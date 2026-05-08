@@ -1,0 +1,29 @@
+# Local editing server and logs
+editor.html
+editor.css
+editor.js
+scripts/editor_server.py
+*.log
+
+# Downloaded source reports are too large for GitHub and are not needed for the public site.
+report/files/
+report/texts/
+report/*.csv
+report/*.json
+
+# Raw data files used during analysis. The public site uses generated chart data
+# and downloadable CSVs in data/derived/.
+data/*.csv
+data/*.xlsx
+data/*.xls
+data/*.json
+
+!data/derived/
+!data/derived/**
+!data/geo/
+!data/geo/**
+
+# Python/cache artifacts
+__pycache__/
+*.pyc
+.pytest_cache/

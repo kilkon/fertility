@@ -1,0 +1,797 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>부록. 자료와 분석 설계</title>
+  <link rel="stylesheet" href="../site.css?v=20260508-public-comments-readonly">
+  <link rel="stylesheet" href="../_book_pages.css?v=20260508-public-comments-readonly">
+</head>
+<body>
+  <div class="layout">
+    <nav class="toc" aria-label="책 목차">
+<h2 class="toc-title">인구·저출산·고령화</h2>
+<a href="../index.html">표지</a>
+<a class="chapter" href="../chapters/chapter-0.html">0. 왜 이 책을 썼는가</a>
+<a class="chapter" href="../chapters/chapter-1.html">1. 지표의 함정과 인구를 읽는 방법</a>
+<a class="toc-section" href="../sections/section-1-1-age-structure.html">1.1 인구피라미드는 무엇을 드러내는가</a>
+<a class="toc-section" href="../sections/section-1-2-population-measures.html">1.2 인구 기준은 왜 서로 다른가</a>
+<a class="toc-section" href="../sections/section-1-3-optimal-population.html">1.3 인구가 많아야 하는 이유가 있는가</a>
+<a class="toc-section" href="../sections/section-1-4-fertility-measures.html">1.4 출산율은 어떻게 다양하게 측정되는가</a>
+<a class="chapter" href="../chapters/chapter-2-population-decline.html">2. 인구는 정말 감소하는가</a>
+<a class="toc-section" href="../sections/section-2-1-population-growth-regions.html">2.1 인구가 증가한 지역은</a>
+<a class="toc-section" href="../sections/section-2-2-older-population-growth.html">2.2 고령층 인구가 증가했는가</a>
+<a class="toc-section" href="../sections/section-2-3-working-age-population-growth.html">2.3 생산연령인구는 증가했는가</a>
+<a class="toc-section" href="../sections/section-2-2-population-concentration.html">2.4 인구 집중도는 심화되는가</a>
+<a class="toc-section" href="../sections/section-2-5-international-low-fertility.html">2.5 저출산은 한국만의 문제인가</a>
+<a class="chapter" href="../chapters/chapter-2.html">3. 저출산 정책의 성과는 어떻게 검산해야 하는가</a>
+<a class="toc-section" href="../sections/section-2-0-low-fertility-policy-types.html">3.1 저출산 정책은 어떤 것이 있는가</a>
+<a class="toc-section" href="../sections/section-2-1-housing-support-marriage-birth.html">3.2 주거 지원은 과연 결혼과 출산을 늘리고 있는가</a>
+<a class="toc-section" href="../sections/section-2-1-yeonggwang-cohort.html">3.3 지역 출산정책은 실제 인구를 남기는가</a>
+<a class="toc-section" href="../sections/section-2-2-fertility-conditions.html">3.4 출산을 미루는 조건은 무엇인가</a>
+<a class="chapter" href="../chapters/chapter-3.html">4. 이동과 지역 격차가 인구를 다시 쓴다</a>
+<a class="toc-section" href="../sections/section-3-0-sido-net-migration.html">4.1 어느 광역시도의 인구 순이동이 가장 큰가</a>
+<a class="toc-section" href="../sections/section-3-1-regional-gap.html">4.2 청년 이동과 시군구 격차</a>
+<a class="toc-section" href="../sections/section-3-2-foreign-multicultural.html">4.3 외국인·다문화·국제결혼</a>
+<a class="chapter" href="../chapters/chapter-4.html">5. 출산 결정의 생활시간표</a>
+<a class="toc-section" href="../sections/section-4-5-households.html">5.1 가구 수는 왜 인구와 다르게 움직이는가</a>
+<a class="toc-section" href="../sections/section-4-6-housing-demand.html">5.2 주거 수요는 왜 인구보다 늦게 변하는가</a>
+<a class="toc-section" href="../sections/section-4-1-family-formation.html">5.3 혼인·이혼·출생의 연결</a>
+<a class="toc-section" href="../sections/section-4-1-marriage-culture.html">5.4 결혼과 출산은 왜 문화적 현상인가</a>
+<a class="toc-section" href="../sections/section-4-1-divorce-fear-marriage.html">5.5 이혼의 두려움은 결혼을 막는가</a>
+<a class="toc-section" href="../sections/section-4-2-men-care-parental-leave.html">5.6 남성이 육아를 담당하지 않는다?</a>
+<a class="toc-section" href="../sections/section-4-3-care-work-balance.html">5.7 돌봄과 일가정양립</a>
+<a class="toc-section" href="../sections/section-4-4-childcare-shortage.html">5.8 어린이집이 적어서 출산을 덜 하는가</a>
+<a class="toc-section" href="../sections/section-4-7-vacant-housing.html">5.9 빈집은 생활권 약화의 신호인가</a>
+<a class="chapter" href="../chapters/chapter-5.html">6. 고령사회, 노동시장, 재정의 압력</a>
+<a class="toc-section" href="../sections/section-5-1-labor-aging.html">6.1 노동시장과 고령층 경제활동</a>
+<a class="toc-section" href="../sections/section-5-2-aging-index.html">6.2 노령화 지수는 무엇이고 얼마나 빠르게 증가할까</a>
+<a class="toc-section" href="../sections/section-5-3-lifecycle-fiscal.html">6.3 생애주기와 재정</a>
+<a class="toc-section" href="../sections/section-5-3-health-spending-aging.html">6.4 고령화 사회에서 의료비 지출은 얼마나 빠르게 증가하는가</a>
+<a class="toc-section" href="../sections/section-5-4-aging-budget.html">6.5 고령화 예산은 얼마나 증가하는가</a>
+<a class="toc-section" href="../sections/section-5-5-elderly-pension.html">6.6 고령층 연금수령액은 얼마나 증가하는가</a>
+<a class="toc-section" href="../sections/section-5-6-elderly-pension-distribution.html">6.7 고령층 연금수령액 구간 분포</a>
+<a class="chapter" href="../chapters/chapter-6-education-low-fertility.html">7. 교육과 저출산</a>
+<a class="toc-section" href="../sections/section-6-1-education-cost-fertility.html">7.1 저출산을 초래할 정도로 교육비가 증가하고 있는가</a>
+<a class="toc-section" href="../sections/section-6-2-private-education-by-school-level.html">7.2 사교육 경쟁은 언제 시작되는가</a>
+<a class="toc-section" href="../sections/section-6-3-education-cost-inequality.html">7.3 교육비 부담은 계층별로 얼마나 다른가</a>
+<a class="toc-section" href="../sections/section-6-4-school-age-decline-education.html">7.4 학생 수가 줄면 교육 부담도 줄어드는가</a>
+<a class="toc-section" href="../sections/section-6-5-education-expectation-burden.html">7.5 부모는 왜 대학까지 책임지려 하는가</a>
+<a class="chapter" href="../chapters/chapter-7-policy-recommendations.html">8. 그래서 어떤 저출산·고령화 정책이 필요한가</a>
+<a class="chapter active" href="../sections/appendix-data-notes.html">부록. 자료와 분석 설계</a>
+</nav>
+    <main class="page book-page">
+      <section class="section-header-block">
+  <p class="series">Appendix</p>
+  <h1>부록. 자료와 분석 설계</h1>
+  <p class="lead">본문의 흐름을 끊지 않기 위해 책의 서사, 각 절의 자료 경로, 분석 방식, 해석상의 주의점을 한곳에 모았다.</p>
+</section>
+<section id="book-narrative" class="section narrative-flow">
+  <h2>책의 서사</h2>
+  <p>핵심 논리는 단순합니다. 출산율이 낮아졌다는 사실에서 출발하되, 곧바로 “출산율을 어떻게 올릴 것인가”로 뛰지 않습니다. 먼저 지표가 무엇을 말하고 무엇을 숨기는지 확인하고, 이어서 출생 코호트가 실제 지역 안에 남는지, 청년과 가족이 이동하는지, 가구와 노동시장과 재정이 어떤 압력을 받는지 추적합니다.</p>
+  <div class="flow-steps" aria-label="책의 논리 흐름">
+    <article>
+      <span>1</span>
+      <h3>지표의 함정</h3>
+      <p>합계출산율, 출생아 수, 주민등록인구, 연앙인구, 인구총조사는 서로 다른 현실을 잽니다.</p>
+    </article>
+    <article>
+      <span>2</span>
+      <h3>정책 검산</h3>
+      <p>높은 출산율이 실제 유아 인구 유지와 정주 조건 개선으로 이어지는지 사례와 전국 지표를 함께 확인합니다.</p>
+    </article>
+    <article>
+      <span>3</span>
+      <h3>구조 변화</h3>
+      <p>20-30대 감소, 초등학생 감소, 고령화율, 부양비를 통해 인구구조의 방향을 읽습니다.</p>
+    </article>
+    <article>
+      <span>4</span>
+      <h3>지역 격차</h3>
+      <p>전국 평균 뒤에 숨은 시군구별 속도 차이를 GIS와 지역 패널로 드러냅니다.</p>
+    </article>
+    <article>
+      <span>5</span>
+      <h3>생활시간표</h3>
+      <p>가구 형성, 주거, 혼인, 육아휴직, 보육이 출산 결정의 시간표를 어떻게 앞당기거나 늦추는지 봅니다.</p>
+    </article>
+    <article>
+      <span>6</span>
+      <h3>노동과 재정</h3>
+      <p>고령층 경제활동, 인력부족, 생애주기 적자, 보건·돌봄 지출로 결론을 확장합니다.</p>
+    </article>
+  </div>
+  <div class="thesis-box">
+    <strong>이 책의 중심 질문</strong>
+    <p>한국은 왜 아이를 적게 낳는가에서 끝나지 않고, 어떤 지역과 어떤 세대가 먼저 줄어들며, 누가 남아 돌봄과 노동과 재정을 감당하게 되는가를 묻습니다.</p>
+  </div>
+</section>
+<section class="panel appendix-chapter">
+  <h2>1. 지표의 함정과 인구를 읽는 방법</h2>
+  <section class="appendix-section">
+  <h3>1.1. 인구피라미드는 무엇을 드러내는가</h3>
+  <div class="evidence-grid"><article class="evidence-item">
+  <h4>피라미드의 움푹 들어간 연령대는 어느 세대인가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>KOSIS DT_1BPA001 성·연령별 1세별 추계인구, 1980·1990·2020·2025년</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/population_pyramid_5yr_1980_1990_2020_2025.csv" download>population_pyramid_5yr_1980_1990_2020_2025.csv</a></dd></div>
+    <div><dt>분석</dt><dd>KOSIS가 제공하는 중위추계 5세 연령군을 사용해 좌우 피라미드를 그리고, 특정 연령대의 돌출·침식을 출생연도 코호트로 환산한다.</dd></div>
+    <div><dt>해석</dt><dd>한국전쟁, 전후 베이비붐, 가족계획, 외환위기 이후 가족 형성 지연, 2015년 이후 출생 급감이 연령층의 두께로 남는다.</dd></div>
+  </dl>
+</article><article class="evidence-item">
+  <h4>가족 형성 핵심 연령층과 학령인구는 함께 줄고 있는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>KOSIS 장래인구추계의 0-14세, 15-64세, 65세 이상 구성비와 1세별 피라미드 원자료</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/age_composition_projection.csv" download>age_composition_projection.csv</a> <a class="csv-button evidence-link" href="../data/population_projection_indicators.csv" download>population_projection_indicators.csv</a></dd></div>
+    <div><dt>분석</dt><dd>20-39세, 6-11세, 65세 이상을 별도 집계해 피라미드 변화와 학교·노동시장 수요 변화를 연결한다.</dd></div>
+    <div><dt>해석</dt><dd>저출산은 출생아 수 문제가 아니라 교육, 노동, 돌봄 수요의 순차적 축소로 이동한다.</dd></div>
+  </dl>
+</article></div>
+</section><section class="appendix-section">
+  <h3>1.2. 인구 기준은 왜 서로 다른가</h3>
+  <div class="evidence-grid"><article class="evidence-item">
+  <h4>주민등록인구, 장래추계, 인구총조사는 무엇을 다르게 보는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>KOSIS DT_1B040A3 주민등록인구현황, DT_1IN1502 인구총조사 총인구, DT_1BPB002 장래인구추계</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/population_measure_comparison.csv" download>population_measure_comparison.csv</a> <a class="csv-button evidence-link" href="../data/population_measure_comparison.csv" download>population_measure_comparison.csv</a> <a class="csv-button evidence-link" href="../data/population_projection_indicators.csv" download>population_projection_indicators.csv</a></dd></div>
+    <div><dt>분석</dt><dd>2000-2024년 전국 기준으로 주민등록인구, 인구총조사 총인구, 장래인구추계 중위추계를 같은 축에 놓고 차이를 계산한다. 총조사는 2000·2005·2010년 전수조사 값과 2015년 이후 등록센서스 연간 값을 연결한다.</dd></div>
+    <div><dt>해석</dt><dd>정책 대상 규모를 계산할 때는 행정등록 기준, 국내 상주 기준, 분석·전망 기준을 구분해야 한다.</dd></div>
+  </dl>
+</article><article class="evidence-item">
+  <h4>인구가 줄어드는가, 아니면 특정 지역에 더 몰리는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>KOSIS 시군구 주민등록인구와 2024년 시군구 고령화율</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/sigungu_aging_2024.csv" download>sigungu_aging_2024.csv</a> <a class="csv-button evidence-link" href="../map_data.js" download>map_data.js</a></dd></div>
+    <div><dt>분석</dt><dd>시군구별 인구 집중도, 상위·하위 분위, 고령화율 지도를 함께 만든다.</dd></div>
+    <div><dt>해석</dt><dd>전국 감소보다 중요한 것은 감소와 집중이 동시에 진행되는 공간 구조다.</dd></div>
+  </dl>
+</article></div>
+</section>
+</section><section class="panel appendix-chapter">
+  <h2>2. 인구는 정말 감소하는가</h2>
+  <section class="appendix-section">
+  <h3>2.1. 인구가 증가한 지역은</h3>
+  <div class="evidence-grid"><article class="evidence-item">
+  <h4>지난 20년 동안 인구가 증가한 시군구는 어디인가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>KOSIS DT_1B040A3 행정구역(시군구)별 성별 주민등록인구수, 2004-2024년</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/sigungu_population_2004_2024.csv" download>sigungu_population_2004_2024.csv</a> <a class="csv-button evidence-link" href="../data/derived/sigungu_population_trend_slopes.csv" download>sigungu_population_trend_slopes.csv</a> <a class="csv-button evidence-link" href="../data/derived/sigungu_population_trend_map_values.csv" download>sigungu_population_trend_map_values.csv</a> <a class="csv-button evidence-link" href="../data/geo/skorea-municipalities-2018-topo-simple.json" download>skorea-municipalities-2018-topo-simple.json</a></dd></div>
+    <div><dt>분석</dt><dd>시군구별 주민등록인구를 종속변수, 연도를 독립변수로 둔 단순회귀를 추정하고 연도 계수의 크기를 지도에 표시한다.</dd></div>
+    <div><dt>해석</dt><dd>전국 인구 감소는 모든 지역의 동시 감소가 아니라 성장축과 축소축의 동시 진행을 뜻한다.</dd></div>
+  </dl>
+</article></div>
+</section><section class="appendix-section">
+  <h3>2.4. 인구 집중도는 심화되는가</h3>
+  <div class="evidence-grid"><article class="evidence-item">
+  <h4>거점별 인구 집중도는 실제로 심화되고 있는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>KOSIS DT_1B040A3 행정구역(시군구)별 성별 주민등록인구수, 2004-2024년</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/sigungu_population_concentration.csv" download>sigungu_population_concentration.csv</a> <a class="csv-button evidence-link" href="../data/derived/sigungu_population_concentration_indices.csv" download>sigungu_population_concentration_indices.csv</a> <a class="csv-button evidence-link" href="../data/derived/sigungu_population_top_growth_hubs.csv" download>sigungu_population_top_growth_hubs.csv</a> <a class="csv-button evidence-link" href="../data/derived/sigungu_population_rank_snapshots.csv" download>sigungu_population_rank_snapshots.csv</a></dd></div>
+    <div><dt>분석</dt><dd>시군구 인구를 하위 행정단위 기준으로 정리한 뒤 상위 10·20·50개 지역 비중, 수도권 비중, 성장거점 20개 지역 비중, 지니계수, HHI, 유효 지역 수를 연도별로 계산한다.</dd></div>
+    <div><dt>해석</dt><dd>전국 상위 시군구 비중은 급격히 뛰지는 않지만, 수도권과 성장거점 20개 지역의 비중은 뚜렷하게 커져 인구 집중은 특정 성장축 중심으로 진행된다.</dd></div>
+  </dl>
+</article></div>
+</section><section class="appendix-section">
+  <h3>2.5. 저출산은 한국만의 문제인가</h3>
+  <div class="evidence-grid"><article class="evidence-item">
+  <h4>저출산은 한국만의 문제인가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>World Bank 합계출산율, 대만 공식 성별지표 플랫폼, OECD Family Database, Eurostat 모친 출생국별 출생 자료</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/international_tfr_trends.csv" download>international_tfr_trends.csv</a> <a class="csv-button evidence-link" href="../data/derived/fertility_family_structure_comparison.csv" download>fertility_family_structure_comparison.csv</a> <a class="csv-button evidence-link" href="../data/worldbank_tfr_selected_countries.csv" download>worldbank_tfr_selected_countries.csv</a> <a class="csv-button evidence-link" href="../data/eurostat_foreign_born_mother_births_2023.csv" download>eurostat_foreign_born_mother_births_2023.csv</a></dd></div>
+    <div><dt>분석</dt><dd>한국·일본·대만·싱가포르와 유럽 주요국의 합계출산율 추세를 비교하고, 비혼 출산 비중과 외국 출생 모친 출생 비중을 함께 놓는다.</dd></div>
+    <div><dt>해석</dt><dd>동아시아 저출산은 결혼 중심 출산규범과 높은 양육·교육·주거비, 성별 돌봄 불평등이 결합된 현상이며, 유럽의 이민자 출산과 비혼 출산은 출산율 하락을 완충하지만 그 자체로 대체수준을 회복시키지는 못한다.</dd></div>
+  </dl>
+</article></div>
+</section>
+</section><section class="panel appendix-chapter">
+  <h2>3. 저출산 정책의 성과는 어떻게 검산해야 하는가</h2>
+  <section class="appendix-section">
+  <h3>3.2. 주거 지원은 과연 결혼과 출산을 늘리고 있는가</h3>
+  <div class="evidence-grid"><article class="evidence-item">
+  <h4>주거지원 정책은 어떤 방식으로 결혼과 출산을 늘리려 하는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>국토교통부 2025년 업무계획, 저출산고령사회위원회 주거정책 보도자료, 국회예산정책처 2026년도 예산안 총괄 분석</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/housing_support_policy_budget.csv" download>housing_support_policy_budget.csv</a> <a class="csv-button evidence-link" href="../data/derived/low_fertility_major_budget_2026.csv" download>low_fertility_major_budget_2026.csv</a></dd></div>
+    <div><dt>분석</dt><dd>저출생 대응 주요사업 중 주거 분야 예산을 2025년과 2026년으로 비교하고, 공급·청약·대출·거주기간 연장·지자체 임대료 지원으로 정책수단을 분류한다.</dd></div>
+    <div><dt>해석</dt><dd>주거지원은 출산 이후 보상보다 결혼과 첫 출산 이전의 고정비와 불확실성을 낮추는 정책수단으로 설계되어야 한다.</dd></div>
+  </dl>
+</article><article class="evidence-item">
+  <h4>주거 안정성이 높아지면 혼인과 출산도 함께 높아지는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>KOSIS DT_1OH0403·DT_1OH0418 40세 미만 가구주 주택소유·무주택 가구, DT_1B8000I 조혼인율·조출생률</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/housing_security_outcomes_national.csv" download>housing_security_outcomes_national.csv</a> <a class="csv-button evidence-link" href="../data/derived/housing_security_vital_sido_panel.csv" download>housing_security_vital_sido_panel.csv</a></dd></div>
+    <div><dt>분석</dt><dd>전국과 시도 패널에서 40세 미만 가구주의 주택보유율, 조혼인율, 조출생률의 2015-2024년 추세를 결합한다.</dd></div>
+    <div><dt>해석</dt><dd>전국적으로는 40세 미만 주택보유율이 낮아지는 동안 혼인과 출생도 장기 하락했다. 다만 2024년 혼인 반등은 주거정책만으로 설명할 수 없으므로 경기순환, 코로나19 이후 이연 혼인, 제도 변화 기대를 함께 보아야 한다.</dd></div>
+  </dl>
+</article><article class="evidence-item">
+  <h4>공공주택 지원은 청년·신혼 가구의 실제 주거 경로를 바꾸고 있는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>주택금융공사 주택금융 및 보금자리론 실태조사 DT_KHFC_026 점유형태, KOSIS 40세 미만 가구주 주택소유 자료</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/housing_tenure_young_newlywed.csv" download>housing_tenure_young_newlywed.csv</a> <a class="csv-button evidence-link" href="../data/derived/housing_security_outcomes_national.csv" download>housing_security_outcomes_national.csv</a></dd></div>
+    <div><dt>분석</dt><dd>30대 이하·신혼·미혼 가구의 자가, 전세, 보증금 있는 월세 비중을 비교해 공공주택과 주거지원이 겨냥하는 불안정한 초기 주거 경로를 확인한다.</dd></div>
+    <div><dt>해석</dt><dd>공공주택 효과는 공급량 자체가 아니라 전세·월세 의존을 낮추고 혼인·출산기의 거주 안정성을 높였는지로 평가되어야 한다.</dd></div>
+  </dl>
+</article><article class="evidence-item">
+  <h4>전세·구입자금 대출은 부담을 낮추는가, 아니면 부채를 뒤로 미루는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>KOSIS DT_1HDAAA06 가구주연령계층별 자산·부채·소득 현황</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/housing_finance_burden_by_age.csv" download>housing_finance_burden_by_age.csv</a></dd></div>
+    <div><dt>분석</dt><dd>29세 이하와 30~39세 가구주 가구의 부채/처분가능소득, 원리금상환액/처분가능소득, 현거주지 전월세보증금/처분가능소득 비율을 계산한다.</dd></div>
+    <div><dt>해석</dt><dd>정책대출은 초기 진입장벽을 낮추지만 청년·30대 가구의 부채와 상환부담이 이미 높다면 출산 위험을 줄이기보다 미래 소득을 미리 당겨 쓰게 만들 수 있다.</dd></div>
+  </dl>
+</article><article class="evidence-item">
+  <h4>청년·신혼부부 주거지원은 일상 생활비 압력을 완화했는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>청년 프로젝트 보조 정리자료의 가계소비 중 주거비 비중</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/youth_housing_consumption_pressure.csv" download>youth_housing_consumption_pressure.csv</a></dd></div>
+    <div><dt>분석</dt><dd>2010년 이후 가계소비에서 주거비가 차지하는 비중의 장기 변화를 확인해 체감 주거 부담이 완화되었는지 검토한다.</dd></div>
+    <div><dt>해석</dt><dd>지원제도가 확대되어도 생활비 안에서 주거비 비중이 내려가지 않는다면 정책은 혼인·출산의 심리적 안전판으로 충분히 작동하지 못한다.</dd></div>
+  </dl>
+</article><article class="evidence-item">
+  <h4>주거지원이 강하면 출산율은 자동으로 높아지는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>싱가포르·프랑스·이스라엘의 공식 합계출산율과 OECD 주거가격·공공주택 관련 자료</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/international_housing_fertility_cases.csv" download>international_housing_fertility_cases.csv</a></dd></div>
+    <div><dt>분석</dt><dd>공공주택 비중이 높은 싱가포르, 주거비가 높지만 출산율이 높은 이스라엘, 가족정책과 주거수당이 결합된 프랑스를 한국과 비교한다.</dd></div>
+    <div><dt>해석</dt><dd>국제 사례는 주거지원의 핵심이 집값 보조 자체가 아니라 출산 이후에도 유지되는 생활권, 돌봄, 시간, 노동시장 안정과 결합되는 데 있음을 보여준다.</dd></div>
+  </dl>
+</article><article class="evidence-item">
+  <h4>수도권에서는 주거 안정성과 가족 형성의 관계가 더 뚜렷한가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>서울·인천·경기의 40세 미만 가구주 주택보유율, 조혼인율, 조출생률</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/capital_region_housing_marriage_birth.csv" download>capital_region_housing_marriage_birth.csv</a> <a class="csv-button evidence-link" href="../data/derived/housing_security_outcome_regression.csv" download>housing_security_outcome_regression.csv</a></dd></div>
+    <div><dt>분석</dt><dd>서울·인천·경기만 따로 분리해 추세를 그리고, 시도-연도 패널에서 연도 추세를 통제한 단순 회귀계수를 비교한다.</dd></div>
+    <div><dt>해석</dt><dd>수도권에서는 주택보유율과 조출생률의 양의 관계가 상대적으로 더 분명하지만, 조혼인율은 단순히 주택보유율만으로 설명되지 않는다. 서울의 낮은 주택보유율과 높은 일자리 접근성, 경기의 주거 수용지 역할을 함께 읽어야 한다.</dd></div>
+  </dl>
+</article></div>
+</section><section class="appendix-section">
+  <h3>3.3. 지역 출산정책은 실제 인구를 남기는가</h3>
+  <div class="evidence-grid"><article class="evidence-item">
+  <h4>조출생률이 높아진 해의 아이들은 네 살까지 지역에 남는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>KOSIS 시군구 조출생률과 지역 1세별 주민등록인구, 영광군·강진군·고흥군·해남군·진도군의 출생연도별 0세·4세 코호트</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/birth_incentive_region_panel_cbr_retention.csv" download>birth_incentive_region_panel_cbr_retention.csv</a> <a class="csv-button evidence-link" href="../data/derived/birth_incentive_region_birth_rate_validation.csv" download>birth_incentive_region_birth_rate_validation.csv</a> <a class="csv-button evidence-link" href="../data/kosis_birth_incentive_crude_birth_rate.csv" download>kosis_birth_incentive_crude_birth_rate.csv</a> <a class="csv-button evidence-link" href="../data/kosis_birth_incentive_regions_age.csv" download>kosis_birth_incentive_regions_age.csv</a></dd></div>
+    <div><dt>분석</dt><dd>출생연도별 조출생률과 birth_year = year - age 방식으로 재구성한 0세→4세 잔존율을 같은 X축에 놓고 각 군별 좌우 패널로 비교한다. 조출생률은 KOSIS T11 공식값이며, 검증표에는 T10 출생건수와 T11에서 역산되는 분모를 함께 남겼다.</dd></div>
+    <div><dt>해석</dt><dd>조출생률 상승이 지역 내 코호트 유지로 이어졌는지를 따로 검산해야 한다. 100% 초과는 코호트 유지가 아니라 전입을 포함한 순증으로 해석한다.</dd></div>
+  </dl>
+</article><article class="evidence-item">
+  <h4>다섯 군의 평균 잔존율은 얼마나 다르게 나타나는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>2013-2020년 8개 출생 코호트의 시군구별 평균 0세·4세 인구와 평균 잔존율</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/birth_incentive_region_cohort_summary.csv" download>birth_incentive_region_cohort_summary.csv</a></dd></div>
+    <div><dt>분석</dt><dd>시군구별 8개 코호트 평균을 계산해 출생 규모와 4세 잔존 규모, 평균 잔존율, 평균 감소율을 비교한다.</dd></div>
+    <div><dt>해석</dt><dd>같은 전남 군 지역이고 현금성 출산지원이 있어도 잔존율은 크게 갈린다. 정책 평가는 지급액보다 가족이 계속 살 수 있는 조건을 함께 보아야 한다.</dd></div>
+  </dl>
+</article></div>
+</section><section class="appendix-section">
+  <h3>3.4. 출산을 미루는 조건은 무엇인가</h3>
+  <div class="evidence-grid"><article class="evidence-item">
+  <h4>출산 지연은 어느 연령대에서 먼저 나타나는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>KOSIS 연령별 출산율과 출산순위별 평균 출산연령</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/fertility_age_pattern.csv" download>fertility_age_pattern.csv</a> <a class="csv-button evidence-link" href="../data/derived/mean_birth_age_order.csv" download>mean_birth_age_order.csv</a></dd></div>
+    <div><dt>분석</dt><dd>25-29세, 30-34세, 35-39세 출산율과 첫째·둘째아 평균 출산연령을 함께 읽어 출산 시점 이동을 확인한다.</dd></div>
+    <div><dt>해석</dt><dd>첫째아 출산이 뒤로 밀리면 둘째 이상 출산으로 이어질 시간도 줄어든다. 출산율 하락은 출산 포기와 출산 지연이 결합된 결과다.</dd></div>
+  </dl>
+</article><article class="evidence-item">
+  <h4>혼인과 소득, 고용 기반은 출산 시점과 어떻게 연결되는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>KOSIS 인구동태 혼인·출생 건수, 초혼 신혼부부 소득구간별 자녀 현황, e-나라지표 청년 고용동향</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/vital_events_policy.csv" download>vital_events_policy.csv</a> <a class="csv-button evidence-link" href="../data/derived/newlywed_income_fertility.csv" download>newlywed_income_fertility.csv</a> <a class="csv-button evidence-link" href="../data/derived/youth_employment_context.csv" download>youth_employment_context.csv</a></dd></div>
+    <div><dt>분석</dt><dd>혼인 건수의 장기 감소, 신혼부부 소득구간별 무자녀 비중과 평균 출생아 수, 청년 고용 기반 변화를 연결해 출산 지연의 생활 조건을 해석한다.</dd></div>
+    <div><dt>해석</dt><dd>한국에서는 혼인이 출산의 주요 통로이고, 소득은 고용 안정의 결과다. 따라서 출산 지연은 혼인 지연, 일자리 안정, 소득 형성, 주거·돌봄 기대가 동시에 늦어지는 과정으로 이해해야 한다.</dd></div>
+  </dl>
+</article></div>
+</section>
+</section><section class="panel appendix-chapter">
+  <h2>4. 이동과 지역 격차가 인구를 다시 쓴다</h2>
+  <section class="appendix-section">
+  <h3>4.1. 어느 광역시도의 인구 순이동이 가장 큰가</h3>
+  <div class="evidence-grid"><article class="evidence-item">
+  <h4>어느 광역시도의 인구 순이동이 가장 큰가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>KOSIS DT_1B26001_A03 시군구/연령(5세)별 이동자수, 2000-2024년 광역시도 순이동</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/domestic_migration_age_DT_1B26001_A03.csv" download>domestic_migration_age_DT_1B26001_A03.csv</a> <a class="csv-button evidence-link" href="../data/derived/sido_net_migration_total.csv" download>sido_net_migration_total.csv</a> <a class="csv-button evidence-link" href="../data/derived/sido_net_migration_age_by_year.csv" download>sido_net_migration_age_by_year.csv</a> <a class="csv-button evidence-link" href="../data/derived/sido_net_migration_age_contribution.csv" download>sido_net_migration_age_contribution.csv</a> <a class="csv-button evidence-link" href="../data/derived/sido_net_migration_age_model_summary.csv" download>sido_net_migration_age_model_summary.csv</a></dd></div>
+    <div><dt>분석</dt><dd>광역시도별 총 순이동을 연도별 패널로 그리고, 최근 10년 평균 순이동을 연령대별 순이동의 합으로 분해한다.</dd></div>
+    <div><dt>해석</dt><dd>경기도는 가족 형성·주거 이동 연령층을 중심으로 순유입이 크고, 서울은 35-64세 유출이 커서 청년 유출만으로 설명되지 않는다.</dd></div>
+  </dl>
+</article></div>
+</section><section class="appendix-section">
+  <h3>4.2. 청년 이동과 시군구 격차</h3>
+  <div class="evidence-grid"><article class="evidence-item">
+  <h4>어느 시군구가 먼저 초고령 구조에 들어갔는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>KOSIS DT_1B04006 시군구별 1세별 주민등록인구, 2024년 고령화율</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/sigungu_aging_top.csv" download>sigungu_aging_top.csv</a> <a class="csv-button evidence-link" href="../data/sigungu_aging_2024.csv" download>sigungu_aging_2024.csv</a> <a class="csv-button evidence-link" href="../map_data.js" download>map_data.js</a></dd></div>
+    <div><dt>분석</dt><dd>상위 시군구 막대그래프와 GIS 지도를 결합해 공간적 군집을 확인한다.</dd></div>
+    <div><dt>해석</dt><dd>고령화는 전국 평균보다 군 지역과 비수도권 생활권에서 먼저 정책 한계로 드러난다.</dd></div>
+  </dl>
+</article><article class="evidence-item">
+  <h4>청년층 기반은 어디에서 약해지는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>e-나라지표 청년 생산가능인구, 시군구 고령화율, 향후 국내이동 자료</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/youth_population_enara.csv" download>youth_population_enara.csv</a> <a class="csv-button evidence-link" href="../data/sigungu_aging_2024.csv" download>sigungu_aging_2024.csv</a></dd></div>
+    <div><dt>분석</dt><dd>청년 생산가능인구 감소와 지역 고령화율을 연결하고, 후속으로 전입·전출 순이동을 붙인다.</dd></div>
+    <div><dt>해석</dt><dd>지역 인구감소는 출생 감소보다 청년 이동에서 먼저 관찰될 수 있다.</dd></div>
+  </dl>
+</article></div>
+</section><section class="appendix-section">
+  <h3>4.3. 외국인·다문화·국제결혼</h3>
+  <div class="evidence-grid"><article class="evidence-item">
+  <h4>외국인 유입은 노동, 유학, 결혼 중 무엇으로 구성되는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>법무부/KOSIS 체류외국인 체류자격별 자료, 등록외국인 시군구·체류자격 자료</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/foreign_residents_DT_1B040A5A.csv" download>foreign_residents_DT_1B040A5A.csv</a> <a class="csv-button evidence-link" href="../data/registered_foreigners_DT_1B040A11.csv" download>registered_foreigners_DT_1B040A11.csv</a></dd></div>
+    <div><dt>분석</dt><dd>체류자격별 규모와 지역 분포를 분해해 노동형, 유학형, 결혼·정착형 유입을 구분한다.</dd></div>
+    <div><dt>해석</dt><dd>외국인 인구는 단일 집단이 아니라 지역 노동시장과 가족 형성에 서로 다른 방식으로 작동한다.</dd></div>
+  </dl>
+</article><article class="evidence-item">
+  <h4>다문화 출생 비중은 출생 구조를 얼마나 바꾸는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>KOSIS 지역별 다문화 출생, 국제결혼 관련 자료</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/multicultural_birth_rate.csv" download>multicultural_birth_rate.csv</a> <a class="csv-button evidence-link" href="../data/international_marriage_DT_1BB0006.csv" download>international_marriage_DT_1BB0006.csv</a></dd></div>
+    <div><dt>분석</dt><dd>전체 출생아 수, 다문화 출생아 수, 다문화 출생 비중을 같은 표로 비교한다.</dd></div>
+    <div><dt>해석</dt><dd>출생아 수가 줄수록 다문화 출생은 지역 교육과 돌봄 체계에서 더 중요한 비중을 갖는다.</dd></div>
+  </dl>
+</article></div>
+</section>
+</section><section class="panel appendix-chapter">
+  <h2>5. 출산 결정의 생활시간표</h2>
+  <section class="appendix-section">
+  <h3>5.1. 가구 수는 왜 인구와 다르게 움직이는가</h3>
+  <div class="evidence-grid"><article class="evidence-item">
+  <h4>가구 수는 왜 인구와 다르게 움직이는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>KOSIS INH_1JC1501 가구수(시도/시/군/구), DT_1B040A3 시군구 주민등록인구</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/household_population_gap_national.csv" download>household_population_gap_national.csv</a> <a class="csv-button evidence-link" href="../data/derived/household_population_gap_all_regions.csv" download>household_population_gap_all_regions.csv</a></dd></div>
+    <div><dt>분석</dt><dd>2015년을 100으로 두고 전국 가구 수 지수, 인구 지수, 평균 가구원 수를 계산한다.</dd></div>
+    <div><dt>해석</dt><dd>인구가 정체되어도 1인가구, 고령가구, 비혼·만혼, 가족 분화가 늘면 가구 수는 계속 증가할 수 있다.</dd></div>
+  </dl>
+</article><article class="evidence-item">
+  <h4>가구 수와 인구의 괴리는 수도권에서만 나타나는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>KOSIS INH_1JC1501 시도별 가구수와 시군구 주민등록인구의 시도 합산값</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/household_population_gap_regions.csv" download>household_population_gap_regions.csv</a></dd></div>
+    <div><dt>분석</dt><dd>시도별 2015-2024년 가구 수 증가율과 인구 증가율을 비교하고, 수도권과 비수도권을 구분한다.</dd></div>
+    <div><dt>해석</dt><dd>가구 수 증가가 인구 증가를 앞서는 현상은 수도권만의 현상이 아니라 대부분 지역에서 관찰되는 생활단위 변화다.</dd></div>
+  </dl>
+</article><article class="evidence-item">
+  <h4>가구주의 고령화와 청년 1인가구 증가는 동시에 일어나는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>KOSIS DT_1JC1511 가구주의 연령 및 가구원수별 가구(일반가구) - 시군구, 전국</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/household_head_age_shift.csv" download>household_head_age_shift.csv</a> <a class="csv-button evidence-link" href="../data/household_head_age_size_DT_1JC1511.csv" download>household_head_age_size_DT_1JC1511.csv</a></dd></div>
+    <div><dt>분석</dt><dd>가구주 20-34세 1인가구와 65세 이상 가구주 가구·1인가구를 집계하고 2015년 대비 증가율과 일반가구 대비 비중을 계산한다.</dd></div>
+    <div><dt>해석</dt><dd>청년 1인가구 증가는 가족 형성의 지연을, 고령 1인가구 증가는 생애 후반 가족 분화와 돌봄 수요 증가를 보여준다.</dd></div>
+  </dl>
+</article></div>
+</section><section class="appendix-section">
+  <h3>5.2. 주거 수요는 왜 인구보다 늦게 변하는가</h3>
+  <div class="evidence-grid"><article class="evidence-item">
+  <h4>주거 수요는 왜 인구보다 늦게 줄어드는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>KOSIS DT_1BZ0503 가구주의 연령/가구원수별 추계가구-전국</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/future_households_policy.csv" download>future_households_policy.csv</a> <a class="csv-button evidence-link" href="../data/future_households_DT_1BZ0503.csv" download>future_households_DT_1BZ0503.csv</a></dd></div>
+    <div><dt>분석</dt><dd>총가구, 1인가구, 2인가구, 4인가구의 장기 추세를 비교한다.</dd></div>
+    <div><dt>해석</dt><dd>주거 수요는 사람 수보다 가구 형태에 더 직접적으로 반응한다. 작은 가구가 늘면 인구 감소가 곧 주택 수요 감소로 이어지지 않는다.</dd></div>
+  </dl>
+</article></div>
+</section><section class="appendix-section">
+  <h3>5.3. 혼인·이혼·출생의 연결</h3>
+  <div class="evidence-grid"><article class="evidence-item">
+  <h4>한국에서 출생은 혼인과 얼마나 강하게 묶여 있는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>KOSIS 인구동태의 출생, 혼인, 이혼, 법적혼인상태별 출생 자료</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/fertility_comparison.csv" download>fertility_comparison.csv</a> <a class="csv-button evidence-link" href="../data/international_marriage_DT_1BB0006.csv" download>international_marriage_DT_1BB0006.csv</a></dd></div>
+    <div><dt>분석</dt><dd>조혼인율, 조출생률, 조이혼율을 시도 패널로 만들고 산점도·상관계수를 계산한다.</dd></div>
+    <div><dt>해석</dt><dd>혼인과 출생의 상관은 주거, 소득, 돌봄 조건을 통과해 나타나는 결과로 해석해야 한다.</dd></div>
+  </dl>
+</article><article class="evidence-item">
+  <h4>혼인 밖 출생이 낮은 구조는 출산율 하락을 어떻게 증폭하는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>법적혼인상태별 출생, 전체 출생아 수, 혼인 건수</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/international_marriage_DT_1BB0006.csv" download>international_marriage_DT_1BB0006.csv</a></dd></div>
+    <div><dt>분석</dt><dd>혼외 출생 비중과 혼인 감소 시점을 같이 놓고 출생 감소의 제도적 경로를 확인한다.</dd></div>
+    <div><dt>해석</dt><dd>혼인 감소가 곧바로 출생 감소로 이어지는 한국적 구조를 설명한다.</dd></div>
+  </dl>
+</article></div>
+</section><section class="appendix-section">
+  <h3>5.4. 결혼과 출산은 왜 문화적 현상인가</h3>
+  <div class="evidence-grid"><article class="evidence-item">
+  <h4>결혼과 출산은 왜 문화적 현상인가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>국가데이터처·통계청 2010년·2024년 사회조사, 2023년 청년 의식변화 기획보도, 저출산고령사회위원회 25-29세 여성 인식조사, KOSIS 합계출산율, 한국행정연구원 사회통합실태조사</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/marriage_attitude_unmarried_gender.csv" download>marriage_attitude_unmarried_gender.csv</a> <a class="csv-button evidence-link" href="../data/derived/family_norms_culture_shift.csv" download>family_norms_culture_shift.csv</a> <a class="csv-button evidence-link" href="../data/derived/marriage_attitude_youth_profile_2022.csv" download>marriage_attitude_youth_profile_2022.csv</a> <a class="csv-button evidence-link" href="../data/derived/young_women_25_29_recent_attitudes.csv" download>young_women_25_29_recent_attitudes.csv</a> <a class="csv-button evidence-link" href="../data/derived/tfr_gender_conflict_timeline.csv" download>tfr_gender_conflict_timeline.csv</a></dd></div>
+    <div><dt>분석</dt><dd>미혼 남녀의 결혼 긍정 인식, 청년 성별·연령대별 결혼 긍정 인식, 25-29세 여성의 결혼 의향·자녀 필요성, 합계출산율 급락과 남녀 갈등 인식의 시간적 겹침을 비교한다.</dd></div>
+    <div><dt>해석</dt><dd>결혼 규범은 약해졌지만 출산과 양육 제도는 여전히 혼인을 중심으로 작동한다. 2010년대 후반의 남녀 갈등과 사회적 비관은 이 간극을 더 크게 만드는 문화적 조건으로 해석하되, 인과효과로 단정하지 않는다.</dd></div>
+  </dl>
+</article></div>
+</section><section class="appendix-section">
+  <h3>5.5. 이혼의 두려움은 결혼을 막는가</h3>
+  <div class="evidence-grid"><article class="evidence-item">
+  <h4>30대와 40대의 이혼율은 증가하고 있는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>KOSIS DT_1B85009 시도/성/연령별 이혼율, 전국 계, 2000-2024년</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/divorce_rate_by_age_DT_1B85009.csv" download>divorce_rate_by_age_DT_1B85009.csv</a> <a class="csv-button evidence-link" href="../data/derived/divorce_rate_30s_40s_trend.csv" download>divorce_rate_30s_40s_trend.csv</a></dd></div>
+    <div><dt>분석</dt><dd>남편·아내별로 30-34세와 35-39세를 30대, 40-44세와 45-49세를 40대로 묶어 해당연령 천명당 이혼율의 추세를 비교한다.</dd></div>
+    <div><dt>해석</dt><dd>최근의 가족 불안은 30대 이혼율 급증이라기보다 혼인 연령 상승과 40대 이후 이혼위험의 상대적 두꺼워짐으로 읽는 것이 더 적절하다.</dd></div>
+  </dl>
+</article><article class="evidence-item">
+  <h4>이혼에 대한 사회적 수용도는 어느 정도인가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>국가데이터처·통계청 2024년 사회조사 결과 보도자료와 KOSIS DT_1SSFA070R 이혼에 대한 견해</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/divorce_acceptance_trend.csv" download>divorce_acceptance_trend.csv</a> <a class="csv-button evidence-link" href="../data/derived/divorce_acceptance_profile_2024.csv" download>divorce_acceptance_profile_2024.csv</a></dd></div>
+    <div><dt>분석</dt><dd>‘이유가 있으면 이혼을 하는 것이 좋다’ 응답 추세와 2024년 집단별 부정·중립·긍정 응답을 비교한다.</dd></div>
+    <div><dt>해석</dt><dd>이혼 수용도는 높아졌지만, 결혼하지 않는 이유의 주류는 여전히 결혼자금, 양육 부담, 고용 불안이다. 이혼 두려움은 핵심 원인이라기보다 결혼의 장기 위험을 크게 느끼게 하는 보조 요인으로 해석해야 한다.</dd></div>
+  </dl>
+</article></div>
+</section><section class="appendix-section">
+  <h3>5.6. 남성이 육아를 담당하지 않는다?</h3>
+  <div class="evidence-grid"><article class="evidence-item">
+  <h4>출산휴가자는 줄고 있는가, 늘고 있는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>e-나라지표 150401 출산전후휴가 및 육아휴직급여 현황</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/maternity_leave_support.csv" download>maternity_leave_support.csv</a> <a class="csv-button evidence-link" href="../data/enara_150401_raw.html" download>enara_150401_raw.html</a></dd></div>
+    <div><dt>분석</dt><dd>출산전후휴가급여 초회수급자 수, 총 지원금액, 1인당 지원금액을 연도별로 계산한다.</dd></div>
+    <div><dt>해석</dt><dd>출산아 수가 줄어도 고용보험 안에서 보호되는 출산휴가 급여 지출은 제도 단가 상승과 대상 확대에 따라 달라질 수 있다.</dd></div>
+  </dl>
+</article><article class="evidence-item">
+  <h4>출산전후휴가급여와 육아휴직급여의 재원을 고용보험이 계속 감당할 수 있는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>e-나라지표 150401 출산전후휴가 및 육아휴직급여 현황과 고용노동부 일가정양립 정책자료</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/maternity_parental_leave_financing_pressure.csv" download>maternity_parental_leave_financing_pressure.csv</a> <a class="csv-button evidence-link" href="../data/enara_150401_raw.html" download>enara_150401_raw.html</a></dd></div>
+    <div><dt>분석</dt><dd>출산전후휴가급여와 육아휴직급여 지원금액을 조원 단위로 환산하고 합계 및 항목별 지출 증가를 비교한다.</dd></div>
+    <div><dt>해석</dt><dd>출산·육아기 소득 중단 보장은 고용보험의 역할과 맞닿아 있지만, 저출산 대응이라는 사회 전체 목적은 일반재정 분담과 사각지대 보완을 함께 요구한다.</dd></div>
+  </dl>
+</article><article class="evidence-item">
+  <h4>육아휴직의 추세는 남성과 여성에서 어떻게 다르게 움직이는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>e-나라지표 150401의 육아휴직급여 초회수급자 성별 자료</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/parental_leave_gender_users.csv" download>parental_leave_gender_users.csv</a> <a class="csv-button evidence-link" href="../data/enara_150401_raw.html" download>enara_150401_raw.html</a></dd></div>
+    <div><dt>분석</dt><dd>전체, 여성근로자, 남성근로자의 수급자 수와 남성 비중을 계산한다.</dd></div>
+    <div><dt>해석</dt><dd>남성 수급자 증가는 돌봄 태도의 변화를 보여주지만, 여성 수급자가 여전히 더 많은 구조는 돌봄 책임의 불균형이 남아 있음을 뜻한다.</dd></div>
+  </dl>
+</article><article class="evidence-item">
+  <h4>1인당 육아휴직 지원금액은 얼마나 증가했는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>e-나라지표 150401의 육아휴직급여 지원금액과 수급자 수</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/parental_leave_per_user_support.csv" download>parental_leave_per_user_support.csv</a> <a class="csv-button evidence-link" href="../data/enara_150401_raw.html" download>enara_150401_raw.html</a></dd></div>
+    <div><dt>분석</dt><dd>총 지원금액을 수급자 수로 나누어 전체 1인당 지원금액을 산출하고, 성별 1인당 지원금액도 같은 방식으로 계산한다.</dd></div>
+    <div><dt>해석</dt><dd>급여 수준 상승은 육아휴직 이용의 문턱을 낮추지만, 남성 이용 확대와 결합할수록 재정 규모가 빠르게 커진다.</dd></div>
+  </dl>
+</article><article class="evidence-item">
+  <h4>남자와 여자의 1인당 육아휴직 지원금액은 왜 다른가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>e-나라지표 150401의 성별 육아휴직급여 수급자 수와 지원금액</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/parental_leave_per_user_support.csv" download>parental_leave_per_user_support.csv</a></dd></div>
+    <div><dt>분석</dt><dd>남성근로자와 여성근로자의 1인당 지원금액 격차와 변화율을 비교한다.</dd></div>
+    <div><dt>해석</dt><dd>성별 1인당 금액 격차는 급여 산식뿐 아니라 휴직 기간, 임금 수준, 이용 시점, 기업문화가 결합된 결과로 해석해야 한다.</dd></div>
+  </dl>
+</article><article class="evidence-item">
+  <h4>남성은 실제로 아이 돌보는 시간을 늘리고 있는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>통계청 2024년 생활시간조사 결과의 미취학 자녀 가구 시간사용</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/preschool_childcare_time_by_parent.csv" download>preschool_childcare_time_by_parent.csv</a></dd></div>
+    <div><dt>분석</dt><dd>2019년과 2024년의 남편·아내 돌보기 시간을 분 단위로 환산하고, 부모 합산 돌보기 시간 중 남편 비중을 계산한다.</dd></div>
+    <div><dt>해석</dt><dd>남편의 돌보기 시간은 늘었지만 아내의 시간이 여전히 훨씬 길다. 제도 이용 확대가 일상적 돌봄 평등으로 이어지는지는 별도로 검산해야 한다.</dd></div>
+  </dl>
+</article><article class="evidence-item">
+  <h4>맞벌이 가구에서도 가사노동은 평등해지고 있는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>통계청 2024년 생활시간조사 결과의 18세 미만 자녀가 있는 맞벌이 가구 시간사용</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/dual_earner_child_housework_time.csv" download>dual_earner_child_housework_time.csv</a></dd></div>
+    <div><dt>분석</dt><dd>2019년과 2024년의 남편·아내 가사노동 시간을 비교하고, 부부 합산 가사노동 시간 중 남편 비중을 계산한다.</dd></div>
+    <div><dt>해석</dt><dd>맞벌이 가구에서 남편의 가사노동 비중은 상승했지만 2024년에도 30%에 미치지 못한다. 저출산 정책은 휴직급여뿐 아니라 일상 시간의 재배분을 겨냥해야 한다.</dd></div>
+  </dl>
+</article></div>
+</section><section class="appendix-section">
+  <h3>5.7. 돌봄과 일가정양립</h3>
+  <div class="evidence-grid"><article class="evidence-item">
+  <h4>부모가 실제 생활권에서 필요한 시간에 믿고 맡길 수 있는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>KOSIS DT_15407_NN009 특수보육어린이집 현황, 중앙육아종합지원센터 시간제보육 및 어린이집 이용시간 안내</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/childcare_time_flexible_facilities.csv" download>childcare_time_flexible_facilities.csv</a> <a class="csv-button evidence-link" href="../data/special_childcare_DT_15407_NN009.csv" download>special_childcare_DT_15407_NN009.csv</a></dd></div>
+    <div><dt>분석</dt><dd>야간 연장, 24시간, 휴일 보육 어린이집 수와 전체 어린이집 대비 비중, 해당 보육 아동현원을 계산한다.</dd></div>
+    <div><dt>해석</dt><dd>전국 어린이집 총량보다 부모의 출퇴근·야간·휴일 생활시간과 맞는 시간 접근성이 실제 돌봄 가능성을 좌우한다.</dd></div>
+  </dl>
+</article><article class="evidence-item">
+  <h4>육아휴직과 일가정양립 제도는 실제로 누가 이용하는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>고용보험 육아휴직 통계, 성별·산업별 육아휴직 이용 자료, KOSIS 보육 관련 통계</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/openfiscal_population_budget.csv" download>openfiscal_population_budget.csv</a></dd></div>
+    <div><dt>분석</dt><dd>육아휴직 이용자 수, 남성 비중, 산업별 이용 격차를 계산하고 보육 인프라 변화와 함께 읽는다.</dd></div>
+    <div><dt>해석</dt><dd>제도가 존재해도 이용 가능성이 성별과 일자리 안정성에 따라 다르면 출산 결정의 불확실성은 줄지 않는다.</dd></div>
+  </dl>
+</article><article class="evidence-item">
+  <h4>돌봄 부담은 가족 형성 조건과 어떻게 연결되는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>보육통계, 육아휴직 자료, 열린재정 보육·가족 예산</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/openfiscal_population_budget.csv" download>openfiscal_population_budget.csv</a></dd></div>
+    <div><dt>분석</dt><dd>보육 공급, 휴직 이용, 재정 지출을 묶어 돌봄의 시간·공간·비용 조건을 비교한다.</dd></div>
+    <div><dt>해석</dt><dd>저출산 대책은 현금지원보다 돌봄 인프라와 노동시간 제도의 결합으로 평가해야 한다.</dd></div>
+  </dl>
+</article></div>
+</section><section class="appendix-section">
+  <h3>5.8. 어린이집이 적어서 출산을 덜 하는가</h3>
+  <div class="evidence-grid"><article class="evidence-item">
+  <h4>어린이집 유형별 개소 수는 어떻게 바뀌었는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>KOSIS DT_15407_NN001 어린이집 설치·운영 현황</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/childcare_supply_by_type.csv" download>childcare_supply_by_type.csv</a> <a class="csv-button evidence-link" href="../data/parental_leave_DT_15407_NN001.csv" download>parental_leave_DT_15407_NN001.csv</a></dd></div>
+    <div><dt>분석</dt><dd>국공립, 사회복지법인, 법인·단체 등, 민간, 가정, 협동, 직장 어린이집의 연도별 개소 수와 정점 이후 감소폭을 계산한다.</dd></div>
+    <div><dt>해석</dt><dd>전체 시설 수보다 중요한 것은 민간·가정 시설 축소와 공공·직장 시설 확대가 동시에 진행되는 공급 구조의 전환이다.</dd></div>
+  </dl>
+</article><article class="evidence-item">
+  <h4>어린이집 이용자수, 곧 보육아동수는 증가하고 있는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>KOSIS DT_15407_NN002 어린이집 보육아동 현황</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/childcare_users_by_type.csv" download>childcare_users_by_type.csv</a> <a class="csv-button evidence-link" href="../data/childcare_children_DT_15407_NN002.csv" download>childcare_children_DT_15407_NN002.csv</a></dd></div>
+    <div><dt>분석</dt><dd>유형별 보육아동수의 정점연도, 최근 연도 수준, 감소폭을 계산하고 시설 수 변화와 비교한다.</dd></div>
+    <div><dt>해석</dt><dd>보육아동수는 2014년 정점 이후 뚜렷하게 감소한다. 이는 어린이집 부족이 전국 총량 부족이라기보다 생활권별 접근성 문제로 나타날 가능성을 뜻한다.</dd></div>
+  </dl>
+</article><article class="evidence-item">
+  <h4>시설이 줄어드는 것이 출산 결정에 어떤 정책 문제를 만드는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>KOSIS 어린이집 설치·운영 현황과 보육아동 현황의 연도·유형 결합 자료</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/childcare_supply_users_by_type.csv" download>childcare_supply_users_by_type.csv</a> <a class="csv-button evidence-link" href="../data/derived/childcare_capacity_pressure.csv" download>childcare_capacity_pressure.csv</a></dd></div>
+    <div><dt>분석</dt><dd>시설 수, 이용 아동 수, 시설당 아동수, 유형별 비중을 결합해 보육 인프라 축소가 총량 조정인지 접근성 약화인지 구분한다.</dd></div>
+    <div><dt>해석</dt><dd>출생 감소가 민간·가정 어린이집 폐원으로 이어지면, 다음 세대 부모에게는 가까운 돌봄 선택지의 축소로 돌아온다. 보육정책은 정원 관리가 아니라 생활권 접근성 관리가 되어야 한다.</dd></div>
+  </dl>
+</article></div>
+</section><section class="appendix-section">
+  <h3>5.9. 빈집은 생활권 약화의 신호인가</h3>
+  <div class="evidence-grid"><article class="evidence-item">
+  <h4>빈집은 생활권 약화의 신호인가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>KOSIS DT_1YL202005 미거주주택(빈집)비율, 국가데이터처 인구주택총조사, 관계부처합동 2022년 빈집실태조사</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/vacant_housing_policy.csv" download>vacant_housing_policy.csv</a> <a class="csv-button evidence-link" href="../data/derived/vacant_housing_rate.csv" download>vacant_housing_rate.csv</a> <a class="csv-button evidence-link" href="../data/derived/vacant_housing_definition_gap_2022.csv" download>vacant_housing_definition_gap_2022.csv</a> <a class="csv-button evidence-link" href="../data/derived/molit_vacant_housing_2022.csv" download>molit_vacant_housing_2022.csv</a> <a class="csv-button evidence-link" href="../data/elderly_economic_activity.csv" download>elderly_economic_activity.csv</a></dd></div>
+    <div><dt>분석</dt><dd>전국 빈집률, 빈집 수, 전체 주택 수의 추세를 비교하고, 2022년 KOSIS 미거주주택과 국토교통부 등 관계부처의 장기 빈집 수를 별도로 비교한다.</dd></div>
+    <div><dt>해석</dt><dd>빈집은 단순한 주택 잔여물이 아니라 인구, 가구, 생활서비스가 어긋나는 지역에서 나타나는 공간적 신호다. KOSIS 통계는 넓은 공실 저량을 보는 탐색 지표이고, 국토부 등 빈집실태조사는 실제 정비·활용·철거 대상에 가까운 집행 지표다.</dd></div>
+  </dl>
+</article></div>
+</section>
+</section><section class="panel appendix-chapter">
+  <h2>6. 고령사회, 노동시장, 재정의 압력</h2>
+  <section class="appendix-section">
+  <h3>6.1. 노동시장과 고령층 경제활동</h3>
+  <div class="evidence-grid"><article class="evidence-item">
+  <h4>고령층에서 취업자는 얼마나 빠르게 증가하고 있을까?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>KOSIS DT_1DE8031S 경제활동인구조사 고령층 부가조사, 2010-2025년 매년 5월</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/elderly_labor_dt_1de8031s_trends.csv" download>elderly_labor_dt_1de8031s_trends.csv</a> <a class="csv-button evidence-link" href="../data/derived/elderly_labor_dt_1de8031s_summary.csv" download>elderly_labor_dt_1de8031s_summary.csv</a> <a class="csv-button evidence-link" href="../data/elderly_labor_DT_1DE8031S.csv" download>elderly_labor_DT_1DE8031S.csv</a></dd></div>
+    <div><dt>분석</dt><dd>전국은 55~79세 전체와 55~64세, 65~79세의 취업자 추세를 분리해 보고, 지역은 KOSIS 시도별 표에서 60세 이상 취업자에 대해 year → 취업자 회귀계수를 계산한다.</dd></div>
+    <div><dt>해석</dt><dd>전국 취업자 증가는 은퇴 지연과 노후소득 필요가 겹친 결과다. 지역 회귀계수는 이 변화가 수도권처럼 고령 인구 자체가 빠르게 늘어난 곳에서 큰지, 농어촌처럼 이미 고령화된 곳에서 완만한지 비교하게 해 준다.</dd></div>
+  </dl>
+</article><article class="evidence-item">
+  <h4>고령층에서 고용률은 얼마나 빠르게 증가하고 있을까?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>KOSIS DT_1DE8031S 고용률과 DT_1DA7015S 시도별 60세 이상 고용률</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/elderly_labor_dt_1de8031s_trends.csv" download>elderly_labor_dt_1de8031s_trends.csv</a> <a class="csv-button evidence-link" href="../data/derived/elderly_regional_labor_60plus_slopes.csv" download>elderly_regional_labor_60plus_slopes.csv</a> <a class="csv-button evidence-link" href="../data/derived/elderly_regional_labor_60plus_trends.csv" download>elderly_regional_labor_60plus_trends.csv</a></dd></div>
+    <div><dt>분석</dt><dd>전국 고용률 추세를 먼저 읽고, 시도별 60세 이상 고용률에 대해 연도 회귀계수를 계산해 퍼센트포인트/년 단위의 변화 속도를 비교한다.</dd></div>
+    <div><dt>해석</dt><dd>고용률이 빠르게 오른 지역은 단순히 노인이 많아진 곳이 아니라 고령층이 실제 노동시장에 더 많이 남거나 들어온 곳이다. 이 값은 고령 친화 일자리, 자영업 구조, 농어업 비중, 지역 노후소득 조건을 함께 묻게 만든다.</dd></div>
+  </dl>
+</article><article class="evidence-item">
+  <h4>고령층에서 실업자는 얼마나 빠르게 증가하고 있을까?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>KOSIS DT_1DE8031S 실업자와 DT_1DA7095S 시도별 60세 이상 실업자</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/elderly_labor_dt_1de8031s_trends.csv" download>elderly_labor_dt_1de8031s_trends.csv</a> <a class="csv-button evidence-link" href="../data/derived/elderly_regional_labor_60plus_slopes.csv" download>elderly_regional_labor_60plus_slopes.csv</a> <a class="csv-button evidence-link" href="../data/regional_elderly_unemployed_DT_1DA7095S.csv" download>regional_elderly_unemployed_DT_1DA7095S.csv</a></dd></div>
+    <div><dt>분석</dt><dd>전국 55~79세 실업자 추세와 시도별 60세 이상 실업자의 연도 회귀계수를 함께 본다. 실업자 표는 60세 이상 범주가 공통으로 제공되어 이 범주를 사용한다.</dd></div>
+    <div><dt>해석</dt><dd>실업자 증가는 취업자 증가보다 규모가 작지만, 고령층이 구직자로 노동시장 안에 남는 정도를 보여준다. 회귀계수가 큰 지역은 고령층 일자리 수요가 실제 구직 압력으로 드러나는 곳이다.</dd></div>
+  </dl>
+</article><article class="evidence-item">
+  <h4>고령층에서 비경제활동인구는 얼마나 빠르게 증가하고 있을까?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>KOSIS DT_1DE8031S 비경제활동인구와 DT_1DA7015S 시도별 60세 이상 비경제활동인구</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/elderly_labor_dt_1de8031s_trends.csv" download>elderly_labor_dt_1de8031s_trends.csv</a> <a class="csv-button evidence-link" href="../data/derived/elderly_regional_labor_60plus_slopes.csv" download>elderly_regional_labor_60plus_slopes.csv</a> <a class="csv-button evidence-link" href="../data/regional_elderly_labor_DT_1DA7015S.csv" download>regional_elderly_labor_DT_1DA7015S.csv</a></dd></div>
+    <div><dt>분석</dt><dd>전국과 지역 모두 비경제활동인구를 취업자·실업자와 별도로 분리해 추세를 본다. 시도별 회귀계수는 노동시장 밖에 있는 고령층 규모가 매년 얼마나 늘었는지 보여준다.</dd></div>
+    <div><dt>해석</dt><dd>비경제활동인구 증가는 노동시장으로 끌어낼 ‘잠재 인력’만을 뜻하지 않는다. 건강, 돌봄, 은퇴, 구직 포기, 소득보장 조건이 섞여 있기 때문에 고용정책과 복지정책을 함께 읽어야 한다.</dd></div>
+  </dl>
+</article></div>
+</section><section class="appendix-section">
+  <h3>6.2. 노령화 지수는 무엇이고 얼마나 빠르게 증가할까</h3>
+  <div class="evidence-grid"><article class="evidence-item">
+  <h4>노령화지수는 무엇을 측정하는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>KOSIS DT_1BPB002 주요 인구지표의 0-14세 구성비, 65세 이상 구성비, 노령화지수</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/aging_index_growth.csv" download>aging_index_growth.csv</a> <a class="csv-button evidence-link" href="../data/derived/national_population_pressure.csv" download>national_population_pressure.csv</a> <a class="csv-button evidence-link" href="../data/population_projection_indicators.csv" download>population_projection_indicators.csv</a></dd></div>
+    <div><dt>분석</dt><dd>노령화지수 = 65세 이상 인구 / 0-14세 인구 × 100으로 해석하고, 유소년 비중과 고령층 비중을 같은 그림에 배치한다.</dd></div>
+    <div><dt>해석</dt><dd>노령화지수는 고령화와 저출산이 한꺼번에 사회의 세대 균형을 어떻게 바꾸는지 보여준다.</dd></div>
+  </dl>
+</article><article class="evidence-item">
+  <h4>노령화지수는 얼마나 빠르게 증가했는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>KOSIS 장래인구추계 중위추계, 2000-2052년</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/aging_index_growth.csv" download>aging_index_growth.csv</a></dd></div>
+    <div><dt>분석</dt><dd>2000년, 2025년, 2052년 값을 비교하고 100, 200, 300, 500을 넘는 시점을 확인한다.</dd></div>
+    <div><dt>해석</dt><dd>한국은 2017년에 노령화지수 100을 넘었고, 2026년에 200, 2030년에 300, 2050년에 500을 넘는 구조로 이동한다.</dd></div>
+  </dl>
+</article></div>
+</section><section class="appendix-section">
+  <h3>6.3. 생애주기와 재정</h3>
+  <div class="evidence-grid"><article class="evidence-item">
+  <h4>고령화는 재정의 어느 항목을 압박하는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>열린재정 국가채무·재정지표, 향후 보건·연금·돌봄 예산</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/openfiscal_debt_context.csv" download>openfiscal_debt_context.csv</a> <a class="csv-button evidence-link" href="../data/openfiscal_population_budget.csv" download>openfiscal_population_budget.csv</a></dd></div>
+    <div><dt>분석</dt><dd>국가채무 흐름을 배경선으로 두고 인구 관련 세출 기능을 별도 묶음으로 추적한다.</dd></div>
+    <div><dt>해석</dt><dd>재정 문제는 단순 부채 규모가 아니라 세대별 소비와 부담의 배분 문제다.</dd></div>
+  </dl>
+</article><article class="evidence-item">
+  <h4>생애주기에서 적자와 흑자는 어느 나이에 발생하는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>KOSIS 국민이전계정, 연령별 노동소득·소비·공공이전 자료</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/openfiscal_population_budget.csv" download>openfiscal_population_budget.csv</a></dd></div>
+    <div><dt>분석</dt><dd>연령별 노동소득과 소비 차이를 계산해 생애주기 적자 곡선을 만든다.</dd></div>
+    <div><dt>해석</dt><dd>저출산·고령화는 아이와 노인이 많고 적다는 문제가 아니라 세대 간 이전 구조의 재편이다.</dd></div>
+  </dl>
+</article></div>
+</section><section class="appendix-section">
+  <h3>6.4. 고령화 사회에서 의료비 지출은 얼마나 빠르게 증가하는가</h3>
+  <div class="evidence-grid"><article class="evidence-item">
+  <h4>연령별 1인 공공보건소비는 어느 나이부터 빠르게 증가하는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>KOSIS DT_1NTA2003 생애주기적자계정(1인규모)의 공공보건소비</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/national_transfer_accounts_DT_1NTA2003.csv" download>national_transfer_accounts_DT_1NTA2003.csv</a> <a class="csv-button evidence-link" href="../data/derived/nta_public_health_age_profile.csv" download>nta_public_health_age_profile.csv</a></dd></div>
+    <div><dt>분석</dt><dd>2010, 2015, 2020, 2022년을 선택해 X축을 각세 연령, Y축을 1인 공공보건소비로 놓고 연령 프로필을 비교한다.</dd></div>
+    <div><dt>해석</dt><dd>의료비 압력은 고령층 전체에서 균일하게 증가하지 않는다. 후기고령층으로 갈수록 1인당 지출이 가파르게 커지므로 고령화 재정은 연령구성의 세부 변화까지 보아야 한다.</dd></div>
+  </dl>
+</article><article class="evidence-item">
+  <h4>같은 연령대의 공공보건소비는 2010년 이후 얼마나 늘었는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>DT_1NTA2003 공공보건소비를 0-14세, 15-44세, 45-64세, 65-74세, 75-84세, 85세 이상으로 재분류한다.</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/nta_public_health_age_group_trend.csv" download>nta_public_health_age_group_trend.csv</a></dd></div>
+    <div><dt>분석</dt><dd>각 연령대 내부 각세별 1인 공공보건소비를 단순 평균하고 연도별 추세를 비교한다.</dd></div>
+    <div><dt>해석</dt><dd>총의료비 증가는 고령층 인구 증가와 1인당 비용 상승이 동시에 작동한 결과다. 따라서 해법은 단순 삭감이 아니라 예방, 만성질환 관리, 지역 의료 접근성, 장기요양과 의료의 연결을 포함해야 한다.</dd></div>
+  </dl>
+</article></div>
+</section><section class="appendix-section">
+  <h3>6.5. 고령화 예산은 얼마나 증가하는가</h3>
+  <div class="evidence-grid"><article class="evidence-item">
+  <h4>고령화 관련 세부사업 수는 늘었는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>열린재정 VW_OPFI940 세부사업 예산편성현황(총지출), 2007-2026년</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/openfiscal_aging_budget_trends.csv" download>openfiscal_aging_budget_trends.csv</a> <a class="csv-button evidence-link" href="../data/openfiscal_VW_OPFI940_aging_budget_matches.csv" download>openfiscal_VW_OPFI940_aging_budget_matches.csv</a></dd></div>
+    <div><dt>분석</dt><dd>세부사업명에 노인·고령·기초연금·기초노령연금·장기요양·치매 등 키워드가 포함된 사업을 추출하고, 연도별 고유 세부사업명 수와 세부사업-소관-회계 단위 수를 함께 계산한다.</dd></div>
+    <div><dt>해석</dt><dd>사업 수 증가는 정책 영역의 확산을 보여주지만, 사업 수가 줄어도 큰 급여성 사업이 커지면 재정 압력은 더 강해질 수 있다.</dd></div>
+  </dl>
+</article><article class="evidence-item">
+  <h4>고령화 관련 예산 금액은 얼마나 증가했는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>열린재정 TotalExpenditure5 API, 금액 변수 Y_YY_DFN_MEDI_KCUR_AMT</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/openfiscal_aging_budget_trends.csv" download>openfiscal_aging_budget_trends.csv</a> <a class="csv-button evidence-link" href="../data/derived/openfiscal_aging_budget_category_trends.csv" download>openfiscal_aging_budget_category_trends.csv</a></dd></div>
+    <div><dt>분석</dt><dd>예산액을 천원에서 조원으로 환산하고 기초연금, 노인일자리, 장기요양·치매, 노인돌봄, 기타 노인·고령화 항목으로 나누어 추세를 계산한다.</dd></div>
+    <div><dt>해석</dt><dd>증가의 대부분은 기초연금에서 발생한다. 장기요양·치매와 노인일자리는 고령사회 서비스와 노동시장 대응의 확대를 보여주지만, 전체 재정 규모에서는 현금급여가 압도적이다.</dd></div>
+  </dl>
+</article><article class="evidence-item">
+  <h4>최근 연도 예산은 어떤 세부사업에 집중되는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>최근 제공 연도 열린재정 세부사업 예산</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/openfiscal_aging_budget_top_programs_latest.csv" download>openfiscal_aging_budget_top_programs_latest.csv</a></dd></div>
+    <div><dt>분석</dt><dd>최근 연도 세부사업을 예산액 기준으로 정렬해 상위 사업을 확인한다.</dd></div>
+    <div><dt>해석</dt><dd>고령화 예산은 넓게 흩어진 작은 사업들의 합이 아니라 기초연금지급, 장기요양보험, 노인일자리 같은 몇 개의 큰 제도에 의해 방향이 결정된다.</dd></div>
+  </dl>
+</article></div>
+</section><section class="appendix-section">
+  <h3>6.6. 고령층 연금수령액은 얼마나 증가하는가</h3>
+  <div class="evidence-grid"><article class="evidence-item">
+  <h4>고령층의 월평균 연금수령액은 얼마나 증가했는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>KOSIS DT_1DE8051S 성별 연금수령여부 및 월평균수령액, 2008-2025년 매년 5월</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/elderly_pension_dt_1de8051s_trends.csv" download>elderly_pension_dt_1de8051s_trends.csv</a> <a class="csv-button evidence-link" href="../data/derived/elderly_pension_dt_1de8051s_summary.csv" download>elderly_pension_dt_1de8051s_summary.csv</a> <a class="csv-button evidence-link" href="../data/elderly_pension_DT_1DE8051S.csv" download>elderly_pension_DT_1DE8051S.csv</a></dd></div>
+    <div><dt>분석</dt><dd>성별 평균수령액을 시계열로 만들고 2008년과 2025년의 변화액과 변화율을 계산한다.</dd></div>
+    <div><dt>해석</dt><dd>평균수령액 증가는 연금제도의 성숙을 보여주지만, 평균 수준만으로 노후소득 안정이 충분하다고 판단할 수는 없다.</dd></div>
+  </dl>
+</article><article class="evidence-item">
+  <h4>연금을 받는 고령층의 비율은 얼마나 늘었는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>KOSIS DT_1DE8051S의 55~79세 인구와 연금수령자 항목</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/elderly_pension_dt_1de8051s_trends.csv" download>elderly_pension_dt_1de8051s_trends.csv</a></dd></div>
+    <div><dt>분석</dt><dd>연금수령자/55~79세 인구×100으로 연금수령률을 계산하고 평균수령액과 같은 그림에 배치한다.</dd></div>
+    <div><dt>해석</dt><dd>수령률 상승은 제도 포괄성이 넓어진다는 뜻이지만, 받는 금액의 충분성과 성별 격차를 함께 보아야 한다.</dd></div>
+  </dl>
+</article></div>
+</section><section class="appendix-section">
+  <h3>6.7. 고령층 연금수령액 구간 분포</h3>
+  <div class="evidence-grid"><article class="evidence-item">
+  <h4>연금수령액 구간은 낮은 금액에서 높은 금액으로 이동했는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>KOSIS DT_1DE8051S의 월평균 10만원 미만, 10~25만원, 25~50만원, 50~100만원, 100만원 이상 구간</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/derived/elderly_pension_dt_1de8051s_distribution.csv" download>elderly_pension_dt_1de8051s_distribution.csv</a></dd></div>
+    <div><dt>분석</dt><dd>각 구간의 수령자 수를 전체 연금수령자로 나누어 구간별 비중을 계산한다.</dd></div>
+    <div><dt>해석</dt><dd>낮은 금액 구간이 줄고 50만원 이상 구간이 늘어나는 것은 연금제도 성숙의 신호지만, 여전히 중간 이하 구간이 두터운 구조는 노후소득 보장의 한계를 보여준다.</dd></div>
+  </dl>
+</article></div>
+</section>
+</section><section class="panel appendix-chapter">
+  <h2>7. 교육과 저출산</h2>
+  <section class="appendix-section">
+  <h3>7.1. 저출산을 초래할 정도로 교육비가 증가하고 있는가</h3>
+  <div class="evidence-grid"><article class="evidence-item">
+  <h4>사교육비는 실제로 줄고 있는가, 아니면 학생 수 감소 속에서도 1인당 부담이 커지고 있는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>KOSIS DT_1PE003 사교육비 총액, DT_1PE201 전체학생 1인당 월평균 사교육비, DT_1PE301 사교육 참여율</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/education_DT_1PE003.csv" download>education_DT_1PE003.csv</a> <a class="csv-button evidence-link" href="../data/education_DT_1PE201.csv" download>education_DT_1PE201.csv</a> <a class="csv-button evidence-link" href="../data/education_DT_1PE301.csv" download>education_DT_1PE301.csv</a> <a class="csv-button evidence-link" href="../data/derived/private_education_cost_trend.csv" download>private_education_cost_trend.csv</a></dd></div>
+    <div><dt>분석</dt><dd>사교육비 총액은 조원, 월평균 사교육비는 만원, 참여율은 퍼센트로 정리하고 2007년 이후 추세와 2025년 변화를 함께 비교한다.</dd></div>
+    <div><dt>해석</dt><dd>출산 결정에서 중요한 것은 현재 지출액만이 아니라 아이 한 명을 낳으면 장기간 교육경쟁 비용을 떠안는다는 예상이다.</dd></div>
+  </dl>
+</article></div>
+</section><section class="appendix-section">
+  <h3>7.2. 사교육 경쟁은 언제 시작되는가</h3>
+  <div class="evidence-grid"><article class="evidence-item">
+  <h4>사교육 경쟁은 대학입시 직전에 시작되는가, 아니면 초등 단계부터 이미 일상화되어 있는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>KOSIS DT_1PE201 학교급별 1인당 월평균 사교육비, DT_1PE301 학교급별 사교육 참여율</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/education_DT_1PE201.csv" download>education_DT_1PE201.csv</a> <a class="csv-button evidence-link" href="../data/education_DT_1PE301.csv" download>education_DT_1PE301.csv</a> <a class="csv-button evidence-link" href="../data/derived/private_education_school_level.csv" download>private_education_school_level.csv</a></dd></div>
+    <div><dt>분석</dt><dd>초등학교, 중학교, 고등학교의 월평균 사교육비와 참여율을 같은 연도 축에서 비교한다.</dd></div>
+    <div><dt>해석</dt><dd>초등학교 단계부터 높은 참여율이 나타난다면 교육비 부담은 입시비용이 아니라 양육 전 과정의 비용으로 작동한다.</dd></div>
+  </dl>
+</article><article class="evidence-item">
+  <h4>고등학생의 사교육 참여율은 왜 2020년 이후 2024년까지 빠르게 올랐는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>KOSIS DT_1PE301 학교급별 사교육 참여율, 2023·2024·2025년 초중고사교육비조사 결과, 교육부 사교육 경감대책·2028 대입제도 개편안</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/education_DT_1PE301.csv" download>education_DT_1PE301.csv</a> <a class="csv-button evidence-link" href="../data/derived/high_school_private_education_drivers.csv" download>high_school_private_education_drivers.csv</a></dd></div>
+    <div><dt>분석</dt><dd>고등학교 전체 참여율과 일반교과, 국어·영어·수학·사회/과학, 유료인터넷 강좌, 진로·진학 학습상담 참여율을 2019-2025년으로 분리해 비교한다.</dd></div>
+    <div><dt>해석</dt><dd>고등학생 사교육 증가는 입시 직전의 한 과목 문제가 아니라 수능·내신·학생부·진학상담 불안이 동시에 커진 결과다. 다만 2025년에는 전체 참여율이 내려가므로 2024년까지의 상승과 최신 하락을 구분해 읽어야 한다.</dd></div>
+  </dl>
+</article></div>
+</section><section class="appendix-section">
+  <h3>7.3. 교육비 부담은 계층별로 얼마나 다른가</h3>
+  <div class="evidence-grid"><article class="evidence-item">
+  <h4>교육비 부담은 모든 가구에 같은가, 아니면 계층별로 전혀 다른 교육경쟁을 만들고 있는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>KOSIS DT_1PE209 가구소득별 1인당 월평균 사교육비, DT_1PE309 가구소득별 사교육 참여율</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/education_DT_1PE209.csv" download>education_DT_1PE209.csv</a> <a class="csv-button evidence-link" href="../data/education_DT_1PE309.csv" download>education_DT_1PE309.csv</a> <a class="csv-button evidence-link" href="../data/derived/private_education_income_gap.csv" download>private_education_income_gap.csv</a></dd></div>
+    <div><dt>분석</dt><dd>2025년 소득구간별 지출액과 참여율을 비교하고, 저소득·고소득 구간의 격차를 계산한다.</dd></div>
+    <div><dt>해석</dt><dd>사교육비는 단순 소비가 아니라 자녀의 미래 지위를 둘러싼 방어적 투자로 작동하며, 이 격차가 둘째·셋째 출산의 기대 비용을 키운다.</dd></div>
+  </dl>
+</article><article class="evidence-item">
+  <h4>소득이 높은 가구는 사교육비를 많이 쓰는데, 그렇다면 출산율은 더 낮은가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>KOSIS DT_1NW2016 초혼 신혼부부의 소득(근로·사업소득) 구간별 출산자녀 현황</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/kosis_newlywed_income_children_DT_1NW2016.csv" download>kosis_newlywed_income_children_DT_1NW2016.csv</a> <a class="csv-button evidence-link" href="../data/derived/newlywed_income_fertility.csv" download>newlywed_income_fertility.csv</a></dd></div>
+    <div><dt>분석</dt><dd>2015-2024년 초혼 신혼부부를 연간 근로·사업소득 구간별로 나누고, 무자녀 비중과 평균 출생아 수를 비교한다.</dd></div>
+    <div><dt>해석</dt><dd>결혼 초기에는 소득이 가장 높은 구간에서 평균 출생아 수가 낮고 무자녀 비중이 높다. 다만 이는 평생 출산율이 낮다는 뜻이 아니라 고소득 맞벌이·주거·경력비용 때문에 출산 시점이 늦어지는 효과를 함께 반영한다.</dd></div>
+  </dl>
+</article></div>
+</section><section class="appendix-section">
+  <h3>7.4. 학생 수가 줄면 교육 부담도 줄어드는가</h3>
+  <div class="evidence-grid"><article class="evidence-item">
+  <h4>학생 수가 줄면 교육비 부담도 자연스럽게 줄어드는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>KOSIS 장래인구추계 0-14세 인구 추산치, 초중고사교육비조사 사교육비 총액·1인당 비용·참여율</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/population_projection_indicators.csv" download>population_projection_indicators.csv</a> <a class="csv-button evidence-link" href="../data/education_DT_1PE003.csv" download>education_DT_1PE003.csv</a> <a class="csv-button evidence-link" href="../data/education_DT_1PE201.csv" download>education_DT_1PE201.csv</a> <a class="csv-button evidence-link" href="../data/education_DT_1PE301.csv" download>education_DT_1PE301.csv</a> <a class="csv-button evidence-link" href="../data/derived/school_age_private_education_pressure.csv" download>school_age_private_education_pressure.csv</a></dd></div>
+    <div><dt>분석</dt><dd>0-14세 인구, 사교육비 총액, 1인당 월평균 사교육비, 참여율을 2007년=100 지수로 바꾸어 비교한다.</dd></div>
+    <div><dt>해석</dt><dd>아이 수 감소가 경쟁 완화로 자동 전환되지 않는다면, 저출산은 교육비 문제를 줄이는 것이 아니라 더 적은 아이에게 더 많은 투자가 몰리는 구조를 만들 수 있다.</dd></div>
+  </dl>
+</article></div>
+</section><section class="appendix-section">
+  <h3>7.5. 부모는 왜 대학까지 책임지려 하는가</h3>
+  <div class="evidence-grid"><article class="evidence-item">
+  <h4>부모는 왜 자녀 교육을 대학까지 책임져야 한다고 느끼는가?</h4>
+  <dl>
+    <div><dt>활용 자료</dt><dd>KOSIS DT_1SSED100R 자녀 교육비 부담 인식, DT_1SSED110R 가장 부담되는 자녀 교육비 항목, DT_1SSED080R 부모가 기대하는 자녀 교육수준</dd></div>
+    <div><dt>자료 파일</dt><dd class="evidence-files"><a class="csv-button evidence-link" href="../data/education_DT_1SSED100R.csv" download>education_DT_1SSED100R.csv</a> <a class="csv-button evidence-link" href="../data/education_DT_1SSED110R.csv" download>education_DT_1SSED110R.csv</a> <a class="csv-button evidence-link" href="../data/education_DT_1SSED080R.csv" download>education_DT_1SSED080R.csv</a> <a class="csv-button evidence-link" href="../data/derived/education_burden_perception.csv" download>education_burden_perception.csv</a></dd></div>
+    <div><dt>분석</dt><dd>학생 자녀가 있는 가구의 교육비 부담 인식과 부담 항목, 부모가 기대하는 자녀 교육수준을 격년 추세로 정리한다.</dd></div>
+    <div><dt>해석</dt><dd>대학 진학이 예외가 아니라 기본값이 되는 사회에서는 출산이 단기 양육비가 아니라 장기 교육비 약속으로 받아들여진다.</dd></div>
+  </dl>
+</article></div>
+</section>
+</section>
+    </main>
+  </div>
+  <script src="../vendor/chart.umd.min.js"></script>
+  <script src="../question_plan.js?v=20260508-public-comments-readonly"></script>
+  <script src="../book_chart_data.js?v=20260508-public-comments-readonly"></script>
+  <script src="../data/geo/sigungu_topo.js?v=20260508-public-comments-readonly"></script>
+  <script src="../book_pages.js?v=20260508-public-comments-readonly"></script>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]]
+      },
+      options: { skipHtmlTags: ["script", "noscript", "style", "textarea", "pre", "code"] }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</body>
+</html>

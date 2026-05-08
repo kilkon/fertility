@@ -1,0 +1,9 @@
+﻿country_code,country_display,region_group,tfr_year,total_fertility_rate,nonmarital_year,nonmarital_birth_share_pct,foreign_born_mother_year,foreign_born_mother_births,total_births,foreign_born_mother_share_pct
+JPN,일본,아시아,2024,1.15,2020,2.4,,,,
+KOR,한국,아시아,2024,0.748,2021,2.95,,,,
+FRA,프랑스,유럽,2024,1.61,2020,62.2,2023.0,173418.0,678333.0,25.6
+GBR,영국,유럽,2024,1.551,2021,51.3,,,,
+SWE,스웨덴,유럽,2024,1.43,2020,55.2,2023.0,29371.0,100051.0,29.4
+DEU,독일,유럽,2024,1.36,2020,33.1,2023.0,220422.0,692989.0,31.8
+ITA,이탈리아,유럽,2024,1.18,2020,33.8,2023.0,82815.0,379890.0,21.8
+ESP,스페인,유럽,2024,1.1,2020,47.6,2023.0,99819.0,319830.0,31.2

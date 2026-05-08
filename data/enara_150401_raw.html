@@ -1,0 +1,249 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>지표누리 공유서비스</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/potal/openAPI/css/style.css;jsessionid=7-yOsIhXsrXed2WVY01ruNEpyg-7HZDA9R1TOY_A.node11" type="text/css">
+<script type="text/javascript" src="/ext/js/jquery.js;jsessionid=7-yOsIhXsrXed2WVY01ruNEpyg-7HZDA9R1TOY_A.node11"></script>
+</head>
+<body>
+	<div class="wrap">
+		
+			<header>
+				<nav class="gnb">
+					<div class="popupNav">
+						<span>통계표 미리보기</span>
+					</div>
+				</nav>
+			</header>
+		
+        <div class="popWrap">
+			<div class="content">
+				<div class="subCont">
+					<h3 class="subTitle mg">통계표</h3>
+					<div style="overflow-y: hidden;">
+						
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+//엑셀 다운로드
+function fn_excelDown(){//소스코드 보안진단	
+	var stts_cd = "150401";
+	var idx_cd = "1504";
+	var $table = $('#t_Table_'+stts_cd).clone();
+	//$table[0].rows[0].cells[0].rowSpan = $table[0].rows[0].cells[0].rowSpan-1;
+	var t_rows = $table[0].rows;
+	var data_value = '';
+	for(var i=0; i<t_rows.length; i++) {
+		var t_cells = t_rows[i].cells;
+		if(t_cells.length>250) {
+			alert('다운로드 받을 수 있는 열(Column)의 갯수를 초과하였습니다.\n(제한:250 / 현재:'+t_cells.length+')');
+			return;
+		}
+		for(var j=0; j<t_cells.length; j++) {
+			data_value += t_cells[j].colSpan + '@span';
+			data_value += t_cells[j].rowSpan + '@span';
+			if($(t_cells[j]).attr('data-id').indexOf('td_')>=0) data_value += t_cells[j].innerText.trim() + '@td@cell';
+			if($(t_cells[j]).attr('data-id').indexOf('td_')<0) data_value += t_cells[j].innerText.trim() + '@th@cell';
+		}
+		data_value += '@row';
+	}
+	//console.log("data_value >> " + data_value);
+	var $form = $('<form name="exceldownform" method="post" action="/unity/potal/indicator/exceldown.do">');
+	var $datavalue = $('<input type="hidden" name="datavalue"/>');
+	$datavalue.val(data_value);
+	$form.append($datavalue);
+	var $idxcd = $('<input type="hidden" name="idxcd"/>');
+	$idxcd.val(idx_cd);
+	$form.append($idxcd);
+	var $sttscd = $('<input type="hidden" name="sttscd"/>');
+	$sttscd.val(stts_cd);
+	$form.append($sttscd);
+	$('body').append($form);
+	$form.submit();
+}
+
+</script> 
+
+
+<form name="dn_150401" method="post" action="/unity/potal/indicator/DownloadStblGams2.do;jsessionid=7-yOsIhXsrXed2WVY01ruNEpyg-7HZDA9R1TOY_A.node11"><!--소스코드 보안진단 -->
+	<input type="hidden" name="stts_cd" value=""/>
+	<input type="hidden" name="HeadStts_cd" value=""/>
+	<input type="hidden" name="idx_cd" value=""/>
+	<input type="hidden" name="SttsKornm" value=""/>
+	<input type="hidden" name="downType" value=""/>
+</form>
+<div></div><!--소스코드 보안진단 -->
+<div class="right pr_5">
+	<label for="searchWrd"> </label><!--소스코드 보안진단 -->
+	<a id="excelButton" href="javascript:fn_excelDown();" title="엑셀다운">엑셀다운</a>
+</div>
+
+<div style="overflow-x:auto;overflow-y:hidden;width:100%;">
+[단위 : 명, 백만원]<!--소스코드 보안진단 -->
+<table id="t_Table_150401" class="table_css" style="white-space:nowrap;">
+	<caption> 통계표 입니다. 단위는 명, 백만원 입니다.</caption>
+		<thead>
+			<!-- tr class="bg"> -->
+			<tr data-id='trHeader150401_1' class='bg'>
+			<th data-id="head_m_150401" scope="col" colspan="2" rowspan="1">&nbsp;</th> <!-- 소트_sunK-->
+			<th data-id='t_h_0' item-id='2017Y' data-index='0' data-name='td__cc_0' class="tc" data-headers='td__cc_0'  rowspan='1'>2017</th>
+<th data-id='t_h_1' item-id='2018Y' data-index='1' data-name='td__cc_1' class="tc" data-headers='td__cc_1'  rowspan='1'>2018</th>
+<th data-id='t_h_2' item-id='2019Y' data-index='2' data-name='td__cc_2' class="tc" data-headers='td__cc_2'  rowspan='1'>2019</th>
+<th data-id='t_h_3' item-id='2020Y' data-index='3' data-name='td__cc_3' class="tc" data-headers='td__cc_3'  rowspan='1'>2020</th>
+<th data-id='t_h_4' item-id='2021Y' data-index='4' data-name='td__cc_4' class="tc" data-headers='td__cc_4'  rowspan='1'>2021</th>
+<th data-id='t_h_5' item-id='2022Y' data-index='5' data-name='td__cc_5' class="tc" data-headers='td__cc_5'  rowspan='1'>2022</th>
+<th data-id='t_h_6' item-id='2023Y' data-index='6' data-name='td__cc_6' class="tc" data-headers='td__cc_6'  rowspan='1'>2023</th>
+<th data-id='t_h_7' item-id='2024Y' data-index='7' data-name='td__cc_7' class="tc" data-headers='td__cc_7'  rowspan='1'>2024</th>
+<th data-id='t_h_8' item-id='2025Y' data-index='8' data-name='td__cc_8' class="tc" data-headers='td__cc_8'  rowspan='1'>2025</th>
+</tr>
+		</thead>
+		<tbody> 
+<tr data-id='tr_150401_1'>
+
+			<th class="tl " data-id ='t_c1_0' item-id='T01' colspan='2' rowspan='1' data-title=''>출산전후휴가급여</th>
+<td data-id='td_150401_1'>81,083</td>
+<td data-id='td_150401_2'>76,394</td>
+<td data-id='td_150401_3'>73,279</td>
+<td data-id='td_150401_4'>70,933</td>
+<td data-id='td_150401_5'>70,275</td>
+<td data-id='td_150401_6'>72,619</td>
+<td data-id='td_150401_7'>72,204</td>
+<td data-id='td_150401_8'>76,668</td>
+<td data-id='td_150401_9'>89,574</td>
+
+			</tr>
+<tr data-id='tr_150401_2'>
+
+			<th class="tl " data-id ='t_c1_1' item-id='T03' colspan='2' rowspan='1' data-title=''>(출산전후휴가급여지원금액)</th>
+<td data-id='td_150401_1'>242,577</td>
+<td data-id='td_150401_2'>248,402</td>
+<td data-id='td_150401_3'>268,479</td>
+<td data-id='td_150401_4'>285,736</td>
+<td data-id='td_150401_5'>289,311</td>
+<td data-id='td_150401_6'>302,785</td>
+<td data-id='td_150401_7'>321,351</td>
+<td data-id='td_150401_8'>348,201</td>
+<td data-id='td_150401_9'>410,060</td>
+
+			</tr>
+<tr data-id='tr_150401_3'>
+
+			<th class="tl " data-id ='t_c1_2' item-id='T02' colspan='1' rowspan='3' data-title=''>육아휴직급여&nbsp;수급자&nbsp;수</th><th class="tl " data-id ='t_c2_20' item-id='T02S02000' colspan='1' rowspan='1' data-title=''>계</th>
+<td data-id='td_150401_1'>90,122</td>
+<td data-id='td_150401_2'>99,199</td>
+<td data-id='td_150401_3'>105,165</td>
+<td data-id='td_150401_4'>112,038</td>
+<td data-id='td_150401_5'>110,555</td>
+<td data-id='td_150401_6'>131,084</td>
+<td data-id='td_150401_7'>126,008</td>
+<td data-id='td_150401_8'>132,535</td>
+<td data-id='td_150401_9'>184,329</td>
+
+			</tr>
+<tr data-id='tr_150401_4'>
+
+			
+<th class="tl " data-id ='t_c2_21' item-id='T02S02001' colspan='1' rowspan='1' data-title=''>여성근로자</th>
+<td data-id='td_150401_1'>78,080</td>
+<td data-id='td_150401_2'>81,537</td>
+<td data-id='td_150401_3'>82,868</td>
+<td data-id='td_150401_4'>84,617</td>
+<td data-id='td_150401_5'>81,514</td>
+<td data-id='td_150401_6'>93,200</td>
+<td data-id='td_150401_7'>90,672</td>
+<td data-id='td_150401_8'>90,706</td>
+<td data-id='td_150401_9'>117,129</td>
+
+			</tr>
+<tr data-id='tr_150401_5'>
+
+			
+<th class="tl " data-id ='t_c2_22' item-id='T02S02002' colspan='1' rowspan='1' data-title=''>남성근로자</th>
+<td data-id='td_150401_1'>12,042</td>
+<td data-id='td_150401_2'>17,662</td>
+<td data-id='td_150401_3'>22,297</td>
+<td data-id='td_150401_4'>27,421</td>
+<td data-id='td_150401_5'>29,041</td>
+<td data-id='td_150401_6'>37,884</td>
+<td data-id='td_150401_7'>35,336</td>
+<td data-id='td_150401_8'>41,829</td>
+<td data-id='td_150401_9'>67,200</td>
+
+			</tr>
+<tr data-id='tr_150401_6'>
+
+			<th class="tl " data-id ='t_c1_3' item-id='T04' colspan='1' rowspan='3' data-title=''>(육아휴직급여&nbsp;지원금액)</th><th class="tl " data-id ='t_c2_30' item-id='T04S02000' colspan='1' rowspan='1' data-title=''>계</th>
+<td data-id='td_150401_1'>680,430</td>
+<td data-id='td_150401_2'>839,083</td>
+<td data-id='td_150401_3'>1,058,853</td>
+<td data-id='td_150401_4'>1,212,143</td>
+<td data-id='td_150401_5'>1,297,525</td>
+<td data-id='td_150401_6'>1,657,231</td>
+<td data-id='td_150401_7'>1,796,995</td>
+<td data-id='td_150401_8'>2,052,487</td>
+<td data-id='td_150401_9'>3,629,169</td>
+
+			</tr>
+<tr data-id='tr_150401_7'>
+
+			
+<th class="tl " data-id ='t_c2_31' item-id='T04S02001' colspan='1' rowspan='1' data-title=''>여성근로자</th>
+<td data-id='td_150401_1'>618,696</td>
+<td data-id='td_150401_2'>733,354</td>
+<td data-id='td_150401_3'>885,073</td>
+<td data-id='td_150401_4'>977,216</td>
+<td data-id='td_150401_5'>1,024,231</td>
+<td data-id='td_150401_6'>1,271,631</td>
+<td data-id='td_150401_7'>1,404,497</td>
+<td data-id='td_150401_8'>1,503,696</td>
+<td data-id='td_150401_9'>2,554,923</td>
+
+			</tr>
+<tr data-id='tr_150401_8'>
+
+			
+<th class="tl " data-id ='t_c2_32' item-id='T04S02002' colspan='1' rowspan='1' data-title=''>남성근로자</th>
+<td data-id='td_150401_1'>61,734</td>
+<td data-id='td_150401_2'>105,729</td>
+<td data-id='td_150401_3'>173,780</td>
+<td data-id='td_150401_4'>234,927</td>
+<td data-id='td_150401_5'>273,293</td>
+<td data-id='td_150401_6'>385,600</td>
+<td data-id='td_150401_7'>392,498</td>
+<td data-id='td_150401_8'>548,791</td>
+<td data-id='td_150401_9'>1,074,246</td>
+
+			</tr>
+		
+	</tbody>
+</table>
+</div>
+<br /> 
+					</div>
+					<h4 class="mg"><strong>출처</strong> : </h4><span class="ml">고용노동부 (고용보험 고용정보통합분석시스템 연도별 통계)</span>
+					<h4 class="mg"><strong>주석</strong> : </h4><span class="ml">* 출산전후휴가급여 수급자 수는 출산전후휴가급여 초회수급자 수로 ’01.11월부터 지급되기 시작
+* 육아휴직급여 수급자 수는 육아휴직급여 초회수급자 수를 의미</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

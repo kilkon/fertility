@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>4.1. 어느 광역시도의 인구 순이동이 가장 큰가</title>
+  <link rel="stylesheet" href="../site.css?v=20260508-public-comments-readonly">
+  <link rel="stylesheet" href="../_book_pages.css?v=20260508-public-comments-readonly">
+</head>
+<body>
+  <div class="layout">
+    <nav class="toc" aria-label="책 목차">
+<h2 class="toc-title">인구·저출산·고령화</h2>
+<a href="../index.html">표지</a>
+<a class="chapter" href="../chapters/chapter-0.html">0. 왜 이 책을 썼는가</a>
+<a class="chapter" href="../chapters/chapter-1.html">1. 지표의 함정과 인구를 읽는 방법</a>
+<a class="toc-section" href="../sections/section-1-1-age-structure.html">1.1 인구피라미드는 무엇을 드러내는가</a>
+<a class="toc-section" href="../sections/section-1-2-population-measures.html">1.2 인구 기준은 왜 서로 다른가</a>
+<a class="toc-section" href="../sections/section-1-3-optimal-population.html">1.3 인구가 많아야 하는 이유가 있는가</a>
+<a class="toc-section" href="../sections/section-1-4-fertility-measures.html">1.4 출산율은 어떻게 다양하게 측정되는가</a>
+<a class="chapter" href="../chapters/chapter-2-population-decline.html">2. 인구는 정말 감소하는가</a>
+<a class="toc-section" href="../sections/section-2-1-population-growth-regions.html">2.1 인구가 증가한 지역은</a>
+<a class="toc-section" href="../sections/section-2-2-older-population-growth.html">2.2 고령층 인구가 증가했는가</a>
+<a class="toc-section" href="../sections/section-2-3-working-age-population-growth.html">2.3 생산연령인구는 증가했는가</a>
+<a class="toc-section" href="../sections/section-2-2-population-concentration.html">2.4 인구 집중도는 심화되는가</a>
+<a class="toc-section" href="../sections/section-2-5-international-low-fertility.html">2.5 저출산은 한국만의 문제인가</a>
+<a class="chapter" href="../chapters/chapter-2.html">3. 저출산 정책의 성과는 어떻게 검산해야 하는가</a>
+<a class="toc-section" href="../sections/section-2-0-low-fertility-policy-types.html">3.1 저출산 정책은 어떤 것이 있는가</a>
+<a class="toc-section" href="../sections/section-2-1-housing-support-marriage-birth.html">3.2 주거 지원은 과연 결혼과 출산을 늘리고 있는가</a>
+<a class="toc-section" href="../sections/section-2-1-yeonggwang-cohort.html">3.3 지역 출산정책은 실제 인구를 남기는가</a>
+<a class="toc-section" href="../sections/section-2-2-fertility-conditions.html">3.4 출산을 미루는 조건은 무엇인가</a>
+<a class="chapter" href="../chapters/chapter-3.html">4. 이동과 지역 격차가 인구를 다시 쓴다</a>
+<a class="toc-section active" href="../sections/section-3-0-sido-net-migration.html">4.1 어느 광역시도의 인구 순이동이 가장 큰가</a>
+<a class="toc-section" href="../sections/section-3-1-regional-gap.html">4.2 청년 이동과 시군구 격차</a>
+<a class="toc-section" href="../sections/section-3-2-foreign-multicultural.html">4.3 외국인·다문화·국제결혼</a>
+<a class="chapter" href="../chapters/chapter-4.html">5. 출산 결정의 생활시간표</a>
+<a class="toc-section" href="../sections/section-4-5-households.html">5.1 가구 수는 왜 인구와 다르게 움직이는가</a>
+<a class="toc-section" href="../sections/section-4-6-housing-demand.html">5.2 주거 수요는 왜 인구보다 늦게 변하는가</a>
+<a class="toc-section" href="../sections/section-4-1-family-formation.html">5.3 혼인·이혼·출생의 연결</a>
+<a class="toc-section" href="../sections/section-4-1-marriage-culture.html">5.4 결혼과 출산은 왜 문화적 현상인가</a>
+<a class="toc-section" href="../sections/section-4-1-divorce-fear-marriage.html">5.5 이혼의 두려움은 결혼을 막는가</a>
+<a class="toc-section" href="../sections/section-4-2-men-care-parental-leave.html">5.6 남성이 육아를 담당하지 않는다?</a>
+<a class="toc-section" href="../sections/section-4-3-care-work-balance.html">5.7 돌봄과 일가정양립</a>
+<a class="toc-section" href="../sections/section-4-4-childcare-shortage.html">5.8 어린이집이 적어서 출산을 덜 하는가</a>
+<a class="toc-section" href="../sections/section-4-7-vacant-housing.html">5.9 빈집은 생활권 약화의 신호인가</a>
+<a class="chapter" href="../chapters/chapter-5.html">6. 고령사회, 노동시장, 재정의 압력</a>
+<a class="toc-section" href="../sections/section-5-1-labor-aging.html">6.1 노동시장과 고령층 경제활동</a>
+<a class="toc-section" href="../sections/section-5-2-aging-index.html">6.2 노령화 지수는 무엇이고 얼마나 빠르게 증가할까</a>
+<a class="toc-section" href="../sections/section-5-3-lifecycle-fiscal.html">6.3 생애주기와 재정</a>
+<a class="toc-section" href="../sections/section-5-3-health-spending-aging.html">6.4 고령화 사회에서 의료비 지출은 얼마나 빠르게 증가하는가</a>
+<a class="toc-section" href="../sections/section-5-4-aging-budget.html">6.5 고령화 예산은 얼마나 증가하는가</a>
+<a class="toc-section" href="../sections/section-5-5-elderly-pension.html">6.6 고령층 연금수령액은 얼마나 증가하는가</a>
+<a class="toc-section" href="../sections/section-5-6-elderly-pension-distribution.html">6.7 고령층 연금수령액 구간 분포</a>
+<a class="chapter" href="../chapters/chapter-6-education-low-fertility.html">7. 교육과 저출산</a>
+<a class="toc-section" href="../sections/section-6-1-education-cost-fertility.html">7.1 저출산을 초래할 정도로 교육비가 증가하고 있는가</a>
+<a class="toc-section" href="../sections/section-6-2-private-education-by-school-level.html">7.2 사교육 경쟁은 언제 시작되는가</a>
+<a class="toc-section" href="../sections/section-6-3-education-cost-inequality.html">7.3 교육비 부담은 계층별로 얼마나 다른가</a>
+<a class="toc-section" href="../sections/section-6-4-school-age-decline-education.html">7.4 학생 수가 줄면 교육 부담도 줄어드는가</a>
+<a class="toc-section" href="../sections/section-6-5-education-expectation-burden.html">7.5 부모는 왜 대학까지 책임지려 하는가</a>
+<a class="chapter" href="../chapters/chapter-7-policy-recommendations.html">8. 그래서 어떤 저출산·고령화 정책이 필요한가</a>
+<a class="chapter" href="../sections/appendix-data-notes.html">부록. 자료와 분석 설계</a>
+</nav>
+    <main class="page book-page">
+      <section class="section-header-block">
+  <p class="series">Chapter 4</p>
+  <h1>4.1. 어느 광역시도의 인구 순이동이 가장 큰가</h1>
+  <p class="lead">출생만으로 지역 인구를 설명할 수 없다. 청년 이동, 외국인 유입, 국제결혼, 다문화 출생이 지역별 인구구조를 다시 만든다.</p>
+  <div class="manuscript-actions page-feedback-actions">
+    <span class="readonly-note">공개본은 읽기 전용입니다.</span>
+    <a class="manuscript-edit-button feedback-button" href="https://github.com/kilkon/fertility/issues/new?title=%5B%EC%9D%98%EA%B2%AC%5D%204.1.%20%EC%96%B4%EB%8A%90%20%EA%B4%91%EC%97%AD%EC%8B%9C%EB%8F%84%EC%9D%98%20%EC%9D%B8%EA%B5%AC%20%EC%88%9C%EC%9D%B4%EB%8F%99%EC%9D%B4%20%EA%B0%80%EC%9E%A5%20%ED%81%B0%EA%B0%80&amp;body=%EB%8C%80%EC%83%81%20%EC%A0%88%3A%204.1.%20%EC%96%B4%EB%8A%90%20%EA%B4%91%EC%97%AD%EC%8B%9C%EB%8F%84%EC%9D%98%20%EC%9D%B8%EA%B5%AC%20%EC%88%9C%EC%9D%B4%EB%8F%99%EC%9D%B4%20%EA%B0%80%EC%9E%A5%20%ED%81%B0%EA%B0%80%0A%ED%8C%8C%EC%9D%BC%3A%20section-3-0-sido-net-migration.html%0A%0A%EB%82%A8%EA%B8%B0%EA%B3%A0%20%EC%8B%B6%EC%9D%80%20%EC%9D%98%EA%B2%AC%3A%0A%0A%EA%B7%BC%EA%B1%B0%20%EC%9E%90%EB%A3%8C%EB%82%98%20%EC%B6%94%EA%B0%80%EB%A1%9C%20%EC%82%B4%ED%8E%B4%EB%B3%BC%20%EC%A7%88%EB%AC%B8%EC%9D%B4%20%EC%9E%88%EC%9C%BC%EB%A9%B4%20%ED%95%A8%EA%BB%98%20%EC%A0%81%EC%96%B4%EC%A3%BC%EC%84%B8%EC%9A%94.&amp;labels=reader-feedback" target="_blank" rel="noopener">이 절에 의견 남기기</a>
+  </div>
+</section>
+<div class="markdown-manuscript">
+<p>지역 인구를 이해할 때 출생과 사망만 보면 절반만 본 것이다. 어떤 지역은 아이가 적게 태어나도 전입이 많아 인구가 유지되고, 어떤 지역은 출생률이 크게 나쁘지 않아도 청년과 가족이 빠져나가며 빠르게 얇아진다. 그래서 지역 인구를 읽는 첫 질문은 “어디에서 태어나는가”가 아니라 “어디로 이동하는가”가 되어야 한다.</p>
+<p>이 절에서는 KOSIS <code>DT_1B26001_A03</code>의 광역시도별 순이동을 사용했다. 순이동은 총전입에서 총전출을 뺀 값이다. 양수이면 그 해에 들어온 사람이 나간 사람보다 많았다는 뜻이고, 음수이면 반대로 빠져나간 사람이 더 많았다는 뜻이다.</p>
+<section class="panel markdown-chart-panel">
+  <div class="chart-panel-header">
+    <h2>광역시도별 순이동 추세(2000-2025)</h2>
+    <a class="csv-button" href="../data/derived/sido_net_migration_total.csv" download>CSV 다운로드</a>
+  </div>
+  <div class="chart-box book-chart"><canvas data-book-chart="sido_net_migration_panel"></canvas></div>
+  <div class="chart-actions source-actions">
+    <span>출처: KOSIS DT_1B26001_A03 시군구/연령(5세)별 이동자수, 광역시도 순이동</span>
+  </div>
+  <p class="source-note">순이동은 총전입에서 총전출을 뺀 값이다. 각 패널의 세로축은 해당 지역의 변동 범위에 맞추어 조정했으므로, 지역 간 절대 규모 비교는 제목의 최근 10년 평균과 최신연도 값을 함께 보아야 한다.</p>
+</section>
+<p>2025년만 보면 경기도의 순유입이 약 3만 3천 명으로 가장 크고, 인천광역시가 약 3만 2천 명, 충청북도가 약 1만 1천 명, 충청남도가 약 8천 명 수준으로 뒤따른다. 반대로 서울특별시는 약 2만 7천 명 순유출로 가장 크고, 광주광역시, 부산광역시, 경상북도, 경상남도, 울산광역시도 순유출을 보인다. 한 해의 수치는 경기 변동, 주택 입주 물량, 행정구역별 개발 일정에 흔들리기 때문에 최근 10년 평균으로 다시 보아야 한다. 2016-2025년 평균으로 보면 경기도는 매년 약 10만 6천 명 순유입되었고, 서울은 매년 약 7만 1천 명 순유출되었다.</p>
+<p>이 숫자를 서울 대 경기의 단순한 대립으로만 읽으면 부족하다. 서울은 여전히 교육, 일자리, 문화, 행정 기능이 집중된 도시다. 그런데도 순이동은 계속 음수다. 이는 서울이 사람을 끌어들이지 못한다는 뜻이 아니라, 들어오는 사람보다 나가는 사람이 더 많다는 뜻이다. 특히 주거비와 가족 형성 조건이 맞물리면 서울에서 직장과 생활을 시작한 사람이 경기·인천 또는 다른 지역으로 밀려나는 흐름이 생긴다.</p>
+<p>순이동의 크기가 어느 연령대 때문에 만들어지는지를 보기 위해 다음과 같은 분해 모형을 사용했다.</p>
+<div class="math-block">\[ M_{r,t} = \sum_a m_{r,a,t} \]</div>
+<p>여기서 <code>M_{r,t}</code>는 지역 <code>r</code>의 <code>t</code>년도 총 순이동이고, <code>m_{r,a,t}</code>는 같은 지역과 연도의 연령대 <code>a</code> 순이동이다. 이 식은 회귀식이라기보다 회계식에 가깝다. 총 순이동은 연령대별 순이동의 합이므로, 어느 연령대가 지역의 순유입 또는 순유출을 주도하는지 직접 분해할 수 있다. 본문에서는 5세 연령을 <code>0-14세</code>, <code>15-19세</code>, <code>20-24세</code>, <code>25-29세</code>, <code>30-34세</code>, <code>35-44세</code>, <code>45-64세</code>, <code>65세 이상</code>으로 묶고, 2016-2025년 평균을 계산했다.</p>
+<section class="panel markdown-chart-panel">
+  <div class="chart-panel-header">
+    <h2>광역시도 순이동의 연령대별 기여(2016-2025년 평균)</h2>
+    <a class="csv-button" href="../data/derived/sido_net_migration_age_contribution.csv" download>CSV 다운로드</a>
+  </div>
+  <div class="chart-box book-chart"><canvas data-book-chart="sido_net_migration_age_contribution"></canvas></div>
+  <div class="chart-actions source-actions">
+    <span>출처: KOSIS DT_1B26001_A03 시군구/연령(5세)별 이동자수, 광역시도 순이동</span>
+  </div>
+  <p class="source-note">연령대별 순이동을 0-14세, 15-19세, 20-24세, 25-29세, 30-34세, 35-44세, 45-64세, 65세 이상으로 묶어 최근 10년 평균을 계산했다. 막대의 합은 해당 지역의 평균 순이동이다.</p>
+</section>
+<p>분해 결과를 보면 경기도의 순유입은 35-44세, 45-64세, 30-34세가 크게 기여한다. 이는 경기도가 단지 청년을 흡수하는 지역이 아니라, 직장·주거·자녀 양육을 함께 고려하는 가족 형성 이후의 이동을 받아내는 지역이라는 뜻이다. 서울의 순유출도 같은 방식으로 읽힌다. 서울은 20대 초중반과 25-29세에서는 순유입을 보이지만, 0-14세, 30대, 35-44세, 45-64세, 65세 이상에서 큰 순유출을 보인다. 서울의 인구 문제는 청년 일자리의 문제가 아니라 주거비, 가족 형성, 중장년 생활 조건이 겹친 결과다.</p>
+<p>부산·대구·대전·광주·울산은 20대와 25-29세 유출이 중요한 축이다. 대학 진학, 첫 일자리, 경력 형성의 기회가 수도권이나 더 큰 생활권으로 이동하면서 지역의 젊은 층이 빠져나간다. 반면 전남·경북·강원·충북 같은 지역은 20대 유출과 45-64세 또는 65세 이상 유입이 동시에 나타난다. 청년은 빠져나가고 중장년·고령층은 들어오는 구조가 되면 총 순이동이 작아 보여도 지역의 연령구조는 빠르게 늙는다.</p>
+<p>따라서 광역시도 순이동은 단순한 인구 증가·감소 지표가 아니다. 그것은 생애주기별 선택의 결과다. 20대 이동은 교육과 첫 일자리의 신호이고, 30-40대 이동은 주거와 양육 조건의 신호이며, 45세 이상 이동은 은퇴 전후 생활권 재배치의 신호다. 지역정책이 효과를 가지려면 어느 연령대가 왜 빠져나가고 왜 들어오는지를 먼저 구분해야 한다.</p>
+</div>
+    </main>
+  </div>
+  <script src="../vendor/chart.umd.min.js"></script>
+  <script src="../question_plan.js?v=20260508-public-comments-readonly"></script>
+  <script src="../book_chart_data.js?v=20260508-public-comments-readonly"></script>
+  <script src="../data/geo/sigungu_topo.js?v=20260508-public-comments-readonly"></script>
+  <script src="../book_pages.js?v=20260508-public-comments-readonly"></script>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]]
+      },
+      options: { skipHtmlTags: ["script", "noscript", "style", "textarea", "pre", "code"] }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</body>
+</html>

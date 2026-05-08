@@ -1,0 +1,4 @@
+﻿age_group,age_group_label,start_year,end_year,regions_analyzed,regions_positive_slope,regions_negative_slope,median_slope_people_per_year,max_slope_region,max_slope_people_per_year,min_slope_region,min_slope_people_per_year
+total,전체 인구,2008,2024,261,83,178,-375.0,화성시,35076.7,흥덕구,-11026.8
+working_age,15-64세 생산연령인구,2008,2024,261,70,191,-527.3,화성시,26881.2,창원시(통합),-9215.7
+older,65세 이상 고령층 인구,2008,2024,261,261,0,1205.4,창원시(통합),7386.7,울릉군,54.7
