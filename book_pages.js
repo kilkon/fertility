@@ -3102,9 +3102,68 @@
     active.scrollIntoView({ block: "nearest", inline: "center" });
   }
 
+  function renderPrevNextNavigation() {
+    const toc = document.querySelector(".toc");
+    const page = document.querySelector(".page.book-page");
+    if (!toc || !page || page.querySelector(".page-prev-next")) return;
+
+    const links = [...toc.querySelectorAll("a[href]")]
+      .filter((link) => {
+        const href = link.getAttribute("href") || "";
+        return href && !href.startsWith("#") && !/index\.html(?:[?#].*)?$/.test(href);
+      })
+      .map((link) => {
+        const url = new URL(link.href, window.location.href);
+        return {
+          href: url.pathname + url.search + url.hash,
+          title: link.textContent.trim()
+        };
+      })
+      .filter((item, index, items) => items.findIndex((candidate) => candidate.href === item.href) === index);
+
+    if (!links.length) return;
+
+    const currentUrl = new URL(window.location.href);
+    const currentHref = currentUrl.pathname + currentUrl.search + currentUrl.hash;
+    const currentIndex = links.findIndex((item) => item.href === currentHref);
+    if (currentIndex === -1) return;
+
+    const previous = links[currentIndex - 1] || null;
+    const next = links[currentIndex + 1] || null;
+    if (!previous && !next) return;
+
+    const nav = document.createElement("nav");
+    nav.className = "page-prev-next";
+    nav.setAttribute("aria-label", "이전 절 및 다음 절");
+
+    if (previous) {
+      const prevLink = document.createElement("a");
+      prevLink.className = "page-prev-next-link";
+      prevLink.href = previous.href;
+      prevLink.innerHTML = `<span class="page-prev-next-label">이전 절</span><strong>${previous.title}</strong>`;
+      nav.appendChild(prevLink);
+    } else {
+      const spacer = document.createElement("span");
+      spacer.className = "page-prev-next-spacer";
+      spacer.setAttribute("aria-hidden", "true");
+      nav.appendChild(spacer);
+    }
+
+    if (next) {
+      const nextLink = document.createElement("a");
+      nextLink.className = "page-prev-next-link next";
+      nextLink.href = next.href;
+      nextLink.innerHTML = `<span class="page-prev-next-label">다음 절</span><strong>${next.title}</strong>`;
+      nav.appendChild(nextLink);
+    }
+
+    page.appendChild(nav);
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
     focusMobileToc();
     renderQuestionPlans();
     renderBookCharts();
+    renderPrevNextNavigation();
   });
 })();
