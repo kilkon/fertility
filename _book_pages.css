@@ -855,6 +855,39 @@
 }
 
 @media (max-width: 640px) {
+  .book-page .section-header-block {
+    padding-bottom: 18px;
+  }
+
+  .book-page .section-header-block h1 {
+    font-size: 25px;
+    line-height: 1.32;
+  }
+
+  .book-page .section-header-block .lead {
+    font-size: 15px;
+    line-height: 1.68;
+  }
+
+  .book-page .panel > h2,
+  .book-page .chart-panel-header h2 {
+    font-size: 16px;
+  }
+
+  .book-chart {
+    height: 330px;
+  }
+
+  .book-chart.policy-typology-chart,
+  .book-chart.pyramid-panel-grid,
+  .book-chart.cohort-panel-chart,
+  .book-chart.elderly-labor-panel-chart,
+  .book-chart.regional-slope-panel-chart,
+  .book-chart.sido-migration-panel-chart {
+    height: auto;
+    min-height: 0;
+  }
+
   .chart-panel-header {
     align-items: stretch;
     flex-direction: column;
@@ -863,6 +896,42 @@
 
   .chart-panel-header .csv-button {
     align-self: flex-start;
+  }
+
+  .csv-button,
+  .manuscript-edit-button {
+    min-height: 36px;
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  .markdown-manuscript {
+    gap: 15px;
+  }
+
+  .markdown-manuscript > p,
+  .markdown-manuscript > ul,
+  .book-narrative p:not(.kicker),
+  .reading-note p {
+    font-size: 15px;
+    line-height: 1.78;
+  }
+
+  .markdown-manuscript > h2 {
+    font-size: 17px;
+  }
+
+  .markdown-manuscript > h3 {
+    font-size: 15px;
+  }
+
+  .pause-box {
+    padding: 16px;
+  }
+
+  .pause-box-body p,
+  .pause-box-body li {
+    font-size: 14px;
   }
 }
 
@@ -929,8 +998,27 @@
     grid-template-columns: 1fr;
   }
 
+  .pyramid-panel {
+    padding: 10px;
+  }
+
+  .pyramid-svg {
+    min-height: 280px;
+  }
+
+  .small-book-chart {
+    height: 280px;
+  }
+
   .sido-migration-panel-chart {
     grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .migration-age-contribution-chart,
+  .household-region-gap-chart {
+    height: 520px;
+    min-height: 520px;
   }
 
   .evidence-grid {
@@ -958,5 +1046,47 @@
 
   .evidence-item div {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .cohort-region-panel,
+  .supplement-chart,
+  .elderly-labor-panel,
+  .regional-slope-panel {
+    padding: 10px;
+  }
+
+  .cohort-mini-svg,
+  .elderly-labor-svg,
+  .regional-slope-svg,
+  .sido-migration-svg {
+    min-width: 460px;
+  }
+
+  .cohort-region-pair,
+  .elderly-labor-panel-chart,
+  .regional-slope-panel-chart,
+  .sido-migration-panel-chart {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .sigungu-slope-map-chart {
+    min-height: 460px;
+  }
+
+  .sigungu-slope-map-svg {
+    min-width: 500px;
+  }
+
+  .data-table {
+    min-width: 720px;
+    font-size: 13px;
+  }
+
+  .data-table th,
+  .data-table td {
+    padding: 9px 10px;
   }
 }

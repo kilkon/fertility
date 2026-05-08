@@ -3095,7 +3095,15 @@
     });
   }
 
+  function focusMobileToc() {
+    const toc = document.querySelector(".toc");
+    const active = toc?.querySelector(".active");
+    if (!toc || !active || !window.matchMedia("(max-width: 900px)").matches) return;
+    active.scrollIntoView({ block: "nearest", inline: "center" });
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
+    focusMobileToc();
     renderQuestionPlans();
     renderBookCharts();
   });
