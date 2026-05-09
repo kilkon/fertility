@@ -3289,6 +3289,85 @@
             }
           }
         };
+      } else if (id === "foreign_stat_gap_top_sigungu") {
+        const sorted = [...rows].sort((a, b) => chartNumber(b.mois_minus_moj_people) - chartNumber(a.mois_minus_moj_people));
+        config = {
+          type: "bar",
+          data: {
+            labels: sorted.map((row) => row.region),
+            datasets: [
+              {
+                label: "행안부 외국인주민 - 법무부 등록외국인",
+                data: sorted.map((row) => chartNumber(row.mois_minus_moj_people)),
+                backgroundColor: "rgba(185,28,28,.72)",
+                yAxisID: "people"
+              },
+              {
+                type: "line",
+                label: "총인구 대비 차이",
+                data: sorted.map((row) => chartNumber(row.gap_share_of_total_population_pct)),
+                borderColor: "rgba(15,118,110,1)",
+                backgroundColor: "rgba(15,118,110,.12)",
+                tension: 0.25,
+                yAxisID: "rate"
+              }
+            ]
+          },
+          options: {
+            ...common,
+            scales: {
+              x: { grid: { display: false }, ticks: { maxRotation: 35, minRotation: 20 } },
+              people: {
+                position: "left",
+                grid: { color: "rgba(15,23,42,.08)" },
+                title: { display: true, text: "명" },
+                ticks: { callback: (value) => Number(value).toLocaleString("ko-KR") }
+              },
+              rate: {
+                position: "right",
+                grid: { display: false },
+                title: { display: true, text: "총인구 대비 차이(%)" },
+                ticks: { callback: (value) => `${value}%` }
+              }
+            }
+          }
+        };
+      } else if (id === "foreign_stat_gap_sido_sources") {
+        const sorted = [...rows].sort((a, b) => chartNumber(b.mois_foreign_residents) - chartNumber(a.mois_foreign_residents));
+        config = {
+          type: "bar",
+          data: {
+            labels: sorted.map((row) => row.sido),
+            datasets: [
+              {
+                label: "행안부 외국인주민",
+                data: sorted.map((row) => chartNumber(row.mois_foreign_residents)),
+                backgroundColor: "rgba(185,28,28,.70)"
+              },
+              {
+                label: "인구총조사 외국인",
+                data: sorted.map((row) => chartNumber(row.census_foreigners)),
+                backgroundColor: "rgba(37,99,235,.64)"
+              },
+              {
+                label: "법무부 등록외국인",
+                data: sorted.map((row) => chartNumber(row.moj_registered_foreigners)),
+                backgroundColor: "rgba(15,118,110,.66)"
+              }
+            ]
+          },
+          options: {
+            ...common,
+            scales: {
+              x: { grid: { display: false }, ticks: { maxRotation: 35, minRotation: 20 } },
+              y: {
+                grid: { color: "rgba(15,23,42,.08)" },
+                title: { display: true, text: "명" },
+                ticks: { callback: (value) => Number(value).toLocaleString("ko-KR") }
+              }
+            }
+          }
+        };
       } else if (id === "foreign_share_top6_panel") {
         const parent = canvas.parentElement;
         if (!parent) return;

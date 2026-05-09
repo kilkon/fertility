@@ -90722,6 +90722,345 @@ window.populationBookCharts = {
         "registered_foreigner_share_pct": 9.73
       }
     ],
+    "foreign_stat_gap_top_sigungu": [
+      {
+        "sido": "경기도",
+        "sigungu": "시흥시",
+        "region": "경기도 시흥시",
+        "total_population": 571982,
+        "foreign_residents": 78444,
+        "registered_foreigners": 40493,
+        "mois_minus_moj_people": 37951,
+        "gap_share_of_total_population_pct": 6.63,
+        "mois_to_moj_ratio": 1.94
+      },
+      {
+        "sido": "경기도",
+        "sigungu": "화성시",
+        "region": "경기도 화성시",
+        "total_population": 1004079,
+        "foreign_residents": 81705,
+        "registered_foreigners": 51059,
+        "mois_minus_moj_people": 30646,
+        "gap_share_of_total_population_pct": 3.05,
+        "mois_to_moj_ratio": 1.6
+      },
+      {
+        "sido": "서울특별시",
+        "sigungu": "구로구",
+        "region": "서울특별시 구로구",
+        "total_population": 418832,
+        "foreign_residents": 53279,
+        "registered_foreigners": 23747,
+        "mois_minus_moj_people": 29532,
+        "gap_share_of_total_population_pct": 7.05,
+        "mois_to_moj_ratio": 2.24
+      },
+      {
+        "sido": "서울특별시",
+        "sigungu": "영등포구",
+        "region": "서울특별시 영등포구",
+        "total_population": 400799,
+        "foreign_residents": 50296,
+        "registered_foreigners": 23400,
+        "mois_minus_moj_people": 26896,
+        "gap_share_of_total_population_pct": 6.71,
+        "mois_to_moj_ratio": 2.15
+      },
+      {
+        "sido": "인천광역시",
+        "sigungu": "부평구",
+        "region": "인천광역시 부평구",
+        "total_population": 504885,
+        "foreign_residents": 37411,
+        "registered_foreigners": 17009,
+        "mois_minus_moj_people": 20402,
+        "gap_share_of_total_population_pct": 4.04,
+        "mois_to_moj_ratio": 2.2
+      },
+      {
+        "sido": "충청남도",
+        "sigungu": "아산시",
+        "region": "충청남도 아산시",
+        "total_population": 392509,
+        "foreign_residents": 43547,
+        "registered_foreigners": 23572,
+        "mois_minus_moj_people": 19975,
+        "gap_share_of_total_population_pct": 5.09,
+        "mois_to_moj_ratio": 1.85
+      },
+      {
+        "sido": "서울특별시",
+        "sigungu": "금천구",
+        "region": "서울특별시 금천구",
+        "total_population": 243662,
+        "foreign_residents": 31444,
+        "registered_foreigners": 13911,
+        "mois_minus_moj_people": 17533,
+        "gap_share_of_total_population_pct": 7.2,
+        "mois_to_moj_ratio": 2.26
+      },
+      {
+        "sido": "경기도",
+        "sigungu": "평택시",
+        "region": "경기도 평택시",
+        "total_population": 615755,
+        "foreign_residents": 48602,
+        "registered_foreigners": 32489,
+        "mois_minus_moj_people": 16113,
+        "gap_share_of_total_population_pct": 2.62,
+        "mois_to_moj_ratio": 1.5
+      },
+      {
+        "sido": "경기도",
+        "sigungu": "김포시",
+        "region": "경기도 김포시",
+        "total_population": 499536,
+        "foreign_residents": 40057,
+        "registered_foreigners": 25608,
+        "mois_minus_moj_people": 14449,
+        "gap_share_of_total_population_pct": 2.89,
+        "mois_to_moj_ratio": 1.56
+      },
+      {
+        "sido": "경상남도",
+        "sigungu": "김해시",
+        "region": "경상남도 김해시",
+        "total_population": 549861,
+        "foreign_residents": 38465,
+        "registered_foreigners": 24727,
+        "mois_minus_moj_people": 13738,
+        "gap_share_of_total_population_pct": 2.5,
+        "mois_to_moj_ratio": 1.56
+      },
+      {
+        "sido": "인천광역시",
+        "sigungu": "서구",
+        "region": "인천광역시 서구",
+        "total_population": 634066,
+        "foreign_residents": 29089,
+        "registered_foreigners": 15810,
+        "mois_minus_moj_people": 13279,
+        "gap_share_of_total_population_pct": 2.09,
+        "mois_to_moj_ratio": 1.84
+      },
+      {
+        "sido": "경기도",
+        "sigungu": "오산시",
+        "region": "경기도 오산시",
+        "total_population": 254071,
+        "foreign_residents": 23550,
+        "registered_foreigners": 10610,
+        "mois_minus_moj_people": 12940,
+        "gap_share_of_total_population_pct": 5.09,
+        "mois_to_moj_ratio": 2.22
+      },
+      {
+        "sido": "서울특별시",
+        "sigungu": "관악구",
+        "region": "서울특별시 관악구",
+        "total_population": 490493,
+        "foreign_residents": 30351,
+        "registered_foreigners": 17808,
+        "mois_minus_moj_people": 12543,
+        "gap_share_of_total_population_pct": 2.56,
+        "mois_to_moj_ratio": 1.7
+      },
+      {
+        "sido": "인천광역시",
+        "sigungu": "연수구",
+        "region": "인천광역시 연수구",
+        "total_population": 417391,
+        "foreign_residents": 30598,
+        "registered_foreigners": 18098,
+        "mois_minus_moj_people": 12500,
+        "gap_share_of_total_population_pct": 2.99,
+        "mois_to_moj_ratio": 1.69
+      },
+      {
+        "sido": "인천광역시",
+        "sigungu": "남동구",
+        "region": "인천광역시 남동구",
+        "total_population": 492920,
+        "foreign_residents": 25631,
+        "registered_foreigners": 13399,
+        "mois_minus_moj_people": 12232,
+        "gap_share_of_total_population_pct": 2.48,
+        "mois_to_moj_ratio": 1.91
+      }
+    ],
+    "foreign_stat_gap_sido_sources": [
+      {
+        "sido": "경기도",
+        "mois_foreign_residents": 845074,
+        "mois_total_population": 13914479,
+        "moj_registered_foreigners": 467398,
+        "census_foreigners": 681201,
+        "mois_minus_moj_people": 377676,
+        "mois_minus_census_people": 163873,
+        "mois_share_pct": 6.07
+      },
+      {
+        "sido": "서울특별시",
+        "mois_foreign_residents": 450888,
+        "mois_total_population": 9335444,
+        "moj_registered_foreigners": 265544,
+        "census_foreigners": 367291,
+        "mois_minus_moj_people": 185344,
+        "mois_minus_census_people": 83597,
+        "mois_share_pct": 4.83
+      },
+      {
+        "sido": "충청남도",
+        "mois_foreign_residents": 169245,
+        "mois_total_population": 2238243,
+        "moj_registered_foreigners": 96687,
+        "census_foreigners": 139111,
+        "mois_minus_moj_people": 72558,
+        "mois_minus_census_people": 30134,
+        "mois_share_pct": 7.56
+      },
+      {
+        "sido": "인천광역시",
+        "mois_foreign_residents": 169219,
+        "mois_total_population": 3058033,
+        "moj_registered_foreigners": 89129,
+        "census_foreigners": 127960,
+        "mois_minus_moj_people": 80090,
+        "mois_minus_census_people": 41259,
+        "mois_share_pct": 5.53
+      },
+      {
+        "sido": "경상남도",
+        "mois_foreign_residents": 162714,
+        "mois_total_population": 3264243,
+        "moj_registered_foreigners": 102333,
+        "census_foreigners": 128519,
+        "mois_minus_moj_people": 60381,
+        "mois_minus_census_people": 34195,
+        "mois_share_pct": 4.98
+      },
+      {
+        "sido": "경상북도",
+        "mois_foreign_residents": 128725,
+        "mois_total_population": 2578999,
+        "moj_registered_foreigners": 76768,
+        "census_foreigners": 101152,
+        "mois_minus_moj_people": 51957,
+        "mois_minus_census_people": 27573,
+        "mois_share_pct": 4.99
+      },
+      {
+        "sido": "충청북도",
+        "mois_foreign_residents": 97341,
+        "mois_total_population": 1646328,
+        "moj_registered_foreigners": 56301,
+        "census_foreigners": 78349,
+        "mois_minus_moj_people": 41040,
+        "mois_minus_census_people": 18992,
+        "mois_share_pct": 5.91
+      },
+      {
+        "sido": "전라남도",
+        "mois_foreign_residents": 95832,
+        "mois_total_population": 1778338,
+        "moj_registered_foreigners": 57189,
+        "census_foreigners": 70936,
+        "mois_minus_moj_people": 38643,
+        "mois_minus_census_people": 24896,
+        "mois_share_pct": 5.39
+      },
+      {
+        "sido": "부산광역시",
+        "mois_foreign_residents": 88542,
+        "mois_total_population": 3257256,
+        "moj_registered_foreigners": 55805,
+        "census_foreigners": 67762,
+        "mois_minus_moj_people": 32737,
+        "mois_minus_census_people": 20780,
+        "mois_share_pct": 2.72
+      },
+      {
+        "sido": "전북특별자치도",
+        "mois_foreign_residents": 79224,
+        "mois_total_population": 1758836,
+        "moj_registered_foreigners": 43795,
+        "census_foreigners": 57688,
+        "mois_minus_moj_people": 35429,
+        "mois_minus_census_people": 21536,
+        "mois_share_pct": 4.5
+      },
+      {
+        "sido": "대구광역시",
+        "mois_foreign_residents": 61554,
+        "mois_total_population": 2369335,
+        "moj_registered_foreigners": 36710,
+        "census_foreigners": 45295,
+        "mois_minus_moj_people": 24844,
+        "mois_minus_census_people": 16259,
+        "mois_share_pct": 2.6
+      },
+      {
+        "sido": "강원특별자치도",
+        "mois_foreign_residents": 50652,
+        "mois_total_population": 1522881,
+        "moj_registered_foreigners": 26074,
+        "census_foreigners": 36580,
+        "mois_minus_moj_people": 24578,
+        "mois_minus_census_people": 14072,
+        "mois_share_pct": 3.33
+      },
+      {
+        "sido": "광주광역시",
+        "mois_foreign_residents": 47728,
+        "mois_total_population": 1444171,
+        "moj_registered_foreigners": 26557,
+        "census_foreigners": 35882,
+        "mois_minus_moj_people": 21171,
+        "mois_minus_census_people": 11846,
+        "mois_share_pct": 3.3
+      },
+      {
+        "sido": "울산광역시",
+        "mois_foreign_residents": 45392,
+        "mois_total_population": 1106895,
+        "moj_registered_foreigners": 27642,
+        "census_foreigners": 35193,
+        "mois_minus_moj_people": 17750,
+        "mois_minus_census_people": 10199,
+        "mois_share_pct": 4.1
+      },
+      {
+        "sido": "대전광역시",
+        "mois_foreign_residents": 42043,
+        "mois_total_population": 1467093,
+        "moj_registered_foreigners": 26249,
+        "census_foreigners": 31322,
+        "mois_minus_moj_people": 15794,
+        "mois_minus_census_people": 10721,
+        "mois_share_pct": 2.87
+      },
+      {
+        "sido": "제주특별자치도",
+        "mois_foreign_residents": 38714,
+        "mois_total_population": 674817,
+        "moj_registered_foreigners": 27990,
+        "census_foreigners": 30511,
+        "mois_minus_moj_people": 10724,
+        "mois_minus_census_people": 8203,
+        "mois_share_pct": 5.74
+      },
+      {
+        "sido": "세종특별자치시",
+        "mois_foreign_residents": 10739,
+        "mois_total_population": 390156,
+        "moj_registered_foreigners": 6182,
+        "census_foreigners": 7992,
+        "mois_minus_moj_people": 4557,
+        "mois_minus_census_people": 2747,
+        "mois_share_pct": 2.75
+      }
+    ],
     "future_households_policy": [
       {
         "year": 2000,
@@ -92559,6 +92898,20 @@ window.populationBookCharts = {
       "csv": "foreign_share_top6_panel.csv",
       "source": "KOSIS DT_1B040A11 시군구별 등록외국인, KOSIS 행정구역별 주민등록인구",
       "note": "행정안전부 2024 외국인주민 비중 상위 지역을 대상으로, 2020-2024년 등록외국인을 주민등록인구로 나눈 비중을 패널로 제시했다."
+    },
+    "foreign_stat_gap_top_sigungu": {
+      "title": "행안부 외국인주민과 법무부 등록외국인의 차이가 큰 시군구(2024)",
+      "kind": "bar",
+      "csv": "foreign_stat_gap_top_sigungu.csv",
+      "source": "행정안전부 2024 지방자치단체 외국인주민 현황, KOSIS DT_1B040A11 법무부 등록외국인",
+      "note": "같은 시군구 이름으로 연결되는 지역을 대상으로 행정안전부 외국인주민에서 법무부 등록외국인을 뺀 차이를 계산했다. 차이는 단순 오류가 아니라 귀화자, 외국인주민 자녀, 장기체류 등록 범위의 차이를 반영한다."
+    },
+    "foreign_stat_gap_sido_sources": {
+      "title": "시도별 외국인 통계 기준의 차이(2024)",
+      "kind": "bar",
+      "csv": "foreign_stat_gap_sido_sources.csv",
+      "source": "행정안전부 2024 지방자치단체 외국인주민 현황, KOSIS DT_1JA1503 인구총조사 외국인, KOSIS DT_1B040A11 법무부 등록외국인",
+      "note": "국가데이터처·통계청 인구총조사 외국인 자료는 이 표에서 시도 단위로 제공되므로, 세 통계의 직접 비교는 시도 단위에서 제시했다."
     },
     "vacant_housing_policy": {
       "title": "빈집 수와 전체 주택",

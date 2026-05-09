@@ -265,6 +265,12 @@ BOOK = [
                 "file": "section-5-2-foreign-population-growth.html",
                 "chart": "foreign_population_source_trends",
             },
+            {
+                "no": "6.3",
+                "title": "외국인 통계는 왜 서로 다르게 보이는가",
+                "file": "section-5-3-foreign-statistical-gap.html",
+                "chart": "foreign_stat_gap_top_sigungu",
+            },
         ],
     },
     {
@@ -988,6 +994,20 @@ CHART_META = {
         "source": "KOSIS DT_1B040A11 시군구별 등록외국인, KOSIS 행정구역별 주민등록인구",
         "note": "행정안전부 2024 외국인주민 비중 상위 지역을 대상으로, 2020-2024년 등록외국인을 주민등록인구로 나눈 비중을 패널로 제시했다.",
     },
+    "foreign_stat_gap_top_sigungu": {
+        "title": "행안부 외국인주민과 법무부 등록외국인의 차이가 큰 시군구(2024)",
+        "kind": "bar",
+        "csv": "foreign_stat_gap_top_sigungu.csv",
+        "source": "행정안전부 2024 지방자치단체 외국인주민 현황, KOSIS DT_1B040A11 법무부 등록외국인",
+        "note": "같은 시군구 이름으로 연결되는 지역을 대상으로 행정안전부 외국인주민에서 법무부 등록외국인을 뺀 차이를 계산했다. 차이는 단순 오류가 아니라 귀화자, 외국인주민 자녀, 장기체류 등록 범위의 차이를 반영한다.",
+    },
+    "foreign_stat_gap_sido_sources": {
+        "title": "시도별 외국인 통계 기준의 차이(2024)",
+        "kind": "bar",
+        "csv": "foreign_stat_gap_sido_sources.csv",
+        "source": "행정안전부 2024 지방자치단체 외국인주민 현황, KOSIS DT_1JA1503 인구총조사 외국인, KOSIS DT_1B040A11 법무부 등록외국인",
+        "note": "국가데이터처·통계청 인구총조사 외국인 자료는 이 표에서 시도 단위로 제공되므로, 세 통계의 직접 비교는 시도 단위에서 제시했다.",
+    },
     "vacant_housing_policy": {
         "title": "빈집 수와 전체 주택",
         "kind": "line",
@@ -1215,6 +1235,7 @@ SECTION_SUPPLEMENTAL_CHARTS = {
     "section-3-1-regional-gap.html": ["young_migration_policy", "sigungu_aging_distribution"],
     "section-3-2-foreign-multicultural.html": ["foreigner_registered_total"],
     "section-5-2-foreign-population-growth.html": ["foreign_share_sigungu_distribution", "foreign_share_top6_panel"],
+    "section-5-3-foreign-statistical-gap.html": ["foreign_stat_gap_sido_sources"],
     "section-4-1-family-formation.html": ["fertility_age_pattern", "mean_birth_age_order"],
     "section-4-1-divorce-fear-marriage.html": ["divorce_acceptance_trend", "divorce_acceptance_profile_2024"],
     "section-4-2-men-care-parental-leave.html": [
@@ -1987,6 +2008,30 @@ SECTION_DATA_EXPANSION = {
             ],
             "analysis": "2024년 시군구별 총인구 대비 외국인주민 비중을 계산하고, 상위 6개 지역의 2020-2024년 등록외국인 비중 추세를 패널로 그렸다.",
             "interpretation": "외국인 유입은 전국 평균보다 산업단지, 항만, 농어촌 계절노동, 수도권 주거·일자리 생활권이 결합된 특정 지역에서 훨씬 강하게 나타난다. 따라서 외국인을 인구감소의 보편적 해법으로 보기보다 지역 노동시장과 생활권 통합 정책으로 다루어야 한다.",
+        },
+    ],
+    "section-5-3-foreign-statistical-gap.html": [
+        {
+            "question": "세 외국인 통계는 같은 사람을 세고 있는가?",
+            "data": "행정안전부 외국인주민 현황, KOSIS DT_1JA1503 인구총조사 외국인, KOSIS DT_1B040A11 등록외국인",
+            "files": [
+                "data/derived/foreign_stat_gap_sido_sources.csv",
+                "data/census_foreigners_DT_1JA1503.csv",
+                "data/registered_foreigners_DT_1B040A11.csv",
+                "data/raw/mois_foreign_residents_2024.xlsx",
+            ],
+            "analysis": "2024년 기준 시도별로 행정안전부 외국인주민, 국가데이터처·통계청 인구총조사 외국인, 법무부 등록외국인을 나란히 비교한다.",
+            "interpretation": "세 통계의 차이는 오류라기보다 정책 목적의 차이다. 지역사회 정책수요를 보려면 행정안전부 통계가, 실제 거주 외국국적 인구를 보려면 인구총조사가, 체류관리와 노동시장 흐름을 보려면 법무부 통계가 더 적합하다.",
+        },
+        {
+            "question": "행안부 외국인주민과 법무부 등록외국인의 차이가 큰 시군구는 어디인가?",
+            "data": "행정안전부 2024 지방자치단체 외국인주민 현황, KOSIS DT_1B040A11 시군구별 등록외국인",
+            "files": [
+                "data/derived/foreign_stat_gap_top_sigungu.csv",
+                "data/derived/foreign_stat_gap_sigungu_2024.csv",
+            ],
+            "analysis": "같은 시군구 이름으로 연결되는 지역을 대상으로 행정안전부 외국인주민에서 법무부 등록외국인을 뺀 차이와 지역 총인구 대비 차이 비율을 계산한다.",
+            "interpretation": "차이가 큰 지역은 외국인 노동자만 많은 곳이 아니라 귀화자, 외국인주민 자녀, 결혼이민자, 외국국적동포와 같은 생활권 주민이 함께 두꺼워진 곳이다. 따라서 단순한 체류관리보다 교육, 보육, 주거, 의료, 통번역, 지역사회 관계 정책이 더 중요해진다.",
         },
     ],
     "section-4-1-family-formation.html": [
@@ -4998,12 +5043,14 @@ def build_derived_data() -> dict[str, list[dict[str, object]]]:
     if not latest_mois_path.exists():
         latest_mois_path = DATA / "raw" / "mois_foreign_residents" / "2024.xlsx"
     sigungu_latest = pd.DataFrame()
+    mois_sido_latest = pd.DataFrame()
     top6_keys: list[tuple[str, str]] = []
     if latest_mois_path.exists():
         xl = pd.ExcelFile(latest_mois_path)
         sheet = next((name for name in xl.sheet_names if name.startswith("1-2")), xl.sheet_names[1])
         mois_latest = pd.read_excel(latest_mois_path, sheet_name=sheet, header=None)
         rows = []
+        sido_rows = []
         current_sido = ""
         for _, row in mois_latest.iterrows():
             name = str(row.iloc[0]).strip()
@@ -5011,6 +5058,16 @@ def build_derived_data() -> dict[str, list[dict[str, object]]]:
                 continue
             if name in broad_regions:
                 current_sido = name
+                total_pop = pd.to_numeric(row.iloc[1], errors="coerce")
+                foreign_pop = pd.to_numeric(row.iloc[3], errors="coerce")
+                if not pd.isna(total_pop) and not pd.isna(foreign_pop) and total_pop > 0:
+                    sido_rows.append(
+                        {
+                            "sido": name,
+                            "mois_foreign_residents": int(foreign_pop),
+                            "mois_total_population": int(total_pop),
+                        }
+                    )
                 continue
             total_pop = pd.to_numeric(row.iloc[1], errors="coerce")
             foreign_pop = pd.to_numeric(row.iloc[3], errors="coerce")
@@ -5026,6 +5083,7 @@ def build_derived_data() -> dict[str, list[dict[str, object]]]:
                 }
             )
         sigungu_latest = pd.DataFrame(rows).sort_values("foreign_share_pct", ascending=False)
+        mois_sido_latest = pd.DataFrame(sido_rows)
         if not sigungu_latest.empty:
             write_csv(sigungu_latest, "foreign_share_sigungu_latest.csv")
             bins = [0, 2, 4, 6, 8, 10, 15, 20, 100]
@@ -5101,6 +5159,77 @@ def build_derived_data() -> dict[str, list[dict[str, object]]]:
         panel = panel[["year", "sido", "sigungu", "region", "registered_foreigners", "population", "registered_foreigner_share_pct"]].sort_values(["region", "year"])
         write_csv(panel, "foreign_share_top6_panel.csv")
         charts["foreign_share_top6_panel"] = panel.to_dict("records")
+
+        reg_2024 = reg_sigungu[reg_sigungu["year"] == 2024].copy()
+        gap = sigungu_latest.merge(reg_2024, on=["sido", "sigungu"], how="inner")
+        gap = gap.dropna(subset=["foreign_residents", "registered_foreigners", "total_population"])
+        if not gap.empty:
+            gap["mois_minus_moj_people"] = (gap["foreign_residents"] - gap["registered_foreigners"]).round(0).astype(int)
+            gap["mois_to_moj_ratio"] = np.where(
+                gap["registered_foreigners"] > 0,
+                gap["foreign_residents"] / gap["registered_foreigners"],
+                np.nan,
+            )
+            gap["gap_share_of_total_population_pct"] = (gap["mois_minus_moj_people"] / gap["total_population"] * 100).round(2)
+            gap["mois_to_moj_ratio"] = gap["mois_to_moj_ratio"].round(2)
+            gap["region"] = gap["sido"] + " " + gap["sigungu"]
+            gap = gap[
+                [
+                    "sido",
+                    "sigungu",
+                    "region",
+                    "total_population",
+                    "foreign_residents",
+                    "registered_foreigners",
+                    "mois_minus_moj_people",
+                    "gap_share_of_total_population_pct",
+                    "mois_to_moj_ratio",
+                ]
+            ].sort_values("mois_minus_moj_people", ascending=False)
+            write_csv(gap, "foreign_stat_gap_sigungu_2024.csv")
+            gap_top = gap.head(15).copy()
+            write_csv(gap_top, "foreign_stat_gap_top_sigungu.csv")
+            charts["foreign_stat_gap_top_sigungu"] = gap_top.to_dict("records")
+
+        if not mois_sido_latest.empty:
+            reg_sido = reg[
+                (reg["year"] == 2024)
+                & (reg["C1_NM"].isin(broad_regions))
+                & (reg["C2_NM"] == "계")
+                & (reg["C3_NM"] == "총계")
+            ].copy()
+            reg_sido["moj_registered_foreigners"] = pd.to_numeric(reg_sido["registered_foreigners"], errors="coerce")
+            reg_sido = reg_sido[["C1_NM", "moj_registered_foreigners"]].rename(columns={"C1_NM": "sido"})
+            census_sido = pd.DataFrame()
+            if census_path.exists():
+                census = pd.read_csv(census_path)
+                census_sido = census[
+                    (pd.to_numeric(census["PRD_DE"], errors="coerce") == 2024)
+                    & (census["C1_NM"].isin(broad_regions))
+                    & (census["C2_NM"] == "계")
+                    & (census["ITM_NM"] == "외국인")
+                ].copy()
+                census_sido["census_foreigners"] = pd.to_numeric(census_sido["DT"], errors="coerce")
+                census_sido = census_sido[["C1_NM", "census_foreigners"]].rename(columns={"C1_NM": "sido"})
+            sido_gap = mois_sido_latest.merge(reg_sido, on="sido", how="left")
+            if not census_sido.empty:
+                sido_gap = sido_gap.merge(census_sido, on="sido", how="left")
+            else:
+                sido_gap["census_foreigners"] = np.nan
+            sido_gap["mois_minus_moj_people"] = sido_gap["mois_foreign_residents"] - sido_gap["moj_registered_foreigners"]
+            sido_gap["mois_minus_census_people"] = sido_gap["mois_foreign_residents"] - sido_gap["census_foreigners"]
+            sido_gap["mois_share_pct"] = (sido_gap["mois_foreign_residents"] / sido_gap["mois_total_population"] * 100).round(2)
+            for col in [
+                "mois_foreign_residents",
+                "moj_registered_foreigners",
+                "census_foreigners",
+                "mois_minus_moj_people",
+                "mois_minus_census_people",
+            ]:
+                sido_gap[col] = pd.to_numeric(sido_gap[col], errors="coerce").round(0).astype("Int64")
+            sido_gap = sido_gap.sort_values("mois_foreign_residents", ascending=False)
+            write_csv(sido_gap, "foreign_stat_gap_sido_sources.csv")
+            charts["foreign_stat_gap_sido_sources"] = sido_gap.to_dict("records")
 
     households_path = DATA / "future_households_DT_1BZ0503.csv"
     if households_path.exists():
