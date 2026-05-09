@@ -4,19 +4,19 @@
 
 ## 이 장에서 읽을 절
 
-- [6.1. 노동시장과 고령층 경제활동](../sections/section-5-1-labor-aging.html)
+- [7.1. 노동시장과 고령층 경제활동](../sections/section-5-1-labor-aging.html)
 
-- [6.2. 노령화 지수는 무엇이고 얼마나 빠르게 증가할까](../sections/section-5-2-aging-index.html)
+- [7.2. 노령화 지수는 무엇이고 얼마나 빠르게 증가할까](../sections/section-5-2-aging-index.html)
 
-- [6.3. 생애주기와 재정](../sections/section-5-3-lifecycle-fiscal.html)
+- [7.3. 생애주기와 재정](../sections/section-5-3-lifecycle-fiscal.html)
 
-- [6.4. 고령화 사회에서 의료비 지출은 얼마나 빠르게 증가하는가](../sections/section-5-3-health-spending-aging.html)
+- [7.4. 고령화 사회에서 의료비 지출은 얼마나 빠르게 증가하는가](../sections/section-5-3-health-spending-aging.html)
 
-- [6.5. 고령화 예산은 얼마나 증가하는가](../sections/section-5-4-aging-budget.html)
+- [7.5. 고령화 예산은 얼마나 증가하는가](../sections/section-5-4-aging-budget.html)
 
-- [6.6. 고령층 연금수령액은 얼마나 증가하는가](../sections/section-5-5-elderly-pension.html)
+- [7.6. 고령층 연금수령액은 얼마나 증가하는가](../sections/section-5-5-elderly-pension.html)
 
-- [6.7. 고령층 연금수령액 구간 분포](../sections/section-5-6-elderly-pension-distribution.html)
+- [7.7. 고령층 연금수령액 구간 분포](../sections/section-5-6-elderly-pension-distribution.html)
 
 ## 이 장에서 밝혀진 것
 

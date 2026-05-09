@@ -60,6 +60,92 @@
     return "#f8fafc";
   }
 
+  function renderForeignerDefinitionComparison(rows) {
+    return `
+      <div class="foreigner-definition-grid">
+        ${rows.map((row) => `
+          <article class="foreigner-definition-card">
+            <p class="definition-source">${svgEscape(row.source)}</p>
+            <h3>${svgEscape(row.statistic)}</h3>
+            <dl>
+              <div>
+                <dt>핵심 정의</dt>
+                <dd>${svgEscape(row.core_definition)}</dd>
+              </div>
+              <div>
+                <dt>거주 기준</dt>
+                <dd>${svgEscape(row.residence_rule)}</dd>
+              </div>
+              <div>
+                <dt>포함</dt>
+                <dd>${svgEscape(row.included)}</dd>
+              </div>
+              <div>
+                <dt>제외</dt>
+                <dd>${svgEscape(row.excluded)}</dd>
+              </div>
+              <div>
+                <dt>분석 용도</dt>
+                <dd>${svgEscape(row.best_for)}</dd>
+              </div>
+            </dl>
+          </article>
+        `).join("")}
+      </div>`;
+  }
+
+  function renderForeignShareTop6Panel(rows) {
+    const regions = [...new Set(rows.map((row) => row.region))];
+    const years = [...new Set(rows.map((row) => Number(row.year)))].sort((a, b) => a - b);
+    const values = rows.map((row) => Number(row.registered_foreigner_share_pct)).filter(Number.isFinite);
+    const yMax = Math.max(1, Math.ceil((Math.max(...values) || 1) / 5) * 5);
+    const width = 360;
+    const height = 220;
+    const margin = { top: 34, right: 22, bottom: 34, left: 44 };
+    const colors = ["#2563eb", "#0f766e", "#b45309", "#be123c", "#7c3aed", "#475569"];
+    const xFor = (year) => {
+      if (years.length <= 1) return (width - margin.left - margin.right) / 2 + margin.left;
+      return margin.left + ((Number(year) - years[0]) / (years[years.length - 1] - years[0])) * (width - margin.left - margin.right);
+    };
+    const yFor = (value) => height - margin.bottom - (Number(value) / yMax) * (height - margin.top - margin.bottom);
+    const ticks = [0, yMax / 2, yMax];
+    return `
+      <div class="foreign-panel-grid">
+        ${regions.map((region, index) => {
+          const regionRows = rows.filter((row) => row.region === region).sort((a, b) => Number(a.year) - Number(b.year));
+          const points = regionRows
+            .map((row) => `${xFor(row.year).toFixed(1)},${yFor(row.registered_foreigner_share_pct).toFixed(1)}`)
+            .join(" ");
+          const latest = regionRows[regionRows.length - 1];
+          const circles = regionRows.map((row) => `
+            <circle class="panel-point" cx="${xFor(row.year).toFixed(1)}" cy="${yFor(row.registered_foreigner_share_pct).toFixed(1)}" r="3.2" style="--panel-color:${colors[index % colors.length]}">
+              <title>${svgEscape(region)} ${row.year}: ${Number(row.registered_foreigner_share_pct).toFixed(2)}%</title>
+            </circle>`).join("");
+          const yTicks = ticks.map((tick) => {
+            const y = yFor(tick);
+            return `
+              <line class="panel-axis-grid" x1="${margin.left}" x2="${width - margin.right}" y1="${y}" y2="${y}"></line>
+              <text class="panel-axis-tick" x="${margin.left - 8}" y="${y + 4}" text-anchor="end">${tick.toFixed(0)}%</text>`;
+          }).join("");
+          const xTicks = years.map((year) => `
+            <text class="panel-axis-tick" x="${xFor(year)}" y="${height - 12}" text-anchor="middle">${year}</text>`).join("");
+          return `
+            <article class="foreign-share-panel">
+              <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="${svgEscape(region)} 등록외국인 비중 추세">
+                <text class="panel-chart-title" x="${margin.left}" y="18">${svgEscape(region)}</text>
+                <text class="panel-axis-label" x="${width - margin.right}" y="18" text-anchor="end">2024년 ${Number(latest.registered_foreigner_share_pct).toFixed(1)}%</text>
+                ${yTicks}
+                <line class="panel-axis" x1="${margin.left}" x2="${width - margin.right}" y1="${height - margin.bottom}" y2="${height - margin.bottom}"></line>
+                <line class="panel-axis" x1="${margin.left}" x2="${margin.left}" y1="${margin.top}" y2="${height - margin.bottom}"></line>
+                <polyline class="panel-line" points="${points}" style="--panel-color:${colors[index % colors.length]}"></polyline>
+                ${circles}
+                ${xTicks}
+              </svg>
+            </article>`;
+        }).join("")}
+      </div>`;
+  }
+
   function renderLowFertilityPolicyTypology(rows) {
     const sortedRows = rows.slice().sort((a, b) => Number(a.order) - Number(b.order));
     return `
@@ -3138,6 +3224,78 @@
             }
           }
         };
+      } else if (id === "foreigner_definition_comparison") {
+        const parent = canvas.parentElement;
+        if (!parent) return;
+        canvas.remove();
+        parent.classList.add("foreigner-definition-chart");
+        parent.innerHTML = renderForeignerDefinitionComparison(rows);
+        return;
+      } else if (id === "foreign_population_source_trends") {
+        const years = [...new Set(rows.map((row) => Number(row.year)))].sort((a, b) => a - b);
+        const sources = [...new Set(rows.map((row) => row.source))];
+        const colors = {
+          "행정안전부 외국인주민": "rgba(185,28,28,1)",
+          "인구총조사 외국인": "rgba(37,99,235,1)",
+          "법무부 체류외국인": "rgba(15,118,110,1)",
+          "법무부 등록외국인": "rgba(180,83,9,1)"
+        };
+        config = {
+          type: "line",
+          data: {
+            labels: years,
+            datasets: sources.map((source) => ({
+              label: source,
+              data: years.map((year) => {
+                const row = rows.find((item) => item.source === source && Number(item.year) === year);
+                return row ? chartNumber(row.population) : null;
+              }),
+              borderColor: colors[source] || "rgba(71,85,105,1)",
+              backgroundColor: (colors[source] || "rgba(71,85,105,1)").replace("1)", ".14)"),
+              spanGaps: true,
+              tension: 0.25
+            }))
+          },
+          options: {
+            ...common,
+            scales: {
+              x: { grid: { display: false }, title: { display: true, text: "연도" } },
+              y: {
+                grid: { color: "rgba(15,23,42,.08)" },
+                title: { display: true, text: "명" },
+                ticks: { callback: (value) => Number(value).toLocaleString("ko-KR") }
+              }
+            }
+          }
+        };
+      } else if (id === "foreign_share_sigungu_distribution") {
+        config = {
+          type: "bar",
+          data: {
+            labels: rows.map((row) => row.share_class),
+            datasets: [
+              {
+                label: "시군구 수",
+                data: rows.map((row) => Number(row.sigungu_count)),
+                backgroundColor: "rgba(15,118,110,.72)"
+              }
+            ]
+          },
+          options: {
+            ...common,
+            scales: {
+              x: { grid: { display: false }, title: { display: true, text: "총인구 대비 외국인주민 비중" } },
+              y: { grid: { color: "rgba(15,23,42,.08)" }, title: { display: true, text: "시군구 수" } }
+            }
+          }
+        };
+      } else if (id === "foreign_share_top6_panel") {
+        const parent = canvas.parentElement;
+        if (!parent) return;
+        canvas.remove();
+        parent.classList.add("foreign-share-panel-chart");
+        parent.innerHTML = renderForeignShareTop6Panel(rows);
+        return;
       } else if (id === "foreigner_registered_total") {
         config = {
           type: "line",

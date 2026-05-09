@@ -249,48 +249,68 @@ BOOK = [
     },
     {
         "no": "6",
+        "title": "외국인이 해결책인가",
+        "file": "chapter-5-foreigners.html",
+        "thesis": "외국인 유입은 인구감소의 빈칸을 일부 메울 수 있지만, 통계 정의와 지역 정착 조건을 구분하지 않으면 과대평가되기 쉽다.",
+        "sections": [
+            {
+                "no": "6.1",
+                "title": "외국인은 누구인가",
+                "file": "section-5-1-who-are-foreigners.html",
+                "chart": "foreigner_definition_comparison",
+            },
+            {
+                "no": "6.2",
+                "title": "외국인은 빠르게 증가하고 있는가",
+                "file": "section-5-2-foreign-population-growth.html",
+                "chart": "foreign_population_source_trends",
+            },
+        ],
+    },
+    {
+        "no": "7",
         "title": "고령사회, 노동시장, 재정의 압력",
         "file": "chapter-5.html",
         "thesis": "저출산·고령화의 마지막 질문은 누가 일하고 누가 돌봄과 비용을 감당하는가이다.",
         "sections": [
             {
-                "no": "6.1",
+                "no": "7.1",
                 "title": "노동시장과 고령층 경제활동",
                 "file": "section-5-1-labor-aging.html",
                 "chart": "elderly_labor_dt_1de8031s",
             },
             {
-                "no": "6.2",
+                "no": "7.2",
                 "title": "노령화 지수는 무엇이고 얼마나 빠르게 증가할까",
                 "file": "section-5-2-aging-index.html",
                 "chart": "aging_index_growth",
             },
             {
-                "no": "6.3",
+                "no": "7.3",
                 "title": "생애주기와 재정",
                 "file": "section-5-3-lifecycle-fiscal.html",
                 "chart": "openfiscal_debt_context",
             },
             {
-                "no": "6.4",
+                "no": "7.4",
                 "title": "고령화 사회에서 의료비 지출은 얼마나 빠르게 증가하는가",
                 "file": "section-5-3-health-spending-aging.html",
                 "chart": "nta_public_health_age_profile",
             },
             {
-                "no": "6.5",
+                "no": "7.5",
                 "title": "고령화 예산은 얼마나 증가하는가",
                 "file": "section-5-4-aging-budget.html",
                 "chart": "openfiscal_aging_budget_trends",
             },
             {
-                "no": "6.6",
+                "no": "7.6",
                 "title": "고령층 연금수령액은 얼마나 증가하는가",
                 "file": "section-5-5-elderly-pension.html",
                 "chart": "elderly_pension_dt_1de8051s",
             },
             {
-                "no": "6.7",
+                "no": "7.7",
                 "title": "고령층 연금수령액 구간 분포",
                 "file": "section-5-6-elderly-pension-distribution.html",
                 "chart": "elderly_pension_amount_distribution",
@@ -298,37 +318,37 @@ BOOK = [
         ],
     },
     {
-        "no": "7",
+        "no": "8",
         "title": "교육과 저출산",
         "file": "chapter-6-education-low-fertility.html",
         "thesis": "교육비와 교육경쟁은 출산 이후에야 나타나는 비용이 아니라, 출산을 결정하기 전부터 부모가 예상하는 장기 위험이다.",
         "sections": [
             {
-                "no": "7.1",
+                "no": "8.1",
                 "title": "저출산을 초래할 정도로 교육비가 증가하고 있는가",
                 "file": "section-6-1-education-cost-fertility.html",
                 "chart": "private_education_cost_trend",
             },
             {
-                "no": "7.2",
+                "no": "8.2",
                 "title": "사교육 경쟁은 언제 시작되는가",
                 "file": "section-6-2-private-education-by-school-level.html",
                 "chart": "private_education_school_level",
             },
             {
-                "no": "7.3",
+                "no": "8.3",
                 "title": "교육비 부담은 계층별로 얼마나 다른가",
                 "file": "section-6-3-education-cost-inequality.html",
                 "chart": "private_education_income_gap",
             },
             {
-                "no": "7.4",
+                "no": "8.4",
                 "title": "학생 수가 줄면 교육 부담도 줄어드는가",
                 "file": "section-6-4-school-age-decline-education.html",
                 "chart": "school_age_private_education_pressure",
             },
             {
-                "no": "7.5",
+                "no": "8.5",
                 "title": "부모는 왜 대학까지 책임지려 하는가",
                 "file": "section-6-5-education-expectation-burden.html",
                 "chart": "education_burden_perception",
@@ -336,7 +356,7 @@ BOOK = [
         ],
     },
     {
-        "no": "8",
+        "no": "9",
         "title": "그래서 어떤 저출산·고령화 정책이 필요한가",
         "file": "chapter-7-policy-recommendations.html",
         "thesis": "저출산·고령화 정책은 출산율과 노동력 확보를 넘어 삶의 질, 가치, 미래에 대한 신뢰를 회복하는 사회정책이어야 한다.",
@@ -940,6 +960,34 @@ CHART_META = {
         "source": "KOSIS DT_1B040A11 시군구별 및 체류자격별 등록외국인 현황",
         "note": "외국인 유입은 지역 노동시장과 가족 형성 구조를 함께 바꾸는 인구정책 변수다.",
     },
+    "foreigner_definition_comparison": {
+        "title": "외국인 통계의 세 가지 정의",
+        "kind": "table",
+        "csv": "foreigner_definition_comparison.csv",
+        "source": "행정안전부 지방자치단체 외국인주민 현황, KOSIS 인구총조사 DT_1JA1503, 법무부 출입국자및체류외국인통계",
+        "note": "외국인은 하나의 행정 범주가 아니다. 통계의 목적에 따라 국적, 체류기간, 등록 여부, 귀화자와 자녀 포함 여부가 달라진다.",
+    },
+    "foreign_population_source_trends": {
+        "title": "통계 기준별 외국인 규모 추세",
+        "kind": "line",
+        "csv": "foreign_population_source_trends.csv",
+        "source": "행정안전부 지방자치단체 외국인주민 현황, KOSIS DT_1JA1503 성 및 현재 국적별 외국인 - 시도, KOSIS DT_1B040A5A·DT_1B040A11 법무부 출입국자및체류외국인통계",
+        "note": "행정안전부 외국인주민은 귀화자와 외국인주민 자녀까지 포함하고, 인구총조사 외국인은 3개월 이상 거주 외국인을, 법무부 통계는 체류·등록 행정대상을 보여준다.",
+    },
+    "foreign_share_sigungu_distribution": {
+        "title": "2024년 시군구 외국인주민 비중 분포",
+        "kind": "bar",
+        "csv": "foreign_share_sigungu_distribution.csv",
+        "source": "행정안전부 2024 지방자치단체 외국인주민 현황 통계표",
+        "note": "시군구 총인구 대비 외국인주민 비중을 구간별로 집계했다. 외국인주민에는 한국국적을 가지지 않은 자, 한국국적 취득자, 외국인주민 자녀가 포함된다.",
+    },
+    "foreign_share_top6_panel": {
+        "title": "외국인 비중 상위 6개 시군구의 등록외국인 비중 추세",
+        "kind": "panel",
+        "csv": "foreign_share_top6_panel.csv",
+        "source": "KOSIS DT_1B040A11 시군구별 등록외국인, KOSIS 행정구역별 주민등록인구",
+        "note": "행정안전부 2024 외국인주민 비중 상위 지역을 대상으로, 2020-2024년 등록외국인을 주민등록인구로 나눈 비중을 패널로 제시했다.",
+    },
     "vacant_housing_policy": {
         "title": "빈집 수와 전체 주택",
         "kind": "line",
@@ -1166,6 +1214,7 @@ SECTION_SUPPLEMENTAL_CHARTS = {
     "section-3-0-living-population.html": ["mobile_inflow_top_sigungu"],
     "section-3-1-regional-gap.html": ["young_migration_policy", "sigungu_aging_distribution"],
     "section-3-2-foreign-multicultural.html": ["foreigner_registered_total"],
+    "section-5-2-foreign-population-growth.html": ["foreign_share_sigungu_distribution", "foreign_share_top6_panel"],
     "section-4-1-family-formation.html": ["fertility_age_pattern", "mean_birth_age_order"],
     "section-4-1-divorce-fear-marriage.html": ["divorce_acceptance_trend", "divorce_acceptance_profile_2024"],
     "section-4-2-men-care-parental-leave.html": [
@@ -1903,6 +1952,41 @@ SECTION_DATA_EXPANSION = {
             "files": ["data/derived/multicultural_birth_rate.csv", "data/international_marriage_DT_1BB0006.csv"],
             "analysis": "전체 출생아 수, 다문화 출생아 수, 다문화 출생 비중을 같은 표로 비교한다.",
             "interpretation": "출생아 수가 줄수록 다문화 출생은 지역 교육과 돌봄 체계에서 더 중요한 비중을 갖는다.",
+        },
+    ],
+    "section-5-1-who-are-foreigners.html": [
+        {
+            "question": "통계에서 말하는 외국인은 같은 사람을 가리키는가?",
+            "data": "행정안전부 지방자치단체 외국인주민 현황, 국가데이터처·통계청 인구총조사, 법무부 출입국자및체류외국인통계의 정의 비교",
+            "files": ["data/derived/foreigner_definition_comparison.csv"],
+            "analysis": "국적, 체류기간, 등록 여부, 귀화자와 자녀 포함 여부를 기준으로 세 통계의 포괄 범위를 비교했다.",
+            "interpretation": "외국인 통계는 목적에 따라 정책수요, 거주인구, 출입국 행정대상을 서로 다르게 포착한다. 정의를 섞으면 외국인 유입의 규모와 정책 효과를 과대평가하거나 과소평가할 수 있다.",
+        }
+    ],
+    "section-5-2-foreign-population-growth.html": [
+        {
+            "question": "외국인 규모는 어떤 통계로 보느냐에 따라 얼마나 달라지는가?",
+            "data": "행정안전부 외국인주민 현황, KOSIS DT_1JA1503 인구총조사 외국인, KOSIS DT_1B040A5A 체류외국인, KOSIS DT_1B040A11 등록외국인",
+            "files": [
+                "data/derived/foreign_population_source_trends.csv",
+                "data/census_foreigners_DT_1JA1503.csv",
+                "data/foreign_residents_DT_1B040A5A.csv",
+                "data/registered_foreigners_DT_1B040A11.csv",
+            ],
+            "analysis": "2018-2024년 전국 총량을 행정안전부 외국인주민, 인구총조사 외국인, 법무부 체류외국인, 법무부 등록외국인으로 나란히 정리했다.",
+            "interpretation": "외국인이 증가한다는 말은 대체로 맞지만, 어떤 범위를 외국인으로 보느냐에 따라 규모와 정책적 의미가 달라진다. 지역사회 통합 수요는 행정안전부 외국인주민, 실제 거주 외국인 규모는 인구총조사, 체류관리와 노동시장 변화는 법무부 통계가 더 직접적으로 보여준다.",
+        },
+        {
+            "question": "외국인 비중이 높은 지역은 전국에 고르게 퍼져 있는가?",
+            "data": "행정안전부 2024 지방자치단체 외국인주민 현황 통계표와 KOSIS 시군구 등록외국인·주민등록인구",
+            "files": [
+                "data/raw/mois_foreign_residents_2024.xlsx",
+                "data/derived/foreign_share_sigungu_latest.csv",
+                "data/derived/foreign_share_sigungu_distribution.csv",
+                "data/derived/foreign_share_top6_panel.csv",
+            ],
+            "analysis": "2024년 시군구별 총인구 대비 외국인주민 비중을 계산하고, 상위 6개 지역의 2020-2024년 등록외국인 비중 추세를 패널로 그렸다.",
+            "interpretation": "외국인 유입은 전국 평균보다 산업단지, 항만, 농어촌 계절노동, 수도권 주거·일자리 생활권이 결합된 특정 지역에서 훨씬 강하게 나타난다. 따라서 외국인을 인구감소의 보편적 해법으로 보기보다 지역 노동시장과 생활권 통합 정책으로 다루어야 한다.",
         },
     ],
     "section-4-1-family-formation.html": [
@@ -4786,6 +4870,230 @@ def build_derived_data() -> dict[str, list[dict[str, object]]]:
     foreigners = foreigners[["year", "registered_foreigners"]].drop_duplicates().sort_values("year")
     write_csv(foreigners, "foreigner_registered_total.csv")
     charts["foreigner_registered_total"] = foreigners.to_dict("records")
+
+    foreigner_defs = pd.DataFrame(
+        [
+            {
+                "source": "행정안전부",
+                "statistic": "지방자치단체 외국인주민 현황",
+                "core_definition": "한국국적을 가지지 않은 자, 한국국적 취득자, 외국인주민 자녀",
+                "residence_rule": "인구주택총조사 기준 지역사회 거주자",
+                "included": "장기 거주 외국인, 귀화자, 외국인주민 자녀",
+                "excluded": "단기 방문자, 조사 기준에 포착되지 않는 체류자",
+                "best_for": "지역사회 통합, 보육·교육·복지·행정서비스 수요",
+            },
+            {
+                "source": "국가데이터처·통계청",
+                "statistic": "인구총조사 외국인",
+                "core_definition": "대한민국에 3개월 이상 거주한 외국 국적자",
+                "residence_rule": "조사 기준시점 현재 국내 상주",
+                "included": "단기체류외국인, 등록외국인, 외국국적동포 거소신고자 중 3개월 이상 거주자",
+                "excluded": "귀화자와 외국인주민 자녀 중 한국 국적자",
+                "best_for": "실제 거주 외국인 규모와 인구총조사 기반 인구구조",
+            },
+            {
+                "source": "법무부",
+                "statistic": "체류외국인·등록외국인",
+                "core_definition": "출입국 행정상 국내 체류 또는 외국인등록을 한 외국 국적자",
+                "residence_rule": "등록외국인은 90일 초과 체류를 위해 외국인등록",
+                "included": "체류자격별 외국인, 등록외국인, 외국국적동포 거소신고자 등 행정대상",
+                "excluded": "한국 국적 취득자와 한국 국적 자녀",
+                "best_for": "체류관리, 노동시장·유학·결혼이민 등 체류자격 분석",
+            },
+        ]
+    )
+    write_csv(foreigner_defs, "foreigner_definition_comparison.csv")
+    charts["foreigner_definition_comparison"] = foreigner_defs.to_dict("records")
+
+    source_trend_parts: list[pd.DataFrame] = []
+
+    registered_trend = foreigners.rename(columns={"registered_foreigners": "population"}).copy()
+    registered_trend["source"] = "법무부 등록외국인"
+    source_trend_parts.append(registered_trend[["year", "source", "population"]])
+
+    stay_path = DATA / "foreign_residents_DT_1B040A5A.csv"
+    if stay_path.exists():
+        stay = pd.read_csv(stay_path)
+        stay = stay[(stay["C1_NM"] == "총계") & (stay["C2_NM"] == "계") & (stay["C3_NM"] == "합계")].copy()
+        stay["population"] = pd.to_numeric(stay["DT"], errors="coerce")
+        stay["year"] = pd.to_numeric(stay["PRD_DE"], errors="coerce")
+        stay = stay[["year", "population"]].dropna().drop_duplicates().sort_values("year")
+        stay["source"] = "법무부 체류외국인"
+        source_trend_parts.append(stay[["year", "source", "population"]])
+
+    census_path = DATA / "census_foreigners_DT_1JA1503.csv"
+    if census_path.exists():
+        census_foreigners = pd.read_csv(census_path)
+        census_foreigners = census_foreigners[
+            (census_foreigners["C1_NM"] == "전국")
+            & (census_foreigners["C2_NM"] == "계")
+            & (census_foreigners["ITM_NM"] == "외국인")
+        ].copy()
+        census_foreigners["population"] = pd.to_numeric(census_foreigners["DT"], errors="coerce")
+        census_foreigners["year"] = pd.to_numeric(census_foreigners["PRD_DE"], errors="coerce")
+        census_foreigners = census_foreigners[["year", "population"]].dropna().drop_duplicates().sort_values("year")
+        census_foreigners["source"] = "인구총조사 외국인"
+        source_trend_parts.append(census_foreigners[["year", "source", "population"]])
+
+    mois_trend_rows: list[dict[str, float | int | str]] = []
+    mois_dir = DATA / "raw" / "mois_foreign_residents"
+    for year in range(2018, 2025):
+        workbook = mois_dir / f"{year}.xlsx"
+        total_value = np.nan
+        if workbook.exists() and workbook.read_bytes()[:4] == b"PK\x03\x04":
+            try:
+                xl = pd.ExcelFile(workbook)
+                sheet = next((name for name in xl.sheet_names if name.startswith("1-1")), xl.sheet_names[0])
+                sheet_df = pd.read_excel(workbook, sheet_name=sheet, header=None)
+                row = sheet_df[sheet_df.iloc[:, 0].astype(str).str.strip() == "전국"]
+                if not row.empty:
+                    total_value = pd.to_numeric(row.iloc[0, 3], errors="coerce")
+            except Exception:
+                total_value = np.nan
+        if year == 2020 and pd.isna(total_value):
+            total_value = 2146748
+        if not pd.isna(total_value):
+            mois_trend_rows.append({"year": year, "source": "행정안전부 외국인주민", "population": float(total_value)})
+    if mois_trend_rows:
+        source_trend_parts.append(pd.DataFrame(mois_trend_rows))
+
+    if source_trend_parts:
+        foreign_source_trends = pd.concat(source_trend_parts, ignore_index=True)
+        foreign_source_trends["year"] = foreign_source_trends["year"].astype(int)
+        foreign_source_trends["population"] = pd.to_numeric(foreign_source_trends["population"], errors="coerce").round(0).astype("Int64")
+        foreign_source_trends = foreign_source_trends.dropna(subset=["population"]).sort_values(["source", "year"])
+        write_csv(foreign_source_trends, "foreign_population_source_trends.csv")
+        charts["foreign_population_source_trends"] = foreign_source_trends.to_dict("records")
+
+    broad_regions = {
+        "서울특별시",
+        "부산광역시",
+        "대구광역시",
+        "인천광역시",
+        "광주광역시",
+        "대전광역시",
+        "울산광역시",
+        "세종특별자치시",
+        "경기도",
+        "강원도",
+        "강원특별자치도",
+        "충청북도",
+        "충청남도",
+        "전라북도",
+        "전북특별자치도",
+        "전라남도",
+        "경상북도",
+        "경상남도",
+        "제주특별자치도",
+    }
+
+    latest_mois_path = DATA / "raw" / "mois_foreign_residents_2024.xlsx"
+    if not latest_mois_path.exists():
+        latest_mois_path = DATA / "raw" / "mois_foreign_residents" / "2024.xlsx"
+    sigungu_latest = pd.DataFrame()
+    top6_keys: list[tuple[str, str]] = []
+    if latest_mois_path.exists():
+        xl = pd.ExcelFile(latest_mois_path)
+        sheet = next((name for name in xl.sheet_names if name.startswith("1-2")), xl.sheet_names[1])
+        mois_latest = pd.read_excel(latest_mois_path, sheet_name=sheet, header=None)
+        rows = []
+        current_sido = ""
+        for _, row in mois_latest.iterrows():
+            name = str(row.iloc[0]).strip()
+            if not name or name == "nan" or name == "구분":
+                continue
+            if name in broad_regions:
+                current_sido = name
+                continue
+            total_pop = pd.to_numeric(row.iloc[1], errors="coerce")
+            foreign_pop = pd.to_numeric(row.iloc[3], errors="coerce")
+            if pd.isna(total_pop) or pd.isna(foreign_pop) or total_pop <= 0:
+                continue
+            rows.append(
+                {
+                    "sido": current_sido,
+                    "sigungu": name,
+                    "total_population": int(total_pop),
+                    "foreign_residents": int(foreign_pop),
+                    "foreign_share_pct": round(float(foreign_pop) / float(total_pop) * 100, 2),
+                }
+            )
+        sigungu_latest = pd.DataFrame(rows).sort_values("foreign_share_pct", ascending=False)
+        if not sigungu_latest.empty:
+            write_csv(sigungu_latest, "foreign_share_sigungu_latest.csv")
+            bins = [0, 2, 4, 6, 8, 10, 15, 20, 100]
+            labels = ["0-2%", "2-4%", "4-6%", "6-8%", "8-10%", "10-15%", "15-20%", "20% 이상"]
+            sigungu_latest["share_class"] = pd.cut(sigungu_latest["foreign_share_pct"], bins=bins, labels=labels, right=False, include_lowest=True)
+            dist = sigungu_latest.groupby("share_class", observed=False).size().reset_index(name="sigungu_count")
+            dist["share_class"] = dist["share_class"].astype(str)
+            write_csv(dist, "foreign_share_sigungu_distribution.csv")
+            charts["foreign_share_sigungu_distribution"] = dist.to_dict("records")
+            top6_keys = list(zip(sigungu_latest.head(6)["sido"], sigungu_latest.head(6)["sigungu"]))
+
+    if top6_keys:
+        reg = pd.read_csv(DATA / "registered_foreigners_DT_1B040A11.csv")
+        reg = reg[(reg["C2_NM"] == "계") & (reg["C3_NM"] == "총계") & (reg["C1_NM"] != "총계")].copy()
+        reg["year"] = pd.to_numeric(reg["PRD_DE"], errors="coerce")
+        reg["registered_foreigners"] = pd.to_numeric(reg["DT"], errors="coerce")
+        parsed_rows = []
+        for year, group in reg.sort_index().groupby("year", sort=True):
+            current_sido = ""
+            for _, row in group.sort_index().iterrows():
+                name = str(row["C1_NM"]).strip()
+                if name in broad_regions:
+                    current_sido = name
+                    continue
+                parsed_rows.append(
+                    {
+                        "year": int(year),
+                        "sido": current_sido,
+                        "sigungu": name,
+                        "registered_foreigners": row["registered_foreigners"],
+                    }
+                )
+        reg_sigungu = pd.DataFrame(parsed_rows)
+        pop = pd.read_csv(DATA / "sigungu_population_2004_2024.csv", dtype={"C1": str})
+        code_to_sido = {
+            "11": "서울특별시",
+            "26": "부산광역시",
+            "27": "대구광역시",
+            "28": "인천광역시",
+            "29": "광주광역시",
+            "30": "대전광역시",
+            "31": "울산광역시",
+            "36": "세종특별자치시",
+            "41": "경기도",
+            "42": "강원도",
+            "51": "강원특별자치도",
+            "43": "충청북도",
+            "44": "충청남도",
+            "45": "전라북도",
+            "52": "전북특별자치도",
+            "46": "전라남도",
+            "47": "경상북도",
+            "48": "경상남도",
+            "50": "제주특별자치도",
+        }
+        pop["sido"] = pop["C1"].str[:2].map(code_to_sido)
+        pop = pop.rename(columns={"C1_NM": "sigungu"})
+        pop["year"] = pd.to_numeric(pop["year"], errors="coerce")
+        pop["population"] = pd.to_numeric(pop["population"], errors="coerce")
+        pop = pop[["year", "sido", "sigungu", "population"]]
+        panel_base = reg_sigungu.merge(pop, on=["year", "sido", "sigungu"], how="left")
+        available_keys = panel_base.dropna(subset=["population", "registered_foreigners"])[["sido", "sigungu"]].drop_duplicates()
+        if not sigungu_latest.empty:
+            top6_df = sigungu_latest.merge(available_keys, on=["sido", "sigungu"], how="inner").head(6)[["sido", "sigungu"]]
+        else:
+            top6_df = pd.DataFrame(top6_keys, columns=["sido", "sigungu"]).merge(available_keys, on=["sido", "sigungu"], how="inner").head(6)
+        top6_keys = list(zip(top6_df["sido"], top6_df["sigungu"]))
+        panel = panel_base
+        panel = panel.merge(top6_df.assign(selected=1), on=["sido", "sigungu"], how="inner")
+        panel = panel.dropna(subset=["population", "registered_foreigners"])
+        panel["registered_foreigner_share_pct"] = (panel["registered_foreigners"] / panel["population"] * 100).round(2)
+        panel["region"] = panel["sido"] + " " + panel["sigungu"]
+        panel = panel[["year", "sido", "sigungu", "region", "registered_foreigners", "population", "registered_foreigner_share_pct"]].sort_values(["region", "year"])
+        write_csv(panel, "foreign_share_top6_panel.csv")
+        charts["foreign_share_top6_panel"] = panel.to_dict("records")
 
     households_path = DATA / "future_households_DT_1BZ0503.csv"
     if households_path.exists():

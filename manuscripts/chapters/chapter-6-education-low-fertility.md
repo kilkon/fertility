@@ -6,11 +6,11 @@
 
 ## 이 장에서 읽을 절
 
-- [7.1. 저출산을 초래할 정도로 교육비가 증가하고 있는가](../sections/section-6-1-education-cost-fertility.html)
-- [7.2. 왜 고등학생의 사교육 참여율이 최근 급증하고 있는가](../sections/section-6-2-private-education-by-school-level.html)
-- [7.3. 소득이 높은 사람은 사교육비를 많이 쓰고 출산율은 낮은가](../sections/section-6-3-education-cost-inequality.html)
-- [7.4. 학생 수가 줄면 교육 부담도 줄어드는가](../sections/section-6-4-school-age-decline-education.html)
-- [7.5. 부모의 교육 기대는 출산 결정을 어떻게 압박하는가](../sections/section-6-5-education-expectation-burden.html)
+- [8.1. 저출산을 초래할 정도로 교육비가 증가하고 있는가](../sections/section-6-1-education-cost-fertility.html)
+- [8.2. 왜 고등학생의 사교육 참여율이 최근 급증하고 있는가](../sections/section-6-2-private-education-by-school-level.html)
+- [8.3. 소득이 높은 사람은 사교육비를 많이 쓰고 출산율은 낮은가](../sections/section-6-3-education-cost-inequality.html)
+- [8.4. 학생 수가 줄면 교육 부담도 줄어드는가](../sections/section-6-4-school-age-decline-education.html)
+- [8.5. 부모의 교육 기대는 출산 결정을 어떻게 압박하는가](../sections/section-6-5-education-expectation-burden.html)
 
 ## 이 장에서 밝혀진 것
 

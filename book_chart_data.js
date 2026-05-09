@@ -90265,6 +90265,463 @@ window.populationBookCharts = {
         "registered_foreigners": 1488353
       }
     ],
+    "foreigner_definition_comparison": [
+      {
+        "source": "행정안전부",
+        "statistic": "지방자치단체 외국인주민 현황",
+        "core_definition": "한국국적을 가지지 않은 자, 한국국적 취득자, 외국인주민 자녀",
+        "residence_rule": "인구주택총조사 기준 지역사회 거주자",
+        "included": "장기 거주 외국인, 귀화자, 외국인주민 자녀",
+        "excluded": "단기 방문자, 조사 기준에 포착되지 않는 체류자",
+        "best_for": "지역사회 통합, 보육·교육·복지·행정서비스 수요"
+      },
+      {
+        "source": "국가데이터처·통계청",
+        "statistic": "인구총조사 외국인",
+        "core_definition": "대한민국에 3개월 이상 거주한 외국 국적자",
+        "residence_rule": "조사 기준시점 현재 국내 상주",
+        "included": "단기체류외국인, 등록외국인, 외국국적동포 거소신고자 중 3개월 이상 거주자",
+        "excluded": "귀화자와 외국인주민 자녀 중 한국 국적자",
+        "best_for": "실제 거주 외국인 규모와 인구총조사 기반 인구구조"
+      },
+      {
+        "source": "법무부",
+        "statistic": "체류외국인·등록외국인",
+        "core_definition": "출입국 행정상 국내 체류 또는 외국인등록을 한 외국 국적자",
+        "residence_rule": "등록외국인은 90일 초과 체류를 위해 외국인등록",
+        "included": "체류자격별 외국인, 등록외국인, 외국국적동포 거소신고자 등 행정대상",
+        "excluded": "한국 국적 취득자와 한국 국적 자녀",
+        "best_for": "체류관리, 노동시장·유학·결혼이민 등 체류자격 분석"
+      }
+    ],
+    "foreign_population_source_trends": [
+      {
+        "year": 2020,
+        "source": "법무부 등록외국인",
+        "population": 1145540
+      },
+      {
+        "year": 2021,
+        "source": "법무부 등록외국인",
+        "population": 1093891
+      },
+      {
+        "year": 2022,
+        "source": "법무부 등록외국인",
+        "population": 1189585
+      },
+      {
+        "year": 2023,
+        "source": "법무부 등록외국인",
+        "population": 1348626
+      },
+      {
+        "year": 2024,
+        "source": "법무부 등록외국인",
+        "population": 1488353
+      },
+      {
+        "year": 2020,
+        "source": "법무부 체류외국인",
+        "population": 2036075
+      },
+      {
+        "year": 2021,
+        "source": "법무부 체류외국인",
+        "population": 1956781
+      },
+      {
+        "year": 2022,
+        "source": "법무부 체류외국인",
+        "population": 2245912
+      },
+      {
+        "year": 2023,
+        "source": "법무부 체류외국인",
+        "population": 2507584
+      },
+      {
+        "year": 2024,
+        "source": "법무부 체류외국인",
+        "population": 2650783
+      },
+      {
+        "year": 2018,
+        "source": "인구총조사 외국인",
+        "population": 1651561
+      },
+      {
+        "year": 2019,
+        "source": "인구총조사 외국인",
+        "population": 1778918
+      },
+      {
+        "year": 2020,
+        "source": "인구총조사 외국인",
+        "population": 1695643
+      },
+      {
+        "year": 2021,
+        "source": "인구총조사 외국인",
+        "population": 1649967
+      },
+      {
+        "year": 2022,
+        "source": "인구총조사 외국인",
+        "population": 1752346
+      },
+      {
+        "year": 2023,
+        "source": "인구총조사 외국인",
+        "population": 1935150
+      },
+      {
+        "year": 2024,
+        "source": "인구총조사 외국인",
+        "population": 2042744
+      },
+      {
+        "year": 2018,
+        "source": "행정안전부 외국인주민",
+        "population": 2054621
+      },
+      {
+        "year": 2019,
+        "source": "행정안전부 외국인주민",
+        "population": 2216612
+      },
+      {
+        "year": 2020,
+        "source": "행정안전부 외국인주민",
+        "population": 2146748
+      },
+      {
+        "year": 2021,
+        "source": "행정안전부 외국인주민",
+        "population": 2134569
+      },
+      {
+        "year": 2022,
+        "source": "행정안전부 외국인주민",
+        "population": 2258248
+      },
+      {
+        "year": 2023,
+        "source": "행정안전부 외국인주민",
+        "population": 2459542
+      },
+      {
+        "year": 2024,
+        "source": "행정안전부 외국인주민",
+        "population": 2583626
+      }
+    ],
+    "foreign_share_sigungu_distribution": [
+      {
+        "share_class": "0-2%",
+        "sigungu_count": 23
+      },
+      {
+        "share_class": "2-4%",
+        "sigungu_count": 82
+      },
+      {
+        "share_class": "4-6%",
+        "sigungu_count": 69
+      },
+      {
+        "share_class": "6-8%",
+        "sigungu_count": 56
+      },
+      {
+        "share_class": "8-10%",
+        "sigungu_count": 16
+      },
+      {
+        "share_class": "10-15%",
+        "sigungu_count": 15
+      },
+      {
+        "share_class": "15-20%",
+        "sigungu_count": 2
+      },
+      {
+        "share_class": "20% 이상",
+        "sigungu_count": 2
+      }
+    ],
+    "foreign_share_top6_panel": [
+      {
+        "year": 2020,
+        "sido": "경기도",
+        "sigungu": "시흥시",
+        "region": "경기도 시흥시",
+        "registered_foreigners": 32410,
+        "population": 500895.0,
+        "registered_foreigner_share_pct": 6.47
+      },
+      {
+        "year": 2021,
+        "sido": "경기도",
+        "sigungu": "시흥시",
+        "region": "경기도 시흥시",
+        "registered_foreigners": 31523,
+        "population": 512030.0,
+        "registered_foreigner_share_pct": 6.16
+      },
+      {
+        "year": 2022,
+        "sido": "경기도",
+        "sigungu": "시흥시",
+        "region": "경기도 시흥시",
+        "registered_foreigners": 33139,
+        "population": 512912.0,
+        "registered_foreigner_share_pct": 6.46
+      },
+      {
+        "year": 2023,
+        "sido": "경기도",
+        "sigungu": "시흥시",
+        "region": "경기도 시흥시",
+        "registered_foreigners": 37188,
+        "population": 519715.0,
+        "registered_foreigner_share_pct": 7.16
+      },
+      {
+        "year": 2024,
+        "sido": "경기도",
+        "sigungu": "시흥시",
+        "region": "경기도 시흥시",
+        "registered_foreigners": 40493,
+        "population": 518132.0,
+        "registered_foreigner_share_pct": 7.82
+      },
+      {
+        "year": 2020,
+        "sido": "경기도",
+        "sigungu": "포천시",
+        "region": "경기도 포천시",
+        "registered_foreigners": 12115,
+        "population": 147274.0,
+        "registered_foreigner_share_pct": 8.23
+      },
+      {
+        "year": 2021,
+        "sido": "경기도",
+        "sigungu": "포천시",
+        "region": "경기도 포천시",
+        "registered_foreigners": 11270,
+        "population": 148939.0,
+        "registered_foreigner_share_pct": 7.57
+      },
+      {
+        "year": 2022,
+        "sido": "경기도",
+        "sigungu": "포천시",
+        "region": "경기도 포천시",
+        "registered_foreigners": 13365,
+        "population": 146701.0,
+        "registered_foreigner_share_pct": 9.11
+      },
+      {
+        "year": 2023,
+        "sido": "경기도",
+        "sigungu": "포천시",
+        "region": "경기도 포천시",
+        "registered_foreigners": 14669,
+        "population": 143323.0,
+        "registered_foreigner_share_pct": 10.23
+      },
+      {
+        "year": 2024,
+        "sido": "경기도",
+        "sigungu": "포천시",
+        "region": "경기도 포천시",
+        "registered_foreigners": 16317,
+        "population": 141463.0,
+        "registered_foreigner_share_pct": 11.53
+      },
+      {
+        "year": 2020,
+        "sido": "전라남도",
+        "sigungu": "영암군",
+        "region": "전라남도 영암군",
+        "registered_foreigners": 4169,
+        "population": 53699.0,
+        "registered_foreigner_share_pct": 7.76
+      },
+      {
+        "year": 2021,
+        "sido": "전라남도",
+        "sigungu": "영암군",
+        "region": "전라남도 영암군",
+        "registered_foreigners": 4119,
+        "population": 52937.0,
+        "registered_foreigner_share_pct": 7.78
+      },
+      {
+        "year": 2022,
+        "sido": "전라남도",
+        "sigungu": "영암군",
+        "region": "전라남도 영암군",
+        "registered_foreigners": 5182,
+        "population": 52395.0,
+        "registered_foreigner_share_pct": 9.89
+      },
+      {
+        "year": 2023,
+        "sido": "전라남도",
+        "sigungu": "영암군",
+        "region": "전라남도 영암군",
+        "registered_foreigners": 8221,
+        "population": 52350.0,
+        "registered_foreigner_share_pct": 15.7
+      },
+      {
+        "year": 2024,
+        "sido": "전라남도",
+        "sigungu": "영암군",
+        "region": "전라남도 영암군",
+        "registered_foreigners": 9673,
+        "population": 51391.0,
+        "registered_foreigner_share_pct": 18.82
+      },
+      {
+        "year": 2020,
+        "sido": "전라남도",
+        "sigungu": "완도군",
+        "region": "전라남도 완도군",
+        "registered_foreigners": 2212,
+        "population": 49916.0,
+        "registered_foreigner_share_pct": 4.43
+      },
+      {
+        "year": 2021,
+        "sido": "전라남도",
+        "sigungu": "완도군",
+        "region": "전라남도 완도군",
+        "registered_foreigners": 2144,
+        "population": 48631.0,
+        "registered_foreigner_share_pct": 4.41
+      },
+      {
+        "year": 2022,
+        "sido": "전라남도",
+        "sigungu": "완도군",
+        "region": "전라남도 완도군",
+        "registered_foreigners": 2848,
+        "population": 47597.0,
+        "registered_foreigner_share_pct": 5.98
+      },
+      {
+        "year": 2023,
+        "sido": "전라남도",
+        "sigungu": "완도군",
+        "region": "전라남도 완도군",
+        "registered_foreigners": 3907,
+        "population": 46641.0,
+        "registered_foreigner_share_pct": 8.38
+      },
+      {
+        "year": 2024,
+        "sido": "전라남도",
+        "sigungu": "완도군",
+        "region": "전라남도 완도군",
+        "registered_foreigners": 5110,
+        "population": 45631.0,
+        "registered_foreigner_share_pct": 11.2
+      },
+      {
+        "year": 2020,
+        "sido": "충청북도",
+        "sigungu": "음성군",
+        "region": "충청북도 음성군",
+        "registered_foreigners": 8691,
+        "population": 93153.0,
+        "registered_foreigner_share_pct": 9.33
+      },
+      {
+        "year": 2021,
+        "sido": "충청북도",
+        "sigungu": "음성군",
+        "region": "충청북도 음성군",
+        "registered_foreigners": 8361,
+        "population": 92197.0,
+        "registered_foreigner_share_pct": 9.07
+      },
+      {
+        "year": 2022,
+        "sido": "충청북도",
+        "sigungu": "음성군",
+        "region": "충청북도 음성군",
+        "registered_foreigners": 9751,
+        "population": 92058.0,
+        "registered_foreigner_share_pct": 10.59
+      },
+      {
+        "year": 2023,
+        "sido": "충청북도",
+        "sigungu": "음성군",
+        "region": "충청북도 음성군",
+        "registered_foreigners": 11990,
+        "population": 91183.0,
+        "registered_foreigner_share_pct": 13.15
+      },
+      {
+        "year": 2024,
+        "sido": "충청북도",
+        "sigungu": "음성군",
+        "region": "충청북도 음성군",
+        "registered_foreigners": 13808,
+        "population": 91236.0,
+        "registered_foreigner_share_pct": 15.13
+      },
+      {
+        "year": 2020,
+        "sido": "충청북도",
+        "sigungu": "진천군",
+        "region": "충청북도 진천군",
+        "registered_foreigners": 5646,
+        "population": 83718.0,
+        "registered_foreigner_share_pct": 6.74
+      },
+      {
+        "year": 2021,
+        "sido": "충청북도",
+        "sigungu": "진천군",
+        "region": "충청북도 진천군",
+        "registered_foreigners": 5477,
+        "population": 85176.0,
+        "registered_foreigner_share_pct": 6.43
+      },
+      {
+        "year": 2022,
+        "sido": "충청북도",
+        "sigungu": "진천군",
+        "region": "충청북도 진천군",
+        "registered_foreigners": 6406,
+        "population": 86147.0,
+        "registered_foreigner_share_pct": 7.44
+      },
+      {
+        "year": 2023,
+        "sido": "충청북도",
+        "sigungu": "진천군",
+        "region": "충청북도 진천군",
+        "registered_foreigners": 7488,
+        "population": 86254.0,
+        "registered_foreigner_share_pct": 8.68
+      },
+      {
+        "year": 2024,
+        "sido": "충청북도",
+        "sigungu": "진천군",
+        "region": "충청북도 진천군",
+        "registered_foreigners": 8419,
+        "population": 86537.0,
+        "registered_foreigner_share_pct": 9.73
+      }
+    ],
     "future_households_policy": [
       {
         "year": 2000,
@@ -92074,6 +92531,34 @@ window.populationBookCharts = {
       "csv": "foreigner_registered_total.csv",
       "source": "KOSIS DT_1B040A11 시군구별 및 체류자격별 등록외국인 현황",
       "note": "외국인 유입은 지역 노동시장과 가족 형성 구조를 함께 바꾸는 인구정책 변수다."
+    },
+    "foreigner_definition_comparison": {
+      "title": "외국인 통계의 세 가지 정의",
+      "kind": "table",
+      "csv": "foreigner_definition_comparison.csv",
+      "source": "행정안전부 지방자치단체 외국인주민 현황, KOSIS 인구총조사 DT_1JA1503, 법무부 출입국자및체류외국인통계",
+      "note": "외국인은 하나의 행정 범주가 아니다. 통계의 목적에 따라 국적, 체류기간, 등록 여부, 귀화자와 자녀 포함 여부가 달라진다."
+    },
+    "foreign_population_source_trends": {
+      "title": "통계 기준별 외국인 규모 추세",
+      "kind": "line",
+      "csv": "foreign_population_source_trends.csv",
+      "source": "행정안전부 지방자치단체 외국인주민 현황, KOSIS DT_1JA1503 성 및 현재 국적별 외국인 - 시도, KOSIS DT_1B040A5A·DT_1B040A11 법무부 출입국자및체류외국인통계",
+      "note": "행정안전부 외국인주민은 귀화자와 외국인주민 자녀까지 포함하고, 인구총조사 외국인은 3개월 이상 거주 외국인을, 법무부 통계는 체류·등록 행정대상을 보여준다."
+    },
+    "foreign_share_sigungu_distribution": {
+      "title": "2024년 시군구 외국인주민 비중 분포",
+      "kind": "bar",
+      "csv": "foreign_share_sigungu_distribution.csv",
+      "source": "행정안전부 2024 지방자치단체 외국인주민 현황 통계표",
+      "note": "시군구 총인구 대비 외국인주민 비중을 구간별로 집계했다. 외국인주민에는 한국국적을 가지지 않은 자, 한국국적 취득자, 외국인주민 자녀가 포함된다."
+    },
+    "foreign_share_top6_panel": {
+      "title": "외국인 비중 상위 6개 시군구의 등록외국인 비중 추세",
+      "kind": "panel",
+      "csv": "foreign_share_top6_panel.csv",
+      "source": "KOSIS DT_1B040A11 시군구별 등록외국인, KOSIS 행정구역별 주민등록인구",
+      "note": "행정안전부 2024 외국인주민 비중 상위 지역을 대상으로, 2020-2024년 등록외국인을 주민등록인구로 나눈 비중을 패널로 제시했다."
     },
     "vacant_housing_policy": {
       "title": "빈집 수와 전체 주택",
