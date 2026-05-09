@@ -157,27 +157,6 @@ h1 {
   line-height: 1.72;
 }
 
-.cover-specs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  max-width: 900px;
-  margin-top: 24px;
-}
-
-.cover-specs span {
-  display: inline-flex;
-  align-items: center;
-  min-height: 34px;
-  padding: 0 12px;
-  border: 1px solid rgba(15, 118, 110, .22);
-  border-radius: 6px;
-  color: var(--ink);
-  background: rgba(15, 118, 110, .08);
-  font-size: 14px;
-  font-weight: 800;
-}
-
 .author {
   margin: 28px 0 0;
   color: var(--ink);

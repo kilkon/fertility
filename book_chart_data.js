@@ -80161,7 +80161,7 @@ window.populationBookCharts = {
       "kind": "taxonomy",
       "csv": "low_fertility_policy_typology.csv",
       "source": "저출산고령사회위원회·보건복지부 저출생 대책 자료, 고용노동부 모성보호·육아지원 제도, 국토교통부 신혼·출산가구 주거지원 정책을 분류",
-      "note": "정책을 예산 항목이 아니라 작동 경로별로 나눈 분류다. 이후 장의 분석은 각 수단이 출생, 정주, 돌봄 접근성, 부모의 시간, 주거 안정 중 무엇을 바꾸었는지를 검산한다."
+      "note": "정책을 예산 항목이 아니라 작동 경로별로 나눈 분류다. 이후 장의 분석은 각 수단이 출생, 정주, 돌봄 접근성, 부모의 시간, 주거 안정 중 무엇을 바꾸었는지를 점검한다."
     },
     "low_fertility_budget_trend": {
       "title": "저출생 대응 예산 규모: 광의·협의 기준 비교",
@@ -80196,7 +80196,7 @@ window.populationBookCharts = {
       "kind": "line",
       "csv": "housing_security_outcomes_national.csv",
       "source": "KOSIS DT_1OH0403·DT_1OH0418 주택소유통계, DT_1B8000I 시군구/인구동태건수 및 동태율",
-      "note": "40세 미만 가구주 가구의 주택보유율과 전국 조혼인율·조출생률을 같은 시간축에 놓았다. 주거지원 수혜 효과가 아니라 주거 안정성과 가족 형성 조건의 동행 여부를 보는 검산이다."
+      "note": "40세 미만 가구주 가구의 주택보유율과 전국 조혼인율·조출생률을 같은 시간축에 놓았다. 주거지원 수혜 효과가 아니라 주거 안정성과 가족 형성 조건의 동행 여부를 보는 점검이다."
     },
     "capital_region_housing_marriage_birth": {
       "title": "수도권 주거 안정성과 혼인·출생 지표",
