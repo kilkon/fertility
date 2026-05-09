@@ -274,7 +274,7 @@ window.populationBookQuestionPlan = [
     thesis: "출산은 독립, 가구 형성, 주거, 혼인, 임신·출산, 돌봄 복귀가 이어지는 생활시간표 위에서 결정된다.",
     sections: [
       {
-        title: "5.3 혼인·이혼·출생의 연결",
+        title: "5.2 혼인·이혼·출생의 연결",
         questions: [
           {
             q: "혼인을 많이 하는 지역일수록 출생이 많은가?",
@@ -307,7 +307,7 @@ window.populationBookQuestionPlan = [
         ]
       },
       {
-        title: "5.4 결혼과 출산은 왜 문화적 현상인가",
+        title: "5.1 결혼과 출산은 왜 문화적 현상인가",
         questions: [
           {
             q: "미혼 남녀의 결혼 긍정 인식은 어떻게 달라졌는가?",
@@ -333,7 +333,7 @@ window.populationBookQuestionPlan = [
         ]
       },
       {
-        title: "5.5 이혼의 두려움은 결혼을 막는가",
+        title: "5.3 이혼의 두려움은 결혼을 막는가",
         questions: [
           {
             q: "30대와 40대의 이혼율은 증가하고 있는가?",
@@ -451,7 +451,7 @@ window.populationBookQuestionPlan = [
         ]
       },
       {
-        title: "5.1-5.2, 5.9 가구·주거·빈집",
+        title: "5.4-5.5, 5.9 가구·주거·빈집",
         questions: [
           {
             q: "가구수는 인구 감소처럼 감소하는가?",

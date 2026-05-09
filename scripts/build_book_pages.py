@@ -27,7 +27,7 @@ MANUSCRIPTS = ROOT / "manuscripts"
 CHAPTER_MANUSCRIPTS = MANUSCRIPTS / "chapters"
 SECTION_MANUSCRIPTS = MANUSCRIPTS / "sections"
 APPENDIX_FILE = "appendix-data-notes.html"
-ASSET_VERSION = "20260509-policy-success"
+ASSET_VERSION = "20260509-prose-revision"
 GITHUB_REPO_URL = "https://github.com/kilkon/fertility"
 
 
@@ -181,33 +181,33 @@ BOOK = [
         "sections": [
             {
                 "no": "5.1",
-                "title": "가구 수는 왜 인구와 다르게 움직이는가",
-                "file": "section-4-5-households.html",
-                "chart": "household_population_gap_national",
-            },
-            {
-                "no": "5.2",
-                "title": "주거 수요는 왜 인구보다 늦게 변하는가",
-                "file": "section-4-6-housing-demand.html",
-                "chart": "future_households_policy",
-            },
-            {
-                "no": "5.3",
-                "title": "혼인·이혼·출생의 연결",
-                "file": "section-4-1-family-formation.html",
-                "chart": "vital_events_policy",
-            },
-            {
-                "no": "5.4",
                 "title": "결혼과 출산은 왜 문화적 현상인가",
                 "file": "section-4-1-marriage-culture.html",
                 "chart": "marriage_attitude_unmarried_gender",
             },
             {
-                "no": "5.5",
+                "no": "5.2",
+                "title": "혼인·이혼·출생의 연결",
+                "file": "section-4-1-family-formation.html",
+                "chart": "vital_events_policy",
+            },
+            {
+                "no": "5.3",
                 "title": "이혼의 두려움은 결혼을 막는가",
                 "file": "section-4-1-divorce-fear-marriage.html",
                 "chart": "divorce_rate_30s_40s_trend",
+            },
+            {
+                "no": "5.4",
+                "title": "가구 수는 왜 인구와 다르게 움직이는가",
+                "file": "section-4-5-households.html",
+                "chart": "household_population_gap_national",
+            },
+            {
+                "no": "5.5",
+                "title": "주거 수요는 왜 인구보다 늦게 변하는가",
+                "file": "section-4-6-housing-demand.html",
+                "chart": "future_households_policy",
             },
             {
                 "no": "5.6",
