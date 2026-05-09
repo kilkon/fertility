@@ -1080,6 +1080,20 @@ CHART_META = {
         "source": "통계청 통계데이터센터, 통신 모바일 인구이동량 통계 시군구 관내외 유입 자료(~2026.04.26)",
         "note": "2025년 52개 주차의 주차별 일평균 이동건수 평균이다. 거주지와 목적지가 같은 귀가 이동은 집계하지 않으며, 관외는 거주 시군구 밖에서 해당 시군구로 들어온 이동이다.",
     },
+    "mobile_outside_migration_by_sex": {
+        "title": "남성과 여성의 관외 이동 추세",
+        "kind": "line",
+        "csv": "mobile_outside_migration_by_sex.csv",
+        "source": "통계청 통계데이터센터, 통신 모바일 인구이동량 통계 성연령별 자료(~2026.04.26)",
+        "note": "전국 성별 이동량 자료에서 관외 이동을 연도별 주차 평균으로 계산했다. 2026년은 4월 4주차까지의 부분 연도이므로 장기 추세선이 아니라 최신 관찰값으로 읽어야 한다.",
+    },
+    "living_population_ratio_map": {
+        "title": "시군구별 주민등록인구 대비 생활인구 배율",
+        "kind": "map",
+        "csv": "living_population_2025q3_map_values.csv",
+        "source": "행정안전부·통계청, 2025년 3분기 인구감소지역 생활인구 산정결과; 통계청 시군구 경계",
+        "note": "2025년 7-9월 생활인구 월평균을 주민등록인구 월평균으로 나눈 값이다. 공표 대상인 인구감소지역만 색으로 표시하고, 그 외 시군구는 회색으로 남겼다.",
+    },
     "living_population_age_component": {
         "title": "생활인구 구성별 연령 분포",
         "kind": "bar",
@@ -1813,6 +1827,7 @@ SECTION_DATA_EXPANSION = {
                 "data/source/living_population_2025q3_status.xlsx",
                 "data/source/living_population_2025q3_stay_population.xlsx",
                 "data/derived/living_population_2025q3_summary.csv",
+                "data/derived/living_population_2025q3_map_values.csv",
                 "data/derived/living_population_2025q3_age_component.csv",
                 "data/derived/living_population_2025q3_sex_component.csv",
                 "data/derived/living_population_2025q3_monthly_trend.csv",
@@ -1836,6 +1851,7 @@ SECTION_DATA_EXPANSION = {
             "data": "통계청 통계데이터센터 통신 모바일 인구이동량 통계 시군구 관내외 유입 자료(~2026.04.26)",
             "files": [
                 "data/source/mobile_inflow_sigungu_20260426.xlsx",
+                "data/derived/mobile_outside_migration_by_sex.csv",
                 "data/derived/mobile_inflow_sigungu_2025_summary.csv",
             ],
             "analysis": "2025년 52개 주차의 주차별 일평균 유입 이동건수를 시군구별로 평균하고, 관내 이동과 관외 유입을 구분했다.",
@@ -2524,6 +2540,62 @@ def build_derived_data() -> dict[str, list[dict[str, object]]]:
         write_csv(living_summary, "living_population_2025q3_summary.csv")
         charts["living_population_ratio_top"] = living_summary.to_dict("records")
 
+        slope_bridge_path = DERIVED / "sigungu_population_trend_map_values.csv"
+        if slope_bridge_path.exists():
+            sido_prefix_map = {
+                "서울특별시": "11",
+                "부산광역시": "26",
+                "대구광역시": "27",
+                "인천광역시": "28",
+                "광주광역시": "29",
+                "대전광역시": "30",
+                "울산광역시": "31",
+                "세종특별자치시": "36",
+                "경기도": "41",
+                "강원특별자치도": "51",
+                "충청북도": "43",
+                "충청남도": "44",
+                "전북특별자치도": "52",
+                "전라남도": "46",
+                "경상북도": "47",
+                "경상남도": "48",
+                "제주특별자치도": "50",
+            }
+            living_for_map = living_summary.copy()
+            living_for_map["kosis_prefix"] = living_for_map["sido"].map(sido_prefix_map)
+            living_for_map.loc[
+                (living_for_map["sido"] == "대구광역시") & (living_for_map["sigungu"] == "군위군"),
+                "kosis_prefix",
+            ] = "47"
+            bridge = pd.read_csv(slope_bridge_path, dtype=str)
+            bridge["kosis_prefix"] = bridge["C1"].astype(str).str[:2]
+            bridge_cols = ["topo_code", "topo_name", "C1", "C1_NM", "kosis_prefix"]
+            living_map_values = bridge[bridge_cols].merge(
+                living_for_map,
+                left_on=["kosis_prefix", "C1_NM"],
+                right_on=["kosis_prefix", "sigungu"],
+                how="left",
+            )
+            living_map_values["has_living_population"] = living_map_values["living_population"].notna()
+            numeric_cols = [
+                "living_population",
+                "registered_population",
+                "stay_population",
+                "foreign_population",
+                "living_registered_ratio",
+                "stay_share_pct",
+                "foreign_share_pct",
+                "living_population_10k",
+                "registered_population_10k",
+                "stay_population_10k",
+                "foreign_population_10k",
+            ]
+            for col in numeric_cols:
+                if col in living_map_values:
+                    living_map_values[col] = pd.to_numeric(living_map_values[col], errors="coerce")
+            write_csv(living_map_values, "living_population_2025q3_map_values.csv")
+            charts["living_population_ratio_map"] = living_map_values.to_dict("records")
+
         component_labels = {
             "계": "생활인구 전체",
             "주민등록인구": "주민등록인구",
@@ -2647,6 +2719,57 @@ def build_derived_data() -> dict[str, list[dict[str, object]]]:
         mobile_summary = mobile_summary.sort_values("avg_total", ascending=False)
         write_csv(mobile_summary, "mobile_inflow_sigungu_2025_summary.csv")
         charts["mobile_inflow_top_sigungu"] = mobile_summary.to_dict("records")
+
+        mobile_sex = pd.read_excel(mobile_inflow_path, sheet_name=0)
+        mobile_sex.columns = ["group_type", "group", "week_label", "inside", "outside", "total"]
+        mobile_sex = mobile_sex.dropna(subset=["group_type", "group", "week_label"])
+        type_values = list(mobile_sex["group_type"].dropna().drop_duplicates())
+        group_values = list(mobile_sex["group"].dropna().drop_duplicates())
+        if len(type_values) >= 2 and len(group_values) >= 3:
+            sex_type = type_values[1]
+            male_value = group_values[1]
+            female_value = group_values[2]
+            mobile_sex = mobile_sex[
+                (mobile_sex["group_type"] == sex_type)
+                & (mobile_sex["group"].isin([male_value, female_value]))
+            ].copy()
+            mobile_sex["sex"] = mobile_sex["group"].map({male_value: "남성", female_value: "여성"})
+            for col in ["inside", "outside", "total"]:
+                mobile_sex[col] = pd.to_numeric(mobile_sex[col], errors="coerce")
+            week_parts = mobile_sex["week_label"].astype(str).str.extract(r"(?P<year>\d{4})\.(?P<month>\d{2})\.(?P<week>\d+)")
+            mobile_sex["year"] = pd.to_numeric(week_parts["year"], errors="coerce").astype("Int64")
+            mobile_sex["month"] = pd.to_numeric(week_parts["month"], errors="coerce").astype("Int64")
+            sex_trend = (
+                mobile_sex.dropna(subset=["year", "sex"])
+                .groupby(["year", "sex"], as_index=False)
+                .agg(
+                    weeks=("week_label", "nunique"),
+                    avg_inside=("inside", "mean"),
+                    avg_outside=("outside", "mean"),
+                    avg_total=("total", "mean"),
+                )
+            )
+            sex_trend["outside_share_pct"] = np.where(
+                sex_trend["avg_total"] > 0,
+                sex_trend["avg_outside"] / sex_trend["avg_total"] * 100,
+                np.nan,
+            )
+            sex_trend["avg_outside_100m"] = sex_trend["avg_outside"] / 1000000
+            sex_trend["avg_total_100m"] = sex_trend["avg_total"] / 1000000
+            base = sex_trend[sex_trend["year"] == sex_trend["year"].min()][["sex", "avg_outside"]].rename(
+                columns={"avg_outside": "base_avg_outside"}
+            )
+            sex_trend = sex_trend.merge(base, on="sex", how="left")
+            sex_trend["outside_index_first_year_100"] = np.where(
+                sex_trend["base_avg_outside"] > 0,
+                sex_trend["avg_outside"] / sex_trend["base_avg_outside"] * 100,
+                np.nan,
+            )
+            sex_trend["year_label"] = sex_trend["year"].astype(str)
+            sex_trend.loc[sex_trend["year"] == 2026, "year_label"] = "2026(4월까지)"
+            sex_trend = sex_trend.sort_values(["sex", "year"])
+            write_csv(sex_trend, "mobile_outside_migration_by_sex.csv")
+            charts["mobile_outside_migration_by_sex"] = sex_trend.to_dict("records")
 
     policy_typology = pd.DataFrame(
         [

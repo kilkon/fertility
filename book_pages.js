@@ -203,6 +203,96 @@
       </div>`;
   }
 
+  function livingPopulationRatioColor(value) {
+    const n = Number(value);
+    if (!Number.isFinite(n)) return "#e5e7eb";
+    if (n < 2) return "#dbeafe";
+    if (n < 4) return "#93c5fd";
+    if (n < 8) return "#38bdf8";
+    if (n < 12) return "#0f766e";
+    if (n < 16) return "#f59e0b";
+    return "#b91c1c";
+  }
+
+  function renderLivingPopulationRatioMap(rows) {
+    const meta = metaFor("living_population_ratio_map");
+    const topo = window.populationBookSigunguTopo;
+    if (!topo || !topo.objects || !topo.arcs) {
+      return '<div class="map-empty">지도 경계 자료를 불러오지 못했습니다.</div>';
+    }
+    const objectName = Object.keys(topo.objects)[0];
+    const geometries = topo.objects[objectName]?.geometries || [];
+    const rowByCode = new Map(rows.map((row) => [String(row.topo_code || ""), row]));
+    const decoded = geometries.map((geometry) => ({
+      geometry,
+      code: String(geometry.properties?.code || geometry.id || ""),
+      name: geometry.properties?.name || geometry.properties?.SIG_KOR_NM || "",
+      polygons: topoGeometryPolygons(geometry, topo.arcs, topo.transform)
+    }));
+    const allPoints = decoded.flatMap((feature) => feature.polygons.flat());
+    if (!allPoints.length) return '<div class="map-empty">지도 좌표를 해석하지 못했습니다.</div>';
+    const xs = allPoints.map((point) => point[0]);
+    const ys = allPoints.map((point) => point[1]);
+    const minX = Math.min(...xs);
+    const maxX = Math.max(...xs);
+    const minY = Math.min(...ys);
+    const maxY = Math.max(...ys);
+    const width = 760;
+    const height = 900;
+    const margin = 22;
+    const scale = Math.min((width - margin * 2) / (maxX - minX), (height - 120 - margin * 2) / (maxY - minY));
+    const offsetX = (width - (maxX - minX) * scale) / 2;
+    const project = (point) => [
+      offsetX + (point[0] - minX) * scale,
+      margin + (maxY - point[1]) * scale
+    ];
+    const paths = decoded.map((feature) => {
+      const row = rowByCode.get(feature.code);
+      const ratio = row ? Number(row.living_registered_ratio) : NaN;
+      const fill = livingPopulationRatioColor(ratio);
+      const d = feature.polygons.map((ring) => {
+        if (!ring.length) return "";
+        const projected = ring.map(project);
+        return `M${projected.map((point) => `${point[0].toFixed(2)},${point[1].toFixed(2)}`).join("L")}Z`;
+      }).join("");
+      const label = row && Number.isFinite(ratio)
+        ? `${row.region || row.topo_name || feature.name}: 생활인구 ${formatKoNumber(row.living_population)}명, 주민등록인구 ${formatKoNumber(row.registered_population)}명, ${ratio.toFixed(2)}배`
+        : `${feature.name}: 공표 대상 아님`;
+      return `<path class="sigungu-map-path" d="${d}" fill="${fill}"><title>${svgEscape(label)}</title></path>`;
+    }).join("");
+    const legend = [
+      ["공표 대상 아님", "#e5e7eb"],
+      ["2배 미만", "#dbeafe"],
+      ["2-4배", "#93c5fd"],
+      ["4-8배", "#38bdf8"],
+      ["8-12배", "#0f766e"],
+      ["12-16배", "#f59e0b"],
+      ["16배 이상", "#b91c1c"]
+    ].map((item, index) => {
+      const x = 36 + (index % 4) * 170;
+      const y = 812 + Math.floor(index / 4) * 28;
+      return `<rect x="${x}" y="${y}" width="18" height="18" fill="${item[1]}"></rect><text x="${x + 26}" y="${y + 14}">${svgEscape(item[0])}</text>`;
+    }).join("");
+    const mappedRows = rows
+      .filter((row) => Number.isFinite(Number(row.living_registered_ratio)))
+      .sort((a, b) => Number(b.living_registered_ratio) - Number(a.living_registered_ratio));
+    const topText = mappedRows
+      .slice(0, 5)
+      .map((row, index) => `${index + 1}. ${row.region} ${Number(row.living_registered_ratio).toFixed(1)}배`)
+      .join(" · ");
+    return `
+      <div class="sigungu-slope-map-wrap">
+        <svg class="sigungu-slope-map-svg" viewBox="0 0 ${width} ${height}" role="img" aria-label="주민등록인구 대비 생활인구 배율 지도">
+          <text class="sigungu-map-title" x="28" y="32">${svgEscape(meta.title || "시군구별 생활인구 배율")}</text>
+          <text class="sigungu-map-subtitle" x="28" y="56">2025년 7-9월 평균 생활인구 ÷ 주민등록인구, 인구감소지역 공표 대상</text>
+          <g>${paths}</g>
+          <text class="sigungu-map-note" x="28" y="790">색이 진할수록 주민등록인구보다 생활인구가 큰 지역이다. 회색은 이번 공표자료에 포함되지 않은 시군구다.</text>
+          <g class="sigungu-map-legend">${legend}</g>
+          <text class="sigungu-map-top" x="28" y="880">${svgEscape(topText)}</text>
+        </svg>
+      </div>`;
+  }
+
   function renderSidoNetMigrationPanel(rows) {
     const regionOrder = [
       "서울특별시", "부산광역시", "대구광역시", "인천광역시", "광주광역시", "대전광역시",
@@ -937,6 +1027,43 @@
             }
           }
         };
+      } else if (id === "mobile_outside_migration_by_sex") {
+        const years = Array.from(new Map(
+          rows
+            .slice()
+            .sort((a, b) => chartNumber(a.year) - chartNumber(b.year))
+            .map((row) => [row.year_label, row.year_label])
+        ).values());
+        const sexes = ["남성", "여성"];
+        const colors = ["rgba(37,99,235,1)", "rgba(185,28,28,1)"];
+        config = {
+          type: "line",
+          data: {
+            labels: years,
+            datasets: sexes.map((sex, index) => ({
+              label: sex,
+              data: years.map((year) => {
+                const row = rows.find((item) => item.sex === sex && item.year_label === year);
+                return row ? chartNumber(row.avg_outside_100m) : null;
+              }),
+              borderColor: colors[index],
+              backgroundColor: colors[index].replace("1)", ".12)"),
+              tension: 0.25,
+              pointRadius: 3
+            }))
+          },
+          options: {
+            ...common,
+            scales: {
+              x: { grid: { display: false }, title: { display: true, text: "연도" } },
+              y: {
+                grid: { color: "rgba(15,23,42,.08)" },
+                ticks: { callback: (value) => `${Number(value).toFixed(1)}백만` },
+                title: { display: true, text: "주차별 일평균 관외 이동건수(백만 건)" }
+              }
+            }
+          }
+        };
       } else if (id === "living_population_age_component") {
         const components = Array.from(new Map(
           rows
@@ -1112,6 +1239,13 @@
             }
           }
         };
+      } else if (id === "living_population_ratio_map") {
+        const parent = canvas.parentElement;
+        if (!parent) return;
+        canvas.remove();
+        parent.classList.add("sigungu-slope-map-chart");
+        parent.innerHTML = renderLivingPopulationRatioMap(rows);
+        return;
       } else if (["sigungu_population_slope_map", "sigungu_older_population_slope_map", "sigungu_working_age_population_slope_map"].includes(id)) {
         const parent = canvas.parentElement;
         if (!parent) return;
