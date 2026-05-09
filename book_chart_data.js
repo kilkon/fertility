@@ -7681,6 +7681,424 @@ window.populationBookCharts = {
         "census_minus_projection_10k": 5.4
       }
     ],
+    "resident_registration_2010_jump": [
+      {
+        "year": 2001,
+        "registered_population": 48021543,
+        "projection_population": 47370164,
+        "annual_change": 288985.0,
+        "annual_change_10k": 28.9,
+        "annual_growth_pct": 0.605,
+        "registered_population_million": 48.022,
+        "projection_annual_change": 362053.0,
+        "projection_annual_change_10k": 36.2,
+        "is_2010": false
+      },
+      {
+        "year": 2002,
+        "registered_population": 48229948,
+        "projection_population": 47644736,
+        "annual_change": 208405.0,
+        "annual_change_10k": 20.8,
+        "annual_growth_pct": 0.434,
+        "registered_population_million": 48.23,
+        "projection_annual_change": 274572.0,
+        "projection_annual_change_10k": 27.5,
+        "is_2010": false
+      },
+      {
+        "year": 2003,
+        "registered_population": 48386823,
+        "projection_population": 47892330,
+        "annual_change": 156875.0,
+        "annual_change_10k": 15.7,
+        "annual_growth_pct": 0.325,
+        "registered_population_million": 48.387,
+        "projection_annual_change": 247594.0,
+        "projection_annual_change_10k": 24.8,
+        "is_2010": false
+      },
+      {
+        "year": 2004,
+        "registered_population": 48583805,
+        "projection_population": 48082519,
+        "annual_change": 196982.0,
+        "annual_change_10k": 19.7,
+        "annual_growth_pct": 0.407,
+        "registered_population_million": 48.584,
+        "projection_annual_change": 190189.0,
+        "projection_annual_change_10k": 19.0,
+        "is_2010": false
+      },
+      {
+        "year": 2005,
+        "registered_population": 48782274,
+        "projection_population": 48184561,
+        "annual_change": 198469.0,
+        "annual_change_10k": 19.8,
+        "annual_growth_pct": 0.409,
+        "registered_population_million": 48.782,
+        "projection_annual_change": 102042.0,
+        "projection_annual_change_10k": 10.2,
+        "is_2010": false
+      },
+      {
+        "year": 2006,
+        "registered_population": 48991779,
+        "projection_population": 48438292,
+        "annual_change": 209505.0,
+        "annual_change_10k": 21.0,
+        "annual_growth_pct": 0.429,
+        "registered_population_million": 48.992,
+        "projection_annual_change": 253731.0,
+        "projection_annual_change_10k": 25.4,
+        "is_2010": false
+      },
+      {
+        "year": 2007,
+        "registered_population": 49268928,
+        "projection_population": 48683638,
+        "annual_change": 277149.0,
+        "annual_change_10k": 27.7,
+        "annual_growth_pct": 0.566,
+        "registered_population_million": 49.269,
+        "projection_annual_change": 245346.0,
+        "projection_annual_change_10k": 24.5,
+        "is_2010": false
+      },
+      {
+        "year": 2008,
+        "registered_population": 49540367,
+        "projection_population": 49054708,
+        "annual_change": 271439.0,
+        "annual_change_10k": 27.1,
+        "annual_growth_pct": 0.551,
+        "registered_population_million": 49.54,
+        "projection_annual_change": 371070.0,
+        "projection_annual_change_10k": 37.1,
+        "is_2010": false
+      },
+      {
+        "year": 2009,
+        "registered_population": 49773145,
+        "projection_population": 49307835,
+        "annual_change": 232778.0,
+        "annual_change_10k": 23.3,
+        "annual_growth_pct": 0.47,
+        "registered_population_million": 49.773,
+        "projection_annual_change": 253127.0,
+        "projection_annual_change_10k": 25.3,
+        "is_2010": false
+      },
+      {
+        "year": 2010,
+        "registered_population": 50515666,
+        "projection_population": 49554112,
+        "annual_change": 742521.0,
+        "annual_change_10k": 74.3,
+        "annual_growth_pct": 1.492,
+        "registered_population_million": 50.516,
+        "projection_annual_change": 246277.0,
+        "projection_annual_change_10k": 24.6,
+        "is_2010": true
+      },
+      {
+        "year": 2011,
+        "registered_population": 50734284,
+        "projection_population": 49936638,
+        "annual_change": 218618.0,
+        "annual_change_10k": 21.9,
+        "annual_growth_pct": 0.433,
+        "registered_population_million": 50.734,
+        "projection_annual_change": 382526.0,
+        "projection_annual_change_10k": 38.3,
+        "is_2010": false
+      },
+      {
+        "year": 2012,
+        "registered_population": 50948272,
+        "projection_population": 50199853,
+        "annual_change": 213988.0,
+        "annual_change_10k": 21.4,
+        "annual_growth_pct": 0.422,
+        "registered_population_million": 50.948,
+        "projection_annual_change": 263215.0,
+        "projection_annual_change_10k": 26.3,
+        "is_2010": false
+      },
+      {
+        "year": 2013,
+        "registered_population": 51141463,
+        "projection_population": 50428893,
+        "annual_change": 193191.0,
+        "annual_change_10k": 19.3,
+        "annual_growth_pct": 0.379,
+        "registered_population_million": 51.141,
+        "projection_annual_change": 229040.0,
+        "projection_annual_change_10k": 22.9,
+        "is_2010": false
+      },
+      {
+        "year": 2014,
+        "registered_population": 51327916,
+        "projection_population": 50746659,
+        "annual_change": 186453.0,
+        "annual_change_10k": 18.6,
+        "annual_growth_pct": 0.365,
+        "registered_population_million": 51.328,
+        "projection_annual_change": 317766.0,
+        "projection_annual_change_10k": 31.8,
+        "is_2010": false
+      },
+      {
+        "year": 2015,
+        "registered_population": 51529338,
+        "projection_population": 51014947,
+        "annual_change": 201422.0,
+        "annual_change_10k": 20.1,
+        "annual_growth_pct": 0.392,
+        "registered_population_million": 51.529,
+        "projection_annual_change": 268288.0,
+        "projection_annual_change_10k": 26.8,
+        "is_2010": false
+      },
+      {
+        "year": 2016,
+        "registered_population": 51696216,
+        "projection_population": 51217803,
+        "annual_change": 166878.0,
+        "annual_change_10k": 16.7,
+        "annual_growth_pct": 0.324,
+        "registered_population_million": 51.696,
+        "projection_annual_change": 202856.0,
+        "projection_annual_change_10k": 20.3,
+        "is_2010": false
+      },
+      {
+        "year": 2017,
+        "registered_population": 51778544,
+        "projection_population": 51361911,
+        "annual_change": 82328.0,
+        "annual_change_10k": 8.2,
+        "annual_growth_pct": 0.159,
+        "registered_population_million": 51.779,
+        "projection_annual_change": 144108.0,
+        "projection_annual_change_10k": 14.4,
+        "is_2010": false
+      },
+      {
+        "year": 2018,
+        "registered_population": 51826059,
+        "projection_population": 51585058,
+        "annual_change": 47515.0,
+        "annual_change_10k": 4.8,
+        "annual_growth_pct": 0.092,
+        "registered_population_million": 51.826,
+        "projection_annual_change": 223147.0,
+        "projection_annual_change_10k": 22.3,
+        "is_2010": false
+      },
+      {
+        "year": 2019,
+        "registered_population": 51849861,
+        "projection_population": 51764822,
+        "annual_change": 23802.0,
+        "annual_change_10k": 2.4,
+        "annual_growth_pct": 0.046,
+        "registered_population_million": 51.85,
+        "projection_annual_change": 179764.0,
+        "projection_annual_change_10k": 18.0,
+        "is_2010": false
+      },
+      {
+        "year": 2020,
+        "registered_population": 51829023,
+        "projection_population": 51836239,
+        "annual_change": -20838.0,
+        "annual_change_10k": -2.1,
+        "annual_growth_pct": -0.04,
+        "registered_population_million": 51.829,
+        "projection_annual_change": 71417.0,
+        "projection_annual_change_10k": 7.1,
+        "is_2010": false
+      },
+      {
+        "year": 2021,
+        "registered_population": 51638809,
+        "projection_population": 51769539,
+        "annual_change": -190214.0,
+        "annual_change_10k": -19.0,
+        "annual_growth_pct": -0.367,
+        "registered_population_million": 51.639,
+        "projection_annual_change": -66700.0,
+        "projection_annual_change_10k": -6.7,
+        "is_2010": false
+      },
+      {
+        "year": 2022,
+        "registered_population": 51439038,
+        "projection_population": 51672569,
+        "annual_change": -199771.0,
+        "annual_change_10k": -20.0,
+        "annual_growth_pct": -0.387,
+        "registered_population_million": 51.439,
+        "projection_annual_change": -96970.0,
+        "projection_annual_change_10k": -9.7,
+        "is_2010": false
+      },
+      {
+        "year": 2023,
+        "registered_population": 51325329,
+        "projection_population": 51712619,
+        "annual_change": -113709.0,
+        "annual_change_10k": -11.4,
+        "annual_growth_pct": -0.221,
+        "registered_population_million": 51.325,
+        "projection_annual_change": 40050.0,
+        "projection_annual_change_10k": 4.0,
+        "is_2010": false
+      },
+      {
+        "year": 2024,
+        "registered_population": 51217221,
+        "projection_population": 51751065,
+        "annual_change": -108108.0,
+        "annual_change_10k": -10.8,
+        "annual_growth_pct": -0.211,
+        "registered_population_million": 51.217,
+        "projection_annual_change": 38446.0,
+        "projection_annual_change_10k": 3.8,
+        "is_2010": false
+      }
+    ],
+    "resident_registration_centenarian_trend": [
+      {
+        "year": 2008,
+        "population_100_plus": 2335,
+        "total_population": 49540367,
+        "share_100_plus_per_100k": 4.71,
+        "annual_change_100_plus": NaN
+      },
+      {
+        "year": 2009,
+        "population_100_plus": 2599,
+        "total_population": 49773145,
+        "share_100_plus_per_100k": 5.22,
+        "annual_change_100_plus": 264.0
+      },
+      {
+        "year": 2010,
+        "population_100_plus": 11130,
+        "total_population": 50515666,
+        "share_100_plus_per_100k": 22.03,
+        "annual_change_100_plus": 8531.0
+      },
+      {
+        "year": 2011,
+        "population_100_plus": 11634,
+        "total_population": 50734284,
+        "share_100_plus_per_100k": 22.93,
+        "annual_change_100_plus": 504.0
+      },
+      {
+        "year": 2012,
+        "population_100_plus": 12657,
+        "total_population": 50948272,
+        "share_100_plus_per_100k": 24.84,
+        "annual_change_100_plus": 1023.0
+      },
+      {
+        "year": 2013,
+        "population_100_plus": 13793,
+        "total_population": 51141463,
+        "share_100_plus_per_100k": 26.97,
+        "annual_change_100_plus": 1136.0
+      },
+      {
+        "year": 2014,
+        "population_100_plus": 15006,
+        "total_population": 51327916,
+        "share_100_plus_per_100k": 29.24,
+        "annual_change_100_plus": 1213.0
+      },
+      {
+        "year": 2015,
+        "population_100_plus": 16209,
+        "total_population": 51529338,
+        "share_100_plus_per_100k": 31.46,
+        "annual_change_100_plus": 1203.0
+      },
+      {
+        "year": 2016,
+        "population_100_plus": 17562,
+        "total_population": 51696216,
+        "share_100_plus_per_100k": 33.97,
+        "annual_change_100_plus": 1353.0
+      },
+      {
+        "year": 2017,
+        "population_100_plus": 17850,
+        "total_population": 51778544,
+        "share_100_plus_per_100k": 34.47,
+        "annual_change_100_plus": 288.0
+      },
+      {
+        "year": 2018,
+        "population_100_plus": 18783,
+        "total_population": 51826059,
+        "share_100_plus_per_100k": 36.24,
+        "annual_change_100_plus": 933.0
+      },
+      {
+        "year": 2019,
+        "population_100_plus": 20160,
+        "total_population": 51849861,
+        "share_100_plus_per_100k": 38.88,
+        "annual_change_100_plus": 1377.0
+      },
+      {
+        "year": 2020,
+        "population_100_plus": 21912,
+        "total_population": 51829023,
+        "share_100_plus_per_100k": 42.28,
+        "annual_change_100_plus": 1752.0
+      },
+      {
+        "year": 2021,
+        "population_100_plus": 7961,
+        "total_population": 51638809,
+        "share_100_plus_per_100k": 15.42,
+        "annual_change_100_plus": -13951.0
+      },
+      {
+        "year": 2022,
+        "population_100_plus": 7733,
+        "total_population": 51439038,
+        "share_100_plus_per_100k": 15.03,
+        "annual_change_100_plus": -228.0
+      },
+      {
+        "year": 2023,
+        "population_100_plus": 8537,
+        "total_population": 51325329,
+        "share_100_plus_per_100k": 16.63,
+        "annual_change_100_plus": 804.0
+      },
+      {
+        "year": 2024,
+        "population_100_plus": 8577,
+        "total_population": 51217221,
+        "share_100_plus_per_100k": 16.75,
+        "annual_change_100_plus": 40.0
+      },
+      {
+        "year": 2025,
+        "population_100_plus": 8726,
+        "total_population": 51117378,
+        "share_100_plus_per_100k": 17.07,
+        "annual_change_100_plus": 149.0
+      }
+    ],
     "sigungu_population_slope_map": [
       {
         "C1_NM": "종로구",
@@ -80120,6 +80538,20 @@ window.populationBookCharts = {
       "csv": "population_measure_gap.csv",
       "source": "KOSIS DT_1B040A3, INH_1IN1503_01, DT_1BPB002와 통계청 2000·2005·2010 인구주택총조사 결과를 이용해 차이 계산",
       "note": "절대 인구 규모가 비슷해 보일 때는 기준 간 차이를 따로 그려야 외국인 포함, 국내 상주 기준, 추계 기준의 효과가 드러난다. 총조사 차이는 조사값이 있는 연도만 해석한다."
+    },
+    "resident_registration_2010_jump": {
+      "title": "주민등록인구의 2010년 단절: 전년 대비 증가분",
+      "kind": "bar",
+      "csv": "resident_registration_2010_jump.csv",
+      "source": "KOSIS DT_1B040A3 주민등록인구현황(전국, 12월); 행정안전부 주민등록 인구통계 작성기준 변경 보도자료(2010.1.29, 2010.9.20)",
+      "note": "2009년 10월 거주불명등록 제도 시행과 2010년 거주불명등록자 통계 포함은 주민등록인구 장기 시계열에 단절을 만든다. 2010년 증가는 자연증가나 이동만으로 해석할 수 없다."
+    },
+    "resident_registration_centenarian_trend": {
+      "title": "100세 이상 주민등록인구 추세",
+      "kind": "line",
+      "csv": "resident_registration_centenarian_trend.csv",
+      "source": "KOSIS DT_1B04006 행정구역(시군구)별/1세별 주민등록인구, 전국, 전체 성별, 2008-2025",
+      "note": "100세 이상 인구는 장수 증가뿐 아니라 장기 거주불명자 조사와 주민등록 말소·정리 방식에 민감하다. 2021년 급감은 통계가 생물학적 고령화만을 반영하지 않는다는 점을 보여준다."
     },
     "sigungu_population_slope_map": {
       "title": "시군구 인구 변화 속도: 연도 회귀계수(2004-2024)",

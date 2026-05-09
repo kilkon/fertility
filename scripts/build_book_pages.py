@@ -59,12 +59,18 @@ BOOK = [
             },
             {
                 "no": "1.3",
+                "title": "왜 갑자기 2010년에 인구가 증가했는가",
+                "file": "section-1-3-2010-registration-jump.html",
+                "chart": "resident_registration_2010_jump",
+            },
+            {
+                "no": "1.4",
                 "title": "인구가 많아야 하는 이유가 있는가",
                 "file": "section-1-3-optimal-population.html",
                 "chart": None,
             },
             {
-                "no": "1.4",
+                "no": "1.5",
                 "title": "출산율은 어떻게 다양하게 측정되는가",
                 "file": "section-1-4-fertility-measures.html",
                 "chart": "fertility_measure_summary",
@@ -409,6 +415,20 @@ CHART_META = {
         "csv": "population_measure_gap.csv",
         "source": "KOSIS DT_1B040A3, INH_1IN1503_01, DT_1BPB002와 통계청 2000·2005·2010 인구주택총조사 결과를 이용해 차이 계산",
         "note": "절대 인구 규모가 비슷해 보일 때는 기준 간 차이를 따로 그려야 외국인 포함, 국내 상주 기준, 추계 기준의 효과가 드러난다. 총조사 차이는 조사값이 있는 연도만 해석한다.",
+    },
+    "resident_registration_2010_jump": {
+        "title": "주민등록인구의 2010년 단절: 전년 대비 증가분",
+        "kind": "bar",
+        "csv": "resident_registration_2010_jump.csv",
+        "source": "KOSIS DT_1B040A3 주민등록인구현황(전국, 12월); 행정안전부 주민등록 인구통계 작성기준 변경 보도자료(2010.1.29, 2010.9.20)",
+        "note": "2009년 10월 거주불명등록 제도 시행과 2010년 거주불명등록자 통계 포함은 주민등록인구 장기 시계열에 단절을 만든다. 2010년 증가는 자연증가나 이동만으로 해석할 수 없다.",
+    },
+    "resident_registration_centenarian_trend": {
+        "title": "100세 이상 주민등록인구 추세",
+        "kind": "line",
+        "csv": "resident_registration_centenarian_trend.csv",
+        "source": "KOSIS DT_1B04006 행정구역(시군구)별/1세별 주민등록인구, 전국, 전체 성별, 2008-2025",
+        "note": "100세 이상 인구는 장수 증가뿐 아니라 장기 거주불명자 조사와 주민등록 말소·정리 방식에 민감하다. 2021년 급감은 통계가 생물학적 고령화만을 반영하지 않는다는 점을 보여준다.",
     },
     "sigungu_population_slope_map": {
         "title": "시군구 인구 변화 속도: 연도 회귀계수(2004-2024)",
@@ -1074,6 +1094,7 @@ CHART_META = {
 SECTION_SUPPLEMENTAL_CHARTS = {
     "section-1-1-age-structure.html": ["national_population_pressure"],
     "section-1-2-population-measures.html": ["population_measure_gap"],
+    "section-1-3-2010-registration-jump.html": ["resident_registration_centenarian_trend"],
     "section-1-4-fertility-measures.html": ["fertility_asfr_shift", "cohort_fertility_by_birth_year", "mean_birth_age_order"],
     "section-2-5-international-low-fertility.html": ["international_tfr_europe", "fertility_family_structure_comparison"],
     "section-2-1-housing-support-marriage-birth.html": [
@@ -1590,6 +1611,22 @@ SECTION_DATA_EXPANSION = {
             "files": ["data/sigungu_aging_2024.csv", "map_data.js"],
             "analysis": "시군구별 인구 집중도, 상위·하위 분위, 고령화율 지도를 함께 만든다.",
             "interpretation": "전국 감소보다 중요한 것은 감소와 집중이 동시에 진행되는 공간 구조다.",
+        },
+    ],
+    "section-1-3-2010-registration-jump.html": [
+        {
+            "question": "2010년 주민등록인구 증가는 실제 인구 증가였는가, 통계 기준의 변화였는가?",
+            "data": "KOSIS DT_1B040A3 주민등록인구현황, 행정안전부 거주불명등록 제도 보도자료",
+            "files": ["data/derived/resident_registration_2010_jump.csv", "data/population_measure_comparison.csv"],
+            "analysis": "전국 주민등록인구의 전년 대비 증가분을 계산하고 2010년 증가분을 주변 연도와 비교한다.",
+            "interpretation": "2010년의 큰 증가는 출생·사망·이동의 순수한 결과라기보다 거주불명등록자 포함이라는 행정 기준 변화가 만든 시계열 단절이다.",
+        },
+        {
+            "question": "100세 이상 인구는 왜 고령화보다 더 민감하게 움직이는가?",
+            "data": "KOSIS DT_1B04006 전국 1세별 주민등록인구, 2008-2025년",
+            "files": ["data/resident_registration_national_age_DT_1B04006.csv", "data/derived/resident_registration_centenarian_trend.csv"],
+            "analysis": "전국 주민등록인구 중 100세 이상 인구와 전체 인구 10만 명당 100세 이상 인구를 계산한다.",
+            "interpretation": "100세 이상 인구는 장수 증가의 신호이면서 동시에 거주불명자 정리와 말소 기준 변화에 취약한 행정통계의 민감한 구간이다.",
         },
     ],
     "section-2-1-population-growth-regions.html": [
@@ -2981,6 +3018,37 @@ def build_derived_data() -> dict[str, list[dict[str, object]]]:
     measure_gap["census_minus_projection_10k"] = (measure_gap["census_minus_projection"] / 10_000).round(1)
     write_csv(measure_gap, "population_measure_gap.csv")
     charts["population_measure_gap"] = measure_gap.to_dict("records")
+
+    registration_jump = measure[["year", "registered_population", "projection_population"]].copy()
+    registration_jump["annual_change"] = registration_jump["registered_population"].diff()
+    registration_jump["annual_change_10k"] = (registration_jump["annual_change"] / 10_000).round(1)
+    registration_jump["annual_growth_pct"] = (registration_jump["registered_population"].pct_change() * 100).round(3)
+    registration_jump["registered_population_million"] = (registration_jump["registered_population"] / 1_000_000).round(3)
+    registration_jump["projection_annual_change"] = registration_jump["projection_population"].diff()
+    registration_jump["projection_annual_change_10k"] = (registration_jump["projection_annual_change"] / 10_000).round(1)
+    registration_jump["is_2010"] = registration_jump["year"].eq(2010)
+    registration_jump = registration_jump[registration_jump["year"].between(2001, 2024)]
+    write_csv(registration_jump, "resident_registration_2010_jump.csv")
+    charts["resident_registration_2010_jump"] = registration_jump.to_dict("records")
+
+    centenarian_path = DATA / "resident_registration_national_age_DT_1B04006.csv"
+    if centenarian_path.exists():
+        centenarian_raw = pd.read_csv(centenarian_path)
+        centenarian_raw["population"] = pd.to_numeric(centenarian_raw["population"], errors="coerce")
+        centenarian = centenarian_raw[centenarian_raw["C2_NM"].isin(["계", "100세 이상"])].pivot_table(
+            index="year",
+            columns="C2_NM",
+            values="population",
+            aggfunc="first",
+        ).reset_index()
+        centenarian = centenarian.rename(columns={"계": "total_population", "100세 이상": "population_100_plus"})
+        centenarian["population_100_plus"] = pd.to_numeric(centenarian["population_100_plus"], errors="coerce")
+        centenarian["total_population"] = pd.to_numeric(centenarian["total_population"], errors="coerce")
+        centenarian["share_100_plus_per_100k"] = (centenarian["population_100_plus"] / centenarian["total_population"] * 100_000).round(2)
+        centenarian["annual_change_100_plus"] = centenarian["population_100_plus"].diff()
+        centenarian = centenarian.sort_values("year")
+        write_csv(centenarian, "resident_registration_centenarian_trend.csv")
+        charts["resident_registration_centenarian_trend"] = centenarian.to_dict("records")
 
     sigungu_slope_map_path = DERIVED / "sigungu_population_trend_map_values.csv"
     if sigungu_slope_map_path.exists():

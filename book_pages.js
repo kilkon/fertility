@@ -1137,6 +1137,94 @@
             }
           }
         };
+      } else if (id === "resident_registration_2010_jump") {
+        config = {
+          type: "bar",
+          data: {
+            labels: rows.map((row) => row.year),
+            datasets: [
+              {
+                label: "전년 대비 주민등록인구 증가분",
+                data: rows.map((row) => chartNumber(row.annual_change_10k)),
+                backgroundColor: rows.map((row) => row.is_2010 ? "rgba(185,28,28,.82)" : "rgba(100,116,139,.48)"),
+                borderColor: rows.map((row) => row.is_2010 ? "rgba(185,28,28,1)" : "rgba(100,116,139,1)"),
+                borderWidth: 1
+              }
+            ]
+          },
+          options: {
+            ...common,
+            plugins: {
+              ...common.plugins,
+              tooltip: {
+                callbacks: {
+                  label: (context) => `${context.dataset.label}: ${formatKoNumber(context.parsed.y, 1)}만 명`
+                }
+              }
+            },
+            scales: {
+              ...common.scales,
+              y: {
+                ...common.scales.y,
+                title: { display: true, text: "증가분(만 명)" },
+                ticks: {
+                  callback: (value) => `${Number(value).toFixed(0)}`
+                }
+              }
+            }
+          }
+        };
+      } else if (id === "resident_registration_centenarian_trend") {
+        config = {
+          type: "line",
+          data: {
+            labels: rows.map((row) => row.year),
+            datasets: [
+              {
+                ...lineDataset("100세 이상 인구", rows, "population_100_plus", "rgba(185,28,28,1)"),
+                yAxisID: "y"
+              },
+              {
+                ...lineDataset("인구 10만 명당 100세 이상", rows, "share_100_plus_per_100k", "rgba(15,118,110,1)"),
+                yAxisID: "y1",
+                borderDash: [5, 4]
+              }
+            ]
+          },
+          options: {
+            ...common,
+            plugins: {
+              ...common.plugins,
+              tooltip: {
+                callbacks: {
+                  label: (context) => {
+                    const suffix = context.dataset.yAxisID === "y1" ? "명/10만 명" : "명";
+                    return `${context.dataset.label}: ${formatKoNumber(context.parsed.y, context.dataset.yAxisID === "y1" ? 2 : 0)}${suffix}`;
+                  }
+                }
+              }
+            },
+            scales: {
+              ...common.scales,
+              y: {
+                ...common.scales.y,
+                title: { display: true, text: "100세 이상 인구(명)" },
+                ticks: {
+                  callback: (value) => formatKoNumber(value)
+                }
+              },
+              y1: {
+                type: "linear",
+                position: "right",
+                grid: { drawOnChartArea: false },
+                title: { display: true, text: "인구 10만 명당(명)" },
+                ticks: {
+                  callback: (value) => Number(value).toFixed(1)
+                }
+              }
+            }
+          }
+        };
       } else if (id === "yeonggwang_cohort") {
         config = {
           type: "bar",
