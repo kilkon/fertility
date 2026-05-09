@@ -24,7 +24,7 @@ from apifunction.kosis import fetch_kosis_statistics, kosis_records_to_dataframe
 DATA = ROOT / "data"
 DERIVED = DATA / "derived"
 START_YEAR = 2010
-END_YEAR = 2024
+END_YEAR = 2025
 AGE_LABEL = "60세이상"
 
 TABLES = {

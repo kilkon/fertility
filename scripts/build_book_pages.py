@@ -27,7 +27,7 @@ MANUSCRIPTS = ROOT / "manuscripts"
 CHAPTER_MANUSCRIPTS = MANUSCRIPTS / "chapters"
 SECTION_MANUSCRIPTS = MANUSCRIPTS / "sections"
 APPENDIX_FILE = "appendix-data-notes.html"
-ASSET_VERSION = "20260509-prose-revision"
+ASSET_VERSION = "20260509-elderly-activity-supplement"
 GITHUB_REPO_URL = "https://github.com/kilkon/fertility"
 
 
@@ -662,11 +662,46 @@ CHART_META = {
         "source": "KOSIS DT_1DE8031S 경제활동인구조사 고령층 부가조사, 매년 5월",
         "note": "2010년과 2025년을 비교해 고령층 노동시장 확대가 인구 증가, 참여 증가, 비경제활동 규모 증가를 동시에 포함한다는 점을 확인한다.",
     },
+    "elderly_activity_life_course_indicators": {
+        "title": "고령층 경제활동 부가조사: 일자리 이탈과 장래 근로 의향",
+        "kind": "line",
+        "csv": "elderly_activity_life_course_indicators.csv",
+        "source": "KOSIS DT_1DE8035S, DT_1DE8036S, DT_1DE8038S, DT_1DE8042S, DT_1DE8044S, DT_1DE8057S 경제활동인구조사 고령층 부가조사, 매년 5월",
+        "note": "55~79세의 주된 일자리 이탈, 구직 경험, 취업 경험, 장래 근로 희망, 희망 근로연령을 연결해 고령층 경제활동을 생애경로 관점에서 읽는다.",
+    },
+    "elderly_activity_exit_reasons_2025": {
+        "title": "2025년 고령층이 주된 일자리를 그만둔 이유",
+        "kind": "bar",
+        "csv": "elderly_activity_exit_reasons_2025.csv",
+        "source": "KOSIS DT_1DE8037S 성별 가장 오래 근무한 일자리를 그만둔 이유, 2025년 5월",
+        "note": "55~79세 중 가장 오래 근무한 일자리를 그만둔 사람을 분모로 각 이유의 비중을 계산했다.",
+    },
+    "elderly_activity_future_work_reasons_2025": {
+        "title": "2025년 고령층이 앞으로도 일하려는 이유",
+        "kind": "bar",
+        "csv": "elderly_activity_future_work_reasons_2025.csv",
+        "source": "KOSIS DT_1DE8044S 성별 장래 근로 희망의사 및 근로 희망사유, 2025년 5월",
+        "note": "55~79세 장래 근로 희망자를 분모로 근로 희망 이유의 비중을 계산했다.",
+    },
+    "elderly_activity_job_preferences_2025": {
+        "title": "2025년 고령층이 원하는 일자리 조건",
+        "kind": "bar",
+        "csv": "elderly_activity_job_preferences_2025.csv",
+        "source": "KOSIS DT_1DE8046S, DT_1DE8048S, DT_1DE8050S 경제활동인구조사 고령층 부가조사, 2025년 5월",
+        "note": "장래 근로 희망자를 분모로 일자리 선택기준, 희망 일자리 형태, 희망 임금수준을 비교했다.",
+    },
+    "elderly_employment_structure_2025": {
+        "title": "2025년 고령층 취업자의 산업·직업 분포",
+        "kind": "bar",
+        "csv": "elderly_employment_structure_2025.csv",
+        "source": "KOSIS DT_1DE8061_11 연령/산업별 취업분포, DT_1DE8063_8 연령/직업별 취업분포, 2025년 5월",
+        "note": "55~79세 취업자가 어느 산업과 직업에 집중되어 있는지, 전체 고령층 취업자 중 해당 범주의 비중으로 계산했다.",
+    },
     "elderly_regional_labor_60plus_slopes": {
         "title": "시도별 60세 이상 노동시장 변화 속도",
         "kind": "panel",
         "csv": "elderly_regional_labor_60plus_slopes.csv",
-        "source": "KOSIS DT_1DA7015S 행정구역(시도)/연령별 경제활동인구, DT_1DA7031S 취업자, DT_1DA7095S 실업자, 2010-2024년",
+        "source": "KOSIS DT_1DA7015S 행정구역(시도)/연령별 경제활동인구, DT_1DA7031S 취업자, DT_1DA7095S 실업자, 2010-2025년",
         "note": "각 시도에서 연도를 독립변수로 두고 60세 이상 취업자, 고용률, 실업자, 비경제활동인구를 각각 회귀분석해 연평균 변화 속도를 비교한다.",
     },
     "nta_public_health_age_profile": {
@@ -1067,7 +1102,7 @@ SECTION_SUPPLEMENTAL_CHARTS = {
     "section-4-5-households.html": ["household_population_gap_regions"],
     "section-4-6-housing-demand.html": ["household_population_gap_national"],
     "section-4-7-vacant-housing.html": ["vacant_housing_rate"],
-    "section-5-1-labor-aging.html": ["elderly_labor_dt_1de8031s_summary"],
+    "section-5-1-labor-aging.html": [],
     "section-5-3-lifecycle-fiscal.html": ["fiscal_aging_pressure"],
     "section-5-4-aging-budget.html": ["openfiscal_aging_budget_top_programs", "fiscal_aging_pressure"],
     "section-5-5-elderly-pension.html": ["national_population_pressure"],
@@ -1083,7 +1118,7 @@ SECTION_FRONT_CONTEXT = {
         "paragraphs": [
             "고령층 노동시장을 보기 전에 먼저 확인해야 할 것은 인구구조의 압력이다. 고령화율은 사회 안에서 65세 이상 인구가 차지하는 비중을 보여주고, 노년부양비는 생산연령 인구 100명이 감당해야 하는 고령 인구의 크기를 보여준다. 중위연령은 전체 인구를 나이순으로 세웠을 때 한가운데 있는 사람의 나이다. 이 세 지표가 동시에 올라간다는 것은 한국 사회의 중심 연령이 위로 이동하고, 일하는 세대와 돌봄을 필요로 하는 세대의 비율이 다시 짜이고 있다는 뜻이다.",
             "이 그림은 고령층 고용을 단순히 ‘노인이 더 일한다’는 현상으로 보지 않게 만든다. 생산연령 인구가 얇아지고, 고령 인구의 비중이 커지며, 사회 전체의 중위연령이 높아지면 노동시장은 자연스럽게 더 나이 든 사람의 노동에 의존하게 된다. 기업은 채용 가능한 청년층이 줄어드는 상황을 맞고, 국가는 연금·의료·돌봄 지출이 커지는 상황을 맞는다. 이 두 압력이 만나는 지점에서 고령층 경제활동이 정책의 중심 문제로 떠오른다.",
-            "따라서 5.1절의 질문은 고령층 노동을 예외적 현상으로 보는 데서 출발하지 않는다. 오히려 인구구조가 이미 노동시장에 던진 질문에 답하는 과정이다. 고령층에서 취업자와 고용률이 얼마나 빨리 늘어나는지, 실업자와 비경제활동인구가 어떤 속도로 변하는지를 보는 이유도 여기에 있다. 고령화율과 노년부양비의 상승은 배경지표가 아니라, 뒤따르는 노동시장 변화의 원인을 설명하는 첫 장면이다.",
+            "따라서 6.1절의 질문은 고령층 노동을 예외적 현상으로 보는 데서 출발하지 않는다. 오히려 인구구조가 이미 노동시장에 던진 질문에 답하는 과정이다. 고령층에서 취업자와 고용률이 얼마나 빨리 늘어나는지, 실업자와 비경제활동인구가 어떤 속도로 변하는지를 보는 이유도 여기에 있다. 고령화율과 노년부양비의 상승은 배경지표가 아니라, 뒤따르는 노동시장 변화의 원인을 설명하는 첫 장면이다.",
         ],
     },
 }
@@ -1094,10 +1129,10 @@ SECTION_INDEPENDENT_ANALYSIS = {
         "heading": "지역 회귀분석: 고령층 노동시장의 속도는 지역마다 다르다",
         "chart": "elderly_regional_labor_60plus_slopes",
         "paragraphs": [
-            "전국 추세는 한국 사회가 어느 방향으로 움직이는지 보여주지만, 지역 정책을 설계하려면 변화의 속도가 어디에서 빠른지 따로 보아야 한다. 이를 위해 시도별 60세 이상 자료에 대해 연도만을 독립변수로 두고 단순 회귀분석을 했다. 여기서 회귀계수는 인과효과가 아니라 ‘2010-2024년 동안 매년 평균적으로 얼마나 변했는가’를 요약한 값이다.",
-            "취업자 증가 속도는 경기도가 연평균 75.0천 명으로 가장 크고, 서울특별시가 33.5천 명으로 뒤를 잇는다. 이는 수도권에서 고령 인구 자체가 크게 늘고, 은퇴 이후에도 일하는 사람이 빠르게 증가했음을 뜻한다. 반면 제주도, 울산광역시, 광주광역시처럼 규모가 작은 지역은 증가 폭도 작다. 이 차이는 지역의 고령화 속도뿐 아니라 산업구조와 일자리 규모의 차이까지 함께 반영한다.",
-            "고용률의 회귀계수는 조금 다른 이야기를 한다. 취업자 수의 증가가 큰 지역이 반드시 고용률 상승도 가장 큰 것은 아니다. 강원도는 연평균 1.31%포인트, 충청북도는 1.13%포인트, 대전광역시는 1.05%포인트 상승해 고령층이 실제 노동시장에 편입되는 속도가 빠른 편이다. 반대로 서울은 취업자 수 증가가 크지만 고용률 상승 속도는 0.29%포인트로 낮다. 큰 도시에서는 고령 인구와 취업자가 함께 늘어도, 노동시장 밖에 있는 고령층도 동시에 늘 수 있다.",
-            "실업자는 모든 지역에서 취업자나 비경제활동인구보다 훨씬 작은 폭으로 움직인다. 경기도가 연평균 2.2천 명, 서울특별시가 1.3천 명 정도 증가하는 수준이다. 그래서 고령층 노동 문제를 실업률만으로 읽으면 핵심을 놓치기 쉽다. 더 큰 변화는 비경제활동인구에서 나타난다. 경기도는 연평균 62.4천 명, 서울은 43.9천 명씩 늘어, 일하고 있는 고령층과 노동시장 밖에 있는 고령층이 동시에 커지는 구조를 보여준다.",
+            "전국 추세는 한국 사회가 어느 방향으로 움직이는지 보여주지만, 지역 정책을 설계하려면 변화의 속도가 어디에서 빠른지 따로 보아야 한다. 이를 위해 시도별 60세 이상 자료에 대해 연도만을 독립변수로 두고 단순 회귀분석을 했다. 여기서 회귀계수는 인과효과가 아니라 ‘2010-2025년 동안 매년 평균적으로 얼마나 변했는가’를 요약한 값이다.",
+            "취업자 증가 속도는 경기도가 연평균 77.1천 명으로 가장 크고, 서울특별시가 34.7천 명으로 뒤를 잇는다. 이는 수도권에서 고령 인구 자체가 크게 늘고, 은퇴 이후에도 일하는 사람이 빠르게 증가했음을 뜻한다. 경상남도와 부산광역시, 인천광역시도 뒤따르는데, 이 차이는 지역의 고령화 속도뿐 아니라 산업구조와 일자리 규모의 차이까지 함께 반영한다.",
+            "고용률의 회귀계수는 조금 다른 이야기를 한다. 취업자 수의 증가가 큰 지역이 반드시 고용률 상승도 가장 큰 것은 아니다. 강원도는 연평균 1.31%포인트, 세종특별자치시는 1.19%포인트, 충청북도는 1.14%포인트 상승해 고령층이 실제 노동시장에 편입되는 속도가 빠른 편이다. 반대로 큰 도시는 고령 인구와 취업자가 함께 늘어도 노동시장 밖에 있는 고령층도 동시에 늘 수 있다.",
+            "실업자는 모든 지역에서 취업자나 비경제활동인구보다 훨씬 작은 폭으로 움직인다. 그래서 고령층 노동 문제를 실업률만으로 읽으면 핵심을 놓치기 쉽다. 더 큰 변화는 비경제활동인구에서 나타난다. 일하고 있는 고령층과 노동시장 밖에 있는 고령층이 동시에 커지는 구조는, 고령층 정책이 고용정책 하나로 끝날 수 없다는 사실을 보여준다.",
             "이 그림의 결론은 단순하지 않다. 어떤 지역은 고령층 일자리를 더 많이 만들어야 하고, 어떤 지역은 일할 수 없는 고령층의 소득과 돌봄을 더 촘촘하게 보아야 한다. 고령사회 노동정책은 전국 평균 고용률 하나로 설계될 수 없다. 지역별 회귀계수의 분포는 각 지역이 ‘더 오래 일하는 사회’와 ‘일을 멈출 수 없는 사회’ 사이에서 어디쯤 서 있는지 묻는 출발점이다.",
         ],
     },
@@ -1433,7 +1468,7 @@ SECTION_READING_NOTE = {
         "각 패널은 같은 DT_1DE8031S 표에서 나온 매년 5월 값이다. 고령층인구, 경제활동인구, 취업자, 실업자, 비경제활동인구는 천명 단위이고, 고용률과 실업률은 퍼센트 단위다.",
         "55~79세 전체 선은 고령층 노동시장의 총량을 보여준다. 55~64세 선은 정년 전후의 ‘연장된 중년 노동시장’을, 65~79세 선은 제도상 은퇴 이후에도 계속되는 ‘노후 노동시장’을 보여준다.",
         "취업자와 고용률만 보면 고령층 노동 확대가 선명하지만, 비경제활동인구도 함께 늘어난다. 이 절의 핵심은 고령층을 하나의 집단으로 보지 않고, 일할 수 있고 일하고 싶은 사람, 일해야만 하는 사람, 일을 멈춰야 하는 사람을 구분해 읽는 것이다.",
-        "지역별 회귀분석은 전국 고령층 부가조사와 연령 범주가 완전히 같지 않다. KOSIS 시도별 경제활동인구조사에서 공통으로 제공되는 60세 이상을 사용했으며, 회귀계수는 인과효과가 아니라 2010-2024년 사이 지역별 변화 속도를 요약한 값이다.",
+        "지역별 회귀분석은 전국 고령층 부가조사와 연령 범주가 완전히 같지 않다. KOSIS 시도별 경제활동인구조사에서 공통으로 제공되는 60세 이상을 사용했으며, 회귀계수는 인과효과가 아니라 2010-2025년 사이 지역별 변화 속도를 요약한 값이다.",
     ],
     "section-5-2-aging-index.html": [
         "노령화지수의 기준선은 100이다. 100보다 작으면 유소년 인구가 고령 인구보다 많고, 100보다 크면 고령 인구가 유소년 인구보다 많다는 뜻이다.",
@@ -1967,6 +2002,27 @@ SECTION_DATA_EXPANSION = {
             "files": ["data/derived/elderly_labor_dt_1de8031s_trends.csv", "data/derived/elderly_regional_labor_60plus_slopes.csv", "data/regional_elderly_labor_DT_1DA7015S.csv"],
             "analysis": "전국과 지역 모두 비경제활동인구를 취업자·실업자와 별도로 분리해 추세를 본다. 시도별 회귀계수는 노동시장 밖에 있는 고령층 규모가 매년 얼마나 늘었는지 보여준다.",
             "interpretation": "비경제활동인구 증가는 노동시장으로 끌어낼 ‘잠재 인력’만을 뜻하지 않는다. 건강, 돌봄, 은퇴, 구직 포기, 소득보장 조건이 섞여 있기 때문에 고용정책과 복지정책을 함께 읽어야 한다.",
+        },
+        {
+            "question": "고령층은 언제 주된 일자리에서 나오고, 왜 다시 일하려 하는가?",
+            "data": "KOSIS DT_1DE8035S, DT_1DE8036S, DT_1DE8037S, DT_1DE8038S, DT_1DE8042S, DT_1DE8044S, DT_1DE8057S 고령층 부가조사",
+            "files": ["data/derived/elderly_activity_life_course_indicators.csv", "data/derived/elderly_activity_exit_reasons_2025.csv", "data/derived/elderly_activity_future_work_reasons_2025.csv"],
+            "analysis": "평균 근속기간, 평균 이직연령, 지난 1년간 구직·취업 경험, 장래 근로 희망률, 희망 근로연령을 연도별로 연결하고 2025년의 이직 사유와 근로 희망 사유를 분해한다.",
+            "interpretation": "고령층 경제활동은 은퇴 이후의 단순한 재취업 문제가 아니다. 주된 일자리에서 이탈한 뒤 생활비, 건강, 돌봄, 일의 보람이 뒤섞여 다시 노동시장과 연결되는 생애경로 문제다.",
+        },
+        {
+            "question": "고령층은 어떤 조건의 일자리를 원하는가?",
+            "data": "KOSIS DT_1DE8046S, DT_1DE8048S, DT_1DE8050S 고령층 부가조사",
+            "files": ["data/derived/elderly_activity_job_preferences_2025.csv"],
+            "analysis": "장래 근로 희망자를 분모로 일자리 선택기준, 희망 일자리 형태, 희망 임금수준을 성별과 전체 기준으로 비교한다.",
+            "interpretation": "고령층이 원하는 일자리는 단순히 임금이 높은 일만이 아니다. 일의 양과 시간대, 계속 일할 수 있는 가능성, 출퇴근 편의가 핵심 조건으로 떠오른다.",
+        },
+        {
+            "question": "고령층 취업자는 어느 산업과 직업에 집중되어 있는가?",
+            "data": "KOSIS DT_1DE8061_11 연령/산업별 취업분포, DT_1DE8063_8 연령/직업별 취업분포",
+            "files": ["data/derived/elderly_employment_structure_2025.csv"],
+            "analysis": "2025년 55~79세 취업자가 산업·직업별로 어디에 분포하는지 계산하고, 전체 고령층 취업자 중 해당 범주의 비중을 비교한다.",
+            "interpretation": "고령층 노동은 특정 산업의 주변부에만 존재하지 않는다. 서비스·판매, 단순노무, 기능·기계조작, 농림어업, 공공·개인서비스가 고령층 일자리의 실제 지형을 만든다.",
         },
     ],
     "section-5-2-aging-index.html": [
@@ -3988,6 +4044,19 @@ def build_derived_data() -> dict[str, list[dict[str, object]]]:
         elderly_labor_summary = pd.read_csv(elderly_labor_summary_path)
         write_csv(elderly_labor_summary, "elderly_labor_dt_1de8031s_summary.csv")
         charts["elderly_labor_dt_1de8031s_summary"] = elderly_labor_summary.to_dict("records")
+
+    for chart_id, csv_name in [
+        ("elderly_activity_life_course_indicators", "elderly_activity_life_course_indicators.csv"),
+        ("elderly_activity_exit_reasons_2025", "elderly_activity_exit_reasons_2025.csv"),
+        ("elderly_activity_future_work_reasons_2025", "elderly_activity_future_work_reasons_2025.csv"),
+        ("elderly_activity_job_preferences_2025", "elderly_activity_job_preferences_2025.csv"),
+        ("elderly_employment_structure_2025", "elderly_employment_structure_2025.csv"),
+    ]:
+        path = DERIVED / csv_name
+        if path.exists():
+            frame = pd.read_csv(path)
+            write_csv(frame, csv_name)
+            charts[chart_id] = frame.to_dict("records")
 
     regional_elderly_labor_path = DERIVED / "elderly_regional_labor_60plus_trends.csv"
     if regional_elderly_labor_path.exists():

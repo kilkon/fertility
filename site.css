@@ -157,6 +157,27 @@ h1 {
   line-height: 1.72;
 }
 
+.cover-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 900px;
+  margin-top: 24px;
+}
+
+.cover-specs span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 12px;
+  border: 1px solid rgba(15, 118, 110, .22);
+  border-radius: 6px;
+  color: var(--ink);
+  background: rgba(15, 118, 110, .08);
+  font-size: 14px;
+  font-weight: 800;
+}
+
 .author {
   margin: 28px 0 0;
   color: var(--ink);
@@ -194,10 +215,34 @@ h1 {
   background: var(--paper);
 }
 
+.support-qr {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: min(260px, 100%);
+  margin: 26px 0 0;
+}
+
+.support-qr img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.support-qr figcaption {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
 .rights-callout {
   display: block;
   max-width: 820px;
-  margin-top: 34px;
+  margin-top: 28px;
   padding: 18px 20px;
   border: 1px solid var(--line);
   border-left: 4px solid var(--teal);

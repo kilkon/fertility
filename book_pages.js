@@ -1392,6 +1392,176 @@
             }
           }
         };
+      } else if (id === "elderly_activity_life_course_indicators") {
+        const dataRows = rows.slice().sort((a, b) => Number(a.year) - Number(b.year));
+        config = {
+          type: "line",
+          data: {
+            labels: dataRows.map((row) => row.year),
+            datasets: [
+              {
+                label: "장래 근로 희망률",
+                data: dataRows.map((row) => chartNumber(row.future_work_hope_pct)),
+                borderColor: "#0f766e",
+                backgroundColor: "rgba(15,118,110,.12)",
+                tension: 0.25,
+                yAxisID: "rate"
+              },
+              {
+                label: "지난 1년 구직 경험률",
+                data: dataRows.map((row) => chartNumber(row.job_search_experience_pct)),
+                borderColor: "#be123c",
+                backgroundColor: "rgba(190,18,60,.10)",
+                tension: 0.25,
+                yAxisID: "rate"
+              },
+              {
+                label: "지난 1년 취업 경험률",
+                data: dataRows.map((row) => chartNumber(row.employment_experience_pct)),
+                borderColor: "#2563eb",
+                backgroundColor: "rgba(37,99,235,.10)",
+                tension: 0.25,
+                yAxisID: "rate"
+              },
+              {
+                label: "평균 이직연령",
+                data: dataRows.map((row) => chartNumber(row.avg_exit_age)),
+                borderColor: "#b45309",
+                backgroundColor: "rgba(180,83,9,.10)",
+                borderDash: [5, 4],
+                tension: 0.25,
+                yAxisID: "age"
+              },
+              {
+                label: "희망 근로연령",
+                data: dataRows.map((row) => chartNumber(row.desired_work_age)),
+                borderColor: "#111827",
+                backgroundColor: "rgba(17,24,39,.10)",
+                borderDash: [2, 4],
+                tension: 0.25,
+                yAxisID: "age"
+              }
+            ]
+          },
+          options: {
+            ...common,
+            scales: {
+              x: { grid: { display: false }, title: { display: true, text: "조사연도(매년 5월)" } },
+              rate: {
+                position: "left",
+                grid: { color: "rgba(15,23,42,.08)" },
+                title: { display: true, text: "55~79세 중 비중(%)" },
+                ticks: { callback: (value) => `${value}%` }
+              },
+              age: {
+                position: "right",
+                grid: { display: false },
+                title: { display: true, text: "연령(세)" },
+                min: 45,
+                max: 80
+              }
+            }
+          }
+        };
+      } else if (id === "elderly_activity_exit_reasons_2025" || id === "elderly_activity_future_work_reasons_2025") {
+        const displayRows = rows
+          .filter((row) => row.share_pct !== "")
+          .map((row) => ({
+            ...row,
+            cleanCategory: String(row.category || "").replace(/^-/, "").replace(/(.{9})/g, "$1\n"),
+            share: Number(row.share_pct)
+          }))
+          .sort((a, b) => a.share - b.share);
+        config = {
+          type: "bar",
+          data: {
+            labels: displayRows.map((row) => row.cleanCategory),
+            datasets: [
+              {
+                label: "비중(%)",
+                data: displayRows.map((row) => row.share),
+                backgroundColor: id === "elderly_activity_exit_reasons_2025" ? "rgba(185,28,28,.72)" : "rgba(15,118,110,.72)"
+              }
+            ]
+          },
+          options: {
+            ...common,
+            indexAxis: "y",
+            scales: {
+              x: {
+                grid: { color: "rgba(15,23,42,.08)" },
+                title: { display: true, text: "비중(%)" },
+                ticks: { callback: (value) => `${value}%` }
+              },
+              y: { grid: { display: false } }
+            }
+          }
+        };
+      } else if (id === "elderly_activity_job_preferences_2025") {
+        const order = ["일의양과시간대", "임금수준", "계속근로가능성", "일의내용", "과거취업경험연관성", "출퇴근거리 등 편리성", "전일제", "시간제"];
+        const displayRows = rows
+          .filter((row) => row.sex === "계" && ["일자리 선택기준", "희망 일자리 형태"].includes(row.group))
+          .map((row) => ({
+            ...row,
+            label: `${row.group}: ${row.category}`,
+            share: Number(row.share_pct)
+          }))
+          .sort((a, b) => order.indexOf(a.category) - order.indexOf(b.category));
+        config = {
+          type: "bar",
+          data: {
+            labels: displayRows.map((row) => row.label),
+            datasets: [
+              {
+                label: "장래 근로 희망자 중 비중(%)",
+                data: displayRows.map((row) => row.share),
+                backgroundColor: displayRows.map((row) => row.group === "희망 일자리 형태" ? "rgba(37,99,235,.70)" : "rgba(180,83,9,.70)")
+              }
+            ]
+          },
+          options: {
+            ...common,
+            indexAxis: "y",
+            scales: {
+              x: {
+                grid: { color: "rgba(15,23,42,.08)" },
+                title: { display: true, text: "비중(%)" },
+                ticks: { callback: (value) => `${value}%` }
+              },
+              y: { grid: { display: false } }
+            }
+          }
+        };
+      } else if (id === "elderly_employment_structure_2025") {
+        const displayRows = rows
+          .filter((row) => row.dimension === "직업")
+          .map((row) => ({ ...row, share: Number(row.category_share_of_elderly_pct) }))
+          .sort((a, b) => a.share - b.share);
+        config = {
+          type: "bar",
+          data: {
+            labels: displayRows.map((row) => row.category),
+            datasets: [
+              {
+                label: "55~79세 취업자 중 비중(%)",
+                data: displayRows.map((row) => row.share),
+                backgroundColor: "rgba(37,99,235,.72)"
+              }
+            ]
+          },
+          options: {
+            ...common,
+            indexAxis: "y",
+            scales: {
+              x: {
+                grid: { color: "rgba(15,23,42,.08)" },
+                title: { display: true, text: "비중(%)" },
+                ticks: { callback: (value) => `${value}%` }
+              },
+              y: { grid: { display: false } }
+            }
+          }
+        };
       } else if (id === "elderly_regional_labor_60plus_slopes") {
         const parent = canvas.parentElement;
         if (!parent) return;
@@ -1451,7 +1621,7 @@
             <article class="regional-slope-panel">
               <svg class="regional-slope-svg" viewBox="0 0 ${width} ${height}" role="img" aria-label="${item} 회귀계수 지역 분포">
                 <text class="panel-chart-title" x="${margin.left}" y="18">${item}</text>
-                <text class="panel-axis-label" x="${margin.left}" y="34">회귀계수: 2010-2024년 연평균 변화 속도</text>
+                <text class="panel-axis-label" x="${margin.left}" y="34">회귀계수: 2010-2025년 연평균 변화 속도</text>
                 ${axisTicks}
                 <line class="regional-slope-zero" x1="${zero}" x2="${zero}" y1="${margin.top - 8}" y2="${height - margin.bottom}"></line>
                 ${dots}
