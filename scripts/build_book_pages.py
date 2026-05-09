@@ -26,7 +26,7 @@ MANUSCRIPTS = ROOT / "manuscripts"
 CHAPTER_MANUSCRIPTS = MANUSCRIPTS / "chapters"
 SECTION_MANUSCRIPTS = MANUSCRIPTS / "sections"
 APPENDIX_FILE = "appendix-data-notes.html"
-ASSET_VERSION = "20260509-anonymous-feedback"
+ASSET_VERSION = "20260509-foreign-stat-gap"
 FEEDBACK_EMAIL = "kilkon@snu.ac.kr"
 PUBLIC_SITE_URL = "https://kilkon.github.io/fertility"
 
