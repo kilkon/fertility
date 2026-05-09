@@ -215,6 +215,15 @@ h1 {
   background: var(--paper);
 }
 
+.device-note {
+  max-width: 620px;
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
 .support-qr {
   display: inline-flex;
   flex-direction: column;
