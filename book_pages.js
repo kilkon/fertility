@@ -354,6 +354,52 @@
             }
           }
         };
+      } else if (id === "pronatalist_policy_country_comparison") {
+        config = {
+          type: "bar",
+          data: {
+            labels: rows.map((row) => row.country),
+            datasets: [
+              {
+                label: "정책 강화 시점",
+                data: rows.map((row) => Number(row.tfr_start)),
+                backgroundColor: "rgba(148,163,184,.68)"
+              },
+              {
+                label: "정책 이후 정점",
+                data: rows.map((row) => Number(row.tfr_peak)),
+                backgroundColor: "rgba(15,118,110,.72)"
+              },
+              {
+                label: "최근 공표값",
+                data: rows.map((row) => Number(row.tfr_latest)),
+                backgroundColor: rows.map((row) => Number(row.change_start_to_latest) >= 0 ? "rgba(37,99,235,.74)" : "rgba(185,28,28,.74)")
+              }
+            ]
+          },
+          options: {
+            ...common,
+            scales: {
+              x: { grid: { display: false }, title: { display: true, text: "국가" } },
+              y: { grid: { color: "rgba(15,23,42,.08)" }, title: { display: true, text: "여성 1명당 출생아 수" }, suggestedMin: 0, suggestedMax: 1.8 }
+            },
+            plugins: {
+              ...common.plugins,
+              tooltip: {
+                callbacks: {
+                  afterBody: (items) => {
+                    const row = rows[items[0].dataIndex];
+                    return [
+                      `정책모형: ${row.policy_model}`,
+                      `기준연도: ${row.start_year} → 정점: ${row.peak_year} → 최근: ${row.latest_year}`,
+                      `평가: ${row.assessment}`
+                    ];
+                  }
+                }
+              }
+            }
+          }
+        };
       } else if (id === "housing_support_policy_budget") {
         config = {
           type: "bar",

@@ -51,6 +51,72 @@ window.populationBookCharts = {
         "evaluation_question": "사업 수와 예산이 아니라 실제 삶의 조건 변화로 평가하고 있는가"
       }
     ],
+    "pronatalist_policy_country_comparison": [
+      {
+        "country": "한국",
+        "policy_model": "종합 패키지형",
+        "main_tools": "현금지원, 부모급여·아동수당, 육아휴직, 보육, 신혼·출산가구 주거지원",
+        "policy_turning_year": 2006,
+        "start_year": 2006,
+        "tfr_start": 1.13,
+        "peak_year": 2015,
+        "tfr_peak": 1.24,
+        "latest_year": 2024,
+        "tfr_latest": 0.75,
+        "change_start_to_latest": -0.38,
+        "assessment": "재정투입은 컸지만 출산율 회복에는 실패했고, 2024년의 반등도 구조적 전환으로 보기는 이르다.",
+        "peak_minus_start": 0.11,
+        "latest_minus_peak": -0.49
+      },
+      {
+        "country": "싱가포르",
+        "policy_model": "고비용 보전·주거 연계형",
+        "main_tools": "Baby Bonus, CDA 공동저축, 육아휴직, 보육보조, HDB 주거·결혼 패키지",
+        "policy_turning_year": 2001,
+        "start_year": 2001,
+        "tfr_start": 1.41,
+        "peak_year": 2012,
+        "tfr_peak": 1.29,
+        "latest_year": 2025,
+        "tfr_latest": 0.87,
+        "change_start_to_latest": -0.54,
+        "assessment": "매우 촘촘한 지원에도 초저출산을 되돌리지 못했다. 비용 보전은 필요조건이지만 충분조건이 아니다.",
+        "peak_minus_start": -0.12,
+        "latest_minus_peak": -0.42
+      },
+      {
+        "country": "헝가리",
+        "policy_model": "혼인·주거·세제 집중형",
+        "main_tools": "가족세액공제, 다자녀 모성 소득세 면제, Baby-expecting loan, CSOK·CSOK Plus 주거대출",
+        "policy_turning_year": 2011,
+        "start_year": 2011,
+        "tfr_start": 1.23,
+        "peak_year": 2021,
+        "tfr_peak": 1.61,
+        "latest_year": 2024,
+        "tfr_latest": 1.4,
+        "change_start_to_latest": 0.17,
+        "assessment": "일정한 반등은 있었지만 대체수준에는 멀고 최근에는 다시 약화되었다. 성과와 비용, 계층 편향을 함께 보아야 한다.",
+        "peak_minus_start": 0.38,
+        "latest_minus_peak": -0.21
+      },
+      {
+        "country": "일본",
+        "policy_model": "아동정책 제도화·일가정양립형",
+        "main_tools": "아동수당 확대, 보육 확충, 남성육아휴직, 고등교육 지원, 어린이미래전략",
+        "policy_turning_year": 1994,
+        "start_year": 1994,
+        "tfr_start": 1.5,
+        "peak_year": 2015,
+        "tfr_peak": 1.45,
+        "latest_year": 2024,
+        "tfr_latest": 1.15,
+        "change_start_to_latest": -0.35,
+        "assessment": "제도는 넓어졌지만 혼인 지연, 청년소득, 직장문화 문제를 충분히 넘지 못해 출산율은 계속 낮아졌다.",
+        "peak_minus_start": -0.05,
+        "latest_minus_peak": -0.3
+      }
+    ],
     "low_fertility_budget_trend": [
       {
         "year": 2020,
@@ -77791,6 +77857,13 @@ window.populationBookCharts = {
       "csv": "low_fertility_major_budget_2026.csv",
       "source": "국회예산정책처 2026년도 예산안 총괄 분석 IV, 기획재정부 제출자료 재구성",
       "note": "2026년 시행계획 기준 전체 저출생 대응 예산이 아니라, 예산안에서 확인되는 주요 사업을 일·가정양립, 양육·돌봄, 주거 분야로 재분류한 부분집합이다."
+    },
+    "pronatalist_policy_country_comparison": {
+      "title": "저출산 정책 강도와 출산율 변화: 한국·싱가포르·헝가리·일본",
+      "kind": "bar",
+      "csv": "pronatalist_policy_country_comparison.csv",
+      "source": "World Bank Fertility Rate, KOSTAT 2024 출생·사망통계 잠정결과, SingStat Births and Fertility, Hungary KSH STADAT, Eurostat demo_find, 일본 후생노동성 2024 인구동태통계, 각국 공식 정책자료 재구성",
+      "note": "각국의 대표적 저출산 정책을 현금·세제, 주거, 돌봄·휴직, 구조개혁 성격으로 요약하고, 정책 강화 이후 합계출산율의 시작점·정점·최근값을 비교했다. 값은 국가별 최신 공표 기준이 달라 추세 판단용으로 읽어야 한다."
     },
     "housing_support_policy_budget": {
       "title": "저출생 대응 주요사업 중 주거 분야 예산",
