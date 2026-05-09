@@ -3,7 +3,7 @@ window.populationBookData = {
     { label: "분석 시군구", value: "5개 군", sub: "영광·강진·고흥·해남·진도" },
     { label: "가장 높은 평균 잔존율", value: "96.1%", sub: "고흥군, 2013-2020년 출생 코호트" },
     { label: "가장 낮은 평균 잔존율", value: "57.8%", sub: "해남군, 2013-2020년 출생 코호트" },
-    { label: "검산 방식", value: "0세→4세", sub: "KOSIS 1세별 주민등록인구" }
+    { label: "점검 방식", value: "0세→4세", sub: "KOSIS 1세별 주민등록인구" }
   ],
   fertility: {
     labels: [2000, 2005, 2010, 2015, 2020, 2021, 2022, 2023, 2024],
