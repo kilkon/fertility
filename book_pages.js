@@ -937,6 +937,133 @@
             }
           }
         };
+      } else if (id === "living_population_age_component") {
+        const components = Array.from(new Map(
+          rows
+            .slice()
+            .sort((a, b) => chartNumber(a.component_order) - chartNumber(b.component_order))
+            .map((row) => [row.component_label, row.component_label])
+        ).values());
+        const ageGroups = Array.from(new Map(
+          rows
+            .slice()
+            .sort((a, b) => chartNumber(a.age_order) - chartNumber(b.age_order))
+            .map((row) => [row.age_group, row.age_group])
+        ).values());
+        const ageColors = ["#94a3b8", "#2563eb", "#0f766e", "#84cc16", "#f59e0b", "#ea580c", "#b91c1c"];
+        config = {
+          type: "bar",
+          data: {
+            labels: components,
+            datasets: ageGroups.map((age, index) => ({
+              label: age,
+              data: components.map((component) => {
+                const row = rows.find((item) => item.component_label === component && item.age_group === age);
+                return row ? chartNumber(row.share_pct) : 0;
+              }),
+              backgroundColor: ageColors[index % ageColors.length]
+            }))
+          },
+          options: {
+            ...common,
+            scales: {
+              x: { stacked: true, grid: { display: false } },
+              y: {
+                stacked: true,
+                min: 0,
+                max: 100,
+                grid: { color: "rgba(15,23,42,.08)" },
+                ticks: { callback: (value) => `${value}%` },
+                title: { display: true, text: "구성비(%)" }
+              }
+            },
+            plugins: {
+              ...common.plugins,
+              tooltip: {
+                callbacks: {
+                  label: (context) => `${context.dataset.label}: ${Number(context.raw).toFixed(1)}%`
+                }
+              }
+            }
+          }
+        };
+      } else if (id === "living_population_sex_component") {
+        const components = Array.from(new Map(
+          rows
+            .slice()
+            .sort((a, b) => chartNumber(a.component_order) - chartNumber(b.component_order))
+            .map((row) => [row.component_label, row.component_label])
+        ).values());
+        const sexes = ["남성", "여성"];
+        const sexColors = ["rgba(37,99,235,.74)", "rgba(185,28,28,.66)"];
+        config = {
+          type: "bar",
+          data: {
+            labels: components,
+            datasets: sexes.map((sex, index) => ({
+              label: sex,
+              data: components.map((component) => {
+                const row = rows.find((item) => item.component_label === component && item.sex === sex);
+                return row ? chartNumber(row.share_pct) : 0;
+              }),
+              backgroundColor: sexColors[index]
+            }))
+          },
+          options: {
+            ...common,
+            scales: {
+              x: { stacked: true, grid: { display: false } },
+              y: {
+                stacked: true,
+                min: 0,
+                max: 100,
+                grid: { color: "rgba(15,23,42,.08)" },
+                ticks: { callback: (value) => `${value}%` },
+                title: { display: true, text: "구성비(%)" }
+              }
+            },
+            plugins: {
+              ...common.plugins,
+              tooltip: {
+                callbacks: {
+                  label: (context) => `${context.dataset.label}: ${Number(context.raw).toFixed(1)}%`
+                }
+              }
+            }
+          }
+        };
+      } else if (id === "living_population_monthly_trend") {
+        const months = Array.from(new Set(rows.slice().sort((a, b) => chartNumber(a.month) - chartNumber(b.month)).map((row) => row.month_label)));
+        const components = ["생활인구 전체", "주민등록인구", "체류인구", "외국인"];
+        const colors = ["rgba(15,118,110,1)", "rgba(100,116,139,1)", "rgba(37,99,235,1)", "rgba(185,28,28,1)"];
+        config = {
+          type: "line",
+          data: {
+            labels: months,
+            datasets: components.map((component, index) => ({
+              label: component,
+              data: months.map((month) => {
+                const row = rows.find((item) => item.component_label === component && item.month_label === month);
+                return row ? chartNumber(row.population_10k) : null;
+              }),
+              borderColor: colors[index],
+              backgroundColor: colors[index].replace("1)", ".12)"),
+              tension: 0.25,
+              pointRadius: 3
+            }))
+          },
+          options: {
+            ...common,
+            scales: {
+              x: { grid: { display: false }, title: { display: true, text: "월" } },
+              y: {
+                grid: { color: "rgba(15,23,42,.08)" },
+                ticks: { callback: (value) => `${Number(value).toLocaleString("ko-KR")}만` },
+                title: { display: true, text: "월별 인구 합계(만 명)" }
+              }
+            }
+          }
+        };
       } else if (id === "mobile_inflow_top_sigungu") {
         const sortedRows = rows
           .slice()

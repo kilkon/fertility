@@ -1080,6 +1080,27 @@ CHART_META = {
         "source": "통계청 통계데이터센터, 통신 모바일 인구이동량 통계 시군구 관내외 유입 자료(~2026.04.26)",
         "note": "2025년 52개 주차의 주차별 일평균 이동건수 평균이다. 거주지와 목적지가 같은 귀가 이동은 집계하지 않으며, 관외는 거주 시군구 밖에서 해당 시군구로 들어온 이동이다.",
     },
+    "living_population_age_component": {
+        "title": "생활인구 구성별 연령 분포",
+        "kind": "bar",
+        "csv": "living_population_2025q3_age_component.csv",
+        "source": "행정안전부·통계청, 2025년 3분기 인구감소지역 생활인구 산정결과",
+        "note": "인구감소지역 공표자료의 2025년 7-9월 월별 값을 합산한 뒤 월평균으로 환산했다. 주민등록인구, 체류인구, 외국인, 생활인구 전체의 연령 구성을 비교한다.",
+    },
+    "living_population_sex_component": {
+        "title": "생활인구 구성별 성별 분포",
+        "kind": "bar",
+        "csv": "living_population_2025q3_sex_component.csv",
+        "source": "행정안전부·통계청, 2025년 3분기 인구감소지역 생활인구 산정결과",
+        "note": "인구감소지역 공표자료의 2025년 7-9월 월별 값을 합산한 뒤 월평균으로 환산했다. 성별 차이는 정주인구와 체류인구가 서로 다른 생활 기능을 갖는지 확인하기 위한 보조 지표다.",
+    },
+    "living_population_monthly_trend": {
+        "title": "생활인구 구성별 월별 변화",
+        "kind": "line",
+        "csv": "living_population_2025q3_monthly_trend.csv",
+        "source": "행정안전부·통계청, 2025년 3분기 인구감소지역 생활인구 산정결과",
+        "note": "2025년 7-9월 3개월 자료이므로 장기 추세가 아니라 여름 성수기에서 초가을로 넘어가는 짧은 계절 변화로 해석해야 한다.",
+    },
     "sido_net_migration_panel": {
         "title": "광역시도별 순이동 추세(2000-2025)",
         "kind": "panel",
@@ -1792,9 +1813,23 @@ SECTION_DATA_EXPANSION = {
                 "data/source/living_population_2025q3_status.xlsx",
                 "data/source/living_population_2025q3_stay_population.xlsx",
                 "data/derived/living_population_2025q3_summary.csv",
+                "data/derived/living_population_2025q3_age_component.csv",
+                "data/derived/living_population_2025q3_sex_component.csv",
+                "data/derived/living_population_2025q3_monthly_trend.csv",
             ],
             "analysis": "2025년 7-9월 월별 생활인구를 주민등록인구, 체류인구, 외국인으로 나누어 평균을 계산하고, 생활인구가 주민등록인구의 몇 배인지 산출했다.",
             "interpretation": "양양·고성·가평처럼 체류와 관광이 강한 지역은 주민등록인구만으로는 실제 생활 수요를 크게 과소평가한다. 다만 생활인구는 정착 인구가 아니라 방문과 체류의 규모이므로 출산 기반과 동일시해서는 안 된다.",
+        },
+        {
+            "question": "생활인구는 어떤 연령과 성별로 구성되어 있으며, 월별로 어떻게 달라지는가?",
+            "data": "행정안전부·통계청 2025년 3분기 인구감소지역 생활인구 산정 결과",
+            "files": [
+                "data/derived/living_population_2025q3_age_component.csv",
+                "data/derived/living_population_2025q3_sex_component.csv",
+                "data/derived/living_population_2025q3_monthly_trend.csv",
+            ],
+            "analysis": "주민등록인구, 체류인구, 외국인, 생활인구 전체를 구성별로 나누어 연령대 비중과 성별 비중을 계산하고, 2025년 7-9월 월별 총량 변화를 비교했다.",
+            "interpretation": "체류인구의 연령·성별 구성이 정주인구와 다르면 생활인구는 단순한 규모 지표를 넘어 지역이 어떤 생활 기능을 갖는지 보여준다. 다만 3개월 자료는 장기 추세가 아니라 계절적 변화의 단서로 읽어야 한다.",
         },
         {
             "question": "사람들은 어느 시군구로 가장 많이 들어오고 있는가?",
@@ -2488,6 +2523,96 @@ def build_derived_data() -> dict[str, list[dict[str, object]]]:
         living_summary = living_summary.sort_values("living_registered_ratio", ascending=False)
         write_csv(living_summary, "living_population_2025q3_summary.csv")
         charts["living_population_ratio_top"] = living_summary.to_dict("records")
+
+        component_labels = {
+            "계": "생활인구 전체",
+            "주민등록인구": "주민등록인구",
+            "체류인구": "체류인구",
+            "외국인": "외국인",
+        }
+        component_order = ["생활인구 전체", "주민등록인구", "체류인구", "외국인"]
+        age_labels = {
+            "under20": "20세 미만",
+            "age20s": "20대",
+            "age30s": "30대",
+            "age40s": "40대",
+            "age50s": "50대",
+            "age60s": "60대",
+            "age70plus": "70세 이상",
+        }
+        monthly_component = (
+            living.groupby(["month", "component"], as_index=False)[
+                ["sex_total", "male", "female", *age_labels.keys()]
+            ]
+            .sum()
+            .assign(component_label=lambda df: df["component"].map(component_labels))
+        )
+        monthly_component = monthly_component[monthly_component["component_label"].notna()].copy()
+        component_summary = (
+            monthly_component.groupby(["component", "component_label"], as_index=False)[
+                ["sex_total", "male", "female", *age_labels.keys()]
+            ]
+            .mean()
+        )
+        component_summary["component_order"] = component_summary["component_label"].map(
+            {name: order for order, name in enumerate(component_order)}
+        )
+
+        age_records = []
+        for _, row in component_summary.iterrows():
+            denominator = row["sex_total"] if row["sex_total"] else np.nan
+            for age_col, age_label in age_labels.items():
+                value = row[age_col]
+                age_records.append(
+                    {
+                        "component": row["component"],
+                        "component_label": row["component_label"],
+                        "component_order": row["component_order"],
+                        "age_group": age_label,
+                        "age_order": list(age_labels).index(age_col),
+                        "population": value,
+                        "population_10k": value / 10000,
+                        "share_pct": value / denominator * 100 if denominator and not pd.isna(denominator) else np.nan,
+                    }
+                )
+        living_age_component = pd.DataFrame(age_records)
+        write_csv(living_age_component, "living_population_2025q3_age_component.csv")
+        charts["living_population_age_component"] = living_age_component.to_dict("records")
+
+        sex_records = []
+        for _, row in component_summary.iterrows():
+            denominator = row["sex_total"] if row["sex_total"] else np.nan
+            for sex_key, sex_label in [("male", "남성"), ("female", "여성")]:
+                value = row[sex_key]
+                sex_records.append(
+                    {
+                        "component": row["component"],
+                        "component_label": row["component_label"],
+                        "component_order": row["component_order"],
+                        "sex": sex_label,
+                        "population": value,
+                        "population_10k": value / 10000,
+                        "share_pct": value / denominator * 100 if denominator and not pd.isna(denominator) else np.nan,
+                    }
+                )
+        living_sex_component = pd.DataFrame(sex_records)
+        write_csv(living_sex_component, "living_population_2025q3_sex_component.csv")
+        charts["living_population_sex_component"] = living_sex_component.to_dict("records")
+
+        living_monthly_trend = monthly_component[
+            ["month", "component", "component_label", "sex_total", "male", "female", *age_labels.keys()]
+        ].copy()
+        living_monthly_trend["component_order"] = living_monthly_trend["component_label"].map(
+            {name: order for order, name in enumerate(component_order)}
+        )
+        living_monthly_trend["month_label"] = living_monthly_trend["month"].astype(str).str.replace(
+            r"^(\d{4})(\d{2})$", r"\1.\2", regex=True
+        )
+        living_monthly_trend["population"] = living_monthly_trend["sex_total"]
+        living_monthly_trend["population_10k"] = living_monthly_trend["population"] / 10000
+        living_monthly_trend = living_monthly_trend.sort_values(["component_order", "month"])
+        write_csv(living_monthly_trend, "living_population_2025q3_monthly_trend.csv")
+        charts["living_population_monthly_trend"] = living_monthly_trend.to_dict("records")
 
     mobile_inflow_path = source_dir / "mobile_inflow_sigungu_20260426.xlsx"
     if mobile_inflow_path.exists():
