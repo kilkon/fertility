@@ -1,0 +1,223 @@
+:root {
+  --ebook-paper: #fffdfa;
+  --ebook-ink: #171a21;
+  --ebook-muted: #5d6470;
+  --ebook-line: #dfe3ea;
+  --ebook-accent: #0f766e;
+  --ebook-accent-2: #b7791f;
+  --ebook-soft: #f4f7f5;
+}
+
+.ebook-cover {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 62rem;
+  min-height: min(76vh, 720px);
+  margin: 0 auto 1.5rem;
+  padding: clamp(2rem, 5vw, 4rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgba(23, 26, 33, 0.16);
+  border-radius: 8px;
+  background:
+    linear-gradient(90deg, rgba(15, 118, 110, 0.08), transparent 34%),
+    linear-gradient(180deg, #fffdfa 0%, #f6f3ed 100%);
+  box-shadow: 0 22px 54px rgba(15, 23, 42, 0.10);
+  color: var(--ebook-ink);
+}
+
+.ebook-cover::before {
+  content: "";
+  position: absolute;
+  inset: 1.1rem auto 1.1rem 1.1rem;
+  width: 0.45rem;
+  background: linear-gradient(180deg, var(--ebook-accent), var(--ebook-accent-2));
+}
+
+.ebook-cover__series {
+  margin: 0 0 1rem;
+  color: var(--ebook-accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.ebook-cover__title {
+  margin: 0;
+  max-width: 12em;
+  font-size: clamp(2.15rem, 6vw, 4.9rem);
+  line-height: 1.08;
+  letter-spacing: 0;
+  font-weight: 850;
+}
+
+.ebook-cover__subtitle {
+  max-width: 44rem;
+  margin: 1.35rem 0 0;
+  color: #384150;
+  font-size: clamp(1rem, 2.1vw, 1.22rem);
+  line-height: 1.85;
+}
+
+.ebook-cover__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 1.2rem;
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--ebook-line);
+  color: var(--ebook-muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.ebook-cover__author {
+  color: var(--ebook-ink);
+  font-weight: 800;
+}
+
+.ebook-textbox {
+  position: relative;
+  border: 1px solid var(--ebook-line);
+  border-radius: 8px;
+  background: rgba(255, 253, 250, 0.96);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.06);
+}
+
+.ebook-textbox__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7rem 0.85rem;
+  border-bottom: 1px solid var(--ebook-line);
+  background: var(--ebook-soft);
+}
+
+.ebook-textbox__label {
+  margin: 0;
+  color: var(--ebook-muted);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ebook-edit-btn {
+  min-height: 2rem;
+  padding: 0 0.72rem;
+  border: 1px solid var(--ebook-line);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--ebook-ink);
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.ebook-edit-btn:hover {
+  border-color: var(--ebook-accent);
+  color: var(--ebook-accent);
+}
+
+.ebook-textbox__body {
+  padding: 1.2rem 1.35rem;
+}
+
+.ebook-visual-block {
+  margin: 1.2rem 0 1.6rem;
+  border: 1px solid var(--ebook-line);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.05);
+}
+
+.ebook-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  background: rgba(15, 23, 42, 0.42);
+  z-index: 9999;
+}
+
+.ebook-modal.open {
+  display: flex;
+}
+
+.ebook-modal__panel {
+  width: min(760px, 100%);
+  max-height: min(820px, calc(100vh - 2rem));
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 30px 80px rgba(15, 23, 42, 0.28);
+}
+
+.ebook-modal__head,
+.ebook-modal__foot {
+  padding: 1rem 1.1rem;
+  border-bottom: 1px solid var(--ebook-line);
+}
+
+.ebook-modal__foot {
+  border-top: 1px solid var(--ebook-line);
+  border-bottom: 0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.55rem;
+}
+
+.ebook-modal__head h2 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.ebook-modal textarea {
+  width: 100%;
+  min-height: 420px;
+  border: 0;
+  padding: 1rem 1.1rem;
+  resize: vertical;
+  font: 0.92rem/1.65 Consolas, "Malgun Gothic", monospace;
+}
+
+.ebook-modal button {
+  min-height: 2.35rem;
+  padding: 0 0.9rem;
+  border: 1px solid var(--ebook-line);
+  border-radius: 6px;
+  background: #fff;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.ebook-modal button[data-primary] {
+  border-color: var(--ebook-accent);
+  background: var(--ebook-accent);
+  color: #fff;
+}
+
+@media (max-width: 760px) {
+  .ebook-cover {
+    min-height: auto;
+    padding: 2rem 1.35rem 2rem 1.75rem;
+  }
+
+  .ebook-cover::before {
+    inset: 1rem auto 1rem 0.8rem;
+    width: 0.28rem;
+  }
+
+  .ebook-textbox__body {
+    padding: 1rem;
+  }
+}
