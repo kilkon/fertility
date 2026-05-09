@@ -27,7 +27,7 @@ MANUSCRIPTS = ROOT / "manuscripts"
 CHAPTER_MANUSCRIPTS = MANUSCRIPTS / "chapters"
 SECTION_MANUSCRIPTS = MANUSCRIPTS / "sections"
 APPENDIX_FILE = "appendix-data-notes.html"
-ASSET_VERSION = "20260509-living-population-map"
+ASSET_VERSION = "20260509-toc-toggle"
 GITHUB_REPO_URL = "https://github.com/kilkon/fertility"
 
 
@@ -5287,7 +5287,12 @@ def build_derived_data() -> dict[str, list[dict[str, object]]]:
 
 
 def nav_html(current: str = "") -> str:
-    parts = ['<nav class="toc" aria-label="책 목차">', '<h2 class="toc-title">인구·저출산·고령화</h2>', '<a href="../index.html">표지</a>']
+    parts = [
+        '<nav class="toc" aria-label="책 목차">',
+        '<button class="toc-toggle" type="button" data-toc-toggle aria-expanded="true">접기</button>',
+        '<h2 class="toc-title">인구·저출산·고령화</h2>',
+        '<a href="../index.html">표지</a>',
+    ]
     for chapter in BOOK:
         cls = "chapter active" if current == chapter["file"] else "chapter"
         parts.append(f'<a class="{cls}" href="../chapters/{chapter["file"]}">{chapter["no"]}. {esc(chapter["title"])}</a>')
@@ -5321,6 +5326,7 @@ def shell(title: str, body: str, current: str, rel: str = "..") -> str:
   <script src="{rel}/question_plan.js?v={ASSET_VERSION}"></script>
   <script src="{rel}/book_chart_data.js?v={ASSET_VERSION}"></script>
   <script src="{rel}/data/geo/sigungu_topo.js?v={ASSET_VERSION}"></script>
+  <script src="{rel}/toc.js?v={ASSET_VERSION}"></script>
   <script src="{rel}/book_pages.js?v={ASSET_VERSION}"></script>
   <script>
     window.MathJax = {{
