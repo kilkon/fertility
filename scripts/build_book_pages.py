@@ -10,7 +10,6 @@ import site
 import sys
 from html import escape
 from pathlib import Path
-from urllib.parse import quote
 
 USER_SITE = site.getusersitepackages()
 if USER_SITE and USER_SITE not in sys.path:
@@ -27,8 +26,9 @@ MANUSCRIPTS = ROOT / "manuscripts"
 CHAPTER_MANUSCRIPTS = MANUSCRIPTS / "chapters"
 SECTION_MANUSCRIPTS = MANUSCRIPTS / "sections"
 APPENDIX_FILE = "appendix-data-notes.html"
-ASSET_VERSION = "20260509-page-nav"
-GITHUB_REPO_URL = "https://github.com/kilkon/fertility"
+ASSET_VERSION = "20260509-anonymous-feedback"
+FEEDBACK_EMAIL = "kilkon@snu.ac.kr"
+PUBLIC_SITE_URL = "https://kilkon.github.io/fertility"
 
 
 BOOK = [
@@ -2519,25 +2519,32 @@ def manuscript_edit_link(path: Path, rel: str = "..") -> str:
 
 
 def page_feedback_link(page_no: str, title: str, file_name: str) -> str:
-    issue_title = quote(f"[의견] {page_no}. {title}", safe="")
-    issue_body = quote(
-        "\n".join(
-            [
-                f"대상 절: {page_no}. {title}",
-                f"파일: {file_name}",
-                "",
-                "남기고 싶은 의견:",
-                "",
-                "근거 자료나 추가로 살펴볼 질문이 있으면 함께 적어주세요.",
-            ]
-        ),
-        safe="",
-    )
-    href = f"{GITHUB_REPO_URL}/issues/new?title={issue_title}&body={issue_body}&labels=reader-feedback"
-    return f"""<div class="manuscript-actions page-feedback-actions">
-    <span class="readonly-note">공개본은 읽기 전용입니다.</span>
-    <a class="manuscript-edit-button feedback-button" href="{esc(href)}" target="_blank" rel="noopener">이 절에 의견 남기기</a>
-  </div>"""
+    subject = f"[대한민국은 정말 사라지는가 의견] {page_no}. {title}"
+    return f"""<details class="feedback-form-box page-feedback-actions">
+    <summary>익명 의견 남기기</summary>
+    <form action="https://formsubmit.co/{FEEDBACK_EMAIL}" method="POST">
+      <input type="hidden" name="_subject" value="{esc(subject)}">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="{PUBLIC_SITE_URL}/feedback-thanks.html">
+      <input type="text" name="_honey" class="feedback-honey" tabindex="-1" autocomplete="off">
+      <input type="hidden" name="대상" value="{esc(page_no)}. {esc(title)}">
+      <input type="hidden" name="파일" value="{esc(file_name)}">
+      <label>
+        <span>이름 또는 별명(선택)</span>
+        <input type="text" name="이름" autocomplete="name" placeholder="익명">
+      </label>
+      <label>
+        <span>답장을 받을 이메일(선택)</span>
+        <input type="email" name="email" autocomplete="email" placeholder="남기지 않아도 됩니다">
+      </label>
+      <label class="feedback-message-field">
+        <span>의견</span>
+        <textarea name="의견" rows="5" required placeholder="오탈자, 해석에 대한 의견, 추가 자료 제안, 더 살펴볼 질문을 자유롭게 남겨주세요."></textarea>
+      </label>
+      <button type="submit">메일로 의견 보내기</button>
+      <p>GitHub 로그인 없이 보낼 수 있습니다. 이름과 이메일을 적지 않으면 익명 의견으로 전달됩니다.</p>
+    </form>
+  </details>"""
 
 
 def slug(text: str) -> str:

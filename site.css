@@ -664,6 +664,112 @@ h1 {
   color: var(--teal);
 }
 
+.feedback-form-box {
+  max-width: 720px;
+  margin-top: 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, .78);
+}
+
+.feedback-form-box summary {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  margin: 0;
+  padding: 9px 13px;
+  color: #ffffff;
+  border-radius: 7px;
+  background: var(--teal);
+  font-size: 13px;
+  font-weight: 850;
+  cursor: pointer;
+  list-style: none;
+}
+
+.feedback-form-box summary::-webkit-details-marker {
+  display: none;
+}
+
+.feedback-form-box[open] summary {
+  margin: 12px 12px 0;
+}
+
+.feedback-form-box form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  padding: 14px 16px 16px;
+}
+
+.feedback-form-box label {
+  display: grid;
+  gap: 6px;
+}
+
+.feedback-form-box label span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.feedback-form-box input,
+.feedback-form-box textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 10px 11px;
+  color: var(--ink);
+  background: #ffffff;
+  font: inherit;
+  font-size: 14px;
+}
+
+.feedback-form-box textarea {
+  min-height: 118px;
+  resize: vertical;
+}
+
+.feedback-message-field,
+.feedback-form-box button,
+.feedback-form-box p {
+  grid-column: 1 / -1;
+}
+
+.feedback-form-box button {
+  justify-self: start;
+  min-height: 40px;
+  padding: 0 16px;
+  border: 1px solid var(--ink);
+  border-radius: 7px;
+  color: #ffffff;
+  background: var(--ink);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 850;
+  cursor: pointer;
+}
+
+.feedback-form-box button:hover {
+  background: #111827;
+}
+
+.feedback-form-box p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.feedback-honey {
+  position: absolute !important;
+  left: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0 !important;
+}
+
 .page-turn-nav {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
@@ -863,6 +969,10 @@ h1 {
   .rights-callout {
     margin-top: 24px;
     padding: 15px 16px;
+  }
+
+  .feedback-form-box form {
+    grid-template-columns: 1fr;
   }
 
   .panel {
