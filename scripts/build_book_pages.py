@@ -27,7 +27,7 @@ MANUSCRIPTS = ROOT / "manuscripts"
 CHAPTER_MANUSCRIPTS = MANUSCRIPTS / "chapters"
 SECTION_MANUSCRIPTS = MANUSCRIPTS / "sections"
 APPENDIX_FILE = "appendix-data-notes.html"
-ASSET_VERSION = "20260509-elderly-activity-supplement"
+ASSET_VERSION = "20260509-living-population-map"
 GITHUB_REPO_URL = "https://github.com/kilkon/fertility"
 
 
