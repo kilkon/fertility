@@ -888,6 +888,103 @@
             }
           }
         };
+      } else if (id === "living_population_ratio_top") {
+        const sortedRows = rows
+          .slice()
+          .filter((row) => Number.isFinite(chartNumber(row.living_registered_ratio)))
+          .sort((a, b) => chartNumber(a.living_registered_ratio) - chartNumber(b.living_registered_ratio))
+          .slice(-20);
+        config = {
+          type: "bar",
+          data: {
+            labels: sortedRows.map((row) => row.region),
+            datasets: [
+              {
+                label: "생활인구 / 주민등록인구",
+                data: sortedRows.map((row) => chartNumber(row.living_registered_ratio)),
+                backgroundColor: "rgba(37,99,235,.78)",
+                borderColor: "rgba(37,99,235,1)",
+                borderWidth: 1
+              }
+            ]
+          },
+          options: {
+            ...common,
+            indexAxis: "y",
+            scales: {
+              x: {
+                grid: { color: "rgba(15,23,42,.08)" },
+                ticks: { callback: (value) => `${Number(value).toFixed(1)}배` },
+                title: { display: true, text: "생활인구가 주민등록인구의 몇 배인가" }
+              },
+              y: { grid: { display: false } }
+            },
+            plugins: {
+              ...common.plugins,
+              tooltip: {
+                callbacks: {
+                  label: (context) => {
+                    const row = sortedRows[context.dataIndex];
+                    return [
+                      `생활/등록: ${chartNumber(row.living_registered_ratio).toFixed(2)}배`,
+                      `생활인구: ${Math.round(chartNumber(row.living_population)).toLocaleString("ko-KR")}명`,
+                      `주민등록인구: ${Math.round(chartNumber(row.registered_population)).toLocaleString("ko-KR")}명`,
+                      `체류인구 비중: ${chartNumber(row.stay_share_pct).toFixed(1)}%`
+                    ];
+                  }
+                }
+              }
+            }
+          }
+        };
+      } else if (id === "mobile_inflow_top_sigungu") {
+        const sortedRows = rows
+          .slice()
+          .filter((row) => Number.isFinite(chartNumber(row.avg_total_10k)))
+          .sort((a, b) => chartNumber(a.avg_total_10k) - chartNumber(b.avg_total_10k))
+          .slice(-20);
+        config = {
+          type: "bar",
+          data: {
+            labels: sortedRows.map((row) => row.region),
+            datasets: [
+              {
+                label: "관내 이동",
+                data: sortedRows.map((row) => chartNumber(row.avg_inside_10k)),
+                backgroundColor: "rgba(100,116,139,.72)"
+              },
+              {
+                label: "관외 유입",
+                data: sortedRows.map((row) => chartNumber(row.avg_outside_10k)),
+                backgroundColor: "rgba(185,28,28,.72)"
+              }
+            ]
+          },
+          options: {
+            ...common,
+            indexAxis: "y",
+            scales: {
+              x: {
+                stacked: true,
+                grid: { color: "rgba(15,23,42,.08)" },
+                ticks: { callback: (value) => `${Number(value).toLocaleString("ko-KR")}만` },
+                title: { display: true, text: "2025년 주차별 일평균 유입 이동건수(만 건)" }
+              },
+              y: { stacked: true, grid: { display: false } }
+            },
+            plugins: {
+              ...common.plugins,
+              tooltip: {
+                callbacks: {
+                  footer: (items) => {
+                    const row = sortedRows[items[0]?.dataIndex ?? 0];
+                    return `관외 유입 비중 ${chartNumber(row.outside_share_pct).toFixed(1)}%`;
+                  }
+                }
+              }
+            }
+          }
+        };
       } else if (["sigungu_population_slope_map", "sigungu_older_population_slope_map", "sigungu_working_age_population_slope_map"].includes(id)) {
         const parent = canvas.parentElement;
         if (!parent) return;

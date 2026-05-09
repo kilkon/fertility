@@ -161,18 +161,24 @@ BOOK = [
         "sections": [
             {
                 "no": "4.1",
+                "title": "생활인구는 얼마나 클까",
+                "file": "section-3-0-living-population.html",
+                "chart": "living_population_ratio_top",
+            },
+            {
+                "no": "4.2",
                 "title": "어느 광역시도의 인구 순이동이 가장 큰가",
                 "file": "section-3-0-sido-net-migration.html",
                 "chart": "sido_net_migration_panel",
             },
             {
-                "no": "4.2",
+                "no": "4.3",
                 "title": "청년 이동과 시군구 격차",
                 "file": "section-3-1-regional-gap.html",
                 "chart": "sigungu_aging_top",
             },
             {
-                "no": "4.3",
+                "no": "4.4",
                 "title": "외국인·다문화·국제결혼",
                 "file": "section-3-2-foreign-multicultural.html",
                 "chart": "multicultural_birth_rate",
@@ -1060,6 +1066,20 @@ CHART_META = {
         "source": "KOSIS DT_1B81A21 합계출산율; 한국행정연구원 사회통합실태조사(2013-2023) 재인용 KOSSDA 교육자료",
         "note": "남녀 갈등은 ‘매우 심각하다’ 응답 비율이다. 두 지표의 시간적 겹침은 문화적 환경을 해석하기 위한 단서이며, 인과효과로 단정해서는 안 된다.",
     },
+    "living_population_ratio_top": {
+        "title": "생활인구가 주민등록인구보다 큰 지역",
+        "kind": "bar",
+        "csv": "living_population_2025q3_summary.csv",
+        "source": "행정안전부·통계청, 2025년 3분기 인구감소지역 생활인구 산정결과",
+        "note": "생활인구는 월별 주민등록인구, 체류인구, 외국인을 합산한 값이다. 2025년 7-9월 평균을 사용했으며, 대상은 공표자료에 포함된 인구감소지역이다.",
+    },
+    "mobile_inflow_top_sigungu": {
+        "title": "시군구별 통신 모바일 유입 이동량 상위 지역",
+        "kind": "bar",
+        "csv": "mobile_inflow_sigungu_2025_summary.csv",
+        "source": "통계청 통계데이터센터, 통신 모바일 인구이동량 통계 시군구 관내외 유입 자료(~2026.04.26)",
+        "note": "2025년 52개 주차의 주차별 일평균 이동건수 평균이다. 거주지와 목적지가 같은 귀가 이동은 집계하지 않으며, 관외는 거주 시군구 밖에서 해당 시군구로 들어온 이동이다.",
+    },
     "sido_net_migration_panel": {
         "title": "광역시도별 순이동 추세(2000-2025)",
         "kind": "panel",
@@ -1108,6 +1128,7 @@ SECTION_SUPPLEMENTAL_CHARTS = {
     ],
     "section-2-1-yeonggwang-cohort.html": ["birth_incentive_region_summary", "national_population_pressure"],
     "section-2-2-fertility-conditions.html": ["fertility_age_pattern", "vital_events_policy", "mean_birth_age_order", "newlywed_income_fertility", "youth_employment_context"],
+    "section-3-0-living-population.html": ["mobile_inflow_top_sigungu"],
     "section-3-1-regional-gap.html": ["young_migration_policy", "sigungu_aging_distribution"],
     "section-3-2-foreign-multicultural.html": ["foreigner_registered_total"],
     "section-4-1-family-formation.html": ["fertility_age_pattern", "mean_birth_age_order"],
@@ -1763,6 +1784,29 @@ SECTION_DATA_EXPANSION = {
             "interpretation": "한국에서는 혼인이 출산의 주요 통로이고, 소득은 고용 안정의 결과다. 따라서 출산 지연은 혼인 지연, 일자리 안정, 소득 형성, 주거·돌봄 기대가 동시에 늦어지는 과정으로 이해해야 한다.",
         },
     ],
+    "section-3-0-living-population.html": [
+        {
+            "question": "주민등록인구가 적은 지역은 실제 생활 수요도 작은가?",
+            "data": "행정안전부·통계청 2025년 3분기 인구감소지역 생활인구 산정 결과",
+            "files": [
+                "data/source/living_population_2025q3_status.xlsx",
+                "data/source/living_population_2025q3_stay_population.xlsx",
+                "data/derived/living_population_2025q3_summary.csv",
+            ],
+            "analysis": "2025년 7-9월 월별 생활인구를 주민등록인구, 체류인구, 외국인으로 나누어 평균을 계산하고, 생활인구가 주민등록인구의 몇 배인지 산출했다.",
+            "interpretation": "양양·고성·가평처럼 체류와 관광이 강한 지역은 주민등록인구만으로는 실제 생활 수요를 크게 과소평가한다. 다만 생활인구는 정착 인구가 아니라 방문과 체류의 규모이므로 출산 기반과 동일시해서는 안 된다.",
+        },
+        {
+            "question": "사람들은 어느 시군구로 가장 많이 들어오고 있는가?",
+            "data": "통계청 통계데이터센터 통신 모바일 인구이동량 통계 시군구 관내외 유입 자료(~2026.04.26)",
+            "files": [
+                "data/source/mobile_inflow_sigungu_20260426.xlsx",
+                "data/derived/mobile_inflow_sigungu_2025_summary.csv",
+            ],
+            "analysis": "2025년 52개 주차의 주차별 일평균 유입 이동건수를 시군구별로 평균하고, 관내 이동과 관외 유입을 구분했다.",
+            "interpretation": "강남·송파·서초·화성처럼 일자리와 생활서비스가 결합된 지역은 등록인구보다 훨씬 큰 이동 수요를 가진다. 지방 인구정책은 '몇 명이 사는가'와 함께 '누가 언제 들어와 무엇을 쓰는가'를 함께 보아야 한다.",
+        },
+    ],
     "section-3-0-sido-net-migration.html": [
         {
             "question": "어느 광역시도의 인구 순이동이 가장 큰가?",
@@ -2372,6 +2416,112 @@ def write_csv(df: pd.DataFrame, filename: str) -> None:
 
 def build_derived_data() -> dict[str, list[dict[str, object]]]:
     charts: dict[str, list[dict[str, object]]] = {}
+
+    source_dir = DATA / "source"
+
+    living_path = source_dir / "living_population_2025q3_status.xlsx"
+    if living_path.exists():
+        living = pd.read_excel(living_path, sheet_name=0, header=[0, 1])
+        living.columns = [
+            "month",
+            "sido",
+            "sigungu",
+            "component",
+            "sex_total",
+            "male",
+            "female",
+            "age_total",
+            "under20",
+            "age20s",
+            "age30s",
+            "age40s",
+            "age50s",
+            "age60s",
+            "age70plus",
+        ]
+        living = living.dropna(subset=["month", "sido", "sigungu", "component"])
+        living["month"] = pd.to_numeric(living["month"], errors="coerce").astype("Int64")
+        for col in ["sex_total", "male", "female", "age_total", "under20", "age20s", "age30s", "age40s", "age50s", "age60s", "age70plus"]:
+            living[col] = pd.to_numeric(living[col], errors="coerce")
+        living_pivot = (
+            living.pivot_table(
+                index=["month", "sido", "sigungu"],
+                columns="component",
+                values="sex_total",
+                aggfunc="sum",
+            )
+            .reset_index()
+            .rename(
+                columns={
+                    "계": "living_population",
+                    "주민등록인구": "registered_population",
+                    "체류인구": "stay_population",
+                    "외국인": "foreign_population",
+                }
+            )
+        )
+        living_summary = (
+            living_pivot.groupby(["sido", "sigungu"], as_index=False)[
+                ["living_population", "registered_population", "stay_population", "foreign_population"]
+            ]
+            .mean()
+            .fillna(0)
+        )
+        living_summary["region"] = living_summary["sido"].astype(str) + " " + living_summary["sigungu"].astype(str)
+        living_summary["living_registered_ratio"] = np.where(
+            living_summary["registered_population"] > 0,
+            living_summary["living_population"] / living_summary["registered_population"],
+            np.nan,
+        )
+        living_summary["stay_share_pct"] = np.where(
+            living_summary["living_population"] > 0,
+            living_summary["stay_population"] / living_summary["living_population"] * 100,
+            np.nan,
+        )
+        living_summary["foreign_share_pct"] = np.where(
+            living_summary["living_population"] > 0,
+            living_summary["foreign_population"] / living_summary["living_population"] * 100,
+            np.nan,
+        )
+        for col in ["living_population", "registered_population", "stay_population", "foreign_population"]:
+            living_summary[f"{col}_10k"] = living_summary[col] / 10000
+        living_summary = living_summary.sort_values("living_registered_ratio", ascending=False)
+        write_csv(living_summary, "living_population_2025q3_summary.csv")
+        charts["living_population_ratio_top"] = living_summary.to_dict("records")
+
+    mobile_inflow_path = source_dir / "mobile_inflow_sigungu_20260426.xlsx"
+    if mobile_inflow_path.exists():
+        mobile = pd.read_excel(mobile_inflow_path, sheet_name=3)
+        mobile.columns = ["sido", "sigungu", "week_label", "inside", "outside", "total"]
+        mobile = mobile.dropna(subset=["sido", "sigungu", "week_label"])
+        for col in ["inside", "outside", "total"]:
+            mobile[col] = pd.to_numeric(mobile[col], errors="coerce")
+        week_parts = mobile["week_label"].astype(str).str.extract(r"(?P<year>\d{4})\.(?P<month>\d{2})\.(?P<week>\d+)주차")
+        mobile["year"] = pd.to_numeric(week_parts["year"], errors="coerce").astype("Int64")
+        mobile["month"] = pd.to_numeric(week_parts["month"], errors="coerce").astype("Int64")
+        mobile["week_in_month"] = pd.to_numeric(week_parts["week"], errors="coerce").astype("Int64")
+        mobile["region"] = mobile["sido"].astype(str) + " " + mobile["sigungu"].astype(str)
+        mobile_2025 = mobile[mobile["year"] == 2025].copy()
+        mobile_summary = (
+            mobile_2025.groupby(["sido", "sigungu", "region"], as_index=False)
+            .agg(
+                weeks=("week_label", "nunique"),
+                avg_inside=("inside", "mean"),
+                avg_outside=("outside", "mean"),
+                avg_total=("total", "mean"),
+            )
+            .fillna(0)
+        )
+        mobile_summary["outside_share_pct"] = np.where(
+            mobile_summary["avg_total"] > 0,
+            mobile_summary["avg_outside"] / mobile_summary["avg_total"] * 100,
+            np.nan,
+        )
+        for col in ["avg_inside", "avg_outside", "avg_total"]:
+            mobile_summary[f"{col}_10k"] = mobile_summary[col] / 10000
+        mobile_summary = mobile_summary.sort_values("avg_total", ascending=False)
+        write_csv(mobile_summary, "mobile_inflow_sigungu_2025_summary.csv")
+        charts["mobile_inflow_top_sigungu"] = mobile_summary.to_dict("records")
 
     policy_typology = pd.DataFrame(
         [
