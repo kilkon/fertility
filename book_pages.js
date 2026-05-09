@@ -3939,7 +3939,25 @@
               lineDataset("경기 30대", rows, "gyeonggi_30s", "rgba(147,51,234,1)")
             ]
           },
-          options: common
+          options: {
+            ...common,
+            scales: {
+              x: { grid: { display: false }, title: { display: true, text: "연도" } },
+              y: {
+                grid: { color: "rgba(15,23,42,.08)" },
+                title: { display: true, text: "순이동(명)" },
+                ticks: { callback: (value) => Number(value).toLocaleString("ko-KR") }
+              }
+            },
+            plugins: {
+              ...common.plugins,
+              tooltip: {
+                callbacks: {
+                  label: (context) => `${context.dataset.label}: ${Number(context.raw).toLocaleString("ko-KR")}명`
+                }
+              }
+            }
+          }
         };
       } else if (id === "future_households_policy") {
         config = {

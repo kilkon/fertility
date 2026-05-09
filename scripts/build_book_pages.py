@@ -26,7 +26,7 @@ MANUSCRIPTS = ROOT / "manuscripts"
 CHAPTER_MANUSCRIPTS = MANUSCRIPTS / "chapters"
 SECTION_MANUSCRIPTS = MANUSCRIPTS / "sections"
 APPENDIX_FILE = "appendix-data-notes.html"
-ASSET_VERSION = "20260509-foreign-stat-gap"
+ASSET_VERSION = "20260509-youth-migration"
 FEEDBACK_EMAIL = "kilkon@snu.ac.kr"
 PUBLIC_SITE_URL = "https://kilkon.github.io/fertility"
 
@@ -1198,11 +1198,11 @@ CHART_META = {
         "note": "연령대별 순이동을 0-14세, 15-19세, 20-24세, 25-29세, 30-34세, 35-44세, 45-64세, 65세 이상으로 묶어 최근 10년 평균을 계산했다. 막대의 합은 해당 지역의 평균 순이동이다.",
     },
     "young_migration_policy": {
-        "title": "서울·경기 20대·30대 순이동",
+        "title": "서울·경기 20대·30대 순이동 추세(2000-2025)",
         "kind": "line",
         "csv": "young_migration_policy.csv",
         "source": "KOSIS DT_1B26001_A03 시군구/연령(5세)별 이동자수",
-        "note": "청년의 수도권 내부 이동은 출산·주거·지역 노동시장 조건을 함께 보여준다.",
+        "note": "20대는 20-24세와 25-29세, 30대는 30-34세와 35-39세 순이동을 합산했다. 서울은 청년기 진입, 경기도는 가족 형성기 정착의 흐름을 함께 보여준다.",
     },
     "future_households_policy": {
         "title": "장래가구: 1인가구와 총가구",
@@ -1232,7 +1232,7 @@ SECTION_SUPPLEMENTAL_CHARTS = {
     "section-2-1-yeonggwang-cohort.html": ["birth_incentive_region_summary", "national_population_pressure"],
     "section-2-2-fertility-conditions.html": ["fertility_age_pattern", "vital_events_policy", "mean_birth_age_order", "newlywed_income_fertility", "youth_employment_context"],
     "section-3-0-living-population.html": ["mobile_inflow_top_sigungu"],
-    "section-3-1-regional-gap.html": ["young_migration_policy", "sigungu_aging_distribution"],
+    "section-3-1-regional-gap.html": ["sigungu_aging_distribution"],
     "section-3-2-foreign-multicultural.html": ["foreigner_registered_total"],
     "section-5-2-foreign-population-growth.html": ["foreign_share_sigungu_distribution", "foreign_share_top6_panel"],
     "section-5-3-foreign-statistical-gap.html": ["foreign_stat_gap_sido_sources"],
@@ -1938,9 +1938,10 @@ SECTION_DATA_EXPANSION = {
                 "data/derived/sido_net_migration_age_by_year.csv",
                 "data/derived/sido_net_migration_age_contribution.csv",
                 "data/derived/sido_net_migration_age_model_summary.csv",
+                "data/derived/young_migration_policy.csv",
             ],
-            "analysis": "광역시도별 총 순이동을 연도별 패널로 그리고, 최근 10년 평균 순이동을 연령대별 순이동의 합으로 분해한다.",
-            "interpretation": "경기도는 가족 형성·주거 이동 연령층을 중심으로 순유입이 크고, 서울은 35-64세 유출이 커서 청년 유출만으로 설명되지 않는다.",
+            "analysis": "광역시도별 총 순이동을 연도별 패널로 그리고, 최근 10년 평균 순이동을 연령대별 순이동의 합으로 분해한다. 이어 서울과 경기도의 20대·30대 순이동을 별도로 추출해 수도권 내부 생애주기 이동을 분석한다.",
+            "interpretation": "서울은 20대 유입의 도시이지만 30대와 가족 형성기 인구를 계속 붙잡지 못하고, 경기도는 그 이동을 받아내는 정착지로 기능한다. 저출산 정책은 서울의 주거비와 경기도의 통근·돌봄 인프라를 함께 보아야 한다.",
         }
     ],
     "section-3-1-regional-gap.html": [
