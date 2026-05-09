@@ -27,7 +27,7 @@ MANUSCRIPTS = ROOT / "manuscripts"
 CHAPTER_MANUSCRIPTS = MANUSCRIPTS / "chapters"
 SECTION_MANUSCRIPTS = MANUSCRIPTS / "sections"
 APPENDIX_FILE = "appendix-data-notes.html"
-ASSET_VERSION = "20260509-toc-toggle"
+ASSET_VERSION = "20260509-page-nav"
 GITHUB_REPO_URL = "https://github.com/kilkon/fertility"
 
 
@@ -5305,6 +5305,54 @@ def nav_html(current: str = "") -> str:
     return "\n".join(parts)
 
 
+def reading_pages() -> list[dict[str, str]]:
+    pages = [{"file": "index.html", "title": "표지", "href": "../index.html"}]
+    for chapter in BOOK:
+        pages.append(
+            {
+                "file": chapter["file"],
+                "title": f'{chapter["no"]}. {chapter["title"]}',
+                "href": f'../chapters/{chapter["file"]}',
+            }
+        )
+        for section in chapter["sections"]:
+            pages.append(
+                {
+                    "file": section["file"],
+                    "title": f'{section["no"]}. {section["title"]}',
+                    "href": f'../sections/{section["file"]}',
+                }
+            )
+    pages.append(
+        {
+            "file": APPENDIX_FILE,
+            "title": "부록. 자료와 분석 설계",
+            "href": f"../sections/{APPENDIX_FILE}",
+        }
+    )
+    return pages
+
+
+def page_turn_nav(current: str) -> str:
+    pages = reading_pages()
+    index = next((idx for idx, page in enumerate(pages) if page["file"] == current), -1)
+    if index < 0:
+        return ""
+    prev_page = pages[index - 1] if index > 0 else None
+    next_page = pages[index + 1] if index + 1 < len(pages) else None
+
+    def item(page: dict[str, str] | None, label: str, direction: str) -> str:
+        if not page:
+            return f'<span class="page-turn-link disabled {direction}" aria-disabled="true">{label}</span>'
+        return f'<a class="page-turn-link {direction}" href="{page["href"]}"><span>{label}</span><strong>{esc(page["title"])}</strong></a>'
+
+    return f"""<nav class="page-turn-nav" aria-label="페이지 이동">
+  {item(prev_page, "이전으로 가기", "prev")}
+  <a class="page-turn-home" href="../index.html">처음으로 돌아가기</a>
+  {item(next_page, "다음 페이지로 가기", "next")}
+</nav>"""
+
+
 def shell(title: str, body: str, current: str, rel: str = "..") -> str:
     return f"""<!doctype html>
 <html lang="ko">
@@ -5320,6 +5368,7 @@ def shell(title: str, body: str, current: str, rel: str = "..") -> str:
     {nav_html(current)}
     <main class="page book-page">
       {body}
+      {page_turn_nav(current)}
     </main>
   </div>
   <script src="{rel}/vendor/chart.umd.min.js"></script>

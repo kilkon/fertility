@@ -664,6 +664,75 @@ h1 {
   color: var(--teal);
 }
 
+.page-turn-nav {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 12px;
+  align-items: stretch;
+  margin-top: 54px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.page-turn-link,
+.page-turn-home {
+  display: flex;
+  min-height: 64px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.page-turn-link {
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.page-turn-link.next {
+  text-align: right;
+}
+
+.page-turn-link span {
+  color: var(--teal);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.page-turn-link strong {
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.page-turn-link:hover {
+  border-color: var(--teal);
+}
+
+.page-turn-link.disabled {
+  color: var(--muted);
+  background: transparent;
+  opacity: .46;
+}
+
+.page-turn-home {
+  align-items: center;
+  justify-content: center;
+  min-width: 158px;
+  padding: 0 18px;
+  border: 1px solid var(--ink);
+  color: #ffffff;
+  background: var(--ink);
+  font-size: 14px;
+  font-weight: 850;
+}
+
+.page-turn-home:hover {
+  background: #111827;
+}
+
 @media (max-width: 900px) {
   .layout {
     display: block;
@@ -820,4 +889,21 @@ h1 {
   .flow-steps,
   .two-col { grid-template-columns: 1fr; }
   .plan-question dl div { grid-template-columns: 1fr; gap: 3px; }
+
+  .page-turn-nav {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 36px;
+    padding-top: 18px;
+  }
+
+  .page-turn-link,
+  .page-turn-link.next {
+    text-align: left;
+  }
+
+  .page-turn-home {
+    min-width: 0;
+    min-height: 48px;
+  }
 }
