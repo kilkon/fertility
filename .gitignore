@@ -7,6 +7,7 @@ scripts/editor_server.py
 
 # Downloaded source reports are too large for GitHub and are not needed for the public site.
 report/files/
+report/*/files/
 report/texts/
 report/*.csv
 report/*.json

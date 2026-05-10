@@ -1,4 +1,4 @@
-## 성공이라는 말은 조심해서 써야 한다
+﻿## 성공이라는 말은 조심해서 써야 한다
 
 저출산 정책을 논할 때 가장 자주 나오는 질문은 “어느 나라가 성공했는가”이다. 그러나 이 질문은 생각보다 까다롭다. 성공을 합계출산율의 반등으로 볼 것인가, 원하는 아이를 낳을 수 있는 조건을 넓힌 것으로 볼 것인가, 부모의 삶의 질과 아동의 삶의 질을 높인 것으로 볼 것인가에 따라 답이 달라진다. 출산율이 조금 올랐더라도 특정 계층에게만 혜택이 집중되거나 여성의 돌봄 부담을 다시 강화했다면 그것을 성공이라고 부르기는 어렵다. 반대로 출산율 반등은 크지 않아도 부모가 일을 그만두지 않고 아이를 키울 수 있게 되었다면, 그 정책은 인구지표 바깥에서 중요한 성과를 낸 것일 수 있다.
 
@@ -23,7 +23,7 @@
 결국 “성공한 나라”를 찾는 작업은 모범답안을 찾는 일이 아니다. 싱가포르는 고비용 사회에서 지원금과 주거정책만으로 충분하지 않다는 사실을 알려준다. 헝가리는 강한 유인이 출산율을 일정하게 끌어올릴 수 있지만, 그 효과가 선택적이고 지속성이 약할 수 있음을 보여준다. 일본은 정책 패키지가 있어도 청년의 생애 시간표와 직장문화가 바뀌지 않으면 결과가 제한된다는 점을 보여준다. 한국이 배워야 할 것은 특정 국가의 제도 이름이 아니라, 출산을 개인의 결심으로 몰아붙이지 않으면서도 가족 형성이 가능한 생활조건을 얼마나 촘촘하게 만들 수 있는가라는 질문이다.
 
 ::: pause 자료를 읽는 기준
-이 절의 출산율 비교는 국가별 최신 공표가 서로 다르다는 한계를 가진다. 한국은 통계청 2024년 출생·사망통계 잠정결과, 싱가포르는 SingStat 최신 출생·출산 자료, 일본은 후생노동성 2024년 인구동태통계, 헝가리는 KSH STADAT와 Eurostat fertility statistics를 기준으로 정리했다. 정책 내용은 싱가포르 LifeSG Baby Bonus, 일본 어린이가정청 「어린이미래전략」, 헝가리 정부의 CSOK Plus 자료, 한국 저출산고령사회위원회와 관계부처 대책을 참고했다. 정책 비교는 인과효과 추정이 아니라, 각국이 어떤 수단을 강하게 사용했고 그 뒤 출산율이 어떻게 움직였는지를 읽기 위한 구조 비교다.
+이 절의 출산율 비교는 국가별 최신 공표가 서로 다르다는 한계를 가진다. 한국은 국가데이터처 2024년 출생·사망통계 잠정결과, 싱가포르는 SingStat 최신 출생·출산 자료, 일본은 후생노동성 2024년 인구동태통계, 헝가리는 KSH STADAT와 Eurostat fertility statistics를 기준으로 정리했다. 정책 내용은 싱가포르 LifeSG Baby Bonus, 일본 어린이가정청 「어린이미래전략」, 헝가리 정부의 CSOK Plus 자료, 한국 저출산고령사회위원회와 관계부처 대책을 참고했다. 정책 비교는 인과효과 추정이 아니라, 각국이 어떤 수단을 강하게 사용했고 그 뒤 출산율이 어떻게 움직였는지를 읽기 위한 구조 비교다.
 
-참고 자료: [SingStat Births and Fertility](https://www.singstat.gov.sg/find-data/search-by-theme/population/births-and-fertility/latest-data), [LifeSG Baby Bonus Scheme](https://www.life.gov.sg/family-parenting/benefits-support/baby-bonus-scheme), [일본 어린이가정청 어린이미래전략](https://www.cfa.go.jp/resources/strategy), [일본 후생노동성 2024년 인구동태통계](https://www.mhlw.go.jp/toukei/saikin/hw/jinkou/kakutei24/index.html), [헝가리 KSH 출생·합계출산율](https://www.ksh.hu/stadat_files/nep/en/nep0006.html), [Eurostat Fertility Statistics 2024](https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260306-1), [통계청 2024년 출생·사망통계 잠정결과](https://www.kostat.go.kr/boardDownload.es?bid=11773&list_no=436027&seq=2).
+참고 자료: [SingStat Births and Fertility](https://www.singstat.gov.sg/find-data/search-by-theme/population/births-and-fertility/latest-data), [LifeSG Baby Bonus Scheme](https://www.life.gov.sg/family-parenting/benefits-support/baby-bonus-scheme), [일본 어린이가정청 어린이미래전략](https://www.cfa.go.jp/resources/strategy), [일본 후생노동성 2024년 인구동태통계](https://www.mhlw.go.jp/toukei/saikin/hw/jinkou/kakutei24/index.html), [헝가리 KSH 출생·합계출산율](https://www.ksh.hu/stadat_files/nep/en/nep0006.html), [Eurostat Fertility Statistics 2024](https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260306-1), [국가데이터처 2024년 출생·사망통계 잠정결과](https://www.kostat.go.kr/boardDownload.es?bid=11773&list_no=436027&seq=2).
 :::

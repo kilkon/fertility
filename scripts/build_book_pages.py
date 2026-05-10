@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 """Build chapter/section pages and chart datasets for the population book."""
 
 from __future__ import annotations
@@ -26,7 +26,7 @@ MANUSCRIPTS = ROOT / "manuscripts"
 CHAPTER_MANUSCRIPTS = MANUSCRIPTS / "chapters"
 SECTION_MANUSCRIPTS = MANUSCRIPTS / "sections"
 APPENDIX_FILE = "appendix-data-notes.html"
-ASSET_VERSION = "20260509-youth-migration"
+ASSET_VERSION = "20260509-income-fertility"
 FEEDBACK_EMAIL = "kilkon@snu.ac.kr"
 PUBLIC_SITE_URL = "https://kilkon.github.io/fertility"
 
@@ -211,36 +211,42 @@ BOOK = [
             },
             {
                 "no": "5.4",
+                "title": "소득이 높으면 출산율이 높아질까?",
+                "file": "section-4-1-income-fertility.html",
+                "chart": "newlywed_income_decile_birth_trend",
+            },
+            {
+                "no": "5.5",
                 "title": "가구 수는 왜 인구와 다르게 움직이는가",
                 "file": "section-4-5-households.html",
                 "chart": "household_population_gap_national",
             },
             {
-                "no": "5.5",
+                "no": "5.6",
                 "title": "주거 수요는 왜 인구보다 늦게 변하는가",
                 "file": "section-4-6-housing-demand.html",
                 "chart": "future_households_policy",
             },
             {
-                "no": "5.6",
+                "no": "5.7",
                 "title": "남성이 육아를 담당하지 않는다?",
                 "file": "section-4-2-men-care-parental-leave.html",
                 "chart": "parental_leave_gender_users",
             },
             {
-                "no": "5.7",
+                "no": "5.8",
                 "title": "돌봄과 일가정양립",
                 "file": "section-4-3-care-work-balance.html",
                 "chart": "childcare_children",
             },
             {
-                "no": "5.8",
+                "no": "5.9",
                 "title": "어린이집이 적어서 출산을 덜 하는가",
                 "file": "section-4-4-childcare-shortage.html",
                 "chart": "childcare_supply_by_type",
             },
             {
-                "no": "5.9",
+                "no": "5.10",
                 "title": "빈집은 생활권 약화의 신호인가",
                 "file": "section-4-7-vacant-housing.html",
                 "chart": "vacant_housing_policy",
@@ -438,14 +444,14 @@ CHART_META = {
         "title": "주민등록인구·인구총조사·장래인구추계의 차이",
         "kind": "line",
         "csv": "population_measure_comparison.csv",
-        "source": "KOSIS DT_1B040A3 주민등록인구현황(전국, 12월), INH_1IN1503_01 인구총조사 인구(전국), DT_1BPB002 장래인구추계 중위추계, 통계청 2000·2005·2010 인구주택총조사 전수집계 결과",
+        "source": "KOSIS DT_1B040A3 주민등록인구현황(전국, 12월), INH_1IN1503_01 인구총조사 인구(전국), DT_1BPB002 장래인구추계 중위추계, 국가데이터처 2000·2005·2010 인구주택총조사 전수집계 결과",
         "note": "2000년부터 비교한다. 인구총조사는 2000·2005·2010년 전수조사 값과 2015년 이후 등록센서스 연간 값을 연결했으며, 중간 연도는 조사값이 없으므로 비워 두었다.",
     },
     "population_measure_gap": {
         "title": "인구 측정 기준별 차이(주민등록인구 대비)",
         "kind": "line",
         "csv": "population_measure_gap.csv",
-        "source": "KOSIS DT_1B040A3, INH_1IN1503_01, DT_1BPB002와 통계청 2000·2005·2010 인구주택총조사 결과를 이용해 차이 계산",
+        "source": "KOSIS DT_1B040A3, INH_1IN1503_01, DT_1BPB002와 국가데이터처 2000·2005·2010 인구주택총조사 결과를 이용해 차이 계산",
         "note": "절대 인구 규모가 비슷해 보일 때는 기준 간 차이를 따로 그려야 외국인 포함, 국내 상주 기준, 추계 기준의 효과가 드러난다. 총조사 차이는 조사값이 있는 연도만 해석한다.",
     },
     "resident_registration_2010_jump": {
@@ -616,6 +622,13 @@ CHART_META = {
         "source": "KOSIS DT_1NW2016 초혼 신혼부부의 소득(근로·사업소득) 구간별 출산자녀 현황",
         "note": "소득은 부부의 연간 근로·사업소득 구간이다. 신혼부부 통계는 혼인신고 후 5년이 지나지 않은 부부를 대상으로 하므로, 전체 생애 출산율이 아니라 결혼 초기의 자녀 보유와 출산 속도를 보여준다.",
     },
+    "newlywed_income_decile_birth_trend": {
+        "title": "신혼부부 소득구간별 평균 출생아 수 추세",
+        "kind": "line",
+        "csv": "newlywed_income_decile_birth_trend.csv",
+        "source": "KOSIS DT_1NW1019 신혼부부의 소득(근로·사업소득) 구간별 출산자녀 현황",
+        "note": "KOSIS 원표의 공식 분류는 소득구간별이다. 신혼부부 통계는 혼인신고 후 5년이 지나지 않은 부부를 대상으로 하므로, 이 값은 생애 완료출산율이 아니라 결혼 초기 평균 출생아 수와 출산 지연을 보여준다.",
+    },
     "youth_employment_context": {
         "title": "청년 고용 기반의 변화(2000=100)",
         "kind": "line",
@@ -634,7 +647,7 @@ CHART_META = {
         "title": "자녀 교육비 부담 인식과 부담 항목",
         "kind": "line",
         "csv": "education_burden_perception.csv",
-        "source": "KOSIS DT_1SSED100R 자녀 교육비 부담 인식, DT_1SSED110R 가장 부담되는 자녀 교육비 항목, 통계청 사회조사",
+        "source": "KOSIS DT_1SSED100R 자녀 교육비 부담 인식, DT_1SSED110R 가장 부담되는 자녀 교육비 항목, 국가데이터처 사회조사",
         "note": "전국 30세 이상 가구주 중 학생 자녀가 있는 가구의 교육비 부담 인식과 부담 항목 분포다. 사회조사는 2년 주기 조사이므로 격년으로 나타난다.",
     },
     "yeonggwang_cohort": {
@@ -837,14 +850,14 @@ CHART_META = {
         "title": "미취학 자녀 가구의 부모 돌보기 시간",
         "kind": "line",
         "csv": "preschool_childcare_time_by_parent.csv",
-        "source": "통계청, 2024년 생활시간조사 결과(2025.7. 공표), 미취학 자녀 가구 시간사용",
+        "source": "국가데이터처, 2024년 생활시간조사 결과(2025.7. 공표), 미취학 자녀 가구 시간사용",
         "note": "미취학 자녀가 있는 가구에서 남편과 아내의 하루 돌보기 시간을 분 단위로 환산하고, 부모 합산 돌보기 시간 중 남편 비중을 계산했다.",
     },
     "dual_earner_child_housework_time": {
         "title": "18세 미만 자녀 맞벌이 가구의 가사노동 시간",
         "kind": "line",
         "csv": "dual_earner_child_housework_time.csv",
-        "source": "통계청, 2024년 생활시간조사 결과(2025.7. 공표), 18세 미만 자녀가 있는 맞벌이 가구 시간사용",
+        "source": "국가데이터처, 2024년 생활시간조사 결과(2025.7. 공표), 18세 미만 자녀가 있는 맞벌이 가구 시간사용",
         "note": "18세 미만 자녀가 있는 맞벌이 가구에서 남편과 아내의 하루 가사노동 시간을 분 단위로 환산하고, 부모 합산 가사노동 시간 중 남편 비중을 계산했다.",
     },
     "childcare_supply_by_type": {
@@ -900,7 +913,7 @@ CHART_META = {
         "title": "전국 미거주주택(빈집) 비율",
         "kind": "line",
         "csv": "vacant_housing_rate.csv",
-        "source": "KOSIS DT_1YL202005 미거주주택(빈집)비율, 국가데이터처·통계청 인구주택총조사 기준",
+        "source": "KOSIS DT_1YL202005 미거주주택(빈집)비율, 국가데이터처 인구주택총조사 기준",
         "note": "조사시점의 미거주 주택 기준이다. 국토부 빈집실태조사의 1년 이상 장기 빈집 기준과 구분해 읽어야 한다.",
     },
     "household_population_gap_national": {
@@ -1006,13 +1019,13 @@ CHART_META = {
         "kind": "bar",
         "csv": "foreign_stat_gap_sido_sources.csv",
         "source": "행정안전부 2024 지방자치단체 외국인주민 현황, KOSIS DT_1JA1503 인구총조사 외국인, KOSIS DT_1B040A11 법무부 등록외국인",
-        "note": "국가데이터처·통계청 인구총조사 외국인 자료는 이 표에서 시도 단위로 제공되므로, 세 통계의 직접 비교는 시도 단위에서 제시했다.",
+        "note": "국가데이터처 인구총조사 외국인 자료는 이 표에서 시도 단위로 제공되므로, 세 통계의 직접 비교는 시도 단위에서 제시했다.",
     },
     "vacant_housing_policy": {
         "title": "빈집 수와 전체 주택",
         "kind": "line",
         "csv": "vacant_housing_policy.csv",
-        "source": "KOSIS DT_1YL202005 미거주주택(빈집)비율, 국가데이터처·통계청 인구주택총조사 기준",
+        "source": "KOSIS DT_1YL202005 미거주주택(빈집)비율, 국가데이터처 인구주택총조사 기준",
         "note": "미거주 주택의 넓은 저량과 전체 주택 재고를 함께 보여주는 그림이다. 비율 추세는 아래 보조 그림에서 따로 제시한다.",
     },
     "vacant_housing_definition_gap_2022": {
@@ -1078,18 +1091,25 @@ CHART_META = {
         "source": "KOSIS DT_1B8000H 시도/인구동태건수 및 동태율",
         "note": "출산정책은 출생만이 아니라 혼인 감소, 사망 증가, 자연증가 전환 속에서 읽어야 한다.",
     },
+    "nonmarital_birth_trend": {
+        "title": "혼인외 출생아 수와 비중",
+        "kind": "line",
+        "csv": "nonmarital_birth_trend.csv",
+        "source": "KOSIS DT_1B81A16 시도/법적혼인상태별 출생",
+        "note": "비중은 혼인외 출생아 수를 전체 출생아 수로 나눈 값이다. 미상은 전체 출생아에는 포함되지만 혼인외 출생아에는 포함하지 않았다.",
+    },
     "marriage_attitude_unmarried_gender": {
         "title": "미혼 남녀의 결혼 긍정 인식 변화",
         "kind": "bar",
         "csv": "marriage_attitude_unmarried_gender.csv",
-        "source": "국가데이터처·통계청, 2010년 사회조사 결과 및 2024년 사회조사 결과",
+        "source": "국가데이터처, 2010년 사회조사 결과 및 2024년 사회조사 결과",
         "note": "미혼 남녀 중 결혼을 해야 한다고 보는 비중이다. 2010년은 15세 이상, 2024년은 13세 이상 사회조사 기준이므로 장기 방향을 읽는 지표로 사용한다.",
     },
     "family_norms_culture_shift": {
         "title": "동거와 비혼 출산을 둘러싼 가족 규범의 변화",
         "kind": "line",
         "csv": "family_norms_culture_shift.csv",
-        "source": "국가데이터처·통계청, 2010년 사회조사 결과 및 2024년 사회조사 결과",
+        "source": "국가데이터처, 2010년 사회조사 결과 및 2024년 사회조사 결과",
         "note": "결혼 필요성은 약해졌고, 동거와 비혼 출산에 대한 수용은 높아졌다. 다만 한국의 제도와 출산 관행은 여전히 혼인 안 출산을 중심으로 작동한다.",
     },
     "divorce_rate_30s_40s_trend": {
@@ -1103,21 +1123,21 @@ CHART_META = {
         "title": "이혼 수용 인식의 변화",
         "kind": "line",
         "csv": "divorce_acceptance_trend.csv",
-        "source": "국가데이터처·통계청, 2024년 사회조사 결과 보도자료; KOSIS DT_1SSFA070R 이혼에 대한 견해",
+        "source": "국가데이터처, 2024년 사회조사 결과 보도자료; KOSIS DT_1SSFA070R 이혼에 대한 견해",
         "note": "‘이유가 있으면 이혼을 하는 것이 좋다’ 응답 비중의 추세다. 2024년에는 20.5%로 2014년 12.0%보다 높아졌다.",
     },
     "divorce_acceptance_profile_2024": {
         "title": "2024년 집단별 이혼에 대한 견해",
         "kind": "bar",
         "csv": "divorce_acceptance_profile_2024.csv",
-        "source": "국가데이터처·통계청, 2024년 사회조사 결과 보도자료; KOSIS DT_1SSFA070R 이혼에 대한 견해",
+        "source": "국가데이터처, 2024년 사회조사 결과 보도자료; KOSIS DT_1SSFA070R 이혼에 대한 견해",
         "note": "부정은 ‘이혼해서는 안 된다’, 중립은 ‘할 수도 있고 하지 않을 수도 있다’, 긍정은 ‘이유가 있으면 하는 것이 좋다’ 응답이다.",
     },
     "marriage_attitude_youth_profile_2022": {
         "title": "청년의 결혼 긍정 인식: 연령대와 성별",
         "kind": "bar",
         "csv": "marriage_attitude_youth_profile_2022.csv",
-        "source": "국가데이터처·통계청, 「사회조사」로 살펴본 청년의 의식변화(2023.8.28.)",
+        "source": "국가데이터처, 「사회조사」로 살펴본 청년의 의식변화(2023.8.28.)",
         "note": "청년은 19-34세 기준이다. 공개 보도자료는 연령대와 성별을 각각 공표하며, 연령×성별 교차값은 제공하지 않는다. 따라서 25-29세 여성의 직접 추정치가 아니라 청년 여성과 25-29세 연령대의 구조를 함께 읽는 보조 지표다.",
     },
     "young_women_25_29_recent_attitudes": {
@@ -1138,49 +1158,49 @@ CHART_META = {
         "title": "생활인구가 주민등록인구보다 큰 지역",
         "kind": "bar",
         "csv": "living_population_2025q3_summary.csv",
-        "source": "행정안전부·통계청, 2025년 3분기 인구감소지역 생활인구 산정결과",
+        "source": "행정안전부·국가데이터처, 2025년 3분기 인구감소지역 생활인구 산정결과",
         "note": "생활인구는 월별 주민등록인구, 체류인구, 외국인을 합산한 값이다. 2025년 7-9월 평균을 사용했으며, 대상은 공표자료에 포함된 인구감소지역이다.",
     },
     "mobile_inflow_top_sigungu": {
         "title": "시군구별 통신 모바일 유입 이동량 상위 지역",
         "kind": "bar",
         "csv": "mobile_inflow_sigungu_2025_summary.csv",
-        "source": "통계청 통계데이터센터, 통신 모바일 인구이동량 통계 시군구 관내외 유입 자료(~2026.04.26)",
+        "source": "국가데이터처 통계데이터센터, 통신 모바일 인구이동량 통계 시군구 관내외 유입 자료(~2026.04.26)",
         "note": "2025년 52개 주차의 주차별 일평균 이동건수 평균이다. 거주지와 목적지가 같은 귀가 이동은 집계하지 않으며, 관외는 거주 시군구 밖에서 해당 시군구로 들어온 이동이다.",
     },
     "mobile_outside_migration_by_sex": {
         "title": "남성과 여성의 관외 이동 추세",
         "kind": "line",
         "csv": "mobile_outside_migration_by_sex.csv",
-        "source": "통계청 통계데이터센터, 통신 모바일 인구이동량 통계 성연령별 자료(~2026.04.26)",
+        "source": "국가데이터처 통계데이터센터, 통신 모바일 인구이동량 통계 성연령별 자료(~2026.04.26)",
         "note": "전국 성별 이동량 자료에서 관외 이동을 연도별 주차 평균으로 계산했다. 2026년은 4월 4주차까지의 부분 연도이므로 장기 추세선이 아니라 최신 관찰값으로 읽어야 한다.",
     },
     "living_population_ratio_map": {
         "title": "시군구별 주민등록인구 대비 생활인구 배율",
         "kind": "map",
         "csv": "living_population_2025q3_map_values.csv",
-        "source": "행정안전부·통계청, 2025년 3분기 인구감소지역 생활인구 산정결과; 통계청 시군구 경계",
+        "source": "행정안전부·국가데이터처, 2025년 3분기 인구감소지역 생활인구 산정결과; 국가데이터처 시군구 경계",
         "note": "2025년 7-9월 생활인구 월평균을 주민등록인구 월평균으로 나눈 값이다. 공표 대상인 인구감소지역만 색으로 표시하고, 그 외 시군구는 회색으로 남겼다.",
     },
     "living_population_age_component": {
         "title": "생활인구 구성별 연령 분포",
         "kind": "bar",
         "csv": "living_population_2025q3_age_component.csv",
-        "source": "행정안전부·통계청, 2025년 3분기 인구감소지역 생활인구 산정결과",
+        "source": "행정안전부·국가데이터처, 2025년 3분기 인구감소지역 생활인구 산정결과",
         "note": "인구감소지역 공표자료의 2025년 7-9월 월별 값을 합산한 뒤 월평균으로 환산했다. 주민등록인구, 체류인구, 외국인, 생활인구 전체의 연령 구성을 비교한다.",
     },
     "living_population_sex_component": {
         "title": "생활인구 구성별 성별 분포",
         "kind": "bar",
         "csv": "living_population_2025q3_sex_component.csv",
-        "source": "행정안전부·통계청, 2025년 3분기 인구감소지역 생활인구 산정결과",
+        "source": "행정안전부·국가데이터처, 2025년 3분기 인구감소지역 생활인구 산정결과",
         "note": "인구감소지역 공표자료의 2025년 7-9월 월별 값을 합산한 뒤 월평균으로 환산했다. 성별 차이는 정주인구와 체류인구가 서로 다른 생활 기능을 갖는지 확인하기 위한 보조 지표다.",
     },
     "living_population_monthly_trend": {
         "title": "생활인구 구성별 월별 변화",
         "kind": "line",
         "csv": "living_population_2025q3_monthly_trend.csv",
-        "source": "행정안전부·통계청, 2025년 3분기 인구감소지역 생활인구 산정결과",
+        "source": "행정안전부·국가데이터처, 2025년 3분기 인구감소지역 생활인구 산정결과",
         "note": "2025년 7-9월 3개월 자료이므로 장기 추세가 아니라 여름 성수기에서 초가을로 넘어가는 짧은 계절 변화로 해석해야 한다.",
     },
     "sido_net_migration_panel": {
@@ -1236,8 +1256,9 @@ SECTION_SUPPLEMENTAL_CHARTS = {
     "section-3-2-foreign-multicultural.html": ["foreigner_registered_total"],
     "section-5-2-foreign-population-growth.html": ["foreign_share_sigungu_distribution", "foreign_share_top6_panel"],
     "section-5-3-foreign-statistical-gap.html": ["foreign_stat_gap_sido_sources"],
-    "section-4-1-family-formation.html": ["fertility_age_pattern", "mean_birth_age_order"],
+    "section-4-1-family-formation.html": ["fertility_age_pattern", "mean_birth_age_order", "nonmarital_birth_trend"],
     "section-4-1-divorce-fear-marriage.html": ["divorce_acceptance_trend", "divorce_acceptance_profile_2024"],
+    "section-4-1-income-fertility.html": [],
     "section-4-2-men-care-parental-leave.html": [
         "maternity_leave_support",
         "parental_leave_per_user_support",
@@ -1484,7 +1505,7 @@ SECTION_NARRATIVE = {
         "kicker": "혼인이 줄면 출생도 흔들린다",
         "paragraphs": [
             "한국에서 출산은 여전히 혼인과 강하게 연결되어 있다. 그러므로 저출산을 말한다는 것은 곧 혼인의 감소, 혼인 연령의 상승, 이혼과 재혼, 혼외출생의 낮은 비중을 함께 읽는 일이다. 출산율만 보면 가족 형성의 제도적 통로가 어떻게 좁아졌는지 놓치기 쉽다.",
-            "하지만 혼인을 늘리면 출생이 자동으로 늘어난다는 식의 결론은 성급하다. 혼인은 주거비, 일자리, 성평등한 돌봄, 지역의 생활 인프라가 일정 수준 이상 갖추어졌을 때 선택 가능한 제도가 된다. 이 절은 혼인과 출생의 상관을 확인하되, 그 관계를 떠받치는 조건을 함께 묻는다.",
+            "하지만 혼인을 늘리면 출생이 자동으로 늘어난다는 식의 결론은 성급하다. 혼인은 주거비, 일자리, 성평등한 돌봄, 지역의 생활 인프라가 일정 수준 이상 갖추어졌을 때 선택 가능한 제도가 된다. 그래서 혼인과 출생의 관계는 상관계수보다 넓은 생활조건의 문제로 읽어야 한다.",
         ],
     },
     "section-4-1-divorce-fear-marriage.html": {
@@ -1492,6 +1513,13 @@ SECTION_NARRATIVE = {
         "paragraphs": [
             "결혼을 하지 않는 이유를 물으면 대개 돈, 주거, 일자리, 양육 부담이 먼저 나온다. 그러나 결혼은 경제계약만이 아니라 관계의 장기 약속이기도 하다. 그래서 어떤 사람에게 결혼의 부담은 ‘잘 살 수 있을까’가 아니라 ‘잘못되면 어떻게 될까’라는 두려움으로 나타난다.",
             "이 절은 이혼의 두려움이 결혼 회피의 핵심 원인이라고 단정하지 않는다. 대신 두 가지 자료를 나누어 본다. 하나는 30대와 40대의 실제 연령별 이혼율이고, 다른 하나는 사회가 이혼을 얼마나 수용하는지에 대한 인식이다. 실제 위험과 사회적 낙인이 함께 낮아지는지, 아니면 관계 실패에 대한 심리적 비용이 여전히 남아 있는지 따져본다.",
+        ],
+    },
+    "section-4-1-income-fertility.html": {
+        "kicker": "돈이 많으면 아이를 더 낳는다는 말은 얼마나 맞는가",
+        "paragraphs": [
+            "저출산 정책은 자주 소득 문제로 번역된다. 아이를 낳지 않는 이유가 돈이라면, 돈을 더 주면 아이를 더 낳을 것이라는 직관이 따라온다. 그러나 가족의 실제 결정은 그렇게 단순하지 않다. 소득은 양육비 부담을 덜어 주지만, 동시에 더 긴 노동시간, 경력 단절의 더 큰 기회비용, 더 높은 교육·주거 기대를 함께 동반할 수 있다.",
+            "소득과 출산의 관계는 ‘돈이 있느냐 없느냐’의 단선으로 움직이지 않는다. 신혼부부 소득구간별 평균 출생아 수를 시계열로 놓으면, 소득 효과와 기회비용 효과가 어떻게 뒤섞이는지 조금 더 차분하게 볼 수 있다. 여기서 쓰는 자료는 KOSIS DT_1NW1019이며, 공식 명칭은 소득분위가 아니라 부부의 연간 근로·사업소득 구간이다.",
         ],
     },
     "section-4-2-men-care-parental-leave.html": {
@@ -1592,6 +1620,10 @@ SECTION_READING_NOTE = {
         "연령별 이혼율은 해당 연령 인구 천명당 이혼건수다. 이혼한 사람의 평균연령이 높아지면 30대 이혼율은 낮아지고 40대 이후 이혼율이 상대적으로 두꺼워질 수 있다.",
         "사회조사 이혼 인식은 ‘이혼을 권장하는가’가 아니라 ‘이혼을 사회적으로 받아들일 수 있는가’를 묻는 지표로 읽어야 한다. 수용도가 높아졌다고 해서 결혼의 위험 인식이 사라졌다는 뜻은 아니다.",
     ],
+    "section-4-1-income-fertility.html": [
+        "이 그림의 소득분류는 KOSIS 원표의 ‘소득구간별’ 항목이며, 부부의 연간 근로·사업소득을 기준으로 한다. 자산, 부모 지원, 주거비 부담, 비근로소득은 직접 반영하지 못한다.",
+        "신혼부부 통계는 혼인신고 후 5년이 지나지 않은 부부를 보기 때문에 생애 전체 출산율이 아니다. 특히 고소득 맞벌이 부부는 결혼과 첫 출산을 늦출 가능성이 있어 평균 출생아 수가 낮게 보일 수 있다.",
+    ],
     "section-4-2-men-care-parental-leave.html": [
         "육아휴직급여 수급자 수의 남성 비중은 2017년 13.4%에서 2025년 36.5%로 높아졌다. 여전히 여성이 더 많이 쓰지만, 남성 이용은 더 이상 예외적 현상으로 보기 어렵다.",
         "성별 환산액은 육아휴직급여 지원금액을 초회수급자 수로 나눈 값이다. 개인별 실제 평균 수령액이 아니라 제도 지출 강도를 보여주는 지표로 읽어야 한다.",
@@ -1648,6 +1680,15 @@ SECTION_READING_NOTE = {
 
 
 SECTION_DATA_EXPANSION = {
+    "section-4-1-income-fertility.html": [
+        {
+            "question": "소득이 높으면 출산율이 높아질까?",
+            "data": "KOSIS DT_1NW1019 신혼부부의 소득(근로·사업소득) 구간별 출산자녀 현황",
+            "files": ["data/kosis_newlywed_income_children_DT_1NW1019.csv", "data/derived/newlywed_income_decile_birth_trend.csv"],
+            "analysis": "2015-2024년 신혼부부를 연간 근로·사업소득 구간별로 나누고, 각 구간의 평균 출생아 수 추세를 비교한다. 원표의 소득분류는 분위가 아니라 구간이므로 자료 해석에서 이 점을 명시한다.",
+            "interpretation": "소득이 높을수록 평균 출생아 수가 자동으로 높아지지 않는다. 신혼부부의 출산은 소득 여력뿐 아니라 혼인 시점, 맞벌이 경력비용, 주거비, 돌봄 가능성, 교육비 기대가 함께 만드는 결정이다.",
+        }
+    ],
     "section-6-1-education-cost-fertility.html": [
         {
             "question": "사교육비는 실제로 줄고 있는가, 아니면 학생 수 감소 속에서도 1인당 부담이 커지고 있는가?",
@@ -1800,7 +1841,7 @@ SECTION_DATA_EXPANSION = {
     "section-2-0-international-policy-success.html": [
         {
             "question": "저출산 정책이 성공한 나라는 있는가?",
-            "data": "World Bank 합계출산율, 통계청 2024 출생·사망통계, SingStat Births and Fertility, Hungary KSH STADAT, Eurostat demo_find, 일본 후생노동성 인구동태통계, 각국 공식 가족정책 자료",
+            "data": "World Bank 합계출산율, 국가데이터처 2024 출생·사망통계, SingStat Births and Fertility, Hungary KSH STADAT, Eurostat demo_find, 일본 후생노동성 인구동태통계, 각국 공식 가족정책 자료",
             "files": ["data/derived/pronatalist_policy_country_comparison.csv", "data/worldbank_tfr_selected_countries.csv"],
             "analysis": "한국·싱가포르·헝가리·일본의 대표 정책수단을 현금·세제, 주거, 돌봄·휴직, 구조개혁 유형으로 요약하고, 정책 강화 이후 합계출산율의 시작점·정점·최근값을 비교한다.",
             "interpretation": "헝가리는 일정한 반등을 보였지만 지속성과 포괄성에 한계가 있고, 싱가포르와 일본은 강한 제도에도 초저출산을 되돌리지 못했다. 한국의 과제는 제도 이름을 수입하는 것이 아니라 청년의 생활시간표를 실제로 바꾸는 조건을 만드는 것이다.",
@@ -1892,7 +1933,7 @@ SECTION_DATA_EXPANSION = {
     "section-3-0-living-population.html": [
         {
             "question": "주민등록인구가 적은 지역은 실제 생활 수요도 작은가?",
-            "data": "행정안전부·통계청 2025년 3분기 인구감소지역 생활인구 산정 결과",
+            "data": "행정안전부·국가데이터처 2025년 3분기 인구감소지역 생활인구 산정 결과",
             "files": [
                 "data/source/living_population_2025q3_status.xlsx",
                 "data/source/living_population_2025q3_stay_population.xlsx",
@@ -1907,7 +1948,7 @@ SECTION_DATA_EXPANSION = {
         },
         {
             "question": "생활인구는 어떤 연령과 성별로 구성되어 있으며, 월별로 어떻게 달라지는가?",
-            "data": "행정안전부·통계청 2025년 3분기 인구감소지역 생활인구 산정 결과",
+            "data": "행정안전부·국가데이터처 2025년 3분기 인구감소지역 생활인구 산정 결과",
             "files": [
                 "data/derived/living_population_2025q3_age_component.csv",
                 "data/derived/living_population_2025q3_sex_component.csv",
@@ -1918,7 +1959,7 @@ SECTION_DATA_EXPANSION = {
         },
         {
             "question": "사람들은 어느 시군구로 가장 많이 들어오고 있는가?",
-            "data": "통계청 통계데이터센터 통신 모바일 인구이동량 통계 시군구 관내외 유입 자료(~2026.04.26)",
+            "data": "국가데이터처 통계데이터센터 통신 모바일 인구이동량 통계 시군구 관내외 유입 자료(~2026.04.26)",
             "files": [
                 "data/source/mobile_inflow_sigungu_20260426.xlsx",
                 "data/derived/mobile_outside_migration_by_sex.csv",
@@ -1979,7 +2020,7 @@ SECTION_DATA_EXPANSION = {
     "section-5-1-who-are-foreigners.html": [
         {
             "question": "통계에서 말하는 외국인은 같은 사람을 가리키는가?",
-            "data": "행정안전부 지방자치단체 외국인주민 현황, 국가데이터처·통계청 인구총조사, 법무부 출입국자및체류외국인통계의 정의 비교",
+            "data": "행정안전부 지방자치단체 외국인주민 현황, 국가데이터처 인구총조사, 법무부 출입국자및체류외국인통계의 정의 비교",
             "files": ["data/derived/foreigner_definition_comparison.csv"],
             "analysis": "국적, 체류기간, 등록 여부, 귀화자와 자녀 포함 여부를 기준으로 세 통계의 포괄 범위를 비교했다.",
             "interpretation": "외국인 통계는 목적에 따라 정책수요, 거주인구, 출입국 행정대상을 서로 다르게 포착한다. 정의를 섞으면 외국인 유입의 규모와 정책 효과를 과대평가하거나 과소평가할 수 있다.",
@@ -2021,7 +2062,7 @@ SECTION_DATA_EXPANSION = {
                 "data/registered_foreigners_DT_1B040A11.csv",
                 "data/raw/mois_foreign_residents_2024.xlsx",
             ],
-            "analysis": "2024년 기준 시도별로 행정안전부 외국인주민, 국가데이터처·통계청 인구총조사 외국인, 법무부 등록외국인을 나란히 비교한다.",
+            "analysis": "2024년 기준 시도별로 행정안전부 외국인주민, 국가데이터처 인구총조사 외국인, 법무부 등록외국인을 나란히 비교한다.",
             "interpretation": "세 통계의 차이는 오류라기보다 정책 목적의 차이다. 지역사회 정책수요를 보려면 행정안전부 통계가, 실제 거주 외국국적 인구를 보려면 인구총조사가, 체류관리와 노동시장 흐름을 보려면 법무부 통계가 더 적합하다.",
         },
         {
@@ -2045,16 +2086,16 @@ SECTION_DATA_EXPANSION = {
         },
         {
             "question": "혼인 밖 출생이 낮은 구조는 출산율 하락을 어떻게 증폭하는가?",
-            "data": "법적혼인상태별 출생, 전체 출생아 수, 혼인 건수",
-            "files": ["data/international_marriage_DT_1BB0006.csv"],
-            "analysis": "혼외 출생 비중과 혼인 감소 시점을 같이 놓고 출생 감소의 제도적 경로를 확인한다.",
-            "interpretation": "혼인 감소가 곧바로 출생 감소로 이어지는 한국적 구조를 설명한다.",
+            "data": "KOSIS DT_1B81A16 시도/법적혼인상태별 출생",
+            "files": ["data/nonmarital_births_DT_1B81A16.csv", "data/derived/nonmarital_birth_trend.csv"],
+            "analysis": "전국 기준 총계, 혼인중의 자, 혼인외의 자, 미상을 연도별로 정리하고, 혼인외 출생아 수와 전체 출생아 대비 비중을 계산한다.",
+            "interpretation": "혼인외 출생 비중은 최근 상승했지만 여전히 낮다. 따라서 한국에서는 혼인이 줄거나 늦어질 때 출생 감소를 완충하는 제도적 통로가 좁다.",
         },
     ],
     "section-4-1-marriage-culture.html": [
         {
             "question": "결혼과 출산은 왜 문화적 현상인가?",
-            "data": "국가데이터처·통계청 2010년·2024년 사회조사, 2023년 청년 의식변화 기획보도, 저출산고령사회위원회 25-29세 여성 인식조사, KOSIS 합계출산율, 한국행정연구원 사회통합실태조사",
+            "data": "국가데이터처 2010년·2024년 사회조사, 2023년 청년 의식변화 기획보도, 저출산고령사회위원회 25-29세 여성 인식조사, KOSIS 합계출산율, 한국행정연구원 사회통합실태조사",
             "files": [
                 "data/derived/marriage_attitude_unmarried_gender.csv",
                 "data/derived/family_norms_culture_shift.csv",
@@ -2076,7 +2117,7 @@ SECTION_DATA_EXPANSION = {
         },
         {
             "question": "이혼에 대한 사회적 수용도는 어느 정도인가?",
-            "data": "국가데이터처·통계청 2024년 사회조사 결과 보도자료와 KOSIS DT_1SSFA070R 이혼에 대한 견해",
+            "data": "국가데이터처 2024년 사회조사 결과 보도자료와 KOSIS DT_1SSFA070R 이혼에 대한 견해",
             "files": ["data/derived/divorce_acceptance_trend.csv", "data/derived/divorce_acceptance_profile_2024.csv"],
             "analysis": "‘이유가 있으면 이혼을 하는 것이 좋다’ 응답 추세와 2024년 집단별 부정·중립·긍정 응답을 비교한다.",
             "interpretation": "이혼 수용도는 높아졌지만, 결혼하지 않는 이유의 주류는 여전히 결혼자금, 양육 부담, 고용 불안이다. 이혼 두려움은 핵심 원인이라기보다 결혼의 장기 위험을 크게 느끼게 하는 보조 요인으로 해석해야 한다.",
@@ -2120,14 +2161,14 @@ SECTION_DATA_EXPANSION = {
         },
         {
             "question": "남성은 실제로 아이 돌보는 시간을 늘리고 있는가?",
-            "data": "통계청 2024년 생활시간조사 결과의 미취학 자녀 가구 시간사용",
+            "data": "국가데이터처 2024년 생활시간조사 결과의 미취학 자녀 가구 시간사용",
             "files": ["data/derived/preschool_childcare_time_by_parent.csv"],
             "analysis": "2019년과 2024년의 남편·아내 돌보기 시간을 분 단위로 환산하고, 부모 합산 돌보기 시간 중 남편 비중을 계산한다.",
             "interpretation": "남편의 돌보기 시간은 늘었지만 아내의 시간이 여전히 훨씬 길다. 제도 이용 확대가 일상적 돌봄 평등으로 이어지는지는 별도로 점검해야 한다.",
         },
         {
             "question": "맞벌이 가구에서도 가사노동은 평등해지고 있는가?",
-            "data": "통계청 2024년 생활시간조사 결과의 18세 미만 자녀가 있는 맞벌이 가구 시간사용",
+            "data": "국가데이터처 2024년 생활시간조사 결과의 18세 미만 자녀가 있는 맞벌이 가구 시간사용",
             "files": ["data/derived/dual_earner_child_housework_time.csv"],
             "analysis": "2019년과 2024년의 남편·아내 가사노동 시간을 비교하고, 부부 합산 가사노동 시간 중 남편 비중을 계산한다.",
             "interpretation": "맞벌이 가구에서 남편의 가사노동 비중은 상승했지만 2024년에도 30%에 미치지 못한다. 저출산 정책은 휴직급여뿐 아니라 일상 시간의 재배분을 겨냥해야 한다.",
@@ -3346,6 +3387,77 @@ def build_derived_data() -> dict[str, list[dict[str, object]]]:
         write_csv(newlywed, "newlywed_income_fertility.csv")
         charts["newlywed_income_fertility"] = newlywed.to_dict("records")
 
+    newlywed_decile_raw_path = DATA / "kosis_newlywed_income_children_DT_1NW1019.csv"
+    if newlywed_decile_raw_path.exists():
+        newlywed_decile_raw = pd.read_csv(newlywed_decile_raw_path)
+        newlywed_decile_raw["year"] = pd.to_numeric(newlywed_decile_raw["PRD_DE"], errors="coerce").astype("Int64")
+        newlywed_decile_raw["value"] = pd.to_numeric(newlywed_decile_raw["DT"], errors="coerce")
+        income_decile_label_map = {
+            "합계": "합계",
+            "1000만원미만": "1천만원 미만",
+            "1000~3000만원 미만": "1천만원~3천만원 미만",
+            "3000~5000만원 미만": "3천만원~5천만원 미만",
+            "5000~7000만원 미만": "5천만원~7천만원 미만",
+            "7000~10000만원 미만": "7천만원~1억원 미만",
+            "10000만원이상": "1억원 이상",
+        }
+        child_category_label_map = {
+            "합계": "합계",
+            "자녀없음": "자녀 없음",
+            "자녀있음": "자녀 있음",
+            "1명": "1명",
+            "2명": "2명",
+            "3명이상": "3명 이상",
+            "평균 출생아수": "평균 출생아 수",
+        }
+        income_order_decile = [
+            "합계",
+            "1천만원 미만",
+            "1천만원~3천만원 미만",
+            "3천만원~5천만원 미만",
+            "5천만원~7천만원 미만",
+            "7천만원~1억원 미만",
+            "1억원 이상",
+        ]
+        newlywed_decile_raw["income_group"] = newlywed_decile_raw["C1_NM"].map(income_decile_label_map)
+        newlywed_decile_raw["child_category"] = newlywed_decile_raw["C2_NM"].map(child_category_label_map)
+        newlywed_decile = (
+            newlywed_decile_raw[
+                newlywed_decile_raw["income_group"].notna()
+                & newlywed_decile_raw["child_category"].isin(["자녀 없음", "자녀 있음", "1명", "2명", "3명 이상", "평균 출생아 수"])
+            ]
+            .pivot_table(index=["year", "income_group"], columns="child_category", values="value", aggfunc="first")
+            .reset_index()
+            .rename(
+                columns={
+                    "자녀 없음": "no_child_pct",
+                    "자녀 있음": "has_child_pct",
+                    "1명": "one_child_pct",
+                    "2명": "two_child_pct",
+                    "3명 이상": "three_plus_child_pct",
+                    "평균 출생아 수": "avg_births",
+                }
+            )
+        )
+        newlywed_decile["income_group"] = pd.Categorical(
+            newlywed_decile["income_group"], categories=income_order_decile, ordered=True
+        )
+        newlywed_decile = newlywed_decile.sort_values(["year", "income_group"]).copy()
+        latest_decile_year = int(newlywed_decile["year"].dropna().max())
+        latest_decile = newlywed_decile[newlywed_decile["year"] == latest_decile_year].copy()
+        total_decile = latest_decile[latest_decile["income_group"].astype(str).eq("합계")].iloc[0]
+        low_decile = latest_decile[latest_decile["income_group"].astype(str).eq("1천만원 미만")].iloc[0]
+        high_decile = latest_decile[latest_decile["income_group"].astype(str).eq("1억원 이상")].iloc[0]
+        newlywed_decile["latest_year"] = latest_decile_year
+        newlywed_decile["latest_total_avg_births"] = float(total_decile["avg_births"])
+        newlywed_decile["latest_low_avg_births"] = float(low_decile["avg_births"])
+        newlywed_decile["latest_high_avg_births"] = float(high_decile["avg_births"])
+        newlywed_decile["latest_high_minus_low_avg_births"] = round(
+            float(high_decile["avg_births"]) - float(low_decile["avg_births"]), 2
+        )
+        write_csv(newlywed_decile, "newlywed_income_decile_birth_trend.csv")
+        charts["newlywed_income_decile_birth_trend"] = newlywed_decile.to_dict("records")
+
     pop_for_education = pd.read_csv(DATA / "population_projection_indicators.csv")
     pop_for_education["DT"] = pd.to_numeric(pop_for_education["DT"], errors="coerce")
     pop_for_education["PRD_DE"] = pd.to_numeric(pop_for_education["PRD_DE"], errors="coerce")
@@ -3922,6 +4034,46 @@ def build_derived_data() -> dict[str, list[dict[str, object]]]:
         vital = vital[[c for c in vital_cols if c in vital.columns]].sort_values("year")
         write_csv(vital, "vital_events_policy.csv")
         charts["vital_events_policy"] = vital.to_dict("records")
+
+    nonmarital_path = DATA / "nonmarital_births_DT_1B81A16.csv"
+    if nonmarital_path.exists():
+        nonmarital_raw = pd.read_csv(nonmarital_path)
+        nonmarital_raw = nonmarital_raw[nonmarital_raw["C1_NM"] == "전국"].copy()
+        nonmarital_raw["DT"] = pd.to_numeric(nonmarital_raw["DT"], errors="coerce")
+        nonmarital = (
+            nonmarital_raw.pivot_table(index="PRD_DE", columns="ITM_NM", values="DT", aggfunc="first")
+            .reset_index()
+            .rename(
+                columns={
+                    "PRD_DE": "year",
+                    "총계": "total_births",
+                    "혼인중의 자": "marital_births",
+                    "혼인외의 자": "nonmarital_births",
+                    "미상": "unknown_marital_status_births",
+                }
+            )
+        )
+        for col in ["total_births", "marital_births", "nonmarital_births", "unknown_marital_status_births"]:
+            if col not in nonmarital.columns:
+                nonmarital[col] = np.nan
+        nonmarital["known_marital_status_births"] = (
+            nonmarital["marital_births"].fillna(0) + nonmarital["nonmarital_births"].fillna(0)
+        )
+        nonmarital["nonmarital_birth_share_pct"] = (
+            nonmarital["nonmarital_births"] / nonmarital["total_births"] * 100
+        ).round(2)
+        nonmarital["nonmarital_share_among_known_pct"] = (
+            nonmarital["nonmarital_births"] / nonmarital["known_marital_status_births"] * 100
+        ).round(2)
+        nonmarital["year"] = pd.to_numeric(nonmarital["year"], errors="coerce").astype("Int64")
+        nonmarital = nonmarital.sort_values("year")
+        latest_nonmarital_year = int(nonmarital["year"].dropna().max())
+        latest_nonmarital = nonmarital[nonmarital["year"] == latest_nonmarital_year].iloc[0]
+        nonmarital["latest_year"] = latest_nonmarital_year
+        nonmarital["latest_nonmarital_births"] = int(latest_nonmarital["nonmarital_births"])
+        nonmarital["latest_nonmarital_birth_share_pct"] = float(latest_nonmarital["nonmarital_birth_share_pct"])
+        write_csv(nonmarital, "nonmarital_birth_trend.csv")
+        charts["nonmarital_birth_trend"] = nonmarital.to_dict("records")
 
     marriage_attitude = pd.DataFrame(
         [
@@ -4936,7 +5088,7 @@ def build_derived_data() -> dict[str, list[dict[str, object]]]:
                 "best_for": "지역사회 통합, 보육·교육·복지·행정서비스 수요",
             },
             {
-                "source": "국가데이터처·통계청",
+                "source": "국가데이터처",
                 "statistic": "인구총조사 외국인",
                 "core_definition": "대한민국에 3개월 이상 거주한 외국 국적자",
                 "residence_rule": "조사 기준시점 현재 국내 상주",

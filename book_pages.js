@@ -1025,6 +1025,41 @@
             }
           }
         };
+      } else if (id === "newlywed_income_decile_birth_trend") {
+        const incomeOrder = ["합계", "1천만원 미만", "1천만원~3천만원 미만", "3천만원~5천만원 미만", "5천만원~7천만원 미만", "7천만원~1억원 미만", "1억원 이상"];
+        const colors = [
+          "rgba(15,23,42,1)",
+          "rgba(37,99,235,1)",
+          "rgba(15,118,110,1)",
+          "rgba(217,119,6,1)",
+          "rgba(185,28,28,1)",
+          "rgba(124,58,237,1)",
+          "rgba(5,150,105,1)"
+        ];
+        const years = Array.from(new Set(rows.map((row) => Number(row.year)).filter((year) => Number.isFinite(year)))).sort((a, b) => a - b);
+        const rowMap = new Map(rows.map((row) => [`${row.income_group}-${row.year}`, row]));
+        config = {
+          type: "line",
+          data: {
+            labels: years,
+            datasets: incomeOrder.map((group, index) => ({
+              label: group,
+              data: years.map((year) => chartNumber(rowMap.get(`${group}-${year}`)?.avg_births)),
+              borderColor: colors[index % colors.length],
+              backgroundColor: colors[index % colors.length].replace(",1)", ",.12)"),
+              tension: 0.25,
+              borderWidth: group === "합계" ? 3 : 2,
+              pointRadius: group === "합계" ? 3 : 2
+            }))
+          },
+          options: {
+            ...common,
+            scales: {
+              x: { grid: { display: false }, title: { display: true, text: "관측연도" } },
+              y: { grid: { color: "rgba(15,23,42,.08)" }, title: { display: true, text: "평균 출생아 수(명)" }, suggestedMin: 0.45, suggestedMax: 1.15 }
+            }
+          }
+        };
       } else if (id === "school_age_private_education_pressure") {
         config = {
           type: "line",
@@ -1528,8 +1563,8 @@
             labels: rows.map((row) => row.year),
             datasets: [
               lineDataset("행정안전부 주민등록인구", rows, "registered_population_million", "rgba(185,28,28,1)"),
-              lineDataset("통계청 인구총조사", rows, "census_population_million", "rgba(37,99,235,1)"),
-              lineDataset("통계청 장래인구추계", rows, "projection_population_million", "rgba(15,118,110,1)")
+              lineDataset("국가데이터처 인구총조사", rows, "census_population_million", "rgba(37,99,235,1)"),
+              lineDataset("국가데이터처 장래인구추계", rows, "projection_population_million", "rgba(15,118,110,1)")
             ]
           },
           options: {
@@ -3926,6 +3961,63 @@
             ]
           },
           options: common
+        };
+      } else if (id === "nonmarital_birth_trend") {
+        config = {
+          type: "bar",
+          data: {
+            labels: rows.map((row) => row.year),
+            datasets: [
+              {
+                type: "bar",
+                label: "혼인외 출생아 수",
+                data: rows.map((row) => chartNumber(row.nonmarital_births)),
+                backgroundColor: "rgba(37,99,235,.68)",
+                yAxisID: "count"
+              },
+              {
+                type: "line",
+                label: "혼인외 출생 비중",
+                data: rows.map((row) => chartNumber(row.nonmarital_birth_share_pct)),
+                borderColor: "rgba(185,28,28,1)",
+                backgroundColor: "rgba(185,28,28,.12)",
+                tension: 0.25,
+                yAxisID: "share"
+              }
+            ]
+          },
+          options: {
+            ...common,
+            scales: {
+              x: { grid: { display: false }, title: { display: true, text: "연도" } },
+              count: {
+                position: "left",
+                grid: { color: "rgba(15,23,42,.08)" },
+                title: { display: true, text: "명" },
+                ticks: { callback: (value) => Number(value).toLocaleString("ko-KR") }
+              },
+              share: {
+                position: "right",
+                grid: { display: false },
+                title: { display: true, text: "전체 출생아 대비 비중(%)" },
+                suggestedMin: 0,
+                suggestedMax: 7,
+                ticks: { callback: (value) => `${value}%` }
+              }
+            },
+            plugins: {
+              ...common.plugins,
+              tooltip: {
+                callbacks: {
+                  label: (context) => {
+                    const value = Number(context.raw);
+                    if (context.dataset.yAxisID === "share") return `${context.dataset.label}: ${value.toFixed(2)}%`;
+                    return `${context.dataset.label}: ${value.toLocaleString("ko-KR")}명`;
+                  }
+                }
+              }
+            }
+          }
         };
       } else if (id === "young_migration_policy") {
         config = {
