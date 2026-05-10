@@ -5208,11 +5208,43 @@ def build_derived_data() -> dict[str, list[dict[str, object]]]:
     intl_wide["international_marriage_share_pct"] = (
         intl_wide["international_marriages"] / intl_wide["total_marriages_for_rate"] * 100
     ).replace([np.inf, -np.inf], np.nan).round(2)
+    topo_code_set = set()
+    slope_bridge_path = DERIVED / "sigungu_population_trend_map_values.csv"
+    if slope_bridge_path.exists():
+        topo_code_set = set(pd.read_csv(slope_bridge_path, dtype=str)["topo_code"].dropna().astype(str))
+    if topo_code_set:
+        intl_wide["topo_code"] = intl_wide["C1"]
+        intl_wide["map_match_note"] = np.where(intl_wide["C1"].isin(topo_code_set), "direct_topo_code", "")
+        topo_candidates = intl_latest[intl_latest["C1"].isin(topo_code_set)][["C1", "C1_NM", "C1_NM_ENG"]].drop_duplicates().copy()
+        topo_candidates["prefix"] = topo_candidates["C1"].str[:2]
+        topo_candidates["name_key"] = topo_candidates["C1_NM"].astype(str).str.strip()
+        topo_candidates["eng_key"] = topo_candidates["C1_NM_ENG"].astype(str).str.strip()
+        topo_lookup = {}
+        for _, row in topo_candidates.iterrows():
+            key = (row["prefix"], row["name_key"], row["eng_key"])
+            topo_lookup.setdefault(key, set()).add(row["C1"])
+
+        def resolve_intl_topo_code(row):
+            if row["C1"] in topo_code_set:
+                return row["C1"], "direct_topo_code"
+            key = (str(row["C1"])[:2], str(row["C1_NM"]).strip(), str(row["C1_NM_ENG"]).strip())
+            candidates = sorted(topo_lookup.get(key, []))
+            if len(candidates) == 1:
+                return candidates[0], "name_prefix_boundary_code"
+            return row["C1"], "unmatched_kosis_code"
+
+        resolved = intl_wide.apply(resolve_intl_topo_code, axis=1, result_type="expand")
+        intl_wide["topo_code"] = resolved[0]
+        intl_wide["map_match_note"] = resolved[1]
+    else:
+        intl_wide["topo_code"] = intl_wide["C1"]
+        intl_wide["map_match_note"] = "no_bridge_available"
     intl_sigungu_map = intl_wide[
         intl_wide["total_marriages_for_rate"].ge(20) & intl_wide["international_marriage_share_pct"].notna()
     ][
         [
             "C1",
+            "topo_code",
             "C1_NM",
             "C1_NM_ENG",
             "남편-전체혼인건수",
@@ -5222,10 +5254,11 @@ def build_derived_data() -> dict[str, list[dict[str, object]]]:
             "total_marriages_for_rate",
             "international_marriages",
             "international_marriage_share_pct",
+            "map_match_note",
         ]
     ].rename(
         columns={
-            "C1": "topo_code",
+            "C1": "kosis_region_code",
             "C1_NM": "region",
             "C1_NM_ENG": "region_eng",
             "남편-전체혼인건수": "husband_total_marriages",
@@ -5233,7 +5266,83 @@ def build_derived_data() -> dict[str, list[dict[str, object]]]:
             "한국인 남편 + 외국인 아내": "korean_husband_foreign_wife",
             "한국인 아내 + 외국인 남편": "korean_wife_foreign_husband",
         }
-    ).sort_values("international_marriage_share_pct", ascending=False)
+    )
+    if topo_code_set and slope_bridge_path.exists():
+        bridge_for_map = pd.read_csv(slope_bridge_path, dtype=str)[["topo_code", "topo_name"]].drop_duplicates()
+        topo_name_by_code = dict(zip(bridge_for_map["topo_code"], bridge_for_map["topo_name"]))
+        boundary_alias_map = {
+            "22520": "37310",  # 군위군: 2023년 대구 편입 전 2018년 지도 경계 코드
+            "23090": "23030",  # 미추홀구: 2018년 지도 경계의 인천 남구
+        }
+        expanded_rows = []
+        for _, row in intl_sigungu_map.iterrows():
+            row = row.copy()
+            kosis_code = str(row["kosis_region_code"])
+            topo_code = str(row["topo_code"])
+            if kosis_code.startswith("000"):
+                continue
+            if topo_code in topo_code_set:
+                expanded_rows.append(row)
+                continue
+            alias_code = boundary_alias_map.get(kosis_code)
+            if alias_code in topo_code_set:
+                row["topo_code"] = alias_code
+                row["map_match_note"] = "renamed_or_transferred_boundary_code"
+                expanded_rows.append(row)
+                continue
+            parent_code = f"{kosis_code[:4]}0"
+            child_codes = sorted(
+                code for code in topo_code_set
+                if code.startswith(kosis_code[:4]) and code != kosis_code
+            )
+            if parent_code in topo_code_set:
+                row["topo_code"] = parent_code
+                row["region"] = topo_name_by_code.get(parent_code, row["region"])
+                row["map_match_note"] = "district_to_parent_boundary_code"
+                expanded_rows.append(row)
+            elif len(child_codes) > 1:
+                for child_code in child_codes:
+                    child_row = row.copy()
+                    child_row["topo_code"] = child_code
+                    child_row["region"] = topo_name_by_code.get(child_code, child_row["region"])
+                    child_row["map_match_note"] = "aggregate_to_child_boundary_code"
+                    expanded_rows.append(child_row)
+            else:
+                expanded_rows.append(row)
+        intl_sigungu_map = pd.DataFrame(expanded_rows)
+        if not intl_sigungu_map.empty:
+            sum_cols = [
+                "husband_total_marriages",
+                "wife_total_marriages",
+                "korean_husband_foreign_wife",
+                "korean_wife_foreign_husband",
+            ]
+            for col in sum_cols:
+                intl_sigungu_map[col] = pd.to_numeric(intl_sigungu_map[col], errors="coerce").fillna(0)
+            intl_sigungu_map = (
+                intl_sigungu_map
+                .groupby("topo_code", as_index=False)
+                .agg(
+                    kosis_region_code=("kosis_region_code", lambda x: "+".join(sorted(set(map(str, x))))),
+                    region=("region", "first"),
+                    region_eng=("region_eng", "first"),
+                    husband_total_marriages=("husband_total_marriages", "sum"),
+                    wife_total_marriages=("wife_total_marriages", "sum"),
+                    korean_husband_foreign_wife=("korean_husband_foreign_wife", "sum"),
+                    korean_wife_foreign_husband=("korean_wife_foreign_husband", "sum"),
+                    map_match_note=("map_match_note", lambda x: "+".join(sorted(set(map(str, x))))),
+                )
+            )
+            intl_sigungu_map["total_marriages_for_rate"] = (
+                intl_sigungu_map["husband_total_marriages"] + intl_sigungu_map["wife_total_marriages"]
+            ) / 2
+            intl_sigungu_map["international_marriages"] = (
+                intl_sigungu_map["korean_husband_foreign_wife"] + intl_sigungu_map["korean_wife_foreign_husband"]
+            )
+            intl_sigungu_map["international_marriage_share_pct"] = (
+                intl_sigungu_map["international_marriages"] / intl_sigungu_map["total_marriages_for_rate"] * 100
+            ).replace([np.inf, -np.inf], np.nan).round(2)
+    intl_sigungu_map = intl_sigungu_map.sort_values("international_marriage_share_pct", ascending=False)
     intl_sigungu_map["year"] = latest_intl_year
     write_csv(intl_sigungu_map, "international_marriage_share_sigungu_2024.csv")
     charts["international_marriage_share_sigungu_map"] = intl_sigungu_map.to_dict("records")

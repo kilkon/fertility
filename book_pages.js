@@ -357,15 +357,22 @@
         : `${feature.name}: 자료 없음`;
       return `<path class="sigungu-map-path" d="${d}" fill="${fill}"><title>${svgEscape(label)}</title></path>`;
     }).join("");
-    const legend = [
-      ["자료 없음", "#e5e7eb"],
+    const hasMissingInternationalMarriageData = decoded.some((feature) => {
+      const row = rowByCode.get(feature.code);
+      return !row || !Number.isFinite(Number(row.international_marriage_share_pct));
+    });
+    const legendItems = [
       ["5% 미만", "#e0f2fe"],
       ["5-10%", "#93c5fd"],
       ["10-15%", "#60a5fa"],
       ["15-20%", "#2563eb"],
       ["20-30%", "#f59e0b"],
       ["30% 이상", "#b91c1c"]
-    ].map((item, index) => {
+    ];
+    if (hasMissingInternationalMarriageData) {
+      legendItems.unshift(["자료 없음", "#e5e7eb"]);
+    }
+    const legend = legendItems.map((item, index) => {
       const x = 36 + (index % 4) * 170;
       const y = 812 + Math.floor(index / 4) * 28;
       return `<rect x="${x}" y="${y}" width="18" height="18" fill="${item[1]}"></rect><text x="${x + 26}" y="${y + 14}">${svgEscape(item[0])}</text>`;
