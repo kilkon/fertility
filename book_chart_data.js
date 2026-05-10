@@ -16810,6 +16810,24 @@ window.populationBookCharts = {
         "source_url": "https://www.hankyung.com/article/202304121217Y"
       },
       {
+        "indicator": "50대 부자 중 창업 부호",
+        "group": "최상위 자산가",
+        "year": 2026,
+        "value": 46.0,
+        "unit": "%",
+        "source_note": "포브스코리아, 2026 대한민국 50대 부자: 창업 부호 23명",
+        "source_url": "https://www.forbeskorea.co.kr/news/articleView.html?idxno=401816"
+      },
+      {
+        "indicator": "50대 부자 중 상속 부호",
+        "group": "최상위 자산가",
+        "year": 2026,
+        "value": 54.0,
+        "unit": "%",
+        "source_note": "포브스코리아, 2026 대한민국 50대 부자: 상속 부호 27명",
+        "source_url": "https://www.forbeskorea.co.kr/news/articleView.html?idxno=401816"
+      },
+      {
         "indicator": "초중고 사교육비 총액",
         "group": "사교육 시장",
         "year": 2025,
@@ -99065,7 +99083,7 @@ window.populationBookCharts = {
       "title": "부모 불안과 출발선 담론을 점검하는 보조 지표",
       "kind": "bar",
       "csv": "education_status_anxiety_indicators.csv",
-      "source": "KOSIS DT_1SSED080R·DT_1SSED100R·DT_1SSED110R·DT_1PE003; 국가데이터처 2025년 사회조사 결과 보도자료(2025.11.11); CEO스코어 2023.4.7 기준 상장 중견기업·500대 기업 상장사 대표이사 분석; CEO스코어/연합뉴스 2024년 초 500대 기업 대표이사 분석; OECD Education at a Glance 2025 Korea Country Note",
+      "source": "KOSIS DT_1SSED080R·DT_1SSED100R·DT_1SSED110R·DT_1PE003; 국가데이터처 2025년 사회조사 결과 보도자료(2025.11.11); CEO스코어 2023.4.7 기준 상장 중견기업·500대 기업 상장사 대표이사 분석; CEO스코어/연합뉴스 2024년 초 500대 기업 대표이사 분석; 포브스코리아 2026 대한민국 50대 부자; OECD Education at a Glance 2025 Korea Country Note",
       "note": "서로 다른 표본과 개념을 한 그림에 놓은 진단용 보조 지표다. KOSIS 값은 원표에서 계산했고, 계층이동 인식과 CEO 구성은 공개 보도자료·기사의 집계값을 옮겼다. 부모 불안이 실제로 존재한다는 점과, 동시에 상층 진입을 전부 상속으로만 설명하는 해석은 과도하다는 점을 함께 보기 위한 그림이다."
     },
     "yeonggwang_cohort": {

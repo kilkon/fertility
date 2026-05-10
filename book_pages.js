@@ -1107,6 +1107,7 @@
           if (group === "부모 불안") return "rgba(185,28,28,.72)";
           if (group === "계층 이동 인식") return "rgba(217,119,6,.72)";
           if (group === "기업 리더 진입경로") return "rgba(37,99,235,.72)";
+          if (group === "최상위 자산가") return "rgba(124,58,237,.72)";
           return "rgba(15,118,110,.72)";
         };
         config = {
