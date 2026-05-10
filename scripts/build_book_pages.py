@@ -648,7 +648,7 @@ CHART_META = {
         "kind": "line",
         "csv": "education_burden_perception.csv",
         "source": "KOSIS DT_1SSED100R 자녀 교육비 부담 인식, DT_1SSED110R 가장 부담되는 자녀 교육비 항목, 국가데이터처 사회조사",
-        "note": "전국 30세 이상 가구주 중 학생 자녀가 있는 가구의 교육비 부담 인식과 부담 항목 분포다. 사회조사는 2년 주기 조사이므로 격년으로 나타난다.",
+        "note": "전국 30세 이상 가구주 중 학생 자녀가 있는 가구의 교육비 부담 인식과 부담 항목 분포다. 학교 납입금보다 학교 밖 교육비가 더 큰 부담으로 남아 있는지를 보기 위한 그림이다.",
     },
     "education_status_anxiety_indicators": {
         "title": "부모 불안과 출발선 담론을 점검하는 보조 지표",

@@ -1088,7 +1088,7 @@
             datasets: [
               lineDataset("교육비 부담스럽다(%)", rows, "education_burden_heavy_or_somewhat_pct", "rgba(185,28,28,1)"),
               lineDataset("학교 납입금 외 교육비가 가장 부담(%)", rows, "non_school_payment_education_cost_most_burdensome_pct", "rgba(37,99,235,1)"),
-              lineDataset("대학 이상 기대(%)", rows, "expect_university_or_more_pct", "rgba(15,118,110,1)")
+              lineDataset("학교 납입금이 가장 부담(%)", rows, "school_payment_most_burdensome_pct", "rgba(15,118,110,1)")
             ]
           },
           options: {
