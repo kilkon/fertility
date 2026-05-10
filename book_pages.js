@@ -1099,6 +1099,67 @@
             }
           }
         };
+      } else if (id === "education_status_anxiety_indicators") {
+        const pctRows = rows.filter((row) => row.unit === "%");
+        const spendingRow = rows.find((row) => row.unit === "조원");
+        const plotRows = spendingRow ? [...pctRows, spendingRow] : pctRows;
+        const colorFor = (group) => {
+          if (group === "부모 불안") return "rgba(185,28,28,.72)";
+          if (group === "계층 이동 인식") return "rgba(217,119,6,.72)";
+          if (group === "기업 리더 진입경로") return "rgba(37,99,235,.72)";
+          return "rgba(15,118,110,.72)";
+        };
+        config = {
+          type: "bar",
+          data: {
+            labels: plotRows.map((row) => `${row.indicator}\n(${row.year})`),
+            datasets: [
+              {
+                type: "bar",
+                label: "비율(%)",
+                data: plotRows.map((row) => row.unit === "%" ? chartNumber(row.value) : null),
+                backgroundColor: plotRows.map((row) => colorFor(row.group)),
+                borderColor: plotRows.map((row) => colorFor(row.group).replace(".72)", "1)")),
+                borderWidth: 1,
+                yAxisID: "pct"
+              },
+              ...(spendingRow ? [{
+                type: "bar",
+                label: "초중고 사교육비 총액(조원)",
+                data: plotRows.map((row) => row.unit === "조원" ? chartNumber(row.value) : null),
+                borderColor: "rgba(15,118,110,.95)",
+                backgroundColor: "rgba(15,118,110,.72)",
+                borderWidth: 1,
+                yAxisID: "money"
+              }] : [])
+            ]
+          },
+          options: {
+            ...common,
+            scales: {
+              x: { grid: { display: false }, ticks: { callback: function(value) { return this.getLabelForValue(value).split("\n"); } } },
+              pct: { position: "left", grid: { color: "rgba(15,23,42,.08)" }, min: 0, max: 105, title: { display: true, text: "비율(%)" } },
+              money: { position: "right", grid: { display: false }, min: 0, suggestedMax: 35, title: { display: true, text: "조원" } }
+            },
+            plugins: {
+              ...common.plugins,
+              tooltip: {
+                callbacks: {
+                  label: (context) => {
+                    const row = plotRows[context.dataIndex];
+                    if (!row) return "";
+                    const value = Number(row.value).toLocaleString("ko-KR");
+                    return `${row.indicator}: ${value}${row.unit}`;
+                  },
+                  afterLabel: (context) => {
+                    const row = plotRows[context.dataIndex];
+                    return row?.source_note || "";
+                  }
+                }
+              }
+            }
+          }
+        };
       } else if (id === "living_population_ratio_top") {
         const sortedRows = rows
           .slice()

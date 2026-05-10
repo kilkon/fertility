@@ -650,6 +650,13 @@ CHART_META = {
         "source": "KOSIS DT_1SSED100R 자녀 교육비 부담 인식, DT_1SSED110R 가장 부담되는 자녀 교육비 항목, 국가데이터처 사회조사",
         "note": "전국 30세 이상 가구주 중 학생 자녀가 있는 가구의 교육비 부담 인식과 부담 항목 분포다. 사회조사는 2년 주기 조사이므로 격년으로 나타난다.",
     },
+    "education_status_anxiety_indicators": {
+        "title": "부모 불안과 출발선 담론을 점검하는 보조 지표",
+        "kind": "bar",
+        "csv": "education_status_anxiety_indicators.csv",
+        "source": "KOSIS DT_1SSED080R·DT_1SSED100R·DT_1SSED110R·DT_1PE003; 국가데이터처 2025년 사회조사 결과 보도자료(2025.11.11); CEO스코어 2023.4.7 기준 상장 중견기업·500대 기업 상장사 대표이사 분석; CEO스코어/연합뉴스 2024년 초 500대 기업 대표이사 분석; OECD Education at a Glance 2025 Korea Country Note",
+        "note": "서로 다른 표본과 개념을 한 그림에 놓은 진단용 보조 지표다. KOSIS 값은 원표에서 계산했고, 계층이동 인식과 CEO 구성은 공개 보도자료·기사의 집계값을 옮겼다. 부모 불안이 실제로 존재한다는 점과, 동시에 상층 진입을 전부 상속으로만 설명하는 해석은 과도하다는 점을 함께 보기 위한 그림이다.",
+    },
     "yeonggwang_cohort": {
         "title": "지역 사례: 출생 코호트 잔존",
         "kind": "barLine",
@@ -1763,10 +1770,10 @@ SECTION_DATA_EXPANSION = {
     "section-6-5-education-expectation-burden.html": [
         {
             "question": "부모는 왜 자녀 교육을 대학까지 책임져야 한다고 느끼는가?",
-            "data": "KOSIS DT_1SSED100R 자녀 교육비 부담 인식, DT_1SSED110R 가장 부담되는 자녀 교육비 항목, DT_1SSED080R 부모가 기대하는 자녀 교육수준",
-            "files": ["data/education_DT_1SSED100R.csv", "data/education_DT_1SSED110R.csv", "data/education_DT_1SSED080R.csv", "data/derived/education_burden_perception.csv"],
-            "analysis": "학생 자녀가 있는 가구의 교육비 부담 인식과 부담 항목, 부모가 기대하는 자녀 교육수준을 격년 추세로 정리한다.",
-            "interpretation": "대학 진학이 예외가 아니라 기본값이 되는 사회에서는 출산이 단기 양육비가 아니라 장기 교육비 약속으로 받아들여진다.",
+            "data": "KOSIS DT_1SSED100R 자녀 교육비 부담 인식, DT_1SSED110R 가장 부담되는 자녀 교육비 항목, DT_1SSED080R 부모가 기대하는 자녀 교육수준, 사회조사 계층이동 인식, CEO스코어·한경비즈니스 기업 리더십 공개 분석",
+            "files": ["data/education_DT_1SSED100R.csv", "data/education_DT_1SSED110R.csv", "data/education_DT_1SSED080R.csv", "data/derived/education_burden_perception.csv", "data/derived/education_status_anxiety_indicators.csv"],
+            "analysis": "학생 자녀가 있는 가구의 교육비 부담과 부모 교육기대 추세를 정리하고, 계층상승 가능성 인식 및 기업 대표이사 오너 일가·전문경영인 비중을 보조 지표로 함께 읽는다.",
+            "interpretation": "부모의 대학 책임감은 실제 계층 불안에 뿌리를 두지만, 성공 가능성을 전부 부모 자산으로 환원하면 과장된다. 핵심은 대학 이후 첫 출발의 위험을 가족이 사적으로 떠안는 구조다.",
         }
     ],
     "section-1-1-age-structure.html": [
@@ -3542,6 +3549,87 @@ def build_derived_data() -> dict[str, list[dict[str, object]]]:
     ).sort_values("year")
     write_csv(burden_view, "education_burden_perception.csv")
     charts["education_burden_perception"] = burden_view.to_dict("records")
+
+    latest_burden = burden_view.sort_values("year").iloc[-1]
+    latest_private = private_trend.sort_values("year").iloc[-1]
+    status_anxiety = pd.DataFrame(
+        [
+            {
+                "indicator": "대학 이상 교육 기대",
+                "group": "부모 불안",
+                "year": int(latest_burden["year"]),
+                "value": round(float(latest_burden["expect_university_or_more_pct"]), 2),
+                "unit": "%",
+                "source_note": "KOSIS DT_1SSED080R, 30세 이상 인구",
+                "source_url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1SSED080R",
+            },
+            {
+                "indicator": "자녀 교육비 부담",
+                "group": "부모 불안",
+                "year": int(latest_burden["year"]),
+                "value": round(float(latest_burden["education_burden_heavy_or_somewhat_pct"]), 2),
+                "unit": "%",
+                "source_note": "KOSIS DT_1SSED100R, 학생 자녀가 있는 30세 이상 가구주",
+                "source_url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1SSED100R",
+            },
+            {
+                "indicator": "학교 밖 교육비가 가장 부담",
+                "group": "부모 불안",
+                "year": int(latest_burden["year"]),
+                "value": round(float(latest_burden["non_school_payment_education_cost_most_burdensome_pct"]), 2),
+                "unit": "%",
+                "source_note": "KOSIS DT_1SSED110R, 학생 자녀가 있는 30세 이상 가구주",
+                "source_url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1SSED110R",
+            },
+            {
+                "indicator": "자식세대 계층상승 가능성 낮다",
+                "group": "계층 이동 인식",
+                "year": 2025,
+                "value": 54.1,
+                "unit": "%",
+                "source_note": "국가데이터처, 2025년 사회조사 결과 보도자료(소득과 소비 부문)",
+                "source_url": "https://www.kostat.go.kr/board.es?act=view&bid=219&list_no=439196&mid=a10301060100",
+            },
+            {
+                "indicator": "500대 기업 대표이사 중 전문경영인",
+                "group": "기업 리더 진입경로",
+                "year": 2024,
+                "value": 83.4,
+                "unit": "%",
+                "source_note": "CEO스코어/연합뉴스, 2024년 초 기준 500대 기업 대표이사 670명 분석",
+                "source_url": "https://www.hankyung.com/article/202401103438Y",
+            },
+            {
+                "indicator": "500대 상장사 대표이사 중 오너 일가",
+                "group": "기업 리더 진입경로",
+                "year": 2023,
+                "value": 19.7,
+                "unit": "%",
+                "source_note": "CEO스코어/연합뉴스, 2023.4.7 기준 500대 기업 상장사 269곳 대표이사 396명 분석",
+                "source_url": "https://www.hankyung.com/article/202304121217Y",
+            },
+            {
+                "indicator": "상장 중견기업 대표이사 중 오너 일가",
+                "group": "기업 리더 진입경로",
+                "year": 2023,
+                "value": 47.9,
+                "unit": "%",
+                "source_note": "CEO스코어/연합뉴스, 2023.4.7 기준 상장 중견기업 715곳 대표이사 981명 분석",
+                "source_url": "https://www.hankyung.com/article/202304121217Y",
+            },
+            {
+                "indicator": "초중고 사교육비 총액",
+                "group": "사교육 시장",
+                "year": int(latest_private["year"]),
+                "value": round(float(latest_private["private_education_total_trillion_krw"]), 2),
+                "unit": "조원",
+                "source_note": "KOSIS DT_1PE003, 국가데이터처·교육부 초중고사교육비조사",
+                "source_url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1PE003",
+            },
+        ]
+    )
+    write_csv(status_anxiety, "education_status_anxiety_indicators.csv")
+    charts["education_status_anxiety_indicators"] = status_anxiety.to_dict("records")
 
     pop = pd.read_csv(DATA / "population_projection_indicators.csv")
     pop["DT"] = pd.to_numeric(pop["DT"], errors="coerce")

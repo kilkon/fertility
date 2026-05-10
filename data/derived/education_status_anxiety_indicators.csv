@@ -1,0 +1,9 @@
+﻿indicator,group,year,value,unit,source_note,source_url
+대학 이상 교육 기대,부모 불안,2024,99.08,%,"KOSIS DT_1SSED080R, 30세 이상 인구",https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1SSED080R
+자녀 교육비 부담,부모 불안,2024,60.92,%,"KOSIS DT_1SSED100R, 학생 자녀가 있는 30세 이상 가구주",https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1SSED100R
+학교 밖 교육비가 가장 부담,부모 불안,2024,71.89,%,"KOSIS DT_1SSED110R, 학생 자녀가 있는 30세 이상 가구주",https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1SSED110R
+자식세대 계층상승 가능성 낮다,계층 이동 인식,2025,54.1,%,"국가데이터처, 2025년 사회조사 결과 보도자료(소득과 소비 부문)",https://www.kostat.go.kr/board.es?act=view&bid=219&list_no=439196&mid=a10301060100
+500대 기업 대표이사 중 전문경영인,기업 리더 진입경로,2024,83.4,%,"CEO스코어/연합뉴스, 2024년 초 기준 500대 기업 대표이사 670명 분석",https://www.hankyung.com/article/202401103438Y
+500대 상장사 대표이사 중 오너 일가,기업 리더 진입경로,2023,19.7,%,"CEO스코어/연합뉴스, 2023.4.7 기준 500대 기업 상장사 269곳 대표이사 396명 분석",https://www.hankyung.com/article/202304121217Y
+상장 중견기업 대표이사 중 오너 일가,기업 리더 진입경로,2023,47.9,%,"CEO스코어/연합뉴스, 2023.4.7 기준 상장 중견기업 715곳 대표이사 981명 분석",https://www.hankyung.com/article/202304121217Y
+초중고 사교육비 총액,사교육 시장,2025,27.54,조원,"KOSIS DT_1PE003, 국가데이터처·교육부 초중고사교육비조사",https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1PE003

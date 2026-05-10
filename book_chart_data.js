@@ -16745,6 +16745,80 @@ window.populationBookCharts = {
         "expect_university_or_more_pct": 99.08
       }
     ],
+    "education_status_anxiety_indicators": [
+      {
+        "indicator": "대학 이상 교육 기대",
+        "group": "부모 불안",
+        "year": 2024,
+        "value": 99.08,
+        "unit": "%",
+        "source_note": "KOSIS DT_1SSED080R, 30세 이상 인구",
+        "source_url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1SSED080R"
+      },
+      {
+        "indicator": "자녀 교육비 부담",
+        "group": "부모 불안",
+        "year": 2024,
+        "value": 60.92,
+        "unit": "%",
+        "source_note": "KOSIS DT_1SSED100R, 학생 자녀가 있는 30세 이상 가구주",
+        "source_url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1SSED100R"
+      },
+      {
+        "indicator": "학교 밖 교육비가 가장 부담",
+        "group": "부모 불안",
+        "year": 2024,
+        "value": 71.89,
+        "unit": "%",
+        "source_note": "KOSIS DT_1SSED110R, 학생 자녀가 있는 30세 이상 가구주",
+        "source_url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1SSED110R"
+      },
+      {
+        "indicator": "자식세대 계층상승 가능성 낮다",
+        "group": "계층 이동 인식",
+        "year": 2025,
+        "value": 54.1,
+        "unit": "%",
+        "source_note": "국가데이터처, 2025년 사회조사 결과 보도자료(소득과 소비 부문)",
+        "source_url": "https://www.kostat.go.kr/board.es?act=view&bid=219&list_no=439196&mid=a10301060100"
+      },
+      {
+        "indicator": "500대 기업 대표이사 중 전문경영인",
+        "group": "기업 리더 진입경로",
+        "year": 2024,
+        "value": 83.4,
+        "unit": "%",
+        "source_note": "CEO스코어/연합뉴스, 2024년 초 기준 500대 기업 대표이사 670명 분석",
+        "source_url": "https://www.hankyung.com/article/202401103438Y"
+      },
+      {
+        "indicator": "500대 상장사 대표이사 중 오너 일가",
+        "group": "기업 리더 진입경로",
+        "year": 2023,
+        "value": 19.7,
+        "unit": "%",
+        "source_note": "CEO스코어/연합뉴스, 2023.4.7 기준 500대 기업 상장사 269곳 대표이사 396명 분석",
+        "source_url": "https://www.hankyung.com/article/202304121217Y"
+      },
+      {
+        "indicator": "상장 중견기업 대표이사 중 오너 일가",
+        "group": "기업 리더 진입경로",
+        "year": 2023,
+        "value": 47.9,
+        "unit": "%",
+        "source_note": "CEO스코어/연합뉴스, 2023.4.7 기준 상장 중견기업 715곳 대표이사 981명 분석",
+        "source_url": "https://www.hankyung.com/article/202304121217Y"
+      },
+      {
+        "indicator": "초중고 사교육비 총액",
+        "group": "사교육 시장",
+        "year": 2025,
+        "value": 27.54,
+        "unit": "조원",
+        "source_note": "KOSIS DT_1PE003, 국가데이터처·교육부 초중고사교육비조사",
+        "source_url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1PE003"
+      }
+    ],
     "age_composition_projection": [
       {
         "year": 2000,
@@ -98986,6 +99060,13 @@ window.populationBookCharts = {
       "csv": "education_burden_perception.csv",
       "source": "KOSIS DT_1SSED100R 자녀 교육비 부담 인식, DT_1SSED110R 가장 부담되는 자녀 교육비 항목, 국가데이터처 사회조사",
       "note": "전국 30세 이상 가구주 중 학생 자녀가 있는 가구의 교육비 부담 인식과 부담 항목 분포다. 사회조사는 2년 주기 조사이므로 격년으로 나타난다."
+    },
+    "education_status_anxiety_indicators": {
+      "title": "부모 불안과 출발선 담론을 점검하는 보조 지표",
+      "kind": "bar",
+      "csv": "education_status_anxiety_indicators.csv",
+      "source": "KOSIS DT_1SSED080R·DT_1SSED100R·DT_1SSED110R·DT_1PE003; 국가데이터처 2025년 사회조사 결과 보도자료(2025.11.11); CEO스코어 2023.4.7 기준 상장 중견기업·500대 기업 상장사 대표이사 분석; CEO스코어/연합뉴스 2024년 초 500대 기업 대표이사 분석; OECD Education at a Glance 2025 Korea Country Note",
+      "note": "서로 다른 표본과 개념을 한 그림에 놓은 진단용 보조 지표다. KOSIS 값은 원표에서 계산했고, 계층이동 인식과 CEO 구성은 공개 보도자료·기사의 집계값을 옮겼다. 부모 불안이 실제로 존재한다는 점과, 동시에 상층 진입을 전부 상속으로만 설명하는 해석은 과도하다는 점을 함께 보기 위한 그림이다."
     },
     "yeonggwang_cohort": {
       "title": "지역 사례: 출생 코호트 잔존",
