@@ -26,7 +26,7 @@ MANUSCRIPTS = ROOT / "manuscripts"
 CHAPTER_MANUSCRIPTS = MANUSCRIPTS / "chapters"
 SECTION_MANUSCRIPTS = MANUSCRIPTS / "sections"
 APPENDIX_FILE = "appendix-data-notes.html"
-ASSET_VERSION = "20260510-lifecycle-fiscal"
+ASSET_VERSION = "20260510-lifecycle-window-local"
 FEEDBACK_EMAIL = "kilkon@snu.ac.kr"
 PUBLIC_SITE_URL = "https://kilkon.github.io/fertility"
 
@@ -978,6 +978,13 @@ CHART_META = {
         "csv": "sigungu_aging_distribution.csv",
         "source": "KOSIS DT_1B04006 행정구역(시군구)별/1세별 주민등록인구",
         "note": "일부 지역의 초고령 구조는 전국 평균보다 훨씬 앞서 나타난다.",
+    },
+    "local_fiscal_aging_exposure": {
+        "title": "2024년 시군구 지방재정 고령화 노출도",
+        "kind": "bubble",
+        "csv": "local_fiscal_aging_exposure.csv",
+        "source": "KOSIS DT_1B04006 행정구역(시군구)별/1세별 주민등록인구",
+        "note": "노년부양비는 15-64세 생산연령인구 100명당 65세 이상 인구 수다. 직접 지방재정 지출 자료가 아니라, 세입 기반과 서비스 수요가 동시에 압박받을 가능성을 보여주는 인구구조 기반 노출도 지표다.",
     },
     "childcare_capacity_pressure": {
         "title": "보육아동수·어린이집 수·시설당 아동수",
@@ -4365,6 +4372,45 @@ def build_derived_data() -> dict[str, list[dict[str, object]]]:
     sig_dist["older_population_share"] = (sig_dist["older_population"] / sig_dist["total_population"] * 100).round(2)
     write_csv(sig_dist, "sigungu_aging_distribution.csv")
     charts["sigungu_aging_distribution"] = sig_dist.to_dict("records")
+
+    sigungu_age_panel_path = DERIVED / "sigungu_age_group_population_panel.csv"
+    if sigungu_age_panel_path.exists():
+        sigungu_age_panel = pd.read_csv(sigungu_age_panel_path)
+        latest_sigungu_age_year = int(sigungu_age_panel["year"].max())
+        local_exposure = sigungu_age_panel[sigungu_age_panel["year"] == latest_sigungu_age_year].copy()
+        local_exposure["old_age_dependency_ratio"] = (
+            local_exposure["older_population"] / local_exposure["working_age_population"] * 100
+        ).round(2)
+        local_exposure["older_population_share"] = (
+            local_exposure["older_population"] / local_exposure["total_population"] * 100
+        ).round(2)
+        local_exposure["exposure_group"] = pd.cut(
+            local_exposure["old_age_dependency_ratio"],
+            bins=[0, 30, 50, 80, 200],
+            labels=["30 미만", "30-50", "50-80", "80 이상"],
+            right=False,
+        ).astype(str)
+        local_exposure["bubble_radius"] = (
+            np.sqrt(local_exposure["older_population"].clip(lower=1)) / 95
+        ).clip(lower=3, upper=16).round(2)
+        local_exposure = local_exposure[
+            [
+                "year",
+                "C1",
+                "C1_NM",
+                "total_population",
+                "working_age_population",
+                "older_population",
+                "working_age_share",
+                "older_share",
+                "older_population_share",
+                "old_age_dependency_ratio",
+                "exposure_group",
+                "bubble_radius",
+            ]
+        ].sort_values("old_age_dependency_ratio", ascending=False)
+        write_csv(local_exposure, "local_fiscal_aging_exposure.csv")
+        charts["local_fiscal_aging_exposure"] = local_exposure.to_dict("records")
 
     migration_path = DATA / "domestic_migration_age_DT_1B26001_A03.csv"
     if migration_path.exists():

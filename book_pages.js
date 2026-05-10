@@ -3335,6 +3335,71 @@
           },
           options: common
         };
+      } else if (id === "local_fiscal_aging_exposure") {
+        const sortedRows = [...rows].sort((a, b) => Number(a.old_age_dependency_ratio) - Number(b.old_age_dependency_ratio));
+        const colors = {
+          "30 미만": "rgba(37,99,235,.36)",
+          "30-50": "rgba(15,118,110,.36)",
+          "50-80": "rgba(180,83,9,.42)",
+          "80 이상": "rgba(190,18,60,.46)"
+        };
+        const borderColors = {
+          "30 미만": "rgba(37,99,235,1)",
+          "30-50": "rgba(15,118,110,1)",
+          "50-80": "rgba(180,83,9,1)",
+          "80 이상": "rgba(190,18,60,1)"
+        };
+        config = {
+          type: "bubble",
+          data: {
+            datasets: Object.keys(colors).map((group) => {
+              const groupRows = sortedRows.filter((row) => row.exposure_group === group);
+              return {
+                label: `노년부양비 ${group}`,
+                data: groupRows.map((row) => ({
+                  x: chartNumber(row.working_age_share),
+                  y: chartNumber(row.old_age_dependency_ratio),
+                  r: chartNumber(row.bubble_radius),
+                  region: row.C1_NM,
+                  olderPopulation: Number(row.older_population),
+                  totalPopulation: Number(row.total_population),
+                  olderShare: Number(row.older_share)
+                })),
+                backgroundColor: colors[group],
+                borderColor: borderColors[group],
+                borderWidth: 1
+              };
+            })
+          },
+          options: {
+            ...common,
+            plugins: {
+              ...common.plugins,
+              tooltip: {
+                callbacks: {
+                  label: (context) => {
+                    const raw = context.raw || {};
+                    return [
+                      `${raw.region}: 노년부양비 ${Number(raw.y).toFixed(1)}, 생산연령비중 ${Number(raw.x).toFixed(1)}%`,
+                      `65세 이상 ${Number(raw.olderPopulation || 0).toLocaleString("ko-KR")}명, 고령화율 ${Number(raw.olderShare || 0).toFixed(1)}%`
+                    ];
+                  }
+                }
+              }
+            },
+            scales: {
+              x: {
+                grid: { color: "rgba(15,23,42,.08)" },
+                title: { display: true, text: "생산연령인구 비중(%, 낮을수록 세입 기반이 약함)" },
+                ticks: { callback: (value) => `${value}%` }
+              },
+              y: {
+                grid: { color: "rgba(15,23,42,.08)" },
+                title: { display: true, text: "노년부양비(생산연령 100명당 65세 이상)" }
+              }
+            }
+          }
+        };
       } else if (id === "childcare_capacity_pressure") {
         config = {
           type: "line",
