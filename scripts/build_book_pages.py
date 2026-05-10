@@ -825,6 +825,13 @@ CHART_META = {
         "source": "KOSIS DT_1BB0006 지역별 다문화 출생",
         "note": "출생 구조는 내국인 출생만으로 설명되지 않으며, 지역별 다문화 출생 비중은 가족 형성 구조 변화를 보여준다.",
     },
+    "international_marriage_share_sigungu_map": {
+        "title": "시군구 전체 혼인 중 국제결혼 비중",
+        "kind": "map",
+        "csv": "international_marriage_share_sigungu_2024.csv",
+        "source": "KOSIS DT_1B83A24 시도/시군구별 외국인과의 혼인, 국가데이터처 인구동향조사",
+        "note": "2024년 기준이다. 한국인 남편+외국인 아내와 한국인 아내+외국인 남편을 합산하고, 지역별 전체 혼인은 남편·아내 주소 기준 전체혼인건수의 평균을 사용해 비중을 계산했다.",
+    },
     "childcare_children": {
         "title": "어린이집 보육아동수",
         "kind": "line",
@@ -2036,6 +2043,13 @@ SECTION_DATA_EXPANSION = {
             "files": ["data/foreign_residents_DT_1B040A5A.csv", "data/registered_foreigners_DT_1B040A11.csv"],
             "analysis": "체류자격별 규모와 지역 분포를 분해해 노동형, 유학형, 결혼·정착형 유입을 구분한다.",
             "interpretation": "외국인 인구는 단일 집단이 아니라 지역 노동시장과 가족 형성에 서로 다른 방식으로 작동한다.",
+        },
+        {
+            "question": "국제결혼은 지역 가족 형성에서 얼마나 큰 비중을 차지하는가?",
+            "data": "KOSIS DT_1B83A24 시도/시군구별 외국인과의 혼인",
+            "files": ["data/international_marriage_DT_1B83A24.csv", "data/derived/international_marriage_share_sigungu_2024.csv", "map_data.js"],
+            "analysis": "2024년 시군구별 한국인 남편+외국인 아내와 한국인 아내+외국인 남편을 합산하고, 전체혼인건수 대비 비중을 GIS 지도에 표시한다.",
+            "interpretation": "국제결혼 비중이 큰 지역에서는 외국인·다문화 정책이 노동력 보완이 아니라 가족 형성, 정주, 자녀교육 정책과 직접 연결된다.",
         },
         {
             "question": "다문화 출생 비중은 출생 구조를 얼마나 바꾸는가?",
@@ -5164,6 +5178,65 @@ def build_derived_data() -> dict[str, list[dict[str, object]]]:
     multi = multi[["year", "multicultural_birth_share"]].sort_values("year")
     write_csv(multi, "multicultural_birth_rate.csv")
     charts["multicultural_birth_rate"] = multi.to_dict("records")
+
+    intl_marriage = pd.read_csv(DATA / "international_marriage_DT_1B83A24.csv")
+    intl_marriage["year"] = pd.to_numeric(intl_marriage["PRD_DE"], errors="coerce")
+    intl_marriage["value"] = pd.to_numeric(intl_marriage["DT"], errors="coerce")
+    intl_marriage["C1"] = intl_marriage["C1"].astype(str).str.zfill(5)
+    latest_intl_year = int(intl_marriage["year"].dropna().max())
+    intl_latest = intl_marriage[
+        (intl_marriage["year"] == latest_intl_year)
+        & (intl_marriage["C1"].str.len() == 5)
+        & (~intl_marriage["C1"].isin(["00000", "00090"]))
+    ].copy()
+    intl_wide = intl_latest.pivot_table(
+        index=["C1", "C1_NM", "C1_NM_ENG"],
+        columns="ITM_NM",
+        values="value",
+        aggfunc="first",
+    ).reset_index()
+    for col in ["남편-전체혼인건수", "아내-전체혼인건수", "한국인 남편 + 외국인 아내", "한국인 아내 + 외국인 남편"]:
+        if col not in intl_wide.columns:
+            intl_wide[col] = 0
+        intl_wide[col] = pd.to_numeric(intl_wide[col], errors="coerce").fillna(0)
+    intl_wide["total_marriages_for_rate"] = (
+        intl_wide["남편-전체혼인건수"] + intl_wide["아내-전체혼인건수"]
+    ) / 2
+    intl_wide["international_marriages"] = (
+        intl_wide["한국인 남편 + 외국인 아내"] + intl_wide["한국인 아내 + 외국인 남편"]
+    )
+    intl_wide["international_marriage_share_pct"] = (
+        intl_wide["international_marriages"] / intl_wide["total_marriages_for_rate"] * 100
+    ).replace([np.inf, -np.inf], np.nan).round(2)
+    intl_sigungu_map = intl_wide[
+        intl_wide["total_marriages_for_rate"].ge(20) & intl_wide["international_marriage_share_pct"].notna()
+    ][
+        [
+            "C1",
+            "C1_NM",
+            "C1_NM_ENG",
+            "남편-전체혼인건수",
+            "아내-전체혼인건수",
+            "한국인 남편 + 외국인 아내",
+            "한국인 아내 + 외국인 남편",
+            "total_marriages_for_rate",
+            "international_marriages",
+            "international_marriage_share_pct",
+        ]
+    ].rename(
+        columns={
+            "C1": "topo_code",
+            "C1_NM": "region",
+            "C1_NM_ENG": "region_eng",
+            "남편-전체혼인건수": "husband_total_marriages",
+            "아내-전체혼인건수": "wife_total_marriages",
+            "한국인 남편 + 외국인 아내": "korean_husband_foreign_wife",
+            "한국인 아내 + 외국인 남편": "korean_wife_foreign_husband",
+        }
+    ).sort_values("international_marriage_share_pct", ascending=False)
+    intl_sigungu_map["year"] = latest_intl_year
+    write_csv(intl_sigungu_map, "international_marriage_share_sigungu_2024.csv")
+    charts["international_marriage_share_sigungu_map"] = intl_sigungu_map.to_dict("records")
 
     childcare_raw = pd.read_csv(DATA / "childcare_children_DT_15407_NN002.csv")
     childcare_raw["type_code"] = childcare_raw["C1"].astype(str).str.zfill(2)

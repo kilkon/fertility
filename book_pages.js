@@ -300,6 +300,97 @@
     return "#b91c1c";
   }
 
+  function internationalMarriageShareColor(value) {
+    const n = Number(value);
+    if (!Number.isFinite(n)) return "#e5e7eb";
+    if (n < 5) return "#e0f2fe";
+    if (n < 10) return "#93c5fd";
+    if (n < 15) return "#60a5fa";
+    if (n < 20) return "#2563eb";
+    if (n < 30) return "#f59e0b";
+    return "#b91c1c";
+  }
+
+  function renderInternationalMarriageShareMap(rows) {
+    const meta = metaFor("international_marriage_share_sigungu_map");
+    const topo = window.populationBookSigunguTopo;
+    if (!topo || !topo.objects || !topo.arcs) {
+      return '<div class="map-empty">지도 경계 자료를 불러오지 못했습니다.</div>';
+    }
+    const objectName = Object.keys(topo.objects)[0];
+    const geometries = topo.objects[objectName]?.geometries || [];
+    const rowByCode = new Map(rows.map((row) => [String(row.topo_code || ""), row]));
+    const decoded = geometries.map((geometry) => ({
+      geometry,
+      code: String(geometry.properties?.code || geometry.id || ""),
+      name: geometry.properties?.name || geometry.properties?.SIG_KOR_NM || "",
+      polygons: topoGeometryPolygons(geometry, topo.arcs, topo.transform)
+    }));
+    const allPoints = decoded.flatMap((feature) => feature.polygons.flat());
+    if (!allPoints.length) return '<div class="map-empty">지도 좌표를 해석하지 못했습니다.</div>';
+    const xs = allPoints.map((point) => point[0]);
+    const ys = allPoints.map((point) => point[1]);
+    const minX = Math.min(...xs);
+    const maxX = Math.max(...xs);
+    const minY = Math.min(...ys);
+    const maxY = Math.max(...ys);
+    const width = 760;
+    const height = 900;
+    const margin = 22;
+    const scale = Math.min((width - margin * 2) / (maxX - minX), (height - 120 - margin * 2) / (maxY - minY));
+    const offsetX = (width - (maxX - minX) * scale) / 2;
+    const project = (point) => [
+      offsetX + (point[0] - minX) * scale,
+      margin + (maxY - point[1]) * scale
+    ];
+    const paths = decoded.map((feature) => {
+      const row = rowByCode.get(feature.code);
+      const share = row ? Number(row.international_marriage_share_pct) : NaN;
+      const fill = internationalMarriageShareColor(share);
+      const d = feature.polygons.map((ring) => {
+        if (!ring.length) return "";
+        const projected = ring.map(project);
+        return `M${projected.map((point) => `${point[0].toFixed(2)},${point[1].toFixed(2)}`).join("L")}Z`;
+      }).join("");
+      const label = row && Number.isFinite(share)
+        ? `${row.region || feature.name}: 국제결혼 ${formatKoNumber(row.international_marriages)}건, 전체혼인 ${formatKoNumber(row.total_marriages_for_rate)}건, ${share.toFixed(1)}%`
+        : `${feature.name}: 자료 없음`;
+      return `<path class="sigungu-map-path" d="${d}" fill="${fill}"><title>${svgEscape(label)}</title></path>`;
+    }).join("");
+    const legend = [
+      ["자료 없음", "#e5e7eb"],
+      ["5% 미만", "#e0f2fe"],
+      ["5-10%", "#93c5fd"],
+      ["10-15%", "#60a5fa"],
+      ["15-20%", "#2563eb"],
+      ["20-30%", "#f59e0b"],
+      ["30% 이상", "#b91c1c"]
+    ].map((item, index) => {
+      const x = 36 + (index % 4) * 170;
+      const y = 812 + Math.floor(index / 4) * 28;
+      return `<rect x="${x}" y="${y}" width="18" height="18" fill="${item[1]}"></rect><text x="${x + 26}" y="${y + 14}">${svgEscape(item[0])}</text>`;
+    }).join("");
+    const mappedRows = rows
+      .filter((row) => Number.isFinite(Number(row.international_marriage_share_pct)))
+      .sort((a, b) => Number(b.international_marriage_share_pct) - Number(a.international_marriage_share_pct));
+    const year = mappedRows[0]?.year || "";
+    const topText = mappedRows
+      .slice(0, 5)
+      .map((row, index) => `${index + 1}. ${row.region} ${Number(row.international_marriage_share_pct).toFixed(1)}%`)
+      .join(" · ");
+    return `
+      <div class="sigungu-slope-map-wrap">
+        <svg class="sigungu-slope-map-svg" viewBox="0 0 ${width} ${height}" role="img" aria-label="시군구 국제결혼 비중 지도">
+          <text class="sigungu-map-title" x="28" y="32">${svgEscape(meta.title || "시군구 전체 혼인 중 국제결혼 비중")}</text>
+          <text class="sigungu-map-subtitle" x="28" y="56">${year}년, 국제결혼건수 ÷ 전체혼인건수(남편·아내 주소 기준 평균)</text>
+          <g>${paths}</g>
+          <text class="sigungu-map-note" x="28" y="790">색이 진할수록 전체 혼인에서 국제결혼이 차지하는 비중이 크다. 전체혼인 20건 미만 지역은 제외했다.</text>
+          <g class="sigungu-map-legend">${legend}</g>
+          <text class="sigungu-map-top" x="28" y="880">${svgEscape(topText)}</text>
+        </svg>
+      </div>`;
+  }
+
   function renderLivingPopulationRatioMap(rows) {
     const meta = metaFor("living_population_ratio_map");
     const topo = window.populationBookSigunguTopo;
@@ -1428,6 +1519,13 @@
         canvas.remove();
         parent.classList.add("sigungu-slope-map-chart");
         parent.innerHTML = renderLivingPopulationRatioMap(rows);
+        return;
+      } else if (id === "international_marriage_share_sigungu_map") {
+        const parent = canvas.parentElement;
+        if (!parent) return;
+        canvas.remove();
+        parent.classList.add("sigungu-slope-map-chart");
+        parent.innerHTML = renderInternationalMarriageShareMap(rows);
         return;
       } else if (["sigungu_population_slope_map", "sigungu_older_population_slope_map", "sigungu_working_age_population_slope_map"].includes(id)) {
         const parent = canvas.parentElement;
