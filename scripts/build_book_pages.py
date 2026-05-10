@@ -777,11 +777,18 @@ CHART_META = {
         "note": "공공보건소비는 국민이전계정의 1인 규모 금액(천원)이다. 원 요청의 DT_1NTA03은 현재 KOSIS에서 DT_1NTA2003으로 제공되는 표와 대응되는 최신 표로 확인했다.",
     },
     "nta_lifecycle_deficit_profile": {
-        "title": "연령별 생애주기 적자와 흑자: 소비와 노동소득",
+        "title": "2022년 연령별 생애주기 적자와 흑자: 소비와 노동소득",
         "kind": "mixed",
         "csv": "nta_lifecycle_deficit_profile.csv",
         "source": "KOSIS DT_1NTA2003 생애주기적자계정(1인규모), 세부계정 소비·노동소득·생애주기적자",
-        "note": "생애주기 적자는 소비에서 노동소득을 뺀 값이다. 엄밀한 조세·사회보험료 순부담은 별도 자료가 필요하지만, 이 그림은 어느 연령에서 사회적 이전이 필요해지는지 보여주는 출발 지표다.",
+        "note": "2022년 국민이전계정의 1인 규모 자료다. 생애주기 적자는 소비에서 노동소득을 뺀 값이다. 엄밀한 조세·사회보험료 순부담은 별도 자료가 필요하지만, 이 그림은 어느 연령에서 사회적 이전이 필요해지는지 보여주는 출발 지표다.",
+    },
+    "nta_lifecycle_surplus_window_trend": {
+        "title": "생애주기 흑자 구간은 언제 시작하고 끝나는가",
+        "kind": "line",
+        "csv": "nta_lifecycle_surplus_window_trend.csv",
+        "source": "KOSIS DT_1NTA2003 생애주기적자계정(1인규모), 세부계정 소비·노동소득",
+        "note": "각 연도에서 노동소득이 소비보다 큰 연령을 생애주기 흑자 구간으로 정의했다. 85세 이상은 열린 구간이므로 흑자 종료 연령 해석에는 영향을 주지 않는다.",
     },
     "nta_public_health_age_group_trend": {
         "title": "연령대별 1인 공공보건소비 증가 속도",
@@ -4898,6 +4905,44 @@ def build_derived_data() -> dict[str, list[dict[str, object]]]:
             ].sort_values(["year", "age"])
             write_csv(lifecycle_wide, "nta_lifecycle_deficit_profile.csv")
             charts["nta_lifecycle_deficit_profile"] = lifecycle_wide.to_dict("records")
+
+            lifecycle_all_wide = (
+                lifecycle.pivot_table(
+                    index=["year", "age", "C2_NM"],
+                    columns="C1_NM",
+                    values="amount_thousand_krw_per_person",
+                    aggfunc="first",
+                )
+                .reset_index()
+                .rename_axis(None, axis=1)
+            )
+            if {"소비", "노동소득"}.issubset(lifecycle_all_wide.columns):
+                lifecycle_all_wide["surplus_thousand_krw_per_person"] = (
+                    lifecycle_all_wide["노동소득"].fillna(0) - lifecycle_all_wide["소비"].fillna(0)
+                )
+                surplus_rows = []
+                for year, group in lifecycle_all_wide.groupby("year"):
+                    group = group.sort_values("age")
+                    surplus_group = group[group["surplus_thousand_krw_per_person"] > 0]
+                    if surplus_group.empty:
+                        continue
+                    max_row = group.loc[group["surplus_thousand_krw_per_person"].idxmax()]
+                    surplus_rows.append(
+                        {
+                            "year": int(year),
+                            "surplus_start_age": int(surplus_group["age"].min()),
+                            "surplus_end_age": int(surplus_group["age"].max()),
+                            "surplus_years": int(surplus_group.shape[0]),
+                            "max_surplus_age": int(max_row["age"]),
+                            "max_surplus_million_krw_per_person": round(
+                                float(max_row["surplus_thousand_krw_per_person"]) / 1000, 3
+                            ),
+                        }
+                    )
+                if surplus_rows:
+                    surplus_window = pd.DataFrame(surplus_rows).sort_values("year")
+                    write_csv(surplus_window, "nta_lifecycle_surplus_window_trend.csv")
+                    charts["nta_lifecycle_surplus_window_trend"] = surplus_window.to_dict("records")
 
         nta = nta_base[nta_base["C1_NM"] == "공공보건소비"].copy()
         nta["year"] = pd.to_numeric(nta["PRD_DE"], errors="coerce").astype("Int64")

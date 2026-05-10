@@ -2261,6 +2261,63 @@
             }
           }
         };
+      } else if (id === "nta_lifecycle_surplus_window_trend") {
+        const orderedRows = [...rows].sort((a, b) => Number(a.year) - Number(b.year));
+        config = {
+          type: "line",
+          data: {
+            labels: orderedRows.map((row) => row.year),
+            datasets: [
+              {
+                label: "흑자 시작 연령",
+                data: orderedRows.map((row) => chartNumber(row.surplus_start_age)),
+                borderColor: "#2563eb",
+                backgroundColor: "rgba(37,99,235,.14)",
+                pointRadius: 3,
+                tension: 0.2
+              },
+              {
+                label: "흑자 종료 연령",
+                data: orderedRows.map((row) => chartNumber(row.surplus_end_age)),
+                borderColor: "#be123c",
+                backgroundColor: "rgba(190,18,60,.14)",
+                pointRadius: 3,
+                tension: 0.2
+              },
+              {
+                label: "흑자 최대 연령",
+                data: orderedRows.map((row) => chartNumber(row.max_surplus_age)),
+                borderColor: "#0f766e",
+                backgroundColor: "rgba(15,118,110,.12)",
+                borderDash: [5, 4],
+                pointRadius: 2,
+                tension: 0.2
+              }
+            ]
+          },
+          options: {
+            ...common,
+            plugins: {
+              ...common.plugins,
+              tooltip: {
+                callbacks: {
+                  afterBody: (items) => {
+                    const row = orderedRows[items[0].dataIndex];
+                    return `흑자 기간: ${row.surplus_years}년, 최대 흑자: ${Number(row.max_surplus_million_krw_per_person).toLocaleString("ko-KR", { maximumFractionDigits: 1 })}백만원`;
+                  }
+                }
+              }
+            },
+            scales: {
+              x: { grid: { display: false }, title: { display: true, text: "연도" } },
+              y: {
+                grid: { color: "rgba(15,23,42,.08)" },
+                title: { display: true, text: "연령" },
+                ticks: { callback: (value) => `${value}세` }
+              }
+            }
+          }
+        };
       } else if (id === "nta_public_health_age_profile") {
         const years = [...new Set(rows.map((row) => Number(row.year)))].sort((a, b) => a - b);
         const ages = [...new Set(rows.map((row) => Number(row.age)))].sort((a, b) => a - b);

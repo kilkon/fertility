@@ -79915,6 +79915,112 @@ window.populationBookCharts = {
         "lifecycle_surplus_million_krw_per_person": -24.202
       }
     ],
+    "nta_lifecycle_surplus_window_trend": [
+      {
+        "year": 2010,
+        "surplus_start_age": 27,
+        "surplus_end_age": 55,
+        "surplus_years": 29,
+        "max_surplus_age": 39,
+        "max_surplus_million_krw_per_person": 10.6
+      },
+      {
+        "year": 2011,
+        "surplus_start_age": 27,
+        "surplus_end_age": 56,
+        "surplus_years": 30,
+        "max_surplus_age": 40,
+        "max_surplus_million_krw_per_person": 11.187
+      },
+      {
+        "year": 2012,
+        "surplus_start_age": 27,
+        "surplus_end_age": 56,
+        "surplus_years": 30,
+        "max_surplus_age": 41,
+        "max_surplus_million_krw_per_person": 10.83
+      },
+      {
+        "year": 2013,
+        "surplus_start_age": 27,
+        "surplus_end_age": 55,
+        "surplus_years": 29,
+        "max_surplus_age": 42,
+        "max_surplus_million_krw_per_person": 11.607
+      },
+      {
+        "year": 2014,
+        "surplus_start_age": 27,
+        "surplus_end_age": 56,
+        "surplus_years": 30,
+        "max_surplus_age": 42,
+        "max_surplus_million_krw_per_person": 12.591
+      },
+      {
+        "year": 2015,
+        "surplus_start_age": 27,
+        "surplus_end_age": 57,
+        "surplus_years": 31,
+        "max_surplus_age": 43,
+        "max_surplus_million_krw_per_person": 14.269
+      },
+      {
+        "year": 2016,
+        "surplus_start_age": 27,
+        "surplus_end_age": 57,
+        "surplus_years": 31,
+        "max_surplus_age": 44,
+        "max_surplus_million_krw_per_person": 14.335
+      },
+      {
+        "year": 2017,
+        "surplus_start_age": 28,
+        "surplus_end_age": 58,
+        "surplus_years": 31,
+        "max_surplus_age": 45,
+        "max_surplus_million_krw_per_person": 15.046
+      },
+      {
+        "year": 2018,
+        "surplus_start_age": 28,
+        "surplus_end_age": 58,
+        "surplus_years": 31,
+        "max_surplus_age": 45,
+        "max_surplus_million_krw_per_person": 15.424
+      },
+      {
+        "year": 2019,
+        "surplus_start_age": 28,
+        "surplus_end_age": 59,
+        "surplus_years": 32,
+        "max_surplus_age": 44,
+        "max_surplus_million_krw_per_person": 15.976
+      },
+      {
+        "year": 2020,
+        "surplus_start_age": 28,
+        "surplus_end_age": 60,
+        "surplus_years": 33,
+        "max_surplus_age": 45,
+        "max_surplus_million_krw_per_person": 17.49
+      },
+      {
+        "year": 2021,
+        "surplus_start_age": 27,
+        "surplus_end_age": 59,
+        "surplus_years": 33,
+        "max_surplus_age": 46,
+        "max_surplus_million_krw_per_person": 18.231
+      },
+      {
+        "year": 2022,
+        "surplus_start_age": 28,
+        "surplus_end_age": 60,
+        "surplus_years": 33,
+        "max_surplus_age": 43,
+        "max_surplus_million_krw_per_person": 17.529
+      }
+    ],
     "nta_public_health_age_profile": [
       {
         "year": 2010,
@@ -95128,11 +95234,18 @@ window.populationBookCharts = {
       "note": "공공보건소비는 국민이전계정의 1인 규모 금액(천원)이다. 원 요청의 DT_1NTA03은 현재 KOSIS에서 DT_1NTA2003으로 제공되는 표와 대응되는 최신 표로 확인했다."
     },
     "nta_lifecycle_deficit_profile": {
-      "title": "연령별 생애주기 적자와 흑자: 소비와 노동소득",
+      "title": "2022년 연령별 생애주기 적자와 흑자: 소비와 노동소득",
       "kind": "mixed",
       "csv": "nta_lifecycle_deficit_profile.csv",
       "source": "KOSIS DT_1NTA2003 생애주기적자계정(1인규모), 세부계정 소비·노동소득·생애주기적자",
-      "note": "생애주기 적자는 소비에서 노동소득을 뺀 값이다. 엄밀한 조세·사회보험료 순부담은 별도 자료가 필요하지만, 이 그림은 어느 연령에서 사회적 이전이 필요해지는지 보여주는 출발 지표다."
+      "note": "2022년 국민이전계정의 1인 규모 자료다. 생애주기 적자는 소비에서 노동소득을 뺀 값이다. 엄밀한 조세·사회보험료 순부담은 별도 자료가 필요하지만, 이 그림은 어느 연령에서 사회적 이전이 필요해지는지 보여주는 출발 지표다."
+    },
+    "nta_lifecycle_surplus_window_trend": {
+      "title": "생애주기 흑자 구간은 언제 시작하고 끝나는가",
+      "kind": "line",
+      "csv": "nta_lifecycle_surplus_window_trend.csv",
+      "source": "KOSIS DT_1NTA2003 생애주기적자계정(1인규모), 세부계정 소비·노동소득",
+      "note": "각 연도에서 노동소득이 소비보다 큰 연령을 생애주기 흑자 구간으로 정의했다. 85세 이상은 열린 구간이므로 흑자 종료 연령 해석에는 영향을 주지 않는다."
     },
     "nta_public_health_age_group_trend": {
       "title": "연령대별 1인 공공보건소비 증가 속도",
