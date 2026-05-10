@@ -2197,6 +2197,70 @@
         };
         parent.innerHTML = items.map(drawSlopePanel).join("");
         return;
+      } else if (id === "nta_lifecycle_deficit_profile") {
+        const orderedRows = [...rows].sort((a, b) => Number(a.age) - Number(b.age));
+        const year = orderedRows.length ? Number(orderedRows[0].year) : "";
+        config = {
+          type: "bar",
+          data: {
+            labels: orderedRows.map((row) => Number(row.age) === 85 ? "85세 이상" : `${Number(row.age)}세`),
+            datasets: [
+              {
+                type: "bar",
+                label: "노동소득 - 소비",
+                data: orderedRows.map((row) => chartNumber(row.lifecycle_surplus_million_krw_per_person)),
+                backgroundColor: orderedRows.map((row) => Number(row.lifecycle_surplus_million_krw_per_person) >= 0 ? "rgba(15,118,110,.42)" : "rgba(190,18,60,.34)"),
+                borderColor: orderedRows.map((row) => Number(row.lifecycle_surplus_million_krw_per_person) >= 0 ? "rgba(15,118,110,1)" : "rgba(190,18,60,1)"),
+                borderWidth: 1,
+                order: 2
+              },
+              {
+                type: "line",
+                label: "소비",
+                data: orderedRows.map((row) => chartNumber(row.consumption_million_krw_per_person)),
+                borderColor: "#b45309",
+                backgroundColor: "rgba(180,83,9,.12)",
+                pointRadius: 0,
+                tension: 0.24,
+                order: 1
+              },
+              {
+                type: "line",
+                label: "노동소득",
+                data: orderedRows.map((row) => chartNumber(row.labor_income_million_krw_per_person)),
+                borderColor: "#2563eb",
+                backgroundColor: "rgba(37,99,235,.12)",
+                pointRadius: 0,
+                tension: 0.24,
+                order: 0
+              }
+            ]
+          },
+          options: {
+            ...common,
+            plugins: {
+              ...common.plugins,
+              tooltip: {
+                callbacks: {
+                  title: (items) => `${year}년 ${items[0].label}`,
+                  label: (context) => `${context.dataset.label}: ${Number(context.parsed.y).toLocaleString("ko-KR", { maximumFractionDigits: 1 })}백만원`
+                }
+              }
+            },
+            scales: {
+              x: {
+                grid: { display: false },
+                ticks: { maxTicksLimit: 12 },
+                title: { display: true, text: "연령(각세, 85세 이상은 열린 구간)" }
+              },
+              y: {
+                grid: { color: (context) => context.tick.value === 0 ? "rgba(15,23,42,.45)" : "rgba(15,23,42,.08)" },
+                title: { display: true, text: "1인당 금액(백만원)" },
+                ticks: { callback: (value) => `${Number(value).toLocaleString("ko-KR")}백만원` }
+              }
+            }
+          }
+        };
       } else if (id === "nta_public_health_age_profile") {
         const years = [...new Set(rows.map((row) => Number(row.year)))].sort((a, b) => a - b);
         const ages = [...new Set(rows.map((row) => Number(row.age)))].sort((a, b) => a - b);

@@ -301,7 +301,7 @@ BOOK = [
                 "no": "7.3",
                 "title": "생애주기와 재정",
                 "file": "section-5-3-lifecycle-fiscal.html",
-                "chart": "openfiscal_debt_context",
+                "chart": "nta_lifecycle_deficit_profile",
             },
             {
                 "no": "7.4",
@@ -775,6 +775,13 @@ CHART_META = {
         "csv": "nta_public_health_age_profile.csv",
         "source": "KOSIS DT_1NTA2003 생애주기적자계정(1인규모), 세부계정 공공보건소비",
         "note": "공공보건소비는 국민이전계정의 1인 규모 금액(천원)이다. 원 요청의 DT_1NTA03은 현재 KOSIS에서 DT_1NTA2003으로 제공되는 표와 대응되는 최신 표로 확인했다.",
+    },
+    "nta_lifecycle_deficit_profile": {
+        "title": "연령별 생애주기 적자와 흑자: 소비와 노동소득",
+        "kind": "mixed",
+        "csv": "nta_lifecycle_deficit_profile.csv",
+        "source": "KOSIS DT_1NTA2003 생애주기적자계정(1인규모), 세부계정 소비·노동소득·생애주기적자",
+        "note": "생애주기 적자는 소비에서 노동소득을 뺀 값이다. 엄밀한 조세·사회보험료 순부담은 별도 자료가 필요하지만, 이 그림은 어느 연령에서 사회적 이전이 필요해지는지 보여주는 출발 지표다.",
     },
     "nta_public_health_age_group_trend": {
         "title": "연령대별 1인 공공보건소비 증가 속도",
@@ -2346,18 +2353,11 @@ SECTION_DATA_EXPANSION = {
     ],
     "section-5-3-lifecycle-fiscal.html": [
         {
-            "question": "고령화는 재정의 어느 항목을 압박하는가?",
-            "data": "열린재정 국가채무·재정지표, 향후 보건·연금·돌봄 예산",
-            "files": ["data/derived/openfiscal_debt_context.csv", "data/openfiscal_population_budget.csv"],
-            "analysis": "국가채무 흐름을 배경선으로 두고 인구 관련 세출 기능을 별도 묶음으로 추적한다.",
-            "interpretation": "재정 문제는 단순 부채 규모가 아니라 세대별 소비와 부담의 배분 문제다.",
-        },
-        {
             "question": "생애주기에서 적자와 흑자는 어느 나이에 발생하는가?",
-            "data": "KOSIS 국민이전계정, 연령별 노동소득·소비·공공이전 자료",
-            "files": ["data/openfiscal_population_budget.csv"],
-            "analysis": "연령별 노동소득과 소비 차이를 계산해 생애주기 적자 곡선을 만든다.",
-            "interpretation": "저출산·고령화는 아이와 노인이 많고 적다는 문제가 아니라 세대 간 이전 구조의 재편이다.",
+            "data": "KOSIS DT_1NTA2003 국민이전계정 생애주기적자계정(1인규모)의 소비, 노동소득, 생애주기적자",
+            "files": ["data/national_transfer_accounts_DT_1NTA2003.csv", "data/derived/nta_lifecycle_deficit_profile.csv"],
+            "analysis": "최신 연도의 각세별 소비와 노동소득을 백만원 단위로 환산하고, 노동소득에서 소비를 뺀 생애주기 흑자와 소비에서 노동소득을 뺀 생애주기 적자를 함께 계산한다.",
+            "interpretation": "아동기와 노년기는 노동소득보다 소비가 큰 적자 구간이고, 중장년기는 노동소득이 소비를 넘는 흑자 구간이다. 저출산·고령화는 이 흑자 구간의 인구가 줄고 적자 구간의 기간과 규모가 커지는 문제다.",
         },
     ],
     "section-5-3-health-spending-aging.html": [
@@ -4827,10 +4827,7 @@ def build_derived_data() -> dict[str, list[dict[str, object]]]:
 
     nta_path = DATA / "national_transfer_accounts_DT_1NTA2003.csv"
     if nta_path.exists():
-        nta = pd.read_csv(nta_path)
-        nta = nta[nta["C1_NM"] == "공공보건소비"].copy()
-        nta["year"] = pd.to_numeric(nta["PRD_DE"], errors="coerce").astype("Int64")
-        nta["amount_thousand_krw_per_person"] = pd.to_numeric(nta["DT"], errors="coerce")
+        nta_all = pd.read_csv(nta_path)
 
         def parse_nta_age(label: object) -> int | None:
             text = str(label)
@@ -4838,6 +4835,73 @@ def build_derived_data() -> dict[str, list[dict[str, object]]]:
                 return 85
             match = re.search(r"\d+", text)
             return int(match.group(0)) if match else None
+
+        nta_base = nta_all.copy()
+        nta_base["year"] = pd.to_numeric(nta_base["PRD_DE"], errors="coerce").astype("Int64")
+        nta_base["amount_thousand_krw_per_person"] = pd.to_numeric(nta_base["DT"], errors="coerce")
+        nta_base["age"] = nta_base["C2_NM"].map(parse_nta_age)
+        nta_base = nta_base.dropna(subset=["year", "age", "amount_thousand_krw_per_person"]).copy()
+        nta_base["age"] = nta_base["age"].astype(int)
+
+        lifecycle_items = ["소비", "노동소득", "생애주기적자"]
+        lifecycle = nta_base[nta_base["C1_NM"].isin(lifecycle_items)].copy()
+        if not lifecycle.empty:
+            latest_lifecycle_year = int(lifecycle["year"].max())
+            lifecycle_latest = lifecycle[lifecycle["year"] == latest_lifecycle_year].copy()
+            lifecycle_wide = (
+                lifecycle_latest.pivot_table(
+                    index=["year", "age", "C2_NM"],
+                    columns="C1_NM",
+                    values="amount_thousand_krw_per_person",
+                    aggfunc="first",
+                )
+                .reset_index()
+                .rename_axis(None, axis=1)
+            )
+            for column in lifecycle_items:
+                if column not in lifecycle_wide.columns:
+                    lifecycle_wide[column] = pd.NA
+            lifecycle_wide = lifecycle_wide.rename(
+                columns={
+                    "C2_NM": "age_label",
+                    "소비": "consumption_thousand_krw_per_person",
+                    "노동소득": "labor_income_thousand_krw_per_person",
+                    "생애주기적자": "lifecycle_deficit_thousand_krw_per_person",
+                }
+            )
+            lifecycle_wide["age_label"] = lifecycle_wide["age_label"].replace({"85세이상": "85세 이상"})
+            lifecycle_wide["consumption_million_krw_per_person"] = (
+                lifecycle_wide["consumption_thousand_krw_per_person"] / 1000
+            ).round(3)
+            lifecycle_wide["labor_income_million_krw_per_person"] = (
+                lifecycle_wide["labor_income_thousand_krw_per_person"] / 1000
+            ).round(3)
+            lifecycle_wide["lifecycle_deficit_million_krw_per_person"] = (
+                lifecycle_wide["lifecycle_deficit_thousand_krw_per_person"] / 1000
+            ).round(3)
+            lifecycle_wide["lifecycle_surplus_million_krw_per_person"] = (
+                -lifecycle_wide["lifecycle_deficit_million_krw_per_person"]
+            ).round(3)
+            lifecycle_wide = lifecycle_wide[
+                [
+                    "year",
+                    "age",
+                    "age_label",
+                    "consumption_thousand_krw_per_person",
+                    "labor_income_thousand_krw_per_person",
+                    "lifecycle_deficit_thousand_krw_per_person",
+                    "consumption_million_krw_per_person",
+                    "labor_income_million_krw_per_person",
+                    "lifecycle_deficit_million_krw_per_person",
+                    "lifecycle_surplus_million_krw_per_person",
+                ]
+            ].sort_values(["year", "age"])
+            write_csv(lifecycle_wide, "nta_lifecycle_deficit_profile.csv")
+            charts["nta_lifecycle_deficit_profile"] = lifecycle_wide.to_dict("records")
+
+        nta = nta_base[nta_base["C1_NM"] == "공공보건소비"].copy()
+        nta["year"] = pd.to_numeric(nta["PRD_DE"], errors="coerce").astype("Int64")
+        nta["amount_thousand_krw_per_person"] = pd.to_numeric(nta["DT"], errors="coerce")
 
         def nta_age_group(age: object) -> str:
             age = int(age)
@@ -4853,7 +4917,6 @@ def build_derived_data() -> dict[str, list[dict[str, object]]]:
                 return "75-84세"
             return "85세 이상"
 
-        nta["age"] = nta["C2_NM"].map(parse_nta_age)
         nta = nta.dropna(subset=["year", "age", "amount_thousand_krw_per_person"]).copy()
         nta["age"] = nta["age"].astype(int)
         nta["age_label"] = nta["C2_NM"].replace({"85세이상": "85세 이상"})
