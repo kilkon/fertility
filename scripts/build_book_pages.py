@@ -706,6 +706,13 @@ CHART_META = {
         "source": "World Bank SP.DYN.TFRT.IN; OECD Family Database/Our World in Data; Eurostat DEMO_FACBC",
         "note": "합계출산율은 2024년 또는 최신값, 비혼 출산 비중은 OECD Family Database를 가공한 Our World in Data의 최신값, 외국 출생 모친 출생 비중은 Eurostat 2023년 자료다. 지표 연도가 서로 다르므로 구조 비교용으로 읽어야 한다.",
     },
+    "china_population_marriage_fertility": {
+        "title": "중국의 인구 감소와 혼인·출생 지표",
+        "kind": "line",
+        "csv": "china_population_marriage_fertility.csv",
+        "source": "중국 국가통계국 2013·2016·2023·2024·2025 국민경제사회발전 통계공보, 민정부 혼인등록 통계, World Bank SP.DYN.TFRT.IN",
+        "note": "각 지표는 2013년 값을 100으로 환산했다. 2025년 혼인등록과 합계출산율은 아직 같은 기준의 연간 확정치가 없어 표시하지 않았다.",
+    },
     "sigungu_aging_top": {
         "title": "2024년 고령화율 상위 시군구",
         "kind": "bar",
@@ -1866,11 +1873,12 @@ SECTION_DATA_EXPANSION = {
             "files": [
                 "data/derived/international_tfr_trends.csv",
                 "data/derived/fertility_family_structure_comparison.csv",
+                "data/derived/china_population_marriage_fertility.csv",
                 "data/worldbank_tfr_selected_countries.csv",
                 "data/eurostat_foreign_born_mother_births_2023.csv",
             ],
-            "analysis": "한국·일본·대만·싱가포르와 유럽 주요국의 합계출산율 추세를 비교하고, 비혼 출산 비중과 외국 출생 모친 출생 비중을 함께 놓는다.",
-            "interpretation": "동아시아 저출산은 결혼 중심 출산규범과 높은 양육·교육·주거비, 성별 돌봄 불평등이 결합된 현상이며, 유럽의 이민자 출산과 비혼 출산은 출산율 하락을 완충하지만 그 자체로 대체수준을 회복시키지는 못한다.",
+            "analysis": "한국·일본·대만·싱가포르와 유럽 주요국의 합계출산율 추세를 비교하고, 비혼 출산 비중과 외국 출생 모친 출생 비중을 함께 놓는다. 마지막에는 중국의 인구, 출생아 수, 조출생률, 혼인등록, 합계출산율을 2013년=100 지수로 비교한다.",
+            "interpretation": "동아시아 저출산은 결혼 중심 출산규범과 높은 양육·교육·주거비, 성별 돌봄 불평등이 결합된 현상이며, 유럽의 이민자 출산과 비혼 출산은 출산율 하락을 완충하지만 그 자체로 대체수준을 회복시키지는 못한다. 중국 사례는 산아제한은 행정적으로 관철될 수 있어도 출산장려는 청년의 생애전망과 가족 형성의 신뢰를 회복하지 못하면 작동하기 어렵다는 점을 보여준다.",
         }
     ],
     "section-2-0-international-policy-success.html": [
@@ -4108,6 +4116,86 @@ def build_derived_data() -> dict[str, list[dict[str, object]]]:
         family_compare = family_compare.sort_values(["region_group", "total_fertility_rate"], ascending=[True, False])
         write_csv(family_compare, "fertility_family_structure_comparison.csv")
         charts["fertility_family_structure_comparison"] = family_compare.to_dict("records")
+
+    china_demo = pd.DataFrame(
+        [
+            {
+                "year": 2013,
+                "population_million": 1360.72,
+                "births_million": 16.40,
+                "crude_birth_rate_per_1000": 12.08,
+                "marriage_registrations_million": 13.469,
+                "total_fertility_rate": 1.714,
+            },
+            {
+                "year": 2016,
+                "population_million": 1382.71,
+                "births_million": 17.86,
+                "crude_birth_rate_per_1000": 12.95,
+                "marriage_registrations_million": 11.428,
+                "total_fertility_rate": 1.772,
+            },
+            {
+                "year": 2020,
+                "population_million": 1412.12,
+                "births_million": 12.00,
+                "crude_birth_rate_per_1000": 8.52,
+                "marriage_registrations_million": 8.143,
+                "total_fertility_rate": 1.236,
+            },
+            {
+                "year": 2021,
+                "population_million": 1412.60,
+                "births_million": 10.62,
+                "crude_birth_rate_per_1000": 7.52,
+                "marriage_registrations_million": 7.636,
+                "total_fertility_rate": 1.117,
+            },
+            {
+                "year": 2022,
+                "population_million": 1411.75,
+                "births_million": 9.56,
+                "crude_birth_rate_per_1000": 6.77,
+                "marriage_registrations_million": 6.835,
+                "total_fertility_rate": 1.034,
+            },
+            {
+                "year": 2023,
+                "population_million": 1409.67,
+                "births_million": 9.02,
+                "crude_birth_rate_per_1000": 6.39,
+                "marriage_registrations_million": 7.680,
+                "total_fertility_rate": 0.999,
+            },
+            {
+                "year": 2024,
+                "population_million": 1408.28,
+                "births_million": 9.54,
+                "crude_birth_rate_per_1000": 6.77,
+                "marriage_registrations_million": 6.106,
+                "total_fertility_rate": 1.013,
+            },
+            {
+                "year": 2025,
+                "population_million": 1404.89,
+                "births_million": 7.92,
+                "crude_birth_rate_per_1000": 5.63,
+                "marriage_registrations_million": None,
+                "total_fertility_rate": None,
+            },
+        ]
+    )
+    for key in [
+        "population_million",
+        "births_million",
+        "crude_birth_rate_per_1000",
+        "marriage_registrations_million",
+        "total_fertility_rate",
+    ]:
+        base = china_demo.loc[china_demo["year"] == 2013, key].iloc[0]
+        china_demo[f"{key}_index_2013_100"] = china_demo[key].astype(float) / float(base) * 100
+    write_csv(china_demo, "china_population_marriage_fertility.csv")
+    charts["china_population_marriage_fertility"] = china_demo.to_dict("records")
 
     fertility_age_path = DATA / "fertility_by_mother_age_DT_1B81A21.csv"
     if fertility_age_path.exists():

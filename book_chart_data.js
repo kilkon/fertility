@@ -38928,6 +38928,112 @@ window.populationBookCharts = {
         "foreign_born_mother_share_pct": 31.2
       }
     ],
+    "china_population_marriage_fertility": [
+      {
+        "year": 2013,
+        "population_million": 1360.72,
+        "births_million": 16.4,
+        "crude_birth_rate_per_1000": 12.08,
+        "marriage_registrations_million": 13.469,
+        "total_fertility_rate": 1.714,
+        "population_million_index_2013_100": 100.0,
+        "births_million_index_2013_100": 100.0,
+        "crude_birth_rate_per_1000_index_2013_100": 100.0,
+        "marriage_registrations_million_index_2013_100": 100.0,
+        "total_fertility_rate_index_2013_100": 100.0
+      },
+      {
+        "year": 2016,
+        "population_million": 1382.71,
+        "births_million": 17.86,
+        "crude_birth_rate_per_1000": 12.95,
+        "marriage_registrations_million": 11.428,
+        "total_fertility_rate": 1.772,
+        "population_million_index_2013_100": 101.61605620553824,
+        "births_million_index_2013_100": 108.90243902439025,
+        "crude_birth_rate_per_1000_index_2013_100": 107.20198675496688,
+        "marriage_registrations_million_index_2013_100": 84.84668498032521,
+        "total_fertility_rate_index_2013_100": 103.38389731621938
+      },
+      {
+        "year": 2020,
+        "population_million": 1412.12,
+        "births_million": 12.0,
+        "crude_birth_rate_per_1000": 8.52,
+        "marriage_registrations_million": 8.143,
+        "total_fertility_rate": 1.236,
+        "population_million_index_2013_100": 103.77741195837498,
+        "births_million_index_2013_100": 73.17073170731709,
+        "crude_birth_rate_per_1000_index_2013_100": 70.52980132450331,
+        "marriage_registrations_million_index_2013_100": 60.457346499368924,
+        "total_fertility_rate_index_2013_100": 72.1120186697783
+      },
+      {
+        "year": 2021,
+        "population_million": 1412.6,
+        "births_million": 10.62,
+        "crude_birth_rate_per_1000": 7.52,
+        "marriage_registrations_million": 7.636,
+        "total_fertility_rate": 1.117,
+        "population_million_index_2013_100": 103.81268740078782,
+        "births_million_index_2013_100": 64.75609756097562,
+        "crude_birth_rate_per_1000_index_2013_100": 62.251655629139066,
+        "marriage_registrations_million_index_2013_100": 56.69314722696562,
+        "total_fertility_rate_index_2013_100": 65.16919486581097
+      },
+      {
+        "year": 2022,
+        "population_million": 1411.75,
+        "births_million": 9.56,
+        "crude_birth_rate_per_1000": 6.77,
+        "marriage_registrations_million": 6.835,
+        "total_fertility_rate": 1.034,
+        "population_million_index_2013_100": 103.75022047151508,
+        "births_million_index_2013_100": 58.29268292682927,
+        "crude_birth_rate_per_1000_index_2013_100": 56.043046357615886,
+        "marriage_registrations_million_index_2013_100": 50.74615784393794,
+        "total_fertility_rate_index_2013_100": 60.3267211201867
+      },
+      {
+        "year": 2023,
+        "population_million": 1409.67,
+        "births_million": 9.02,
+        "crude_birth_rate_per_1000": 6.39,
+        "marriage_registrations_million": 7.68,
+        "total_fertility_rate": 0.999,
+        "population_million_index_2013_100": 103.59736022105943,
+        "births_million_index_2013_100": 55.00000000000001,
+        "crude_birth_rate_per_1000_index_2013_100": 52.89735099337748,
+        "marriage_registrations_million_index_2013_100": 57.019823297943425,
+        "total_fertility_rate_index_2013_100": 58.284714119019846
+      },
+      {
+        "year": 2024,
+        "population_million": 1408.28,
+        "births_million": 9.54,
+        "crude_birth_rate_per_1000": 6.77,
+        "marriage_registrations_million": 6.106,
+        "total_fertility_rate": 1.013,
+        "population_million_index_2013_100": 103.49520841907224,
+        "births_million_index_2013_100": 58.17073170731707,
+        "crude_birth_rate_per_1000_index_2013_100": 56.043046357615886,
+        "marriage_registrations_million_index_2013_100": 45.33372930432846,
+        "total_fertility_rate_index_2013_100": 59.10151691948657
+      },
+      {
+        "year": 2025,
+        "population_million": 1404.89,
+        "births_million": 7.92,
+        "crude_birth_rate_per_1000": 5.63,
+        "marriage_registrations_million": NaN,
+        "total_fertility_rate": NaN,
+        "population_million_index_2013_100": 103.24607560703159,
+        "births_million_index_2013_100": 48.29268292682927,
+        "crude_birth_rate_per_1000_index_2013_100": 46.60596026490066,
+        "marriage_registrations_million_index_2013_100": NaN,
+        "total_fertility_rate_index_2013_100": NaN
+      }
+    ],
     "fertility_age_pattern": [
       {
         "year": 2000,
@@ -102886,6 +102992,13 @@ window.populationBookCharts = {
       "csv": "fertility_family_structure_comparison.csv",
       "source": "World Bank SP.DYN.TFRT.IN; OECD Family Database/Our World in Data; Eurostat DEMO_FACBC",
       "note": "합계출산율은 2024년 또는 최신값, 비혼 출산 비중은 OECD Family Database를 가공한 Our World in Data의 최신값, 외국 출생 모친 출생 비중은 Eurostat 2023년 자료다. 지표 연도가 서로 다르므로 구조 비교용으로 읽어야 한다."
+    },
+    "china_population_marriage_fertility": {
+      "title": "중국의 인구 감소와 혼인·출생 지표",
+      "kind": "line",
+      "csv": "china_population_marriage_fertility.csv",
+      "source": "중국 국가통계국 2013·2016·2023·2024·2025 국민경제사회발전 통계공보, 민정부 혼인등록 통계, World Bank SP.DYN.TFRT.IN",
+      "note": "각 지표는 2013년 값을 100으로 환산했다. 2025년 혼인등록과 합계출산율은 아직 같은 기준의 연간 확정치가 없어 표시하지 않았다."
     },
     "sigungu_aging_top": {
       "title": "2024년 고령화율 상위 시군구",

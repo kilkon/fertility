@@ -2763,6 +2763,70 @@
             }
           }
         };
+      } else if (id === "china_population_marriage_fertility") {
+        config = {
+          type: "line",
+          data: {
+            labels: rows.map((row) => row.year),
+            datasets: [
+              {
+                ...lineDataset("연말 총인구", rows, "population_million_index_2013_100", "rgba(71,85,105,1)"),
+                borderDash: [5, 4],
+                pointRadius: 3
+              },
+              {
+                ...lineDataset("출생아 수", rows, "births_million_index_2013_100", "rgba(185,28,28,1)"),
+                borderWidth: 3,
+                pointRadius: 3
+              },
+              {
+                ...lineDataset("조출생률", rows, "crude_birth_rate_per_1000_index_2013_100", "rgba(37,99,235,1)"),
+                pointRadius: 3
+              },
+              {
+                ...lineDataset("혼인등록", rows, "marriage_registrations_million_index_2013_100", "rgba(15,118,110,1)"),
+                pointRadius: 3
+              },
+              {
+                ...lineDataset("합계출산율", rows, "total_fertility_rate_index_2013_100", "rgba(147,51,234,1)"),
+                borderDash: [2, 3],
+                pointRadius: 3
+              }
+            ]
+          },
+          options: {
+            ...common,
+            scales: {
+              x: { grid: { display: false }, title: { display: true, text: "연도" } },
+              y: {
+                grid: { color: "rgba(15,23,42,.08)" },
+                title: { display: true, text: "2013년=100" },
+                suggestedMin: 40,
+                suggestedMax: 110
+              }
+            },
+            plugins: {
+              ...common.plugins,
+              tooltip: {
+                callbacks: {
+                  label: (context) => {
+                    const row = rows[context.dataIndex] || {};
+                    const value = Number(context.raw);
+                    const label = context.dataset.label || "";
+                    const actuals = {
+                      "연말 총인구": row.population_million == null ? "" : `${Number(row.population_million).toLocaleString("ko-KR")}백만 명`,
+                      "출생아 수": row.births_million == null ? "" : `${Number(row.births_million).toLocaleString("ko-KR")}백만 명`,
+                      "조출생률": row.crude_birth_rate_per_1000 == null ? "" : `${Number(row.crude_birth_rate_per_1000).toFixed(2)}‰`,
+                      "혼인등록": row.marriage_registrations_million == null ? "" : `${Number(row.marriage_registrations_million).toLocaleString("ko-KR")}백만 쌍`,
+                      "합계출산율": row.total_fertility_rate == null ? "" : `${Number(row.total_fertility_rate).toFixed(3)}명`
+                    };
+                    return `${label}: ${Number.isFinite(value) ? value.toFixed(1) : "-"}${actuals[label] ? ` (${actuals[label]})` : ""}`;
+                  }
+                }
+              }
+            }
+          }
+        };
       } else if (id === "sigungu_aging_top") {
         config = {
           type: "bar",
