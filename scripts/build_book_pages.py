@@ -26,7 +26,7 @@ MANUSCRIPTS = ROOT / "manuscripts"
 CHAPTER_MANUSCRIPTS = MANUSCRIPTS / "chapters"
 SECTION_MANUSCRIPTS = MANUSCRIPTS / "sections"
 APPENDIX_FILE = "appendix-data-notes.html"
-ASSET_VERSION = "20260511-family-conditions-dashboard"
+ASSET_VERSION = "20260511-youth-income-life-satisfaction"
 FEEDBACK_EMAIL = "kilkon@snu.ac.kr"
 PUBLIC_SITE_URL = "https://kilkon.github.io/fertility"
 
@@ -579,6 +579,13 @@ CHART_META = {
         "source": "KOSIS DT_1HDAAA06 가구주연령계층별 자산·부채·소득 현황",
         "note": "전세·구입자금 대출은 초기 진입장벽을 낮추지만, 이미 높은 부채와 상환 부담 위에 얹힐 경우 출산 위험을 줄이기보다 미래 부담을 뒤로 미룰 수 있다.",
     },
+    "young_income_trend_by_age": {
+        "title": "29세 이하·30대 가구주의 처분가능소득 변화",
+        "kind": "line",
+        "csv": "young_income_trend_by_age.csv",
+        "source": "KOSIS DT_1HDAAA06 가구주연령계층별 자산·부채·소득 현황",
+        "note": "가계금융복지조사의 가구주 연령계층별 처분가능소득이다. 공식 분류상 20대는 '29세 이하'로 제시되므로, 여기서는 20대 이하 초기 가구주와 30대 가구주를 비교한다.",
+    },
     "youth_housing_consumption_pressure": {
         "title": "가계소비 중 주거비 비중",
         "kind": "line",
@@ -648,6 +655,20 @@ CHART_META = {
         "csv": "family_condition_dashboard.csv",
         "source": "KOSIS 인구동태·주택소유통계·신혼부부통계, e-나라지표 청년고용·출산전후휴가 및 육아휴직급여 현황, KOSIS 어린이집 특수보육 현황",
         "note": "40세 미만 주택보유율, 청년 취업자, 육아휴직 수급자, 야간연장 어린이집 비중을 기준연도 100 지수로 비교했다. 육아휴직은 2017년을 기준으로 삼았다.",
+    },
+    "young_life_satisfaction_trend": {
+        "title": "20대·30대 삶의 만족도 평균 추세",
+        "kind": "line",
+        "csv": "young_life_satisfaction_trend.csv",
+        "source": "KOSIS DT_417001_0002 한국행정연구원 사회통합실태조사, 삶에 대한 만족도",
+        "note": "0점은 전혀 만족하지 않음, 10점은 매우 만족함을 뜻한다. 2019년까지는 만 19~69세, 2020년부터는 만 19세 이상 응답자 기준이다.",
+    },
+    "capital_life_satisfaction_comparison": {
+        "title": "수도권과 서울·인천·경기의 삶의 만족도 비교",
+        "kind": "line",
+        "csv": "capital_life_satisfaction_comparison.csv",
+        "source": "국가데이터처 수도권 광역지표 삶의 만족도(idctId=42), 사회조사 및 사회조사 마이크로데이터 재산출",
+        "note": "현재 삶에 대해 전반적으로 만족한다고 응답한 13세 이상 인구 비율이다. 공개 지표는 연령×수도권 교차표를 제공하지 않으므로, 20·30대 전국 추세와 수도권 전체 추세를 나란히 읽어야 한다.",
     },
     "school_age_private_education_pressure": {
         "title": "학생 수 감소와 사교육비 압력",
@@ -1993,13 +2014,16 @@ SECTION_DATA_EXPANSION = {
             "data": "KOSIS 인구동태·주택소유통계·신혼부부통계, e-나라지표 청년고용·출산전후휴가 및 육아휴직급여 현황, KOSIS 어린이집 특수보육 현황",
             "files": [
                 "data/derived/family_condition_dashboard.csv",
+                "data/derived/young_income_trend_by_age.csv",
+                "data/derived/young_life_satisfaction_trend.csv",
+                "data/derived/capital_life_satisfaction_comparison.csv",
                 "data/derived/housing_security_outcomes_national.csv",
                 "data/derived/youth_employment_context.csv",
                 "data/derived/maternity_parental_leave_financing_pressure.csv",
                 "data/derived/childcare_time_flexible_facilities.csv",
             ],
-            "analysis": "40세 미만 주택보유율, 청년 취업자, 육아휴직 수급자, 야간연장 어린이집 비중을 기준연도 100 지수로 놓고 2015년 이후 방향을 비교한다. 조혼인율과 조출생률은 조건이 아니라 결과 지표이므로 그림에서 제외하고 본문 해석에서만 연결한다.",
-            "interpretation": "제도 이용과 지출은 늘었지만 혼인·출생·주거·청년 고용의 핵심 배경조건은 같은 속도로 좋아지지 않았다. 따라서 정책 성과 평가는 예산 집행이나 제도 수가 아니라 생활조건의 변화를 함께 보아야 한다.",
+            "analysis": "40세 미만 주택보유율, 청년 취업자, 육아휴직 수급자, 야간연장 어린이집 비중을 기준연도 100 지수로 놓고 2015년 이후 방향을 비교한다. 여기에 29세 이하·30대 가구주의 처분가능소득, 19~29세·30~39세 삶의 만족도 평균, 수도권 광역지표의 삶의 만족도 추세를 보조 지표로 붙인다.",
+            "interpretation": "제도 이용과 지출은 늘었지만 혼인·출생·주거·청년 고용의 핵심 배경조건은 같은 속도로 좋아지지 않았다. 소득은 명목 기준으로 늘었고 삶의 만족도도 완만히 회복되지만, 수도권 청년이 다른 지역보다 더 낮다고 단정할 공개 교차표는 부족하다. 따라서 정책 성과 평가는 예산 집행이나 제도 수가 아니라 생활조건과 생애전망의 변화를 함께 보아야 한다.",
         }
     ],
     "section-3-0-living-population.html": [
@@ -3219,10 +3243,13 @@ def build_derived_data() -> dict[str, list[dict[str, object]]]:
     for chart_id, filename in [
         ("housing_tenure_young_newlywed", "housing_tenure_young_newlywed.csv"),
         ("housing_finance_burden_by_age", "housing_finance_burden_by_age.csv"),
+        ("young_income_trend_by_age", "young_income_trend_by_age.csv"),
         ("youth_housing_consumption_pressure", "youth_housing_consumption_pressure.csv"),
         ("housing_security_outcomes_national", "housing_security_outcomes_national.csv"),
         ("capital_region_housing_marriage_birth", "capital_region_housing_marriage_birth.csv"),
         ("housing_security_outcome_regression", "housing_security_outcome_regression.csv"),
+        ("young_life_satisfaction_trend", "young_life_satisfaction_trend.csv"),
+        ("capital_life_satisfaction_comparison", "capital_life_satisfaction_comparison.csv"),
     ]:
         path = DERIVED / filename
         if path.exists():

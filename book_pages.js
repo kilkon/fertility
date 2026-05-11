@@ -890,6 +890,44 @@
             }
           }
         };
+      } else if (id === "young_income_trend_by_age") {
+        const years = [...new Set(rows.map((row) => Number(row.year)))].sort((a, b) => a - b);
+        const pick = (ageGroup, key, year) => {
+          const row = rows.find((item) => item.age_group === ageGroup && Number(item.year) === Number(year));
+          return row ? chartNumber(row[key]) : null;
+        };
+        const toRows = (ageGroup) => years.map((year) => ({
+          year,
+          value: pick(ageGroup, "disposable_income_million_krw", year)
+        }));
+        config = {
+          type: "line",
+          data: {
+            labels: years,
+            datasets: [
+              lineDataset("29세 이하", toRows("29세 이하"), "value", "rgba(37,99,235,1)"),
+              lineDataset("30~39세", toRows("30~39세"), "value", "rgba(15,118,110,1)")
+            ]
+          },
+          options: {
+            ...common,
+            scales: {
+              x: { grid: { display: false }, title: { display: true, text: "연도" } },
+              y: { grid: { color: "rgba(15,23,42,.08)" }, title: { display: true, text: "처분가능소득(백만원)" } }
+            },
+            plugins: {
+              ...common.plugins,
+              tooltip: {
+                callbacks: {
+                  label: (context) => {
+                    const value = Number(context.raw);
+                    return `${context.dataset.label}: ${Number.isFinite(value) ? value.toFixed(1) : "-"}백만원`;
+                  }
+                }
+              }
+            }
+          }
+        };
       } else if (id === "youth_housing_consumption_pressure") {
         config = {
           type: "line",
@@ -2913,6 +2951,76 @@
                     return `${label}: ${Number.isFinite(value) ? value.toFixed(1) : "-"}${actuals[label] ? ` (${actuals[label]})` : ""}`;
                   }
                 }
+              }
+            }
+          }
+        };
+      } else if (id === "young_life_satisfaction_trend") {
+        const years = [...new Set(rows.map((row) => Number(row.year)))].sort((a, b) => a - b);
+        const pick = (ageGroup, year) => {
+          const row = rows.find((item) => item.age_group === ageGroup && Number(item.year) === Number(year));
+          return row ? chartNumber(row.life_satisfaction_avg_0_10) : null;
+        };
+        const toRows = (ageGroup) => years.map((year) => ({ year, value: pick(ageGroup, year) }));
+        config = {
+          type: "line",
+          data: {
+            labels: years,
+            datasets: [
+              lineDataset("전체", toRows("전체"), "value", "rgba(71,85,105,1)"),
+              lineDataset("19~29세", toRows("19~29세"), "value", "rgba(37,99,235,1)"),
+              lineDataset("30~39세", toRows("30~39세"), "value", "rgba(15,118,110,1)")
+            ]
+          },
+          options: {
+            ...common,
+            scales: {
+              x: { grid: { display: false }, title: { display: true, text: "연도" } },
+              y: {
+                grid: { color: "rgba(15,23,42,.08)" },
+                title: { display: true, text: "삶의 만족도 평균(0~10점)" },
+                suggestedMin: 5,
+                suggestedMax: 7.2
+              }
+            }
+          }
+        };
+      } else if (id === "capital_life_satisfaction_comparison") {
+        const years = [...new Set(rows.map((row) => Number(row.year)))].sort((a, b) => a - b);
+        const pick = (region, year) => {
+          const row = rows.find((item) => item.region === region && Number(item.year) === Number(year));
+          return row ? chartNumber(row.life_satisfaction_positive_pct) : null;
+        };
+        const toRows = (region) => years.map((year) => ({ year, value: pick(region, year) }));
+        config = {
+          type: "line",
+          data: {
+            labels: years,
+            datasets: [
+              lineDataset("전국", toRows("전국"), "value", "rgba(71,85,105,1)"),
+              lineDataset("수도권", toRows("수도권"), "value", "rgba(147,51,234,1)"),
+              {
+                ...lineDataset("서울", toRows("서울특별시"), "value", "rgba(37,99,235,1)"),
+                borderDash: [5, 4]
+              },
+              {
+                ...lineDataset("인천", toRows("인천광역시"), "value", "rgba(234,88,12,1)"),
+                borderDash: [2, 3]
+              },
+              {
+                ...lineDataset("경기", toRows("경기도"), "value", "rgba(15,118,110,1)"),
+                borderDash: [6, 3]
+              }
+            ]
+          },
+          options: {
+            ...common,
+            scales: {
+              x: { grid: { display: false }, title: { display: true, text: "연도" } },
+              y: {
+                grid: { color: "rgba(15,23,42,.08)" },
+                title: { display: true, text: "삶에 만족하는 인구 비율(%)" },
+                ticks: { callback: (value) => `${value}%` }
               }
             }
           }

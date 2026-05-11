@@ -11778,6 +11778,152 @@ window.populationBookCharts = {
         "deposit_to_disposable_income_pct": 119.1
       }
     ],
+    "young_income_trend_by_age": [
+      {
+        "year": 2017,
+        "age_group": "29세 이하",
+        "disposable_income_10k_krw": 2833.074573319,
+        "disposable_income_million_krw": 28.3,
+        "debt_to_disposable_income_pct": 84.5,
+        "repayment_to_disposable_income_pct": 13.9
+      },
+      {
+        "year": 2018,
+        "age_group": "29세 이하",
+        "disposable_income_10k_krw": 3070.4752057864,
+        "disposable_income_million_krw": 30.7,
+        "debt_to_disposable_income_pct": 84.4,
+        "repayment_to_disposable_income_pct": 11.5
+      },
+      {
+        "year": 2019,
+        "age_group": "29세 이하",
+        "disposable_income_10k_krw": 3190.9857078062,
+        "disposable_income_million_krw": 31.9,
+        "debt_to_disposable_income_pct": 100.2,
+        "repayment_to_disposable_income_pct": 16.0
+      },
+      {
+        "year": 2020,
+        "age_group": "29세 이하",
+        "disposable_income_10k_krw": 3052.6146341894,
+        "disposable_income_million_krw": 30.5,
+        "debt_to_disposable_income_pct": 114.0,
+        "repayment_to_disposable_income_pct": 16.9
+      },
+      {
+        "year": 2021,
+        "age_group": "29세 이하",
+        "disposable_income_10k_krw": 3237.3047557739,
+        "disposable_income_million_krw": 32.4,
+        "debt_to_disposable_income_pct": 109.7,
+        "repayment_to_disposable_income_pct": 16.4
+      },
+      {
+        "year": 2022,
+        "age_group": "29세 이하",
+        "disposable_income_10k_krw": 3440.4607800268,
+        "disposable_income_million_krw": 34.4,
+        "debt_to_disposable_income_pct": 145.7,
+        "repayment_to_disposable_income_pct": 16.9
+      },
+      {
+        "year": 2023,
+        "age_group": "29세 이하",
+        "disposable_income_10k_krw": 3525.3111814014,
+        "disposable_income_million_krw": 35.3,
+        "debt_to_disposable_income_pct": 133.5,
+        "repayment_to_disposable_income_pct": 24.2
+      },
+      {
+        "year": 2024,
+        "age_group": "29세 이하",
+        "disposable_income_10k_krw": 4062.286081579,
+        "disposable_income_million_krw": 40.6,
+        "debt_to_disposable_income_pct": 111.5,
+        "repayment_to_disposable_income_pct": 25.8
+      },
+      {
+        "year": 2025,
+        "age_group": "29세 이하",
+        "disposable_income_10k_krw": 3837.7295493466,
+        "disposable_income_million_krw": 38.4,
+        "debt_to_disposable_income_pct": 122.6,
+        "repayment_to_disposable_income_pct": 23.5
+      },
+      {
+        "year": 2017,
+        "age_group": "30~39세",
+        "disposable_income_10k_krw": 4533.0823545963,
+        "disposable_income_million_krw": 45.3,
+        "debt_to_disposable_income_pct": 152.7,
+        "repayment_to_disposable_income_pct": 26.1
+      },
+      {
+        "year": 2018,
+        "age_group": "30~39세",
+        "disposable_income_10k_krw": 4734.1706044328,
+        "disposable_income_million_krw": 47.3,
+        "debt_to_disposable_income_pct": 170.8,
+        "repayment_to_disposable_income_pct": 27.6
+      },
+      {
+        "year": 2019,
+        "age_group": "30~39세",
+        "disposable_income_10k_krw": 4891.6880911452,
+        "disposable_income_million_krw": 48.9,
+        "debt_to_disposable_income_pct": 182.2,
+        "repayment_to_disposable_income_pct": 32.3
+      },
+      {
+        "year": 2020,
+        "age_group": "30~39세",
+        "disposable_income_10k_krw": 5182.1110702158,
+        "disposable_income_million_krw": 51.8,
+        "debt_to_disposable_income_pct": 194.6,
+        "repayment_to_disposable_income_pct": 29.9
+      },
+      {
+        "year": 2021,
+        "age_group": "30~39세",
+        "disposable_income_10k_krw": 5432.3614565151,
+        "disposable_income_million_krw": 54.3,
+        "debt_to_disposable_income_pct": 206.0,
+        "repayment_to_disposable_income_pct": 34.4
+      },
+      {
+        "year": 2022,
+        "age_group": "30~39세",
+        "disposable_income_10k_krw": 5639.6725163778,
+        "disposable_income_million_krw": 56.4,
+        "debt_to_disposable_income_pct": 200.5,
+        "repayment_to_disposable_income_pct": 28.4
+      },
+      {
+        "year": 2023,
+        "age_group": "30~39세",
+        "disposable_income_10k_krw": 5771.2758120365,
+        "disposable_income_million_krw": 57.7,
+        "debt_to_disposable_income_pct": 196.1,
+        "repayment_to_disposable_income_pct": 32.7
+      },
+      {
+        "year": 2024,
+        "age_group": "30~39세",
+        "disposable_income_10k_krw": 5838.4992956416,
+        "disposable_income_million_krw": 58.4,
+        "debt_to_disposable_income_pct": 184.5,
+        "repayment_to_disposable_income_pct": 28.9
+      },
+      {
+        "year": 2025,
+        "age_group": "30~39세",
+        "disposable_income_10k_krw": 5976.1300710917,
+        "disposable_income_million_krw": 59.8,
+        "debt_to_disposable_income_pct": 182.4,
+        "repayment_to_disposable_income_pct": 27.5
+      }
+    ],
     "youth_housing_consumption_pressure": [
       {
         "year": 2010,
@@ -12444,6 +12590,580 @@ window.populationBookCharts = {
         "correlation": 0.5795,
         "n": 30,
         "model": "outcome = a + b*under40_homeownership_rate + c*year"
+      }
+    ],
+    "young_life_satisfaction_trend": [
+      {
+        "year": 2013,
+        "age_group": "19~29세",
+        "life_satisfaction_avg_0_10": 5.7
+      },
+      {
+        "year": 2014,
+        "age_group": "19~29세",
+        "life_satisfaction_avg_0_10": 5.9
+      },
+      {
+        "year": 2015,
+        "age_group": "19~29세",
+        "life_satisfaction_avg_0_10": 5.8
+      },
+      {
+        "year": 2016,
+        "age_group": "19~29세",
+        "life_satisfaction_avg_0_10": 6.1
+      },
+      {
+        "year": 2017,
+        "age_group": "19~29세",
+        "life_satisfaction_avg_0_10": 6.1
+      },
+      {
+        "year": 2018,
+        "age_group": "19~29세",
+        "life_satisfaction_avg_0_10": 6.1
+      },
+      {
+        "year": 2019,
+        "age_group": "19~29세",
+        "life_satisfaction_avg_0_10": 6.0
+      },
+      {
+        "year": 2020,
+        "age_group": "19~29세",
+        "life_satisfaction_avg_0_10": 6.2
+      },
+      {
+        "year": 2021,
+        "age_group": "19~29세",
+        "life_satisfaction_avg_0_10": 6.4
+      },
+      {
+        "year": 2022,
+        "age_group": "19~29세",
+        "life_satisfaction_avg_0_10": 6.5
+      },
+      {
+        "year": 2023,
+        "age_group": "19~29세",
+        "life_satisfaction_avg_0_10": 6.5
+      },
+      {
+        "year": 2024,
+        "age_group": "19~29세",
+        "life_satisfaction_avg_0_10": 6.5
+      },
+      {
+        "year": 2025,
+        "age_group": "19~29세",
+        "life_satisfaction_avg_0_10": 6.7
+      },
+      {
+        "year": 2013,
+        "age_group": "30~39세",
+        "life_satisfaction_avg_0_10": 5.8
+      },
+      {
+        "year": 2014,
+        "age_group": "30~39세",
+        "life_satisfaction_avg_0_10": 5.8
+      },
+      {
+        "year": 2015,
+        "age_group": "30~39세",
+        "life_satisfaction_avg_0_10": 5.8
+      },
+      {
+        "year": 2016,
+        "age_group": "30~39세",
+        "life_satisfaction_avg_0_10": 5.9
+      },
+      {
+        "year": 2017,
+        "age_group": "30~39세",
+        "life_satisfaction_avg_0_10": 6.2
+      },
+      {
+        "year": 2018,
+        "age_group": "30~39세",
+        "life_satisfaction_avg_0_10": 6.2
+      },
+      {
+        "year": 2019,
+        "age_group": "30~39세",
+        "life_satisfaction_avg_0_10": 6.1
+      },
+      {
+        "year": 2020,
+        "age_group": "30~39세",
+        "life_satisfaction_avg_0_10": 6.1
+      },
+      {
+        "year": 2021,
+        "age_group": "30~39세",
+        "life_satisfaction_avg_0_10": 6.5
+      },
+      {
+        "year": 2022,
+        "age_group": "30~39세",
+        "life_satisfaction_avg_0_10": 6.6
+      },
+      {
+        "year": 2023,
+        "age_group": "30~39세",
+        "life_satisfaction_avg_0_10": 6.5
+      },
+      {
+        "year": 2024,
+        "age_group": "30~39세",
+        "life_satisfaction_avg_0_10": 6.6
+      },
+      {
+        "year": 2025,
+        "age_group": "30~39세",
+        "life_satisfaction_avg_0_10": 6.8
+      },
+      {
+        "year": 2013,
+        "age_group": "전체",
+        "life_satisfaction_avg_0_10": 5.7
+      },
+      {
+        "year": 2014,
+        "age_group": "전체",
+        "life_satisfaction_avg_0_10": 5.7
+      },
+      {
+        "year": 2015,
+        "age_group": "전체",
+        "life_satisfaction_avg_0_10": 5.8
+      },
+      {
+        "year": 2016,
+        "age_group": "전체",
+        "life_satisfaction_avg_0_10": 5.9
+      },
+      {
+        "year": 2017,
+        "age_group": "전체",
+        "life_satisfaction_avg_0_10": 6.0
+      },
+      {
+        "year": 2018,
+        "age_group": "전체",
+        "life_satisfaction_avg_0_10": 6.1
+      },
+      {
+        "year": 2019,
+        "age_group": "전체",
+        "life_satisfaction_avg_0_10": 6.0
+      },
+      {
+        "year": 2020,
+        "age_group": "전체",
+        "life_satisfaction_avg_0_10": 6.0
+      },
+      {
+        "year": 2021,
+        "age_group": "전체",
+        "life_satisfaction_avg_0_10": 6.3
+      },
+      {
+        "year": 2022,
+        "age_group": "전체",
+        "life_satisfaction_avg_0_10": 6.5
+      },
+      {
+        "year": 2023,
+        "age_group": "전체",
+        "life_satisfaction_avg_0_10": 6.4
+      },
+      {
+        "year": 2024,
+        "age_group": "전체",
+        "life_satisfaction_avg_0_10": 6.4
+      },
+      {
+        "year": 2025,
+        "age_group": "전체",
+        "life_satisfaction_avg_0_10": 6.6
+      }
+    ],
+    "capital_life_satisfaction_comparison": [
+      {
+        "year": 2011,
+        "region": "경기도",
+        "life_satisfaction_positive_pct": 25.3
+      },
+      {
+        "year": 2012,
+        "region": "경기도",
+        "life_satisfaction_positive_pct": 32.8
+      },
+      {
+        "year": 2013,
+        "region": "경기도",
+        "life_satisfaction_positive_pct": 34.8
+      },
+      {
+        "year": 2014,
+        "region": "경기도",
+        "life_satisfaction_positive_pct": 42.7
+      },
+      {
+        "year": 2015,
+        "region": "경기도",
+        "life_satisfaction_positive_pct": 33.4
+      },
+      {
+        "year": 2016,
+        "region": "경기도",
+        "life_satisfaction_positive_pct": 42.8
+      },
+      {
+        "year": 2017,
+        "region": "경기도",
+        "life_satisfaction_positive_pct": 28.9
+      },
+      {
+        "year": 2018,
+        "region": "경기도",
+        "life_satisfaction_positive_pct": 39.0
+      },
+      {
+        "year": 2019,
+        "region": "경기도",
+        "life_satisfaction_positive_pct": 40.0
+      },
+      {
+        "year": 2020,
+        "region": "경기도",
+        "life_satisfaction_positive_pct": 44.3
+      },
+      {
+        "year": 2021,
+        "region": "경기도",
+        "life_satisfaction_positive_pct": 33.3
+      },
+      {
+        "year": 2022,
+        "region": "경기도",
+        "life_satisfaction_positive_pct": 42.6
+      },
+      {
+        "year": 2023,
+        "region": "경기도",
+        "life_satisfaction_positive_pct": 41.3
+      },
+      {
+        "year": 2024,
+        "region": "경기도",
+        "life_satisfaction_positive_pct": 35.7
+      },
+      {
+        "year": 2025,
+        "region": "경기도",
+        "life_satisfaction_positive_pct": 46.5
+      },
+      {
+        "year": 2011,
+        "region": "서울특별시",
+        "life_satisfaction_positive_pct": 27.2
+      },
+      {
+        "year": 2012,
+        "region": "서울특별시",
+        "life_satisfaction_positive_pct": 32.7
+      },
+      {
+        "year": 2013,
+        "region": "서울특별시",
+        "life_satisfaction_positive_pct": 35.8
+      },
+      {
+        "year": 2014,
+        "region": "서울특별시",
+        "life_satisfaction_positive_pct": 43.4
+      },
+      {
+        "year": 2015,
+        "region": "서울특별시",
+        "life_satisfaction_positive_pct": 36.6
+      },
+      {
+        "year": 2016,
+        "region": "서울특별시",
+        "life_satisfaction_positive_pct": 43.1
+      },
+      {
+        "year": 2017,
+        "region": "서울특별시",
+        "life_satisfaction_positive_pct": 32.3
+      },
+      {
+        "year": 2018,
+        "region": "서울특별시",
+        "life_satisfaction_positive_pct": 42.1
+      },
+      {
+        "year": 2019,
+        "region": "서울특별시",
+        "life_satisfaction_positive_pct": 40.6
+      },
+      {
+        "year": 2020,
+        "region": "서울특별시",
+        "life_satisfaction_positive_pct": 46.4
+      },
+      {
+        "year": 2021,
+        "region": "서울특별시",
+        "life_satisfaction_positive_pct": 34.1
+      },
+      {
+        "year": 2022,
+        "region": "서울특별시",
+        "life_satisfaction_positive_pct": 43.2
+      },
+      {
+        "year": 2023,
+        "region": "서울특별시",
+        "life_satisfaction_positive_pct": 41.8
+      },
+      {
+        "year": 2024,
+        "region": "서울특별시",
+        "life_satisfaction_positive_pct": 46.3
+      },
+      {
+        "year": 2025,
+        "region": "서울특별시",
+        "life_satisfaction_positive_pct": 44.2
+      },
+      {
+        "year": 2011,
+        "region": "수도권",
+        "life_satisfaction_positive_pct": 25.8
+      },
+      {
+        "year": 2012,
+        "region": "수도권",
+        "life_satisfaction_positive_pct": 32.4
+      },
+      {
+        "year": 2013,
+        "region": "수도권",
+        "life_satisfaction_positive_pct": 35.0
+      },
+      {
+        "year": 2014,
+        "region": "수도권",
+        "life_satisfaction_positive_pct": 43.0
+      },
+      {
+        "year": 2015,
+        "region": "수도권",
+        "life_satisfaction_positive_pct": 34.4
+      },
+      {
+        "year": 2016,
+        "region": "수도권",
+        "life_satisfaction_positive_pct": 42.5
+      },
+      {
+        "year": 2017,
+        "region": "수도권",
+        "life_satisfaction_positive_pct": 30.1
+      },
+      {
+        "year": 2018,
+        "region": "수도권",
+        "life_satisfaction_positive_pct": 40.3
+      },
+      {
+        "year": 2019,
+        "region": "수도권",
+        "life_satisfaction_positive_pct": 40.6
+      },
+      {
+        "year": 2020,
+        "region": "수도권",
+        "life_satisfaction_positive_pct": 44.9
+      },
+      {
+        "year": 2021,
+        "region": "수도권",
+        "life_satisfaction_positive_pct": 33.3
+      },
+      {
+        "year": 2022,
+        "region": "수도권",
+        "life_satisfaction_positive_pct": 42.5
+      },
+      {
+        "year": 2023,
+        "region": "수도권",
+        "life_satisfaction_positive_pct": 41.3
+      },
+      {
+        "year": 2024,
+        "region": "수도권",
+        "life_satisfaction_positive_pct": 38.7
+      },
+      {
+        "year": 2025,
+        "region": "수도권",
+        "life_satisfaction_positive_pct": 45.6
+      },
+      {
+        "year": 2011,
+        "region": "인천광역시",
+        "life_satisfaction_positive_pct": 22.6
+      },
+      {
+        "year": 2012,
+        "region": "인천광역시",
+        "life_satisfaction_positive_pct": 29.3
+      },
+      {
+        "year": 2013,
+        "region": "인천광역시",
+        "life_satisfaction_positive_pct": 32.7
+      },
+      {
+        "year": 2014,
+        "region": "인천광역시",
+        "life_satisfaction_positive_pct": 42.6
+      },
+      {
+        "year": 2015,
+        "region": "인천광역시",
+        "life_satisfaction_positive_pct": 31.3
+      },
+      {
+        "year": 2016,
+        "region": "인천광역시",
+        "life_satisfaction_positive_pct": 38.9
+      },
+      {
+        "year": 2017,
+        "region": "인천광역시",
+        "life_satisfaction_positive_pct": 27.7
+      },
+      {
+        "year": 2018,
+        "region": "인천광역시",
+        "life_satisfaction_positive_pct": 40.0
+      },
+      {
+        "year": 2019,
+        "region": "인천광역시",
+        "life_satisfaction_positive_pct": 43.6
+      },
+      {
+        "year": 2020,
+        "region": "인천광역시",
+        "life_satisfaction_positive_pct": 42.3
+      },
+      {
+        "year": 2021,
+        "region": "인천광역시",
+        "life_satisfaction_positive_pct": 31.1
+      },
+      {
+        "year": 2022,
+        "region": "인천광역시",
+        "life_satisfaction_positive_pct": 39.4
+      },
+      {
+        "year": 2023,
+        "region": "인천광역시",
+        "life_satisfaction_positive_pct": 39.8
+      },
+      {
+        "year": 2024,
+        "region": "인천광역시",
+        "life_satisfaction_positive_pct": 28.0
+      },
+      {
+        "year": 2025,
+        "region": "인천광역시",
+        "life_satisfaction_positive_pct": 46.0
+      },
+      {
+        "year": 2011,
+        "region": "전국",
+        "life_satisfaction_positive_pct": 24.1
+      },
+      {
+        "year": 2012,
+        "region": "전국",
+        "life_satisfaction_positive_pct": 33.3
+      },
+      {
+        "year": 2013,
+        "region": "전국",
+        "life_satisfaction_positive_pct": 34.1
+      },
+      {
+        "year": 2014,
+        "region": "전국",
+        "life_satisfaction_positive_pct": 42.2
+      },
+      {
+        "year": 2015,
+        "region": "전국",
+        "life_satisfaction_positive_pct": 33.3
+      },
+      {
+        "year": 2016,
+        "region": "전국",
+        "life_satisfaction_positive_pct": 42.4
+      },
+      {
+        "year": 2017,
+        "region": "전국",
+        "life_satisfaction_positive_pct": 29.7
+      },
+      {
+        "year": 2018,
+        "region": "전국",
+        "life_satisfaction_positive_pct": 40.8
+      },
+      {
+        "year": 2019,
+        "region": "전국",
+        "life_satisfaction_positive_pct": 39.1
+      },
+      {
+        "year": 2020,
+        "region": "전국",
+        "life_satisfaction_positive_pct": 42.7
+      },
+      {
+        "year": 2021,
+        "region": "전국",
+        "life_satisfaction_positive_pct": 34.0
+      },
+      {
+        "year": 2022,
+        "region": "전국",
+        "life_satisfaction_positive_pct": 43.3
+      },
+      {
+        "year": 2023,
+        "region": "전국",
+        "life_satisfaction_positive_pct": 42.2
+      },
+      {
+        "year": 2024,
+        "region": "전국",
+        "life_satisfaction_positive_pct": 40.1
+      },
+      {
+        "year": 2025,
+        "region": "전국",
+        "life_satisfaction_positive_pct": 45.3
       }
     ],
     "international_housing_fertility_cases": [
@@ -103052,6 +103772,13 @@ window.populationBookCharts = {
       "source": "KOSIS DT_1HDAAA06 가구주연령계층별 자산·부채·소득 현황",
       "note": "전세·구입자금 대출은 초기 진입장벽을 낮추지만, 이미 높은 부채와 상환 부담 위에 얹힐 경우 출산 위험을 줄이기보다 미래 부담을 뒤로 미룰 수 있다."
     },
+    "young_income_trend_by_age": {
+      "title": "29세 이하·30대 가구주의 처분가능소득 변화",
+      "kind": "line",
+      "csv": "young_income_trend_by_age.csv",
+      "source": "KOSIS DT_1HDAAA06 가구주연령계층별 자산·부채·소득 현황",
+      "note": "가계금융복지조사의 가구주 연령계층별 처분가능소득이다. 공식 분류상 20대는 '29세 이하'로 제시되므로, 여기서는 20대 이하 초기 가구주와 30대 가구주를 비교한다."
+    },
     "youth_housing_consumption_pressure": {
       "title": "가계소비 중 주거비 비중",
       "kind": "line",
@@ -103121,6 +103848,20 @@ window.populationBookCharts = {
       "csv": "family_condition_dashboard.csv",
       "source": "KOSIS 인구동태·주택소유통계·신혼부부통계, e-나라지표 청년고용·출산전후휴가 및 육아휴직급여 현황, KOSIS 어린이집 특수보육 현황",
       "note": "40세 미만 주택보유율, 청년 취업자, 육아휴직 수급자, 야간연장 어린이집 비중을 기준연도 100 지수로 비교했다. 육아휴직은 2017년을 기준으로 삼았다."
+    },
+    "young_life_satisfaction_trend": {
+      "title": "20대·30대 삶의 만족도 평균 추세",
+      "kind": "line",
+      "csv": "young_life_satisfaction_trend.csv",
+      "source": "KOSIS DT_417001_0002 한국행정연구원 사회통합실태조사, 삶에 대한 만족도",
+      "note": "0점은 전혀 만족하지 않음, 10점은 매우 만족함을 뜻한다. 2019년까지는 만 19~69세, 2020년부터는 만 19세 이상 응답자 기준이다."
+    },
+    "capital_life_satisfaction_comparison": {
+      "title": "수도권과 서울·인천·경기의 삶의 만족도 비교",
+      "kind": "line",
+      "csv": "capital_life_satisfaction_comparison.csv",
+      "source": "국가데이터처 수도권 광역지표 삶의 만족도(idctId=42), 사회조사 및 사회조사 마이크로데이터 재산출",
+      "note": "현재 삶에 대해 전반적으로 만족한다고 응답한 13세 이상 인구 비율이다. 공개 지표는 연령×수도권 교차표를 제공하지 않으므로, 20·30대 전국 추세와 수도권 전체 추세를 나란히 읽어야 한다."
     },
     "school_age_private_education_pressure": {
       "title": "학생 수 감소와 사교육비 압력",
