@@ -2873,12 +2873,6 @@
           data: {
             labels: rows.map((row) => row.year),
             datasets: [
-              {
-                ...lineDataset("조혼인율", rows, "marriage_rate_index_2015_100", "rgba(185,28,28,1)"),
-                borderWidth: 3,
-                pointRadius: 3
-              },
-              lineDataset("조출생률", rows, "birth_rate_index_2015_100", "rgba(37,99,235,1)"),
               lineDataset("40세 미만 주택보유율", rows, "under40_homeownership_index_2015_100", "rgba(15,118,110,1)"),
               lineDataset("청년 취업자", rows, "youth_employed_index_2015_100", "rgba(71,85,105,1)"),
               {
@@ -2911,8 +2905,6 @@
                     const label = context.dataset.label || "";
                     const value = Number(context.raw);
                     const actuals = {
-                      "조혼인율": row.crude_marriage_rate == null ? "" : `${Number(row.crude_marriage_rate).toFixed(1)}‰`,
-                      "조출생률": row.crude_birth_rate == null ? "" : `${Number(row.crude_birth_rate).toFixed(1)}‰`,
                       "40세 미만 주택보유율": row.under40_homeownership_rate == null ? "" : `${Number(row.under40_homeownership_rate).toFixed(1)}%`,
                       "청년 취업자": row.youth_employed_population_2000_100 == null ? "" : `${Number(row.youth_employed_population_2000_100).toFixed(1)}(2000=100)`,
                       "육아휴직 수급자": row.parental_leave_total_users == null ? "" : `${Number(row.parental_leave_total_users).toLocaleString("ko-KR")}명`,

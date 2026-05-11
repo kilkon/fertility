@@ -103120,7 +103120,7 @@ window.populationBookCharts = {
       "kind": "line",
       "csv": "family_condition_dashboard.csv",
       "source": "KOSIS 인구동태·주택소유통계·신혼부부통계, e-나라지표 청년고용·출산전후휴가 및 육아휴직급여 현황, KOSIS 어린이집 특수보육 현황",
-      "note": "혼인율, 출생률, 40세 미만 주택보유율, 청년 취업자, 육아휴직 수급자, 야간연장 어린이집 비중을 기준연도 100 지수로 비교했다. 육아휴직은 2017년을 기준으로 삼았다."
+      "note": "40세 미만 주택보유율, 청년 취업자, 육아휴직 수급자, 야간연장 어린이집 비중을 기준연도 100 지수로 비교했다. 육아휴직은 2017년을 기준으로 삼았다."
     },
     "school_age_private_education_pressure": {
       "title": "학생 수 감소와 사교육비 압력",
