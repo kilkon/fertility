@@ -12240,6 +12240,63 @@ window.populationBookCharts = {
         "housing_share_pct": 17.1
       }
     ],
+    "capital_youth_population_share_2025": [
+      {
+        "year": 2025,
+        "region_code": "00",
+        "region": "전국",
+        "population_total": 51117378,
+        "population_20s": 5682242,
+        "population_30s": 6676457,
+        "population_20_39": 12358699,
+        "share_of_region_total_pct": 24.2,
+        "share_of_national_20_39_pct": 100.0
+      },
+      {
+        "year": 2025,
+        "region_code": "CAP",
+        "region": "수도권",
+        "population_total": 26081644,
+        "population_20s": 3150655,
+        "population_30s": 3819918,
+        "population_20_39": 6970573,
+        "share_of_region_total_pct": 26.7,
+        "share_of_national_20_39_pct": 56.4
+      },
+      {
+        "year": 2025,
+        "region_code": "11",
+        "region": "서울특별시",
+        "population_total": 9299548,
+        "population_20s": 1254885,
+        "population_30s": 1462944,
+        "population_20_39": 2717829,
+        "share_of_region_total_pct": 29.2,
+        "share_of_national_20_39_pct": 22.0
+      },
+      {
+        "year": 2025,
+        "region_code": "28",
+        "region": "인천광역시",
+        "population_total": 3051961,
+        "population_20s": 338166,
+        "population_30s": 431527,
+        "population_20_39": 769693,
+        "share_of_region_total_pct": 25.2,
+        "share_of_national_20_39_pct": 6.2
+      },
+      {
+        "year": 2025,
+        "region_code": "41",
+        "region": "경기도",
+        "population_total": 13730135,
+        "population_20s": 1557604,
+        "population_30s": 1925447,
+        "population_20_39": 3483051,
+        "share_of_region_total_pct": 25.4,
+        "share_of_national_20_39_pct": 28.2
+      }
+    ],
     "housing_security_outcomes_national": [
       {
         "year": 2015,
@@ -104123,6 +104180,13 @@ window.populationBookCharts = {
       "csv": "capital_life_satisfaction_comparison.csv",
       "source": "국가데이터처 수도권 광역지표 삶의 만족도(idctId=42), 사회조사 및 사회조사 마이크로데이터 재산출",
       "note": "현재 삶에 대해 전반적으로 만족한다고 응답한 13세 이상 인구 비율이다. 공개 지표는 연령×수도권 교차표를 제공하지 않으므로, 20·30대 전국 추세와 수도권 전체 추세를 나란히 읽어야 한다."
+    },
+    "capital_youth_population_share_2025": {
+      "title": "2025년 20·30대 인구의 수도권 집중",
+      "kind": "bar",
+      "csv": "capital_youth_population_2025_summary.csv",
+      "source": "KOSIS DT_1B04006 행정구역(시군구)별/1세별 주민등록인구, 총인구수, 2025년",
+      "note": "20~39세 주민등록인구를 1세별로 합산했다. 수도권은 서울·인천·경기 합계이며, 비중은 전국 20~39세 인구 대비 비율이다."
     },
     "school_age_private_education_pressure": {
       "title": "학생 수 감소와 사교육비 압력",

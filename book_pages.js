@@ -3063,6 +3063,47 @@
             }
           }
         };
+      } else if (id === "capital_youth_population_share_2025") {
+        const order = ["서울특별시", "인천광역시", "경기도", "수도권"];
+        const dataRows = order.map((region) => rows.find((row) => row.region === region)).filter(Boolean);
+        config = {
+          type: "bar",
+          data: {
+            labels: dataRows.map((row) => row.region),
+            datasets: [
+              {
+                label: "전국 20~39세 중 비중",
+                data: dataRows.map((row) => chartNumber(row.share_of_national_20_39_pct)),
+                backgroundColor: dataRows.map((row) => row.region === "수도권" ? "rgba(147,51,234,.72)" : "rgba(37,99,235,.68)")
+              }
+            ]
+          },
+          options: {
+            ...common,
+            scales: {
+              x: { grid: { display: false }, title: { display: true, text: "지역" } },
+              y: {
+                grid: { color: "rgba(15,23,42,.08)" },
+                title: { display: true, text: "전국 20~39세 대비 비중(%)" },
+                suggestedMax: 65,
+                ticks: { callback: (value) => `${value}%` }
+              }
+            },
+            plugins: {
+              ...common.plugins,
+              tooltip: {
+                callbacks: {
+                  label: (context) => {
+                    const row = dataRows[context.dataIndex] || {};
+                    const pct = Number(context.raw);
+                    const people = Number(row.population_20_39 || 0);
+                    return `${Number.isFinite(pct) ? pct.toFixed(1) : "-"}% (${people.toLocaleString("ko-KR")}명)`;
+                  }
+                }
+              }
+            }
+          }
+        };
       } else if (id === "multicultural_birth_rate") {
         config = {
           type: "line",
