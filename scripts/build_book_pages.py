@@ -580,11 +580,18 @@ CHART_META = {
         "note": "전세·구입자금 대출은 초기 진입장벽을 낮추지만, 이미 높은 부채와 상환 부담 위에 얹힐 경우 출산 위험을 줄이기보다 미래 부담을 뒤로 미룰 수 있다.",
     },
     "young_income_trend_by_age": {
-        "title": "29세 이하·30대 가구주의 처분가능소득 변화",
+        "title": "29세 이하·30대 가구주의 명목 처분가능소득",
         "kind": "line",
         "csv": "young_income_trend_by_age.csv",
         "source": "KOSIS DT_1HDAAA06 가구주연령계층별 자산·부채·소득 현황",
-        "note": "가계금융복지조사의 가구주 연령계층별 처분가능소득이다. 공식 분류상 20대는 '29세 이하'로 제시되므로, 여기서는 20대 이하 초기 가구주와 30대 가구주를 비교한다.",
+        "note": "가계금융복지조사의 가구주 연령계층별 처분가능소득 원자료다. 공식 분류상 20대는 '29세 이하'로 제시되므로, 여기서는 20대 이하 초기 가구주와 30대 가구주를 비교한다.",
+    },
+    "young_real_income_trend_by_age": {
+        "title": "29세 이하·30대 가구주의 실질 처분가능소득",
+        "kind": "line",
+        "csv": "young_income_trend_by_age.csv",
+        "source": "KOSIS DT_1HDAAA06 가구주연령계층별 자산·부채·소득 현황, KOSIS DT_1J22135 연도별 지출목적별 소비자물가지수(전국 총지수, 2020=100)",
+        "note": "명목 처분가능소득을 전국 소비자물가지수로 조정해 2025년 가격 기준 백만원으로 환산했다. 물가 상승 이후 남는 구매력의 변화를 보기 위한 그림이다.",
     },
     "youth_housing_consumption_pressure": {
         "title": "가계소비 중 주거비 비중",
@@ -2015,6 +2022,7 @@ SECTION_DATA_EXPANSION = {
             "files": [
                 "data/derived/family_condition_dashboard.csv",
                 "data/derived/young_income_trend_by_age.csv",
+                "data/derived/cpi_annual_2020_100.csv",
                 "data/derived/young_life_satisfaction_trend.csv",
                 "data/derived/capital_life_satisfaction_comparison.csv",
                 "data/derived/housing_security_outcomes_national.csv",
@@ -3244,6 +3252,7 @@ def build_derived_data() -> dict[str, list[dict[str, object]]]:
         ("housing_tenure_young_newlywed", "housing_tenure_young_newlywed.csv"),
         ("housing_finance_burden_by_age", "housing_finance_burden_by_age.csv"),
         ("young_income_trend_by_age", "young_income_trend_by_age.csv"),
+        ("young_real_income_trend_by_age", "young_income_trend_by_age.csv"),
         ("youth_housing_consumption_pressure", "youth_housing_consumption_pressure.csv"),
         ("housing_security_outcomes_national", "housing_security_outcomes_national.csv"),
         ("capital_region_housing_marriage_birth", "capital_region_housing_marriage_birth.csv"),

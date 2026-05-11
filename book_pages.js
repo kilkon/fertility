@@ -928,6 +928,44 @@
             }
           }
         };
+      } else if (id === "young_real_income_trend_by_age") {
+        const years = [...new Set(rows.map((row) => Number(row.year)))].sort((a, b) => a - b);
+        const pick = (ageGroup, key, year) => {
+          const row = rows.find((item) => item.age_group === ageGroup && Number(item.year) === Number(year));
+          return row ? chartNumber(row[key]) : null;
+        };
+        const toRows = (ageGroup) => years.map((year) => ({
+          year,
+          value: pick(ageGroup, "real_disposable_income_2025_million_krw", year)
+        }));
+        config = {
+          type: "line",
+          data: {
+            labels: years,
+            datasets: [
+              lineDataset("29세 이하", toRows("29세 이하"), "value", "rgba(37,99,235,1)"),
+              lineDataset("30~39세", toRows("30~39세"), "value", "rgba(15,118,110,1)")
+            ]
+          },
+          options: {
+            ...common,
+            scales: {
+              x: { grid: { display: false }, title: { display: true, text: "연도" } },
+              y: { grid: { color: "rgba(15,23,42,.08)" }, title: { display: true, text: "실질 처분가능소득(2025년 가격, 백만원)" } }
+            },
+            plugins: {
+              ...common.plugins,
+              tooltip: {
+                callbacks: {
+                  label: (context) => {
+                    const value = Number(context.raw);
+                    return `${context.dataset.label}: ${Number.isFinite(value) ? value.toFixed(1) : "-"}백만원`;
+                  }
+                }
+              }
+            }
+          }
+        };
       } else if (id === "youth_housing_consumption_pressure") {
         config = {
           type: "line",
