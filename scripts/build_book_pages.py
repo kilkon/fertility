@@ -26,7 +26,7 @@ MANUSCRIPTS = ROOT / "manuscripts"
 CHAPTER_MANUSCRIPTS = MANUSCRIPTS / "chapters"
 SECTION_MANUSCRIPTS = MANUSCRIPTS / "sections"
 APPENDIX_FILE = "appendix-data-notes.html"
-ASSET_VERSION = "20260511-china-fertility-case"
+ASSET_VERSION = "20260511-family-conditions-dashboard"
 FEEDBACK_EMAIL = "kilkon@snu.ac.kr"
 PUBLIC_SITE_URL = "https://kilkon.github.io/fertility"
 
@@ -150,6 +150,12 @@ BOOK = [
                 "title": "출산을 미루는 조건은 무엇인가",
                 "file": "section-2-2-fertility-conditions.html",
                 "chart": "fertility_age_pattern",
+            },
+            {
+                "no": "3.6",
+                "title": "결혼과 육아의 조건은 실제로 좋아졌는가",
+                "file": "section-2-3-family-conditions-dashboard.html",
+                "chart": "family_condition_dashboard",
             },
         ],
     },
@@ -635,6 +641,13 @@ CHART_META = {
         "csv": "youth_employment_context.csv",
         "source": "e-나라지표 149501 청년 고용동향, 국가데이터처 경제활동인구조사",
         "note": "15-29세 청년층의 생산가능인구, 경제활동인구, 취업자를 2000년=100으로 지수화했다. 출산의 직접 원인이라기보다 혼인과 첫 출산을 미루게 하는 노동시장 배경으로 읽어야 한다.",
+    },
+    "family_condition_dashboard": {
+        "title": "결혼·출산·육아 조건의 변화",
+        "kind": "line",
+        "csv": "family_condition_dashboard.csv",
+        "source": "KOSIS 인구동태·주택소유통계·신혼부부통계, e-나라지표 청년고용·출산전후휴가 및 육아휴직급여 현황, KOSIS 어린이집 특수보육 현황",
+        "note": "혼인율, 출생률, 40세 미만 주택보유율, 청년 취업자, 육아휴직 수급자, 야간연장 어린이집 비중을 기준연도 100 지수로 비교했다. 육아휴직은 2017년을 기준으로 삼았다.",
     },
     "school_age_private_education_pressure": {
         "title": "학생 수 감소와 사교육비 압력",
@@ -1293,6 +1306,7 @@ SECTION_SUPPLEMENTAL_CHARTS = {
     ],
     "section-2-1-yeonggwang-cohort.html": ["birth_incentive_region_summary", "national_population_pressure"],
     "section-2-2-fertility-conditions.html": ["fertility_age_pattern", "vital_events_policy", "mean_birth_age_order", "newlywed_income_fertility", "youth_employment_context"],
+    "section-2-3-family-conditions-dashboard.html": ["vital_events_policy", "housing_security_outcomes_national", "maternity_parental_leave_financing_pressure", "childcare_time_flexible_facilities"],
     "section-3-0-living-population.html": ["mobile_inflow_top_sigungu"],
     "section-3-1-regional-gap.html": ["sigungu_aging_distribution"],
     "section-3-2-foreign-multicultural.html": ["foreigner_registered_total"],
@@ -1972,6 +1986,21 @@ SECTION_DATA_EXPANSION = {
             "analysis": "혼인 건수의 장기 감소, 신혼부부 소득구간별 무자녀 비중과 평균 출생아 수, 청년 고용 기반 변화를 연결해 출산 지연의 생활 조건을 해석한다.",
             "interpretation": "한국에서는 혼인이 출산의 주요 통로이고, 소득은 고용 안정의 결과다. 따라서 출산 지연은 혼인 지연, 일자리 안정, 소득 형성, 주거·돌봄 기대가 동시에 늦어지는 과정으로 이해해야 한다.",
         },
+    ],
+    "section-2-3-family-conditions-dashboard.html": [
+        {
+            "question": "저출산 정책이 결혼과 육아의 생활조건을 실제로 바꾸었는가?",
+            "data": "KOSIS 인구동태·주택소유통계·신혼부부통계, e-나라지표 청년고용·출산전후휴가 및 육아휴직급여 현황, KOSIS 어린이집 특수보육 현황",
+            "files": [
+                "data/derived/family_condition_dashboard.csv",
+                "data/derived/housing_security_outcomes_national.csv",
+                "data/derived/youth_employment_context.csv",
+                "data/derived/maternity_parental_leave_financing_pressure.csv",
+                "data/derived/childcare_time_flexible_facilities.csv",
+            ],
+            "analysis": "혼인율, 조출생률, 40세 미만 주택보유율, 청년 취업자, 육아휴직 수급자, 야간연장 어린이집 비중을 기준연도 100 지수로 놓고 2015년 이후 방향을 비교한다.",
+            "interpretation": "제도 이용과 지출은 늘었지만 혼인·출생·주거·청년 고용의 핵심 배경조건은 같은 속도로 좋아지지 않았다. 따라서 정책 성과 평가는 예산 집행이나 제도 수가 아니라 생활조건의 변화를 함께 보아야 한다.",
+        }
     ],
     "section-3-0-living-population.html": [
         {
@@ -5523,6 +5552,86 @@ def build_derived_data() -> dict[str, list[dict[str, object]]]:
         ).round(3)
         write_csv(special_children, "childcare_time_flexible_children.csv")
         charts["childcare_time_flexible_children"] = special_children.to_dict("records")
+
+    dashboard_years = pd.DataFrame({"year": list(range(2015, 2025))})
+    family_dashboard = dashboard_years.copy()
+    housing_condition_path = DERIVED / "housing_security_outcomes_national.csv"
+    if housing_condition_path.exists():
+        housing_condition = pd.read_csv(housing_condition_path)
+        housing_condition["year"] = pd.to_numeric(housing_condition["year"], errors="coerce")
+        housing_condition = housing_condition[housing_condition["region"] == "전국"].copy()
+        family_dashboard = family_dashboard.merge(
+            housing_condition[
+                [
+                    "year",
+                    "crude_marriage_rate",
+                    "crude_birth_rate",
+                    "under40_homeownership_rate",
+                ]
+            ],
+            on="year",
+            how="left",
+        )
+    youth_condition_path = DERIVED / "youth_employment_context.csv"
+    if youth_condition_path.exists():
+        youth_condition = pd.read_csv(youth_condition_path)
+        youth_condition["year"] = pd.to_numeric(youth_condition["year"], errors="coerce")
+        youth_condition = youth_condition[youth_condition["year"].between(2015, 2024)].copy()
+        family_dashboard = family_dashboard.merge(
+            youth_condition[["year", "employed_population_index"]].rename(
+                columns={"employed_population_index": "youth_employed_population_2000_100"}
+            ),
+            on="year",
+            how="left",
+        )
+    leave_condition_path = DERIVED / "maternity_parental_leave_financing_pressure.csv"
+    if leave_condition_path.exists():
+        leave_condition = pd.read_csv(leave_condition_path)
+        leave_condition["year"] = pd.to_numeric(leave_condition["year"], errors="coerce")
+        family_dashboard = family_dashboard.merge(
+            leave_condition[["year", "parental_leave_total_users"]],
+            on="year",
+            how="left",
+        )
+    childcare_condition_path = DERIVED / "childcare_time_flexible_facilities.csv"
+    if childcare_condition_path.exists():
+        time_childcare = pd.read_csv(childcare_condition_path)
+        time_childcare["year"] = pd.to_numeric(time_childcare["year"], errors="coerce")
+        night_childcare = time_childcare[time_childcare["time_type"] == "야간 연장"][
+            ["year", "share_of_total_facilities_pct"]
+        ].rename(columns={"share_of_total_facilities_pct": "night_extended_childcare_share_pct"})
+        family_dashboard = family_dashboard.merge(night_childcare, on="year", how="left")
+    newlywed_condition_path = DERIVED / "newlywed_income_fertility.csv"
+    if newlywed_condition_path.exists():
+        newlywed_condition = pd.read_csv(newlywed_condition_path)
+        newlywed_condition["year"] = pd.to_numeric(newlywed_condition["year"], errors="coerce")
+        newlywed_total = newlywed_condition[newlywed_condition["income_group"] == "합계"][
+            ["year", "avg_births", "no_child_pct"]
+        ].rename(columns={"avg_births": "newlywed_avg_births", "no_child_pct": "newlywed_no_child_pct"})
+        family_dashboard = family_dashboard.merge(newlywed_total, on="year", how="left")
+
+    def index_column(frame: pd.DataFrame, source: str, target: str, base_year: int | None = 2015) -> None:
+        frame[source] = pd.to_numeric(frame[source], errors="coerce")
+        if base_year is not None and frame.loc[frame["year"] == base_year, source].notna().any():
+            base_value = frame.loc[frame["year"] == base_year, source].iloc[0]
+        else:
+            base_value = frame[source].dropna().iloc[0] if frame[source].notna().any() else np.nan
+        frame[target] = (frame[source] / base_value * 100).round(1) if pd.notna(base_value) and base_value else np.nan
+
+    for source, target, base_year in [
+        ("crude_marriage_rate", "marriage_rate_index_2015_100", 2015),
+        ("crude_birth_rate", "birth_rate_index_2015_100", 2015),
+        ("under40_homeownership_rate", "under40_homeownership_index_2015_100", 2015),
+        ("youth_employed_population_2000_100", "youth_employed_index_2015_100", 2015),
+        ("parental_leave_total_users", "parental_leave_users_index_2017_100", 2017),
+        ("night_extended_childcare_share_pct", "night_childcare_share_index_2015_100", 2015),
+        ("newlywed_avg_births", "newlywed_avg_births_index_2015_100", 2015),
+        ("newlywed_no_child_pct", "newlywed_no_child_index_2015_100", 2015),
+    ]:
+        if source in family_dashboard.columns:
+            index_column(family_dashboard, source, target, base_year)
+    write_csv(family_dashboard, "family_condition_dashboard.csv")
+    charts["family_condition_dashboard"] = family_dashboard.to_dict("records")
 
     fiscal = pd.read_csv(DATA / "openfiscal_population_budget.csv")
     fiscal = fiscal.rename(columns={"ACNT_YR": "year", "NAT_DB_AMT": "national_debt", "FNC_DB_AMT": "financial_debt"})

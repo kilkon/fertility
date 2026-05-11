@@ -2867,6 +2867,64 @@
             }
           }
         };
+      } else if (id === "family_condition_dashboard") {
+        config = {
+          type: "line",
+          data: {
+            labels: rows.map((row) => row.year),
+            datasets: [
+              {
+                ...lineDataset("조혼인율", rows, "marriage_rate_index_2015_100", "rgba(185,28,28,1)"),
+                borderWidth: 3,
+                pointRadius: 3
+              },
+              lineDataset("조출생률", rows, "birth_rate_index_2015_100", "rgba(37,99,235,1)"),
+              lineDataset("40세 미만 주택보유율", rows, "under40_homeownership_index_2015_100", "rgba(15,118,110,1)"),
+              lineDataset("청년 취업자", rows, "youth_employed_index_2015_100", "rgba(71,85,105,1)"),
+              {
+                ...lineDataset("육아휴직 수급자", rows, "parental_leave_users_index_2017_100", "rgba(147,51,234,1)"),
+                borderDash: [5, 4]
+              },
+              {
+                ...lineDataset("야간연장 어린이집 비중", rows, "night_childcare_share_index_2015_100", "rgba(234,88,12,1)"),
+                borderDash: [2, 3]
+              }
+            ]
+          },
+          options: {
+            ...common,
+            scales: {
+              x: { grid: { display: false }, title: { display: true, text: "연도" } },
+              y: {
+                grid: { color: "rgba(15,23,42,.08)" },
+                title: { display: true, text: "기준연도=100" },
+                suggestedMin: 45,
+                suggestedMax: 170
+              }
+            },
+            plugins: {
+              ...common.plugins,
+              tooltip: {
+                callbacks: {
+                  label: (context) => {
+                    const row = rows[context.dataIndex] || {};
+                    const label = context.dataset.label || "";
+                    const value = Number(context.raw);
+                    const actuals = {
+                      "조혼인율": row.crude_marriage_rate == null ? "" : `${Number(row.crude_marriage_rate).toFixed(1)}‰`,
+                      "조출생률": row.crude_birth_rate == null ? "" : `${Number(row.crude_birth_rate).toFixed(1)}‰`,
+                      "40세 미만 주택보유율": row.under40_homeownership_rate == null ? "" : `${Number(row.under40_homeownership_rate).toFixed(1)}%`,
+                      "청년 취업자": row.youth_employed_population_2000_100 == null ? "" : `${Number(row.youth_employed_population_2000_100).toFixed(1)}(2000=100)`,
+                      "육아휴직 수급자": row.parental_leave_total_users == null ? "" : `${Number(row.parental_leave_total_users).toLocaleString("ko-KR")}명`,
+                      "야간연장 어린이집 비중": row.night_extended_childcare_share_pct == null ? "" : `${Number(row.night_extended_childcare_share_pct).toFixed(2)}%`
+                    };
+                    return `${label}: ${Number.isFinite(value) ? value.toFixed(1) : "-"}${actuals[label] ? ` (${actuals[label]})` : ""}`;
+                  }
+                }
+              }
+            }
+          }
+        };
       } else if (id === "multicultural_birth_rate") {
         config = {
           type: "line",
