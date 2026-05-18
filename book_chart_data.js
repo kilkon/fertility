@@ -104192,6 +104192,308 @@ window.populationBookCharts = {
         "population_change_pct_since_2015": -6.43,
         "gap_change_pct": 15.63
       }
+    ],
+    "fertility_driver_standardized_effects": [
+      {
+        "level": "시도 패널(지역 고정효과)",
+        "channel": "40세 미만 주택보유율",
+        "variable": "under40_homeownership_rate",
+        "std_beta": 1.206,
+        "std_se": 0.072,
+        "n": 170,
+        "r2": 0.797,
+        "paper_family": "주거 안정 경로",
+        "interpretation": "지역 고정효과를 둔 뒤 시도 내 변화가 조출생률 변화와 같은 방향인지 본 값"
+      },
+      {
+        "level": "시도 패널(지역 고정효과)",
+        "channel": "혼인율",
+        "variable": "crude_marriage_rate",
+        "std_beta": 0.845,
+        "std_se": 0.026,
+        "n": 170,
+        "r2": 0.925,
+        "paper_family": "가족형성 경로",
+        "interpretation": "지역 고정효과를 둔 뒤 시도 내 변화가 조출생률 변화와 같은 방향인지 본 값"
+      },
+      {
+        "level": "전국 시계열 변화율",
+        "channel": "혼인율 변화",
+        "variable": "crude_marriage_rate",
+        "std_beta": 0.723,
+        "std_se": 0.261,
+        "n": 9,
+        "r2": 0.523,
+        "paper_family": "McDonald/Doepke 계열: 가족형성·일가정 양립",
+        "interpretation": "양(+)이면 해당 변수 증가와 합계출산율 증가가 같은 방향, 음(-)이면 반대 방향"
+      },
+      {
+        "level": "시도 패널(지역 고정효과)",
+        "channel": "혼인율",
+        "variable": "crude_marriage_rate",
+        "std_beta": 0.686,
+        "std_se": 0.037,
+        "n": 170,
+        "r2": 0.938,
+        "paper_family": "근접요인과 구조요인의 결합",
+        "interpretation": "지역 고정효과를 둔 뒤 시도 내 변화가 조출생률 변화와 같은 방향인지 본 값"
+      },
+      {
+        "level": "시도 패널(지역 고정효과)",
+        "channel": "40세 미만 주택보유율",
+        "variable": "under40_homeownership_rate",
+        "std_beta": 0.345,
+        "std_se": 0.061,
+        "n": 170,
+        "r2": 0.938,
+        "paper_family": "근접요인과 구조요인의 결합",
+        "interpretation": "지역 고정효과를 둔 뒤 시도 내 변화가 조출생률 변화와 같은 방향인지 본 값"
+      },
+      {
+        "level": "전국 시계열 변화율",
+        "channel": "40세 미만 주택보유율 변화",
+        "variable": "under40_homeownership_rate",
+        "std_beta": 0.066,
+        "std_se": 0.377,
+        "n": 9,
+        "r2": 0.004,
+        "paper_family": "주거비·공간 불평등 모형",
+        "interpretation": "양(+)이면 해당 변수 증가와 합계출산율 증가가 같은 방향, 음(-)이면 반대 방향"
+      },
+      {
+        "level": "전국 시계열 변화율",
+        "channel": "주거비 비중 변화",
+        "variable": "housing_share_pct",
+        "std_beta": 0.024,
+        "std_se": 0.289,
+        "n": 14,
+        "r2": 0.001,
+        "paper_family": "주거비 부담 모형",
+        "interpretation": "양(+)이면 해당 변수 증가와 합계출산율 증가가 같은 방향, 음(-)이면 반대 방향"
+      },
+      {
+        "level": "전국 시계열 변화율",
+        "channel": "청년 취업자 지수 변화",
+        "variable": "youth_employed_population_2000_100",
+        "std_beta": -0.011,
+        "std_se": 0.378,
+        "n": 9,
+        "r2": 0.0,
+        "paper_family": "경제적 불안정성 모형",
+        "interpretation": "양(+)이면 해당 변수 증가와 합계출산율 증가가 같은 방향, 음(-)이면 반대 방향"
+      },
+      {
+        "level": "전국 시계열 변화율",
+        "channel": "30대 삶의 만족도 변화",
+        "variable": "life_satisfaction_avg_0_10",
+        "std_beta": -0.062,
+        "std_se": 0.333,
+        "n": 11,
+        "r2": 0.004,
+        "paper_family": "생애전망·삶의 질 모형",
+        "interpretation": "양(+)이면 해당 변수 증가와 합계출산율 증가가 같은 방향, 음(-)이면 반대 방향"
+      },
+      {
+        "level": "전국 시계열 변화율",
+        "channel": "사교육비 변화",
+        "variable": "monthly_private_education_10k_krw",
+        "std_beta": -0.102,
+        "std_se": 0.257,
+        "n": 17,
+        "r2": 0.01,
+        "paper_family": "Becker-Lewis/Kim-Tertilt-Yum: 수량-질·지위경쟁",
+        "interpretation": "양(+)이면 해당 변수 증가와 합계출산율 증가가 같은 방향, 음(-)이면 반대 방향"
+      },
+      {
+        "level": "전국 시계열 변화율",
+        "channel": "신혼부부 무자녀 비율 변화",
+        "variable": "newlywed_no_child_pct",
+        "std_beta": -0.256,
+        "std_se": 0.365,
+        "n": 9,
+        "r2": 0.065,
+        "paper_family": "혼인 이후 출산 이행 모형",
+        "interpretation": "양(+)이면 해당 변수 증가와 합계출산율 증가가 같은 방향, 음(-)이면 반대 방향"
+      },
+      {
+        "level": "전국 시계열 변화율",
+        "channel": "30대 실질 처분가능소득 변화",
+        "variable": "real_disposable_income_2025_million_krw",
+        "std_beta": -0.569,
+        "std_se": 0.368,
+        "n": 7,
+        "r2": 0.324,
+        "paper_family": "소득·기회비용 모형",
+        "interpretation": "양(+)이면 해당 변수 증가와 합계출산율 증가가 같은 방향, 음(-)이면 반대 방향"
+      }
+    ],
+    "fertility_driver_age_contribution": [
+      {
+        "age_group": "25-29세",
+        "asfr_2000": 150.3,
+        "asfr_2024": 20.7,
+        "asfr_change": -129.6,
+        "tfr_contribution_change": -0.648
+      },
+      {
+        "age_group": "30-34세",
+        "asfr_2000": 84.1,
+        "asfr_2024": 70.4,
+        "asfr_change": -13.7,
+        "tfr_contribution_change": -0.068
+      },
+      {
+        "age_group": "35-39세",
+        "asfr_2000": 17.6,
+        "asfr_2024": 46.0,
+        "asfr_change": 28.4,
+        "tfr_contribution_change": 0.142
+      },
+      {
+        "age_group": "40-44세",
+        "asfr_2000": 2.7,
+        "asfr_2024": 7.7,
+        "asfr_change": 5.0,
+        "tfr_contribution_change": 0.025
+      }
+    ],
+    "becker_quantity_quality_simulation": [
+      {
+        "investment_level_q": 0.0,
+        "base_child_cost": 8,
+        "pq_price": 5,
+        "available_budget": 60,
+        "affordable_children_n": 7.5,
+        "one_child_total_cost": 8.0
+      },
+      {
+        "investment_level_q": 0.5,
+        "base_child_cost": 8,
+        "pq_price": 5,
+        "available_budget": 60,
+        "affordable_children_n": 5.714,
+        "one_child_total_cost": 10.5
+      },
+      {
+        "investment_level_q": 1.0,
+        "base_child_cost": 8,
+        "pq_price": 5,
+        "available_budget": 60,
+        "affordable_children_n": 4.615,
+        "one_child_total_cost": 13.0
+      },
+      {
+        "investment_level_q": 1.5,
+        "base_child_cost": 8,
+        "pq_price": 5,
+        "available_budget": 60,
+        "affordable_children_n": 3.871,
+        "one_child_total_cost": 15.5
+      },
+      {
+        "investment_level_q": 2.0,
+        "base_child_cost": 8,
+        "pq_price": 5,
+        "available_budget": 60,
+        "affordable_children_n": 3.333,
+        "one_child_total_cost": 18.0
+      },
+      {
+        "investment_level_q": 2.5,
+        "base_child_cost": 8,
+        "pq_price": 5,
+        "available_budget": 60,
+        "affordable_children_n": 2.927,
+        "one_child_total_cost": 20.5
+      },
+      {
+        "investment_level_q": 3.0,
+        "base_child_cost": 8,
+        "pq_price": 5,
+        "available_budget": 60,
+        "affordable_children_n": 2.609,
+        "one_child_total_cost": 23.0
+      },
+      {
+        "investment_level_q": 3.5,
+        "base_child_cost": 8,
+        "pq_price": 5,
+        "available_budget": 60,
+        "affordable_children_n": 2.353,
+        "one_child_total_cost": 25.5
+      },
+      {
+        "investment_level_q": 4.0,
+        "base_child_cost": 8,
+        "pq_price": 5,
+        "available_budget": 60,
+        "affordable_children_n": 2.143,
+        "one_child_total_cost": 28.0
+      },
+      {
+        "investment_level_q": 4.5,
+        "base_child_cost": 8,
+        "pq_price": 5,
+        "available_budget": 60,
+        "affordable_children_n": 1.967,
+        "one_child_total_cost": 30.5
+      },
+      {
+        "investment_level_q": 5.0,
+        "base_child_cost": 8,
+        "pq_price": 5,
+        "available_budget": 60,
+        "affordable_children_n": 1.818,
+        "one_child_total_cost": 33.0
+      },
+      {
+        "investment_level_q": 5.5,
+        "base_child_cost": 8,
+        "pq_price": 5,
+        "available_budget": 60,
+        "affordable_children_n": 1.69,
+        "one_child_total_cost": 35.5
+      },
+      {
+        "investment_level_q": 6.0,
+        "base_child_cost": 8,
+        "pq_price": 5,
+        "available_budget": 60,
+        "affordable_children_n": 1.579,
+        "one_child_total_cost": 38.0
+      },
+      {
+        "investment_level_q": 6.5,
+        "base_child_cost": 8,
+        "pq_price": 5,
+        "available_budget": 60,
+        "affordable_children_n": 1.481,
+        "one_child_total_cost": 40.5
+      },
+      {
+        "investment_level_q": 7.0,
+        "base_child_cost": 8,
+        "pq_price": 5,
+        "available_budget": 60,
+        "affordable_children_n": 1.395,
+        "one_child_total_cost": 43.0
+      },
+      {
+        "investment_level_q": 7.5,
+        "base_child_cost": 8,
+        "pq_price": 5,
+        "available_budget": 60,
+        "affordable_children_n": 1.319,
+        "one_child_total_cost": 45.5
+      },
+      {
+        "investment_level_q": 8.0,
+        "base_child_cost": 8,
+        "pq_price": 5,
+        "available_budget": 60,
+        "affordable_children_n": 1.25,
+        "one_child_total_cost": 48.0
+      }
     ]
   },
   "meta": {
@@ -105097,6 +105399,27 @@ window.populationBookCharts = {
       "csv": "young_migration_policy.csv",
       "source": "KOSIS DT_1B26001_A03 시군구/연령(5세)별 이동자수",
       "note": "20대는 20-24세와 25-29세, 30대는 30-34세와 35-39세 순이동을 합산했다. 서울은 청년기 진입, 경기도는 가족 형성기 정착의 흐름을 함께 보여준다."
+    },
+    "fertility_driver_standardized_effects": {
+      "title": "저출산 핵심요인 후보의 표준화 계수 비교",
+      "kind": "bar",
+      "csv": "fertility_driver_standardized_effects.csv",
+      "source": "KOSIS·국가데이터처·기존 파생자료를 결합한 탐색적 분석",
+      "note": "전국 계수는 z(Δlog TFR_t)=α_k+β_k z(ΔX_t^(k))+ε_kt의 후보 변수별 단순 변화율 회귀에서 얻었다. 시도 패널 계수는 z(CBR_it)=α_i+β_k z(X_it^(k))+ε_it 및 z(CBR_it)=α_i+β_1 z(CMR_it)+β_2 z(HomeOwn40_it)+ε_it의 지역 고정효과 모형에서 얻었다. 표준화 계수는 인과효과가 아니라 방향성 점검으로 해석해야 한다."
+    },
+    "fertility_driver_age_contribution": {
+      "title": "연령별 출산율 변화가 합계출산율 하락에 기여한 정도",
+      "kind": "bar",
+      "csv": "fertility_driver_age_contribution.csv",
+      "source": "KOSIS 인구동태 연령별 출산율, 2000년과 2024년 비교",
+      "note": "각 연령대의 연령별 출산율 변화에 5세 구간 폭을 곱해 합계출산율 변화 기여분으로 환산했다. 25-29세 출산율 하락이 전체 하락의 대부분을 설명한다."
+    },
+    "becker_quantity_quality_simulation": {
+      "title": "Becker 수량-질 모형 시뮬레이션: 자녀 1인당 투자 수준과 감당 가능한 자녀 수",
+      "kind": "line",
+      "csv": "becker_quantity_quality_simulation.csv",
+      "source": "Becker(1960), Becker and Lewis(1973)의 수량-질 모형을 바탕으로 한 저자 시뮬레이션",
+      "note": "가구가 자녀에게 쓸 수 있는 예산을 60으로 고정하고, 자녀 한 명의 기본비용을 8, 자녀 1인당 투자 단가를 5로 놓은 단순 예시다. 실제 추정값이 아니라 수량-질 교환관계의 직관을 보여주기 위한 그림이다."
     },
     "future_households_policy": {
       "title": "장래가구: 1인가구와 총가구",

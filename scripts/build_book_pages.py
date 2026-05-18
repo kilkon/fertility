@@ -26,7 +26,8 @@ MANUSCRIPTS = ROOT / "manuscripts"
 CHAPTER_MANUSCRIPTS = MANUSCRIPTS / "chapters"
 SECTION_MANUSCRIPTS = MANUSCRIPTS / "sections"
 APPENDIX_FILE = "appendix-data-notes.html"
-ASSET_VERSION = "20260518-numbered-files"
+APPENDIX_REFERENCES_FILE = "appendix-references.html"
+ASSET_VERSION = "20260518-fertility-drivers"
 FEEDBACK_EMAIL = "kilkon@snu.ac.kr"
 PUBLIC_SITE_URL = "https://kilkon.github.io/fertility"
 
@@ -276,6 +277,12 @@ BOOK = [
                 "title": "빈집은 생활권 약화의 신호인가",
                 "file": "section-6-10-vacant-housing.html",
                 "chart": "vacant_housing_policy",
+            },
+            {
+                "no": "6.11",
+                "title": "도대체 무엇이 저출산의 핵심요인인가",
+                "file": "section-6-11-fertility-core-drivers.html",
+                "chart": "fertility_driver_standardized_effects",
             },
         ],
     },
@@ -1353,6 +1360,27 @@ CHART_META = {
         "csv": "young_migration_policy.csv",
         "source": "KOSIS DT_1B26001_A03 시군구/연령(5세)별 이동자수",
         "note": "20대는 20-24세와 25-29세, 30대는 30-34세와 35-39세 순이동을 합산했다. 서울은 청년기 진입, 경기도는 가족 형성기 정착의 흐름을 함께 보여준다.",
+    },
+    "fertility_driver_standardized_effects": {
+        "title": "저출산 핵심요인 후보의 표준화 계수 비교",
+        "kind": "bar",
+        "csv": "fertility_driver_standardized_effects.csv",
+        "source": "KOSIS·국가데이터처·기존 파생자료를 결합한 탐색적 분석",
+        "note": "전국 계수는 z(Δlog TFR_t)=α_k+β_k z(ΔX_t^(k))+ε_kt의 후보 변수별 단순 변화율 회귀에서 얻었다. 시도 패널 계수는 z(CBR_it)=α_i+β_k z(X_it^(k))+ε_it 및 z(CBR_it)=α_i+β_1 z(CMR_it)+β_2 z(HomeOwn40_it)+ε_it의 지역 고정효과 모형에서 얻었다. 표준화 계수는 인과효과가 아니라 방향성 점검으로 해석해야 한다.",
+    },
+    "fertility_driver_age_contribution": {
+        "title": "연령별 출산율 변화가 합계출산율 하락에 기여한 정도",
+        "kind": "bar",
+        "csv": "fertility_driver_age_contribution.csv",
+        "source": "KOSIS 인구동태 연령별 출산율, 2000년과 2024년 비교",
+        "note": "각 연령대의 연령별 출산율 변화에 5세 구간 폭을 곱해 합계출산율 변화 기여분으로 환산했다. 25-29세 출산율 하락이 전체 하락의 대부분을 설명한다.",
+    },
+    "becker_quantity_quality_simulation": {
+        "title": "Becker 수량-질 모형 시뮬레이션: 자녀 1인당 투자 수준과 감당 가능한 자녀 수",
+        "kind": "line",
+        "csv": "becker_quantity_quality_simulation.csv",
+        "source": "Becker(1960), Becker and Lewis(1973)의 수량-질 모형을 바탕으로 한 저자 시뮬레이션",
+        "note": "가구가 자녀에게 쓸 수 있는 예산을 60으로 고정하고, 자녀 한 명의 기본비용을 8, 자녀 1인당 투자 단가를 5로 놓은 단순 예시다. 실제 추정값이 아니라 수량-질 교환관계의 직관을 보여주기 위한 그림이다.",
     },
     "future_households_policy": {
         "title": "장래가구: 1인가구와 총가구",
@@ -2462,6 +2490,22 @@ SECTION_DATA_EXPANSION = {
             "interpretation": "빈집은 단순한 주택 잔여물이 아니라 인구, 가구, 생활서비스가 어긋나는 지역에서 나타나는 공간적 신호다. KOSIS 통계는 넓은 공실 저량을 보는 탐색 지표이고, 국토부 등 빈집실태조사는 실제 정비·활용·철거 대상에 가까운 집행 지표다.",
         },
     ],
+    "section-6-11-fertility-core-drivers.html": [
+        {
+            "question": "저출산 핵심요인 후보를 같은 눈금에서 비교하면 무엇이 가장 강하게 보이는가?",
+            "data": "KOSIS 인구동태, 국가데이터처 신혼부부·사교육·가구·소득 관련 파생자료, 시도별 주거·혼인·출생 패널",
+            "files": ["data/derived/fertility_driver_standardized_effects.csv", "data/derived/fertility_driver_model_comparison.csv", "data/derived/fertility_driver_summary.csv"],
+            "analysis": "전국 변화율 모형과 시도 고정효과 패널 모형을 나누어 표준화 계수를 계산한다.",
+            "interpretation": "자료에서 가장 강하게 보이는 직접 경로는 혼인·가족형성의 약화이지만, 이는 주거·노동·돌봄·교육 경쟁이라는 상위 조건이 통과하는 문턱으로 해석해야 한다.",
+        },
+        {
+            "question": "합계출산율 하락은 어느 연령대에서 집중적으로 발생했는가?",
+            "data": "KOSIS 인구동태 연령별 출산율",
+            "files": ["data/derived/fertility_driver_age_contribution.csv", "data/derived/fertility_age_pattern.csv"],
+            "analysis": "2000년과 2024년의 연령별 출산율 차이를 5세 구간 폭으로 곱해 합계출산율 변화 기여분을 계산한다.",
+            "interpretation": "25-29세 출산율 하락이 압도적으로 크며, 35세 이후 출산 증가는 이 손실을 일부 보전할 뿐이다. 저출산의 핵심은 출산 포기의 문제이면서 동시에 생애 이행의 지연 문제다.",
+        },
+    ],
     "section-8-1-labor-aging.html": [
         {
             "question": "고령층에서 취업자는 얼마나 빠르게 증가하고 있을까?",
@@ -2638,6 +2682,17 @@ def inline_markdown(text: str) -> str:
     escaped = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", escaped)
     escaped = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", r'<a href="\2">\1</a>', escaped)
     return escaped
+
+
+def split_reference_section(markdown: str) -> tuple[str, str]:
+    """Return manuscript body and a trailing reference section, if present."""
+    normalized = markdown.replace("\r\n", "\n")
+    match = re.search(r"(?m)^#{1,2}\s+참고문헌\s*$", normalized)
+    if not match:
+        return markdown, ""
+    body = normalized[: match.start()].rstrip() + "\n"
+    references = normalized[match.end() :].strip()
+    return body, references
 
 
 def render_chart_panel(chart_id: str, rel: str = "..", size: str = "") -> str:
@@ -6470,6 +6525,15 @@ def build_derived_data() -> dict[str, list[dict[str, object]]]:
         write_csv(household_regions, "household_population_gap_regions.csv")
         charts["household_population_gap_regions"] = household_regions.to_dict("records")
 
+    for chart_id, filename in [
+        ("fertility_driver_standardized_effects", "fertility_driver_standardized_effects.csv"),
+        ("fertility_driver_age_contribution", "fertility_driver_age_contribution.csv"),
+        ("becker_quantity_quality_simulation", "becker_quantity_quality_simulation.csv"),
+    ]:
+        path = DERIVED / filename
+        if path.exists():
+            charts[chart_id] = pd.read_csv(path).to_dict("records")
+
     return charts
 
 
@@ -6488,6 +6552,8 @@ def nav_html(current: str = "") -> str:
             parts.append(f'<a class="toc-section{active}" href="../sections/{section["file"]}">{section["no"]} {esc(section["title"])}</a>')
     appendix_active = " active" if current == APPENDIX_FILE else ""
     parts.append(f'<a class="chapter{appendix_active}" href="../sections/{APPENDIX_FILE}">부록. 자료와 분석 설계</a>')
+    references_active = " active" if current == APPENDIX_REFERENCES_FILE else ""
+    parts.append(f'<a class="chapter{references_active}" href="../sections/{APPENDIX_REFERENCES_FILE}">부록. 참고문헌</a>')
     parts.append("</nav>")
     return "\n".join(parts)
 
@@ -6515,6 +6581,13 @@ def reading_pages() -> list[dict[str, str]]:
             "file": APPENDIX_FILE,
             "title": "부록. 자료와 분석 설계",
             "href": f"../sections/{APPENDIX_FILE}",
+        }
+    )
+    pages.append(
+        {
+            "file": APPENDIX_REFERENCES_FILE,
+            "title": "부록. 참고문헌",
+            "href": f"../sections/{APPENDIX_REFERENCES_FILE}",
         }
     )
     return pages
@@ -6751,7 +6824,11 @@ def ensure_markdown_manuscripts() -> None:
 def section_body(chapter: dict, section: dict) -> str:
     manuscript = section_manuscript_path(section)
     if manuscript.exists():
-        body = render_markdown(manuscript.read_text(encoding="utf-8"), rel="..")
+        manuscript_body, refs = split_reference_section(manuscript.read_text(encoding="utf-8"))
+        body = render_markdown(manuscript_body, rel="..")
+        refs_note = ""
+        if refs:
+            refs_note = f'<p class="source-note bibliography-note">참고문헌은 <a href="../sections/{APPENDIX_REFERENCES_FILE}">부록. 참고문헌</a>에 모아 두었다.</p>'
         return f"""<section class="section-header-block">
   <p class="series">Chapter {chapter["no"]}</p>
   <h1>{section["no"]}. {esc(section["title"])}</h1>
@@ -6760,6 +6837,7 @@ def section_body(chapter: dict, section: dict) -> str:
 </section>
 <div class="markdown-manuscript">
 {body}
+{refs_note}
 </div>"""
     meta = CHART_META[section["chart"]]
     analysis = SECTION_ANALYSIS.get(section["file"], {})
@@ -6964,10 +7042,70 @@ def appendix_body() -> str:
 {''.join(groups)}"""
 
 
+def bibliography_sources() -> list[dict[str, str]]:
+    sources: list[dict[str, str]] = []
+    for chapter in BOOK:
+        chapter_path = chapter_manuscript_path(chapter)
+        if chapter_path.exists():
+            _, refs = split_reference_section(chapter_path.read_text(encoding="utf-8"))
+            if refs:
+                sources.append(
+                    {
+                        "label": f'{chapter["no"]}. {chapter["title"]}',
+                        "href": f'../chapters/{chapter["file"]}',
+                        "references": refs,
+                    }
+                )
+        for section in chapter["sections"]:
+            section_path = section_manuscript_path(section)
+            if not section_path.exists():
+                continue
+            _, refs = split_reference_section(section_path.read_text(encoding="utf-8"))
+            if refs:
+                sources.append(
+                    {
+                        "label": f'{section["no"]}. {section["title"]}',
+                        "href": f'../sections/{section["file"]}',
+                        "references": refs,
+                    }
+                )
+    return sources
+
+
+def bibliography_body() -> str:
+    blocks = []
+    for item in bibliography_sources():
+        rendered = render_markdown(item["references"], rel="..")
+        blocks.append(
+            f"""<section class="panel bibliography-source">
+  <h2><a href="{item["href"]}">{esc(item["label"])}</a></h2>
+  <div class="markdown-manuscript bibliography-list">
+{rendered}
+  </div>
+</section>"""
+        )
+    if not blocks:
+        blocks.append(
+            """<section class="panel bibliography-source">
+  <p>현재 원고에서 별도 참고문헌 항목을 찾지 못했다.</p>
+</section>"""
+        )
+    return f"""<section class="section-header-block">
+  <p class="series">Appendix</p>
+  <h1>부록. 참고문헌</h1>
+  <p class="lead">본문의 독서 흐름을 끊지 않기 위해 장과 절에 흩어져 있던 참고문헌을 이곳에 모았다. 각 묶음의 제목을 누르면 해당 장·절로 돌아갈 수 있다.</p>
+</section>
+{''.join(blocks)}"""
+
+
 def chapter_body(chapter: dict) -> str:
     manuscript = chapter_manuscript_path(chapter)
     if manuscript.exists():
-        body = render_markdown(manuscript.read_text(encoding="utf-8"), rel="..")
+        manuscript_body, refs = split_reference_section(manuscript.read_text(encoding="utf-8"))
+        body = render_markdown(manuscript_body, rel="..")
+        refs_note = ""
+        if refs:
+            refs_note = f'<p class="source-note bibliography-note">참고문헌은 <a href="../sections/{APPENDIX_REFERENCES_FILE}">부록. 참고문헌</a>에 모아 두었다.</p>'
         return f"""<section class="section-header-block">
   <p class="series">Chapter {chapter["no"]}</p>
   <h1>{chapter["no"]}. {esc(chapter["title"])}</h1>
@@ -6976,6 +7114,7 @@ def chapter_body(chapter: dict) -> str:
 </section>
 <div class="markdown-manuscript chapter-manuscript">
 {body}
+{refs_note}
 </div>"""
     cards = []
     for section in chapter["sections"]:
@@ -7015,6 +7154,10 @@ def write_pages() -> None:
             )
     (SECTIONS / APPENDIX_FILE).write_text(
         shell("부록. 자료와 분석 설계", appendix_body(), APPENDIX_FILE),
+        encoding="utf-8",
+    )
+    (SECTIONS / APPENDIX_REFERENCES_FILE).write_text(
+        shell("부록. 참고문헌", bibliography_body(), APPENDIX_REFERENCES_FILE),
         encoding="utf-8",
     )
 

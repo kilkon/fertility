@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Davis-Blake 중간변수 모형 개념도</title>
+  <desc id="desc">사회구조가 출산율에 직접 영향을 미치는 것이 아니라 성교, 수태, 임신과 출산 사이의 중간변수를 통해 출산율에 영향을 미친다는 개념도</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#334155"/>
+    </marker>
+    <marker id="softArrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#94a3b8"/>
+    </marker>
+    <style>
+      .bg { fill: #fbfaf7; }
+      .panel { fill: #ffffff; stroke: #d8d3c8; stroke-width: 1.5; }
+      .left { fill: #f2f7f4; stroke: #9db7ab; }
+      .mid1 { fill: #fff7ed; stroke: #fdba74; }
+      .mid2 { fill: #f0f9ff; stroke: #7dd3fc; }
+      .mid3 { fill: #f8fafc; stroke: #cbd5e1; }
+      .final { fill: #fef2f2; stroke: #fca5a5; }
+      .title { font: 700 30px "Noto Sans KR", "Malgun Gothic", Arial, sans-serif; fill: #172033; }
+      .subtitle { font: 400 17px "Noto Sans KR", "Malgun Gothic", Arial, sans-serif; fill: #475569; }
+      .label { font: 700 20px "Noto Sans KR", "Malgun Gothic", Arial, sans-serif; fill: #172033; }
+      .small { font: 400 16px "Noto Sans KR", "Malgun Gothic", Arial, sans-serif; fill: #334155; }
+      .tiny { font: 400 14px "Noto Sans KR", "Malgun Gothic", Arial, sans-serif; fill: #64748b; }
+      .warn { font: 700 15px "Noto Sans KR", "Malgun Gothic", Arial, sans-serif; fill: #b91c1c; }
+      .arrow { stroke: #334155; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+      .soft { stroke: #94a3b8; stroke-width: 2.5; stroke-dasharray: 8 8; fill: none; marker-end: url(#softArrow); }
+      .cross { stroke: #ef4444; stroke-width: 5; stroke-linecap: round; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1200" height="720"/>
+  <text class="title" x="60" y="62">Davis-Blake의 핵심: 사회구조는 중간변수를 통해서만 출산율을 바꾼다</text>
+  <text class="subtitle" x="60" y="94">“경제가 어렵다”, “집값이 높다”, “가치관이 바뀌었다”는 말은 출산율로 바로 연결되지 않는다.</text>
+
+  <rect class="panel left" x="60" y="170" width="260" height="330" rx="18"/>
+  <text class="label" x="90" y="215">사회구조와 생활조건</text>
+  <text class="small" x="90" y="260">ㆍ소득과 고용 불안</text>
+  <text class="small" x="90" y="294">ㆍ주거비와 자산 격차</text>
+  <text class="small" x="90" y="328">ㆍ교육비와 경쟁 압력</text>
+  <text class="small" x="90" y="362">ㆍ성평등과 돌봄 분담</text>
+  <text class="small" x="90" y="396">ㆍ가치관과 가족 규범</text>
+  <text class="tiny" x="90" y="452">정책과 구조 요인은</text>
+  <text class="tiny" x="90" y="476">아래 경로를 바꿀 때만</text>
+  <text class="tiny" x="90" y="500">출산율에 도달한다.</text>
+
+  <rect class="panel mid1" x="445" y="130" width="300" height="125" rx="16"/>
+  <text class="label" x="475" y="170">1. 성교ㆍ결합 변수</text>
+  <text class="small" x="475" y="205">혼인 연령, 무혼 비율</text>
+  <text class="small" x="475" y="232">별거ㆍ이혼, 관계 안정성</text>
+
+  <rect class="panel mid2" x="445" y="300" width="300" height="125" rx="16"/>
+  <text class="label" x="475" y="340">2. 수태 변수</text>
+  <text class="small" x="475" y="375">피임 사용, 불임ㆍ난임</text>
+  <text class="small" x="475" y="402">성교 빈도, 임신 가능성</text>
+
+  <rect class="panel mid3" x="445" y="470" width="300" height="125" rx="16"/>
+  <text class="label" x="475" y="510">3. 임신ㆍ출산 변수</text>
+  <text class="small" x="475" y="545">자연유산, 인공임신중절</text>
+  <text class="small" x="475" y="572">임신 유지와 출산 이행</text>
+
+  <rect class="panel final" x="895" y="250" width="245" height="210" rx="20"/>
+  <text class="label" x="935" y="305">관찰되는 출산율</text>
+  <text class="small" x="935" y="350">합계출산율</text>
+  <text class="small" x="935" y="382">연령별 출산율</text>
+  <text class="small" x="935" y="414">첫째ㆍ둘째 출산</text>
+
+  <path class="arrow" d="M320 335 C365 335 390 192 435 192"/>
+  <path class="arrow" d="M320 335 C365 335 390 362 435 362"/>
+  <path class="arrow" d="M320 335 C365 335 390 532 435 532"/>
+
+  <path class="arrow" d="M745 192 C805 192 825 300 885 330"/>
+  <path class="arrow" d="M745 362 C805 362 825 362 885 362"/>
+  <path class="arrow" d="M745 532 C805 532 825 424 885 392"/>
+
+  <path class="soft" d="M320 170 C530 70 830 95 1018 240"/>
+  <line class="cross" x1="642" y1="104" x2="682" y2="144"/>
+  <line class="cross" x1="682" y1="104" x2="642" y2="144"/>
+  <text class="warn" x="705" y="128">직접 효과로 단정하면 안 됨</text>
+
+  <rect x="140" y="610" width="920" height="54" rx="14" fill="#ffffff" stroke="#e2e8f0"/>
+  <text class="small" x="166" y="643">읽는 법: 원인을 찾을 때는 “그 요인이 출산율을 낮췄다”가 아니라 “그 요인이 어떤 중간변수를 바꿨는가”를 먼저 물어야 한다.</text>
+</svg>

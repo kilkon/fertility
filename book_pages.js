@@ -4769,6 +4769,142 @@
             }
           }
         };
+      } else if (id === "fertility_driver_standardized_effects") {
+        const sortedRows = [...rows].sort((a, b) => Number(a.std_beta) - Number(b.std_beta));
+        config = {
+          type: "bar",
+          data: {
+            labels: sortedRows.map((row) => `${row.level}: ${row.channel}`),
+            datasets: [
+              {
+                label: "표준화 계수",
+                data: sortedRows.map((row) => Number(row.std_beta)),
+                backgroundColor: sortedRows.map((row) => Number(row.std_beta) >= 0 ? "rgba(15,118,110,.74)" : "rgba(185,28,28,.74)")
+              }
+            ]
+          },
+          options: {
+            ...common,
+            indexAxis: "y",
+            scales: {
+              x: {
+                grid: { color: "rgba(15,23,42,.08)" },
+                title: { display: true, text: "표준화 계수" },
+                ticks: { callback: (value) => Number(value).toFixed(1) }
+              },
+              y: { grid: { display: false }, ticks: { autoSkip: false, font: { size: 11 } } }
+            },
+            plugins: {
+              ...common.plugins,
+              tooltip: {
+                callbacks: {
+                  afterBody: (items) => {
+                    const row = sortedRows[items[0].dataIndex];
+                    return [
+                      `표본: n=${row.n}, R²=${row.r2}`,
+                      `논문 계열: ${row.paper_family}`,
+                      row.interpretation
+                    ];
+                  }
+                }
+              }
+            }
+          }
+        };
+      } else if (id === "fertility_driver_age_contribution") {
+        config = {
+          type: "bar",
+          data: {
+            labels: rows.map((row) => row.age_group),
+            datasets: [
+              {
+                label: "TFR 변화 기여분",
+                data: rows.map((row) => Number(row.tfr_contribution_change)),
+                backgroundColor: rows.map((row) => Number(row.tfr_contribution_change) >= 0 ? "rgba(15,118,110,.74)" : "rgba(185,28,28,.74)")
+              }
+            ]
+          },
+          options: {
+            ...common,
+            scales: {
+              x: { grid: { display: false }, title: { display: true, text: "연령대" } },
+              y: { grid: { color: "rgba(15,23,42,.08)" }, title: { display: true, text: "합계출산율 변화 기여분" } }
+            },
+            plugins: {
+              ...common.plugins,
+              tooltip: {
+                callbacks: {
+                  afterBody: (items) => {
+                    const row = rows[items[0].dataIndex];
+                    return `ASFR: ${row.asfr_2000} → ${row.asfr_2024}`;
+                  }
+                }
+              }
+            }
+          }
+        };
+      } else if (id === "becker_quantity_quality_simulation") {
+        config = {
+          type: "line",
+          data: {
+            labels: rows.map((row) => Number(row.investment_level_q)),
+            datasets: [
+              {
+                label: "감당 가능한 자녀 수 n",
+                data: rows.map((row) => Number(row.affordable_children_n)),
+                borderColor: "rgba(15,118,110,1)",
+                backgroundColor: "rgba(15,118,110,.12)",
+                tension: 0.32,
+                pointRadius: 3,
+                yAxisID: "y"
+              },
+              {
+                label: "자녀 1명 총비용",
+                data: rows.map((row) => Number(row.one_child_total_cost)),
+                borderColor: "rgba(185,28,28,1)",
+                backgroundColor: "rgba(185,28,28,.10)",
+                borderDash: [6, 4],
+                tension: 0.2,
+                pointRadius: 2,
+                yAxisID: "y1"
+              }
+            ]
+          },
+          options: {
+            ...common,
+            scales: {
+              x: {
+                grid: { color: "rgba(15,23,42,.06)" },
+                title: { display: true, text: "자녀 1인당 투자 수준 q" }
+              },
+              y: {
+                grid: { color: "rgba(15,23,42,.08)" },
+                title: { display: true, text: "감당 가능한 자녀 수" },
+                min: 0
+              },
+              y1: {
+                position: "right",
+                grid: { drawOnChartArea: false },
+                title: { display: true, text: "자녀 1명 총비용" },
+                min: 0
+              }
+            },
+            plugins: {
+              ...common.plugins,
+              tooltip: {
+                callbacks: {
+                  afterBody: (items) => {
+                    const row = rows[items[0].dataIndex];
+                    return [
+                      `가정: 사용 가능 예산=${row.available_budget}, 기본비용=${row.base_child_cost}, 투자단가=${row.pq_price}`,
+                      `n = 예산 / (기본비용 + 투자단가 × q)`
+                    ];
+                  }
+                }
+              }
+            }
+          }
+        };
       } else if (id === "future_households_policy") {
         config = {
           type: "line",
