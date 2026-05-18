@@ -408,8 +408,34 @@ BOOK = [
     },
     {
         "no": "10",
-        "title": "그래서 어떤 저출산·고령화 정책이 필요한가",
+        "title": "정치와 저출산·고령화",
         "file": "chapter-10.html",
+        "thesis": "저출산·고령화는 출산율과 재정의 문제가 아니라 위기담론, 세대 간 자원배분, 지역대표성이 충돌하는 정치의 문제이기도 하다.",
+        "sections": [
+            {
+                "no": "10.1",
+                "title": "정치는 왜 인구문제를 위기로 말하는가",
+                "file": "section-10-1-crisis-politics.html",
+                "chart": None,
+            },
+            {
+                "no": "10.2",
+                "title": "세대 간 자원배분은 공정한가",
+                "file": "section-10-2-generational-allocation.html",
+                "chart": None,
+            },
+            {
+                "no": "10.3",
+                "title": "지역대표성은 인구변화에 어떻게 흔들리는가",
+                "file": "section-10-3-regional-representation.html",
+                "chart": None,
+            },
+        ],
+    },
+    {
+        "no": "11",
+        "title": "그래서 어떤 저출산·고령화 정책이 필요한가",
+        "file": "chapter-11.html",
         "thesis": "저출산·고령화 정책은 출산율과 노동력 확보를 넘어 삶의 질, 가치, 미래에 대한 신뢰를 회복하는 사회정책이어야 한다.",
         "sections": [],
     },
@@ -1381,6 +1407,20 @@ CHART_META = {
         "csv": "becker_quantity_quality_simulation.csv",
         "source": "Becker(1960), Becker and Lewis(1973)의 수량-질 모형을 바탕으로 한 저자 시뮬레이션",
         "note": "가구가 자녀에게 쓸 수 있는 예산을 60으로 고정하고, 자녀 한 명의 기본비용을 8, 자녀 1인당 투자 단가를 5로 놓은 단순 예시다. 실제 추정값이 아니라 수량-질 교환관계의 직관을 보여주기 위한 그림이다.",
+    },
+    "nec_age_turnout_recent": {
+        "title": "최근 주요 선거의 연령대별 투표율",
+        "kind": "line",
+        "csv": "nec_age_turnout_recent.csv",
+        "source": "중앙선거관리위원회 제20대 대통령선거·제8회 전국동시지방선거·제22대 국회의원선거 투표율 분석, 공공데이터포털",
+        "note": "선관위 투표율 분석은 선거인명부에 근거한 표본조사와 사전·재외투표 전수조사를 결합한다. 이 자료는 연령대별 투표 참여를 보여주지만, 비밀투표 원칙상 연령대별 후보 선택을 직접 보여주지는 않는다.",
+    },
+    "nec_voter_engagement_2024": {
+        "title": "제22대 국회의원선거 전 연령대별 선거 관심도와 적극 투표 의향",
+        "kind": "bar",
+        "csv": "nec_voter_engagement_2024.csv",
+        "source": "중앙선거관리위원회 제22대 국회의원선거 제2차 유권자 의식조사",
+        "note": "제21대 국선 2차 조사와 제22대 국선 2차 조사의 연령별 선거 관심도 및 '반드시 투표하겠다' 응답을 비교했다. 실제 투표율과 함께 읽으면 청년층의 낮은 정치 관심과 중·노년층의 높은 참여 의향이 선거 대표성에 어떤 차이를 만드는지 볼 수 있다.",
     },
     "future_households_policy": {
         "title": "장래가구: 1인가구와 총가구",
@@ -6529,6 +6569,8 @@ def build_derived_data() -> dict[str, list[dict[str, object]]]:
         ("fertility_driver_standardized_effects", "fertility_driver_standardized_effects.csv"),
         ("fertility_driver_age_contribution", "fertility_driver_age_contribution.csv"),
         ("becker_quantity_quality_simulation", "becker_quantity_quality_simulation.csv"),
+        ("nec_age_turnout_recent", "nec_age_turnout_recent.csv"),
+        ("nec_voter_engagement_2024", "nec_voter_engagement_2024.csv"),
     ]:
         path = DERIVED / filename
         if path.exists():

@@ -4905,6 +4905,107 @@
             }
           }
         };
+      } else if (id === "nec_age_turnout_recent") {
+        const ageGroups = [...new Set(rows.map((row) => row.age_group))]
+          .sort((a, b) => {
+            const ra = rows.find((row) => row.age_group === a);
+            const rb = rows.find((row) => row.age_group === b);
+            return Number(ra?.age_order || 0) - Number(rb?.age_order || 0);
+          });
+        const elections = [...new Set(rows.map((row) => row.election_label))];
+        const colors = ["rgba(37,99,235,1)", "rgba(185,28,28,1)", "rgba(15,118,110,1)", "rgba(147,51,234,1)"];
+        const valueFor = (election, ageGroup) => {
+          const row = rows.find((item) => item.election_label === election && item.age_group === ageGroup);
+          return row ? chartNumber(row.turnout_pct) : null;
+        };
+        config = {
+          type: "line",
+          data: {
+            labels: ageGroups,
+            datasets: elections.map((election, index) => ({
+              label: election,
+              data: ageGroups.map((ageGroup) => valueFor(election, ageGroup)),
+              borderColor: colors[index % colors.length],
+              backgroundColor: colors[index % colors.length].replace("1)", ".12)"),
+              tension: 0.25,
+              pointRadius: 3,
+              spanGaps: true
+            }))
+          },
+          options: {
+            ...common,
+            scales: {
+              x: { grid: { display: false }, title: { display: true, text: "Age group" } },
+              y: {
+                grid: { color: "rgba(15,23,42,.08)" },
+                title: { display: true, text: "Turnout (%)" },
+                min: 30,
+                max: 95,
+                ticks: { callback: (value) => `${value}%` }
+              }
+            },
+            plugins: {
+              ...common.plugins,
+              tooltip: {
+                callbacks: {
+                  label: (context) => `${context.dataset.label}: ${Number(context.raw).toFixed(1)}%`
+                }
+              }
+            }
+          }
+        };
+      } else if (id === "nec_voter_engagement_2024") {
+        const sortedRows = [...rows].sort((a, b) => Number(a.age_order) - Number(b.age_order));
+        config = {
+          type: "bar",
+          data: {
+            labels: sortedRows.map((row) => row.age_group),
+            datasets: [
+              {
+                label: "Election interest, 2020 NA",
+                data: sortedRows.map((row) => Number(row.interest_21st_na_pct)),
+                backgroundColor: "rgba(148,163,184,.68)"
+              },
+              {
+                label: "Election interest, 2024 NA",
+                data: sortedRows.map((row) => Number(row.interest_22nd_na_pct)),
+                backgroundColor: "rgba(37,99,235,.72)"
+              },
+              {
+                label: "Active voting intention, 2024 NA",
+                data: sortedRows.map((row) => Number(row.active_intention_22nd_na_pct)),
+                backgroundColor: "rgba(185,28,28,.72)"
+              }
+            ]
+          },
+          options: {
+            ...common,
+            scales: {
+              x: { grid: { display: false }, title: { display: true, text: "Age group" } },
+              y: {
+                grid: { color: "rgba(15,23,42,.08)" },
+                title: { display: true, text: "Share (%)" },
+                min: 0,
+                max: 100,
+                ticks: { callback: (value) => `${value}%` }
+              }
+            },
+            plugins: {
+              ...common.plugins,
+              tooltip: {
+                callbacks: {
+                  afterBody: (items) => {
+                    const row = sortedRows[items[0].dataIndex];
+                    return [
+                      `Interest change: ${Number(row.interest_change_pp).toFixed(1)}pp`,
+                      `Active intention change: ${Number(row.active_intention_change_pp).toFixed(1)}pp`
+                    ];
+                  }
+                }
+              }
+            }
+          }
+        };
       } else if (id === "future_households_policy") {
         config = {
           type: "line",

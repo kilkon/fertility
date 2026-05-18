@@ -46448,7 +46448,7 @@ window.populationBookCharts = {
         "older_share": NaN,
         "older_population_share": NaN,
         "old_age_dependency_ratio": NaN,
-        "exposure_group": "nan",
+        "exposure_group": NaN,
         "bubble_radius": 3.0
       },
       {
@@ -46462,7 +46462,7 @@ window.populationBookCharts = {
         "older_share": NaN,
         "older_population_share": NaN,
         "old_age_dependency_ratio": NaN,
-        "exposure_group": "nan",
+        "exposure_group": NaN,
         "bubble_radius": 3.0
       },
       {
@@ -46476,7 +46476,7 @@ window.populationBookCharts = {
         "older_share": NaN,
         "older_population_share": NaN,
         "old_age_dependency_ratio": NaN,
-        "exposure_group": "nan",
+        "exposure_group": NaN,
         "bubble_radius": 3.0
       },
       {
@@ -46490,7 +46490,7 @@ window.populationBookCharts = {
         "older_share": NaN,
         "older_population_share": NaN,
         "old_age_dependency_ratio": NaN,
-        "exposure_group": "nan",
+        "exposure_group": NaN,
         "bubble_radius": 3.0
       },
       {
@@ -46504,7 +46504,7 @@ window.populationBookCharts = {
         "older_share": NaN,
         "older_population_share": NaN,
         "old_age_dependency_ratio": NaN,
-        "exposure_group": "nan",
+        "exposure_group": NaN,
         "bubble_radius": 3.0
       },
       {
@@ -46518,7 +46518,7 @@ window.populationBookCharts = {
         "older_share": NaN,
         "older_population_share": NaN,
         "old_age_dependency_ratio": NaN,
-        "exposure_group": "nan",
+        "exposure_group": NaN,
         "bubble_radius": 3.0
       },
       {
@@ -46532,7 +46532,7 @@ window.populationBookCharts = {
         "older_share": NaN,
         "older_population_share": NaN,
         "old_age_dependency_ratio": NaN,
-        "exposure_group": "nan",
+        "exposure_group": NaN,
         "bubble_radius": 3.0
       },
       {
@@ -46546,7 +46546,7 @@ window.populationBookCharts = {
         "older_share": NaN,
         "older_population_share": NaN,
         "old_age_dependency_ratio": NaN,
-        "exposure_group": "nan",
+        "exposure_group": NaN,
         "bubble_radius": 3.0
       },
       {
@@ -46560,7 +46560,7 @@ window.populationBookCharts = {
         "older_share": NaN,
         "older_population_share": NaN,
         "old_age_dependency_ratio": NaN,
-        "exposure_group": "nan",
+        "exposure_group": NaN,
         "bubble_radius": 3.0
       },
       {
@@ -46574,7 +46574,7 @@ window.populationBookCharts = {
         "older_share": NaN,
         "older_population_share": NaN,
         "old_age_dependency_ratio": NaN,
-        "exposure_group": "nan",
+        "exposure_group": NaN,
         "bubble_radius": 3.0
       },
       {
@@ -46588,7 +46588,7 @@ window.populationBookCharts = {
         "older_share": NaN,
         "older_population_share": NaN,
         "old_age_dependency_ratio": NaN,
-        "exposure_group": "nan",
+        "exposure_group": NaN,
         "bubble_radius": 3.0
       },
       {
@@ -46602,7 +46602,7 @@ window.populationBookCharts = {
         "older_share": NaN,
         "older_population_share": NaN,
         "old_age_dependency_ratio": NaN,
-        "exposure_group": "nan",
+        "exposure_group": NaN,
         "bubble_radius": 3.0
       },
       {
@@ -46616,7 +46616,7 @@ window.populationBookCharts = {
         "older_share": NaN,
         "older_population_share": NaN,
         "old_age_dependency_ratio": NaN,
-        "exposure_group": "nan",
+        "exposure_group": NaN,
         "bubble_radius": 3.0
       }
     ],
@@ -104494,6 +104494,319 @@ window.populationBookCharts = {
         "affordable_children_n": 1.25,
         "one_child_total_cost": 48.0
       }
+    ],
+    "nec_age_turnout_recent": [
+      {
+        "election_label": "2022 대선",
+        "election_year": 2022,
+        "election_type": "presidential",
+        "age_group": "18세",
+        "age_order": 1,
+        "turnout_pct": 71.3,
+        "source_note": "중앙선거관리위원회 제20대 대통령선거 투표율 분석"
+      },
+      {
+        "election_label": "2022 대선",
+        "election_year": 2022,
+        "election_type": "presidential",
+        "age_group": "19세",
+        "age_order": 2,
+        "turnout_pct": 72.5,
+        "source_note": "중앙선거관리위원회 제20대 대통령선거 투표율 분석"
+      },
+      {
+        "election_label": "2022 대선",
+        "election_year": 2022,
+        "election_type": "presidential",
+        "age_group": "20대",
+        "age_order": 3,
+        "turnout_pct": 71.0,
+        "source_note": "중앙선거관리위원회 제20대 대통령선거 투표율 분석"
+      },
+      {
+        "election_label": "2022 대선",
+        "election_year": 2022,
+        "election_type": "presidential",
+        "age_group": "30대",
+        "age_order": 4,
+        "turnout_pct": 70.7,
+        "source_note": "중앙선거관리위원회 제20대 대통령선거 투표율 분석"
+      },
+      {
+        "election_label": "2022 대선",
+        "election_year": 2022,
+        "election_type": "presidential",
+        "age_group": "40대",
+        "age_order": 5,
+        "turnout_pct": 74.2,
+        "source_note": "중앙선거관리위원회 제20대 대통령선거 투표율 분석"
+      },
+      {
+        "election_label": "2022 대선",
+        "election_year": 2022,
+        "election_type": "presidential",
+        "age_group": "50대",
+        "age_order": 6,
+        "turnout_pct": 81.4,
+        "source_note": "중앙선거관리위원회 제20대 대통령선거 투표율 분석"
+      },
+      {
+        "election_label": "2022 대선",
+        "election_year": 2022,
+        "election_type": "presidential",
+        "age_group": "60대",
+        "age_order": 7,
+        "turnout_pct": 87.6,
+        "source_note": "중앙선거관리위원회 제20대 대통령선거 투표율 분석"
+      },
+      {
+        "election_label": "2022 대선",
+        "election_year": 2022,
+        "election_type": "presidential",
+        "age_group": "70대",
+        "age_order": 8,
+        "turnout_pct": 86.2,
+        "source_note": "중앙선거관리위원회 제20대 대통령선거 투표율 분석"
+      },
+      {
+        "election_label": "2022 대선",
+        "election_year": 2022,
+        "election_type": "presidential",
+        "age_group": "80세 이상",
+        "age_order": 9,
+        "turnout_pct": 61.8,
+        "source_note": "중앙선거관리위원회 제20대 대통령선거 투표율 분석"
+      },
+      {
+        "election_label": "2022 지방선거",
+        "election_year": 2022,
+        "election_type": "local",
+        "age_group": "18세",
+        "age_order": 1,
+        "turnout_pct": 36.1,
+        "source_note": "중앙선거관리위원회 제8회 전국동시지방선거 투표율 분석"
+      },
+      {
+        "election_label": "2022 지방선거",
+        "election_year": 2022,
+        "election_type": "local",
+        "age_group": "19세",
+        "age_order": 2,
+        "turnout_pct": 35.7,
+        "source_note": "중앙선거관리위원회 제8회 전국동시지방선거 투표율 분석"
+      },
+      {
+        "election_label": "2022 지방선거",
+        "election_year": 2022,
+        "election_type": "local",
+        "age_group": "20대",
+        "age_order": 3,
+        "turnout_pct": 36.3,
+        "source_note": "중앙선거관리위원회 제8회 전국동시지방선거 투표율 분석"
+      },
+      {
+        "election_label": "2022 지방선거",
+        "election_year": 2022,
+        "election_type": "local",
+        "age_group": "30대",
+        "age_order": 4,
+        "turnout_pct": 37.8,
+        "source_note": "중앙선거관리위원회 제8회 전국동시지방선거 투표율 분석"
+      },
+      {
+        "election_label": "2022 지방선거",
+        "election_year": 2022,
+        "election_type": "local",
+        "age_group": "40대",
+        "age_order": 5,
+        "turnout_pct": 44.7,
+        "source_note": "중앙선거관리위원회 제8회 전국동시지방선거 투표율 분석"
+      },
+      {
+        "election_label": "2022 지방선거",
+        "election_year": 2022,
+        "election_type": "local",
+        "age_group": "50대",
+        "age_order": 6,
+        "turnout_pct": 55.2,
+        "source_note": "중앙선거관리위원회 제8회 전국동시지방선거 투표율 분석"
+      },
+      {
+        "election_label": "2022 지방선거",
+        "election_year": 2022,
+        "election_type": "local",
+        "age_group": "60대",
+        "age_order": 7,
+        "turnout_pct": 70.5,
+        "source_note": "중앙선거관리위원회 제8회 전국동시지방선거 투표율 분석"
+      },
+      {
+        "election_label": "2022 지방선거",
+        "election_year": 2022,
+        "election_type": "local",
+        "age_group": "70대",
+        "age_order": 8,
+        "turnout_pct": 75.3,
+        "source_note": "중앙선거관리위원회 제8회 전국동시지방선거 투표율 분석"
+      },
+      {
+        "election_label": "2022 지방선거",
+        "election_year": 2022,
+        "election_type": "local",
+        "age_group": "80세 이상",
+        "age_order": 9,
+        "turnout_pct": 51.2,
+        "source_note": "중앙선거관리위원회 제8회 전국동시지방선거 투표율 분석"
+      },
+      {
+        "election_label": "2024 총선",
+        "election_year": 2024,
+        "election_type": "national_assembly",
+        "age_group": "18세",
+        "age_order": 1,
+        "turnout_pct": 56.8,
+        "source_note": "중앙선거관리위원회 제22대 국회의원선거 투표율 분석"
+      },
+      {
+        "election_label": "2024 총선",
+        "election_year": 2024,
+        "election_type": "national_assembly",
+        "age_group": "19세",
+        "age_order": 2,
+        "turnout_pct": 57.7,
+        "source_note": "중앙선거관리위원회 제22대 국회의원선거 투표율 분석"
+      },
+      {
+        "election_label": "2024 총선",
+        "election_year": 2024,
+        "election_type": "national_assembly",
+        "age_group": "20대",
+        "age_order": 3,
+        "turnout_pct": 52.4,
+        "source_note": "중앙선거관리위원회 제22대 국회의원선거 투표율 분석"
+      },
+      {
+        "election_label": "2024 총선",
+        "election_year": 2024,
+        "election_type": "national_assembly",
+        "age_group": "30대",
+        "age_order": 4,
+        "turnout_pct": 55.1,
+        "source_note": "중앙선거관리위원회 제22대 국회의원선거 투표율 분석"
+      },
+      {
+        "election_label": "2024 총선",
+        "election_year": 2024,
+        "election_type": "national_assembly",
+        "age_group": "40대",
+        "age_order": 5,
+        "turnout_pct": 62.6,
+        "source_note": "중앙선거관리위원회 제22대 국회의원선거 투표율 분석"
+      },
+      {
+        "election_label": "2024 총선",
+        "election_year": 2024,
+        "election_type": "national_assembly",
+        "age_group": "50대",
+        "age_order": 6,
+        "turnout_pct": 71.6,
+        "source_note": "중앙선거관리위원회 제22대 국회의원선거 투표율 분석"
+      },
+      {
+        "election_label": "2024 총선",
+        "election_year": 2024,
+        "election_type": "national_assembly",
+        "age_group": "60대",
+        "age_order": 7,
+        "turnout_pct": 82.0,
+        "source_note": "중앙선거관리위원회 제22대 국회의원선거 투표율 분석"
+      },
+      {
+        "election_label": "2024 총선",
+        "election_year": 2024,
+        "election_type": "national_assembly",
+        "age_group": "70대",
+        "age_order": 8,
+        "turnout_pct": 84.7,
+        "source_note": "중앙선거관리위원회 제22대 국회의원선거 투표율 분석"
+      },
+      {
+        "election_label": "2024 총선",
+        "election_year": 2024,
+        "election_type": "national_assembly",
+        "age_group": "80세 이상",
+        "age_order": 9,
+        "turnout_pct": 60.5,
+        "source_note": "중앙선거관리위원회 제22대 국회의원선거 투표율 분석"
+      }
+    ],
+    "nec_voter_engagement_2024": [
+      {
+        "age_group": "18-29세",
+        "age_order": 1,
+        "interest_21st_na_pct": 74.1,
+        "interest_22nd_na_pct": 57.9,
+        "interest_change_pp": -16.2,
+        "active_intention_21st_na_pct": 60.4,
+        "active_intention_22nd_na_pct": 50.3,
+        "active_intention_change_pp": -10.1,
+        "source_note": "중앙선거관리위원회 제22대 국회의원선거 제2차 유권자 의식조사"
+      },
+      {
+        "age_group": "30대",
+        "age_order": 2,
+        "interest_21st_na_pct": 82.2,
+        "interest_22nd_na_pct": 72.7,
+        "interest_change_pp": -9.5,
+        "active_intention_21st_na_pct": 75.6,
+        "active_intention_22nd_na_pct": 68.8,
+        "active_intention_change_pp": -6.8,
+        "source_note": "중앙선거관리위원회 제22대 국회의원선거 제2차 유권자 의식조사"
+      },
+      {
+        "age_group": "40대",
+        "age_order": 3,
+        "interest_21st_na_pct": 90.9,
+        "interest_22nd_na_pct": 87.5,
+        "interest_change_pp": -3.4,
+        "active_intention_21st_na_pct": 84.4,
+        "active_intention_22nd_na_pct": 81.7,
+        "active_intention_change_pp": -2.7,
+        "source_note": "중앙선거관리위원회 제22대 국회의원선거 제2차 유권자 의식조사"
+      },
+      {
+        "age_group": "50대",
+        "age_order": 4,
+        "interest_21st_na_pct": 87.9,
+        "interest_22nd_na_pct": 92.0,
+        "interest_change_pp": 4.1,
+        "active_intention_21st_na_pct": 80.3,
+        "active_intention_22nd_na_pct": 87.0,
+        "active_intention_change_pp": 6.7,
+        "source_note": "중앙선거관리위원회 제22대 국회의원선거 제2차 유권자 의식조사"
+      },
+      {
+        "age_group": "60대",
+        "age_order": 5,
+        "interest_21st_na_pct": 91.6,
+        "interest_22nd_na_pct": 91.2,
+        "interest_change_pp": -0.4,
+        "active_intention_21st_na_pct": 86.6,
+        "active_intention_22nd_na_pct": 89.0,
+        "active_intention_change_pp": 2.4,
+        "source_note": "중앙선거관리위원회 제22대 국회의원선거 제2차 유권자 의식조사"
+      },
+      {
+        "age_group": "70세 이상",
+        "age_order": 6,
+        "interest_21st_na_pct": 92.0,
+        "interest_22nd_na_pct": 95.4,
+        "interest_change_pp": 3.4,
+        "active_intention_21st_na_pct": 90.9,
+        "active_intention_22nd_na_pct": 94.6,
+        "active_intention_change_pp": 3.7,
+        "source_note": "중앙선거관리위원회 제22대 국회의원선거 제2차 유권자 의식조사"
+      }
     ]
   },
   "meta": {
@@ -105420,6 +105733,20 @@ window.populationBookCharts = {
       "csv": "becker_quantity_quality_simulation.csv",
       "source": "Becker(1960), Becker and Lewis(1973)의 수량-질 모형을 바탕으로 한 저자 시뮬레이션",
       "note": "가구가 자녀에게 쓸 수 있는 예산을 60으로 고정하고, 자녀 한 명의 기본비용을 8, 자녀 1인당 투자 단가를 5로 놓은 단순 예시다. 실제 추정값이 아니라 수량-질 교환관계의 직관을 보여주기 위한 그림이다."
+    },
+    "nec_age_turnout_recent": {
+      "title": "최근 주요 선거의 연령대별 투표율",
+      "kind": "line",
+      "csv": "nec_age_turnout_recent.csv",
+      "source": "중앙선거관리위원회 제20대 대통령선거·제8회 전국동시지방선거·제22대 국회의원선거 투표율 분석, 공공데이터포털",
+      "note": "선관위 투표율 분석은 선거인명부에 근거한 표본조사와 사전·재외투표 전수조사를 결합한다. 이 자료는 연령대별 투표 참여를 보여주지만, 비밀투표 원칙상 연령대별 후보 선택을 직접 보여주지는 않는다."
+    },
+    "nec_voter_engagement_2024": {
+      "title": "제22대 국회의원선거 전 연령대별 선거 관심도와 적극 투표 의향",
+      "kind": "bar",
+      "csv": "nec_voter_engagement_2024.csv",
+      "source": "중앙선거관리위원회 제22대 국회의원선거 제2차 유권자 의식조사",
+      "note": "제21대 국선 2차 조사와 제22대 국선 2차 조사의 연령별 선거 관심도 및 '반드시 투표하겠다' 응답을 비교했다. 실제 투표율과 함께 읽으면 청년층의 낮은 정치 관심과 중·노년층의 높은 참여 의향이 선거 대표성에 어떤 차이를 만드는지 볼 수 있다."
     },
     "future_households_policy": {
       "title": "장래가구: 1인가구와 총가구",
