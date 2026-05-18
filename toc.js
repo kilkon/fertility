@@ -10,8 +10,8 @@
     const setCollapsed = (collapsed) => {
       layout.classList.toggle("toc-collapsed", collapsed);
       toggle.setAttribute("aria-expanded", String(!collapsed));
-      toggle.setAttribute("title", collapsed ? "목차 펼치기" : "목차 접기");
-      toggle.textContent = collapsed ? "목차" : "접기";
+      toggle.setAttribute("title", collapsed ? "\uBAA9\uCC28 \uD3BC\uCE58\uAE30" : "\uBAA9\uCC28 \uC811\uAE30");
+      toggle.textContent = collapsed ? "\uBAA9\uCC28" : "\uC811\uAE30";
       try {
         window.localStorage.setItem(storageKey, collapsed ? "1" : "0");
       } catch (error) {
