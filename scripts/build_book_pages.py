@@ -4,7 +4,6 @@
 from __future__ import annotations
 
 import json
-import numpy as np
 import re
 import site
 import sys
@@ -15,6 +14,7 @@ USER_SITE = site.getusersitepackages()
 if USER_SITE and USER_SITE not in sys.path:
     sys.path.append(USER_SITE)
 
+import numpy as np
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -41,36 +41,56 @@ BOOK = [
     },
     {
         "no": "1",
+        "title": "우리는 인구를 어떻게 보아야 할 것인가",
+        "file": "chapter-1-population-perspectives.html",
+        "thesis": "인구는 출생아 수나 고령자 비율만이 아니라 경제, 가족, 지역, 문화, 공공서비스를 함께 움직이는 사회의 구조 변수다.",
+        "sections": [
+            {
+                "no": "1.1",
+                "title": "인구는 왜 사회의 구조 변수인가",
+                "file": "section-1-1-population-as-structure.html",
+                "chart": None,
+            },
+            {
+                "no": "1.2",
+                "title": "인구 증가와 감소를 어떻게 다르게 보는가",
+                "file": "section-1-2-growth-decline-perspectives.html",
+                "chart": None,
+            },
+        ],
+    },
+    {
+        "no": "2",
         "title": "지표의 함정과 인구를 읽는 방법",
         "file": "chapter-1.html",
         "thesis": "같은 인구 문제도 어떤 지표로 보느냐에 따라 전혀 다른 결론이 나온다.",
         "sections": [
             {
-                "no": "1.1",
+                "no": "2.1",
                 "title": "인구피라미드는 무엇을 드러내는가",
                 "file": "section-1-1-age-structure.html",
                 "chart": "population_pyramid_four_panel",
             },
             {
-                "no": "1.2",
+                "no": "2.2",
                 "title": "인구 기준은 왜 서로 다른가",
                 "file": "section-1-2-population-measures.html",
                 "chart": "population_measure_comparison",
             },
             {
-                "no": "1.3",
+                "no": "2.3",
                 "title": "왜 갑자기 2010년에 인구가 증가했는가",
                 "file": "section-1-3-2010-registration-jump.html",
                 "chart": "resident_registration_2010_jump",
             },
             {
-                "no": "1.4",
+                "no": "2.4",
                 "title": "인구가 많아야 하는 이유가 있는가",
                 "file": "section-1-3-optimal-population.html",
                 "chart": None,
             },
             {
-                "no": "1.5",
+                "no": "2.5",
                 "title": "출산율은 어떻게 다양하게 측정되는가",
                 "file": "section-1-4-fertility-measures.html",
                 "chart": "fertility_measure_summary",
@@ -78,37 +98,37 @@ BOOK = [
         ],
     },
     {
-        "no": "2",
+        "no": "3",
         "title": "인구는 정말 감소하는가",
         "file": "chapter-2-population-decline.html",
         "thesis": "전국 인구 감소는 모든 지역이 동시에 줄어든다는 뜻이 아니다. 같은 20년 동안에도 성장축과 축소축이 함께 만들어진다.",
         "sections": [
             {
-                "no": "2.1",
+                "no": "3.1",
                 "title": "인구가 증가한 지역은",
                 "file": "section-2-1-population-growth-regions.html",
                 "chart": "sigungu_population_slope_map",
             },
             {
-                "no": "2.2",
+                "no": "3.2",
                 "title": "고령층 인구가 증가했는가",
                 "file": "section-2-2-older-population-growth.html",
                 "chart": "sigungu_older_population_slope_map",
             },
             {
-                "no": "2.3",
+                "no": "3.3",
                 "title": "생산연령인구는 증가했는가",
                 "file": "section-2-3-working-age-population-growth.html",
                 "chart": "sigungu_working_age_population_slope_map",
             },
             {
-                "no": "2.4",
+                "no": "3.4",
                 "title": "인구 집중도는 심화되는가",
                 "file": "section-2-2-population-concentration.html",
                 "chart": "sigungu_population_concentration",
             },
             {
-                "no": "2.5",
+                "no": "3.5",
                 "title": "저출산은 한국만의 문제인가",
                 "file": "section-2-5-international-low-fertility.html",
                 "chart": "international_tfr_asia",
@@ -116,43 +136,43 @@ BOOK = [
         ],
     },
     {
-        "no": "3",
+        "no": "4",
         "title": "저출산 정책의 성과는 어떻게 평가해야 하는가",
         "file": "chapter-2.html",
         "thesis": "저출산 정책은 출산율 반등만이 아니라 출생아 수, 코호트 잔존, 정주 조건, 재정 투입을 함께 놓고 평가해야 한다.",
         "sections": [
             {
-                "no": "3.1",
+                "no": "4.1",
                 "title": "저출산 정책은 어떤 것이 있는가",
                 "file": "section-2-0-low-fertility-policy-types.html",
                 "chart": "low_fertility_policy_typology",
             },
             {
-                "no": "3.2",
+                "no": "4.2",
                 "title": "저출산 정책이 성공한 나라는 있는가",
                 "file": "section-2-0-international-policy-success.html",
                 "chart": "pronatalist_policy_country_comparison",
             },
             {
-                "no": "3.3",
+                "no": "4.3",
                 "title": "주거 지원은 과연 결혼과 출산을 늘리고 있는가",
                 "file": "section-2-1-housing-support-marriage-birth.html",
                 "chart": "housing_support_policy_budget",
             },
             {
-                "no": "3.4",
+                "no": "4.4",
                 "title": "지역 출산정책은 실제 인구를 남기는가",
                 "file": "section-2-1-yeonggwang-cohort.html",
                 "chart": "birth_incentive_region_retention",
             },
             {
-                "no": "3.5",
+                "no": "4.5",
                 "title": "출산을 미루는 조건은 무엇인가",
                 "file": "section-2-2-fertility-conditions.html",
                 "chart": "fertility_age_pattern",
             },
             {
-                "no": "3.6",
+                "no": "4.6",
                 "title": "결혼과 육아의 조건은 실제로 좋아졌는가",
                 "file": "section-2-3-family-conditions-dashboard.html",
                 "chart": "family_condition_dashboard",
@@ -160,31 +180,31 @@ BOOK = [
         ],
     },
     {
-        "no": "4",
+        "no": "5",
         "title": "이동과 지역 격차가 인구를 다시 쓴다",
         "file": "chapter-3.html",
         "thesis": "출생만으로 지역 인구를 설명할 수 없다. 청년 이동, 외국인 유입, 국제결혼, 다문화 출생이 지역별 인구구조를 다시 만든다.",
         "sections": [
             {
-                "no": "4.1",
+                "no": "5.1",
                 "title": "생활인구는 얼마나 클까",
                 "file": "section-3-0-living-population.html",
                 "chart": "living_population_ratio_top",
             },
             {
-                "no": "4.2",
+                "no": "5.2",
                 "title": "어느 광역시도의 인구 순이동이 가장 큰가",
                 "file": "section-3-0-sido-net-migration.html",
                 "chart": "sido_net_migration_panel",
             },
             {
-                "no": "4.3",
+                "no": "5.3",
                 "title": "청년 이동과 시군구 격차",
                 "file": "section-3-1-regional-gap.html",
                 "chart": "sigungu_aging_top",
             },
             {
-                "no": "4.4",
+                "no": "5.4",
                 "title": "외국인·다문화·국제결혼",
                 "file": "section-3-2-foreign-multicultural.html",
                 "chart": "multicultural_birth_rate",
@@ -192,67 +212,67 @@ BOOK = [
         ],
     },
     {
-        "no": "5",
+        "no": "6",
         "title": "출산 결정의 생활시간표",
         "file": "chapter-4.html",
         "thesis": "출산 결정은 어느 날 갑자기 내려지는 선택이 아니라 독립, 주거, 혼인, 임신·출산, 돌봄 복귀가 이어지는 생활시간표 위에서 만들어진다.",
         "sections": [
             {
-                "no": "5.1",
+                "no": "6.1",
                 "title": "결혼과 출산은 왜 문화적 현상인가",
                 "file": "section-4-1-marriage-culture.html",
                 "chart": "marriage_attitude_unmarried_gender",
             },
             {
-                "no": "5.2",
+                "no": "6.2",
                 "title": "혼인·이혼·출생의 연결",
                 "file": "section-4-1-family-formation.html",
                 "chart": "vital_events_policy",
             },
             {
-                "no": "5.3",
+                "no": "6.3",
                 "title": "이혼의 두려움은 결혼을 막는가",
                 "file": "section-4-1-divorce-fear-marriage.html",
                 "chart": "divorce_rate_30s_40s_trend",
             },
             {
-                "no": "5.4",
+                "no": "6.4",
                 "title": "소득이 높으면 출산율이 높아질까?",
                 "file": "section-4-1-income-fertility.html",
                 "chart": "newlywed_income_decile_birth_trend",
             },
             {
-                "no": "5.5",
+                "no": "6.5",
                 "title": "가구 수는 왜 인구와 다르게 움직이는가",
                 "file": "section-4-5-households.html",
                 "chart": "household_population_gap_national",
             },
             {
-                "no": "5.6",
+                "no": "6.6",
                 "title": "주거 수요는 왜 인구보다 늦게 변하는가",
                 "file": "section-4-6-housing-demand.html",
                 "chart": "future_households_policy",
             },
             {
-                "no": "5.7",
+                "no": "6.7",
                 "title": "남성이 육아를 담당하지 않는다?",
                 "file": "section-4-2-men-care-parental-leave.html",
                 "chart": "parental_leave_gender_users",
             },
             {
-                "no": "5.8",
+                "no": "6.8",
                 "title": "돌봄과 일가정양립",
                 "file": "section-4-3-care-work-balance.html",
                 "chart": "childcare_children",
             },
             {
-                "no": "5.9",
+                "no": "6.9",
                 "title": "어린이집이 적어서 출산을 덜 하는가",
                 "file": "section-4-4-childcare-shortage.html",
                 "chart": "childcare_supply_by_type",
             },
             {
-                "no": "5.10",
+                "no": "6.10",
                 "title": "빈집은 생활권 약화의 신호인가",
                 "file": "section-4-7-vacant-housing.html",
                 "chart": "vacant_housing_policy",
@@ -260,25 +280,25 @@ BOOK = [
         ],
     },
     {
-        "no": "6",
+        "no": "7",
         "title": "외국인이 해결책인가",
         "file": "chapter-5-foreigners.html",
         "thesis": "외국인 유입은 인구감소의 빈칸을 일부 메울 수 있지만, 통계 정의와 지역 정착 조건을 구분하지 않으면 과대평가되기 쉽다.",
         "sections": [
             {
-                "no": "6.1",
+                "no": "7.1",
                 "title": "외국인은 누구인가",
                 "file": "section-5-1-who-are-foreigners.html",
                 "chart": "foreigner_definition_comparison",
             },
             {
-                "no": "6.2",
+                "no": "7.2",
                 "title": "외국인은 빠르게 증가하고 있는가",
                 "file": "section-5-2-foreign-population-growth.html",
                 "chart": "foreign_population_source_trends",
             },
             {
-                "no": "6.3",
+                "no": "7.3",
                 "title": "외국인 통계는 왜 서로 다르게 보이는가",
                 "file": "section-5-3-foreign-statistical-gap.html",
                 "chart": "foreign_stat_gap_top_sigungu",
@@ -286,49 +306,49 @@ BOOK = [
         ],
     },
     {
-        "no": "7",
+        "no": "8",
         "title": "고령사회, 노동시장, 재정의 압력",
         "file": "chapter-5.html",
         "thesis": "저출산·고령화의 마지막 질문은 누가 일하고 누가 돌봄과 비용을 감당하는가이다.",
         "sections": [
             {
-                "no": "7.1",
+                "no": "8.1",
                 "title": "노동시장과 고령층 경제활동",
                 "file": "section-5-1-labor-aging.html",
                 "chart": "elderly_labor_dt_1de8031s",
             },
             {
-                "no": "7.2",
+                "no": "8.2",
                 "title": "노령화 지수는 무엇이고 얼마나 빠르게 증가할까",
                 "file": "section-5-2-aging-index.html",
                 "chart": "aging_index_growth",
             },
             {
-                "no": "7.3",
+                "no": "8.3",
                 "title": "생애주기와 재정",
                 "file": "section-5-3-lifecycle-fiscal.html",
                 "chart": "nta_lifecycle_deficit_profile",
             },
             {
-                "no": "7.4",
+                "no": "8.4",
                 "title": "고령화 사회에서 의료비 지출은 얼마나 빠르게 증가하는가",
                 "file": "section-5-3-health-spending-aging.html",
                 "chart": "nta_public_health_age_profile",
             },
             {
-                "no": "7.5",
+                "no": "8.5",
                 "title": "고령화 예산은 얼마나 증가하는가",
                 "file": "section-5-4-aging-budget.html",
                 "chart": "openfiscal_aging_budget_trends",
             },
             {
-                "no": "7.6",
+                "no": "8.6",
                 "title": "고령층 연금수령액은 얼마나 증가하는가",
                 "file": "section-5-5-elderly-pension.html",
                 "chart": "elderly_pension_dt_1de8051s",
             },
             {
-                "no": "7.7",
+                "no": "8.7",
                 "title": "고령층 연금수령액 구간 분포",
                 "file": "section-5-6-elderly-pension-distribution.html",
                 "chart": "elderly_pension_amount_distribution",
@@ -336,37 +356,37 @@ BOOK = [
         ],
     },
     {
-        "no": "8",
+        "no": "9",
         "title": "교육과 저출산",
         "file": "chapter-6-education-low-fertility.html",
         "thesis": "교육비와 교육경쟁은 출산 이후에야 나타나는 비용이 아니라, 출산을 결정하기 전부터 부모가 예상하는 장기 위험이다.",
         "sections": [
             {
-                "no": "8.1",
+                "no": "9.1",
                 "title": "저출산을 초래할 정도로 교육비가 증가하고 있는가",
                 "file": "section-6-1-education-cost-fertility.html",
                 "chart": "private_education_cost_trend",
             },
             {
-                "no": "8.2",
+                "no": "9.2",
                 "title": "사교육 경쟁은 언제 시작되는가",
                 "file": "section-6-2-private-education-by-school-level.html",
                 "chart": "private_education_school_level",
             },
             {
-                "no": "8.3",
+                "no": "9.3",
                 "title": "교육비 부담은 계층별로 얼마나 다른가",
                 "file": "section-6-3-education-cost-inequality.html",
                 "chart": "private_education_income_gap",
             },
             {
-                "no": "8.4",
+                "no": "9.4",
                 "title": "학생 수가 줄면 교육 부담도 줄어드는가",
                 "file": "section-6-4-school-age-decline-education.html",
                 "chart": "school_age_private_education_pressure",
             },
             {
-                "no": "8.5",
+                "no": "9.5",
                 "title": "부모는 왜 대학까지 책임지려 하는가",
                 "file": "section-6-5-education-expectation-burden.html",
                 "chart": "education_burden_perception",
@@ -374,7 +394,7 @@ BOOK = [
         ],
     },
     {
-        "no": "9",
+        "no": "10",
         "title": "그래서 어떤 저출산·고령화 정책이 필요한가",
         "file": "chapter-7-policy-recommendations.html",
         "thesis": "저출산·고령화 정책은 출산율과 노동력 확보를 넘어 삶의 질, 가치, 미래에 대한 신뢰를 회복하는 사회정책이어야 한다.",

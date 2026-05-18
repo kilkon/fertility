@@ -10,6 +10,6 @@
 - 작은 보조 그림은 `{{chart:차트ID|small}}`처럼 넣을 수 있습니다.
 - 일반 이미지도 `![그림 설명](../data/example.png)` 형식으로 넣을 수 있습니다.
 - 표는 일반 마크다운 표 문법을 사용할 수 있습니다.
-- 5.4절의 고령화 예산 사업 표는 `{{aging_budget_program_table}}`로 삽입합니다.
+- 8.5절의 고령화 예산 사업 표는 `{{aging_budget_program_table}}`로 삽입합니다.
 
 차트 ID와 CSV·출처 정보는 `scripts/build_book_pages.py`의 `CHART_META`에 정의되어 있습니다.

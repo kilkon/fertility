@@ -4,25 +4,25 @@
 
 ## 이 장에서 읽을 절
 
-- [5.1. 결혼과 출산은 왜 문화적 현상인가](../sections/section-4-1-marriage-culture.html)
+- [6.1. 결혼과 출산은 왜 문화적 현상인가](../sections/section-4-1-marriage-culture.html)
 
-- [5.2. 혼인·이혼·출생의 연결](../sections/section-4-1-family-formation.html)
+- [6.2. 혼인·이혼·출생의 연결](../sections/section-4-1-family-formation.html)
 
-- [5.3. 이혼의 두려움은 결혼을 막는가](../sections/section-4-1-divorce-fear-marriage.html)
+- [6.3. 이혼의 두려움은 결혼을 막는가](../sections/section-4-1-divorce-fear-marriage.html)
 
-- [5.4. 소득이 높으면 출산율이 높아질까?](../sections/section-4-1-income-fertility.html)
+- [6.4. 소득이 높으면 출산율이 높아질까?](../sections/section-4-1-income-fertility.html)
 
-- [5.5. 가구 수는 왜 인구와 다르게 움직이는가](../sections/section-4-5-households.html)
+- [6.5. 가구 수는 왜 인구와 다르게 움직이는가](../sections/section-4-5-households.html)
 
-- [5.6. 주거 수요는 왜 인구보다 늦게 변하는가](../sections/section-4-6-housing-demand.html)
+- [6.6. 주거 수요는 왜 인구보다 늦게 변하는가](../sections/section-4-6-housing-demand.html)
 
-- [5.7. 남성이 육아를 담당하지 않는다?](../sections/section-4-2-men-care-parental-leave.html)
+- [6.7. 남성이 육아를 담당하지 않는다?](../sections/section-4-2-men-care-parental-leave.html)
 
-- [5.8. 돌봄과 일가정양립](../sections/section-4-3-care-work-balance.html)
+- [6.8. 돌봄과 일가정양립](../sections/section-4-3-care-work-balance.html)
 
-- [5.9. 어린이집이 적어서 출산을 덜 하는가](../sections/section-4-4-childcare-shortage.html)
+- [6.9. 어린이집이 적어서 출산을 덜 하는가](../sections/section-4-4-childcare-shortage.html)
 
-- [5.10. 빈집은 생활권 약화의 신호인가](../sections/section-4-7-vacant-housing.html)
+- [6.10. 빈집은 생활권 약화의 신호인가](../sections/section-4-7-vacant-housing.html)
 
 ## 이 장에서 밝혀진 것
 
@@ -32,7 +32,7 @@
 
 이 노동과 주거, 관계의 조건은 지역마다 다르게 놓인다. 비수도권 청년의 가족형성은 단순히 소득이 낮아서 어려운 것이 아니라, 지역 노동시장이 남성과 여성에게 서로 다른 기회를 제공하고, 정주 문화와 부모 세대의 지원 가능성이 결혼의 의미를 다르게 만들기 때문에 복잡해진다. 어떤 지역에서 결혼은 안정의 통로가 되지만, 다른 지역에서는 경력과 독립을 포기해야 하는 위험으로 느껴질 수 있다.
 
-이혼에 대한 분석은 결혼의 또 다른 위험 감각을 보여준다. 30대 이혼율이 최근 급증한다고 보기는 어렵지만, 혼인과 이혼의 시간표는 뒤로 밀리고 있고 40대 이후의 이혼위험은 여전히 무겁다. 동시에 사회조사에서는 이혼을 절대 금지로 보는 태도가 약해지고 조건부 수용이 넓어졌다. 이혼의 두려움은 결혼 감소의 단일 원인이라기보다, 결혼이 실패했을 때 주거·양육·경력·소득의 비용을 누가 떠안는가에 대한 불안으로 읽어야 한다.
+이혼에 대한 분석에서는 결혼의 또 다른 위험 감각이 드러난다. 30대 이혼율이 최근 급증한다고 보기는 어렵지만, 혼인과 이혼의 시간표는 뒤로 밀리고 있고 40대 이후의 이혼위험은 여전히 무겁다. 동시에 사회조사에서는 이혼을 절대 금지로 보는 태도가 약해지고 조건부 수용이 넓어졌다. 이혼의 두려움은 결혼 감소의 단일 원인이라기보다, 결혼이 실패했을 때 주거·양육·경력·소득의 비용을 누가 떠안는가에 대한 불안으로 읽어야 한다.
 
 소득은 이 이야기에서 중요한 축이지만, 모든 것을 설명하지는 못한다. 소득이 높으면 아이를 키울 여력은 커진다. 동시에 고소득 맞벌이에게는 시간 비용과 경력 비용도 커진다. 돈을 더 주면 출산이 오른다는 단순한 직관은 신혼부부 자료 앞에서 조심스러워진다. 소득은 바닥을 만들지만, 그 바닥 위에서 아이를 낳고 키울 시간과 돌봄이 함께 놓여야 한다.
 
