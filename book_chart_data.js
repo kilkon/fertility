@@ -102672,6 +102672,272 @@ window.populationBookCharts = {
         "mois_share_pct": 2.75
       }
     ],
+    "foreign_settlement_indicators": [
+      {
+        "year": 2018,
+        "foreign_residents_total": 2054621,
+        "non_korean_foreigners": 1651561,
+        "foreign_workers": 528063,
+        "marriage_migrants": 166882,
+        "foreign_students": 142757,
+        "overseas_koreans_foreign_nationality": 296023,
+        "naturalized_koreans": 176915,
+        "foreign_resident_children": 226145,
+        "longterm_5plus": 446395,
+        "longterm_10plus": 133518,
+        "longterm_5plus_share_pct": 27.0,
+        "stay_resident_f2": null,
+        "stay_overseas_korean_f4": null,
+        "stay_permanent_f5": null,
+        "stay_marriage_f6": null
+      },
+      {
+        "year": 2019,
+        "foreign_residents_total": 2216612,
+        "non_korean_foreigners": 1778918,
+        "foreign_workers": 515051,
+        "marriage_migrants": 173882,
+        "foreign_students": 160610,
+        "overseas_koreans_foreign_nationality": 303245,
+        "naturalized_koreans": 185728,
+        "foreign_resident_children": 251966,
+        "longterm_5plus": 534722,
+        "longterm_10plus": 182656,
+        "longterm_5plus_share_pct": 30.1,
+        "stay_resident_f2": null,
+        "stay_overseas_korean_f4": null,
+        "stay_permanent_f5": null,
+        "stay_marriage_f6": null
+      },
+      {
+        "year": 2020,
+        "foreign_residents_total": 2146748,
+        "non_korean_foreigners": 1695643,
+        "foreign_workers": null,
+        "marriage_migrants": null,
+        "foreign_students": null,
+        "overseas_koreans_foreign_nationality": null,
+        "naturalized_koreans": 199128,
+        "foreign_resident_children": 251977,
+        "longterm_5plus": null,
+        "longterm_10plus": null,
+        "longterm_5plus_share_pct": NaN,
+        "stay_resident_f2": 43666,
+        "stay_overseas_korean_f4": 466682,
+        "stay_permanent_f5": 160947,
+        "stay_marriage_f6": 133987
+      },
+      {
+        "year": 2021,
+        "foreign_residents_total": 2134569,
+        "non_korean_foreigners": 1649967,
+        "foreign_workers": 395175,
+        "marriage_migrants": 174632,
+        "foreign_students": 156607,
+        "overseas_koreans_foreign_nationality": 368581,
+        "naturalized_koreans": 210880,
+        "foreign_resident_children": 273722,
+        "longterm_5plus": 637788,
+        "longterm_10plus": 251739,
+        "longterm_5plus_share_pct": 38.7,
+        "stay_resident_f2": 42367,
+        "stay_overseas_korean_f4": 478442,
+        "stay_permanent_f5": 168118,
+        "stay_marriage_f6": 134285
+      },
+      {
+        "year": 2022,
+        "foreign_residents_total": 2258248,
+        "non_korean_foreigners": 1752346,
+        "foreign_workers": 403139,
+        "marriage_migrants": 175756,
+        "foreign_students": 189397,
+        "overseas_koreans_foreign_nationality": 397581,
+        "naturalized_koreans": 223825,
+        "foreign_resident_children": 282077,
+        "longterm_5plus": 732325,
+        "longterm_10plus": 285689,
+        "longterm_5plus_share_pct": 41.8,
+        "stay_resident_f2": 44561,
+        "stay_overseas_korean_f4": 502451,
+        "stay_permanent_f5": 176107,
+        "stay_marriage_f6": 136266
+      },
+      {
+        "year": 2023,
+        "foreign_residents_total": 2459542,
+        "non_korean_foreigners": 1935150,
+        "foreign_workers": 470250,
+        "marriage_migrants": 180072,
+        "foreign_students": 206329,
+        "overseas_koreans_foreign_nationality": 410972,
+        "naturalized_koreans": 234506,
+        "foreign_resident_children": 289886,
+        "longterm_5plus": 894088,
+        "longterm_10plus": 343494,
+        "longterm_5plus_share_pct": 46.2,
+        "stay_resident_f2": 53325,
+        "stay_overseas_korean_f4": 536374,
+        "stay_permanent_f5": 185441,
+        "stay_marriage_f6": 142042
+      },
+      {
+        "year": 2024,
+        "foreign_residents_total": 2583626,
+        "non_korean_foreigners": 2042744,
+        "foreign_workers": 502634,
+        "marriage_migrants": 191839,
+        "foreign_students": 233237,
+        "overseas_koreans_foreign_nationality": 415695,
+        "naturalized_koreans": 245578,
+        "foreign_resident_children": 295304,
+        "longterm_5plus": 982668,
+        "longterm_10plus": 392598,
+        "longterm_5plus_share_pct": 48.1,
+        "stay_resident_f2": 61292,
+        "stay_overseas_korean_f4": 555968,
+        "stay_permanent_f5": 202968,
+        "stay_marriage_f6": 148376
+      }
+    ],
+    "foreign_family_birth_trends": [
+      {
+        "year": 2008,
+        "total_births": 465892,
+        "multicultural_births": 13443,
+        "multicultural_birth_share_pct": 2.9,
+        "foreign_resident_children": null,
+        "marriage_migrants": null
+      },
+      {
+        "year": 2009,
+        "total_births": 444849,
+        "multicultural_births": 19024,
+        "multicultural_birth_share_pct": 4.3,
+        "foreign_resident_children": null,
+        "marriage_migrants": null
+      },
+      {
+        "year": 2010,
+        "total_births": 470171,
+        "multicultural_births": 20312,
+        "multicultural_birth_share_pct": 4.3,
+        "foreign_resident_children": null,
+        "marriage_migrants": null
+      },
+      {
+        "year": 2011,
+        "total_births": 471265,
+        "multicultural_births": 22014,
+        "multicultural_birth_share_pct": 4.7,
+        "foreign_resident_children": null,
+        "marriage_migrants": null
+      },
+      {
+        "year": 2012,
+        "total_births": 484550,
+        "multicultural_births": 22908,
+        "multicultural_birth_share_pct": 4.7,
+        "foreign_resident_children": null,
+        "marriage_migrants": null
+      },
+      {
+        "year": 2013,
+        "total_births": 436455,
+        "multicultural_births": 21290,
+        "multicultural_birth_share_pct": 4.9,
+        "foreign_resident_children": null,
+        "marriage_migrants": null
+      },
+      {
+        "year": 2014,
+        "total_births": 435435,
+        "multicultural_births": 21174,
+        "multicultural_birth_share_pct": 4.9,
+        "foreign_resident_children": null,
+        "marriage_migrants": null
+      },
+      {
+        "year": 2015,
+        "total_births": 438420,
+        "multicultural_births": 19729,
+        "multicultural_birth_share_pct": 4.5,
+        "foreign_resident_children": null,
+        "marriage_migrants": null
+      },
+      {
+        "year": 2016,
+        "total_births": 406243,
+        "multicultural_births": 19431,
+        "multicultural_birth_share_pct": 4.8,
+        "foreign_resident_children": null,
+        "marriage_migrants": null
+      },
+      {
+        "year": 2017,
+        "total_births": 357771,
+        "multicultural_births": 18440,
+        "multicultural_birth_share_pct": 5.2,
+        "foreign_resident_children": null,
+        "marriage_migrants": null
+      },
+      {
+        "year": 2018,
+        "total_births": 326822,
+        "multicultural_births": 18079,
+        "multicultural_birth_share_pct": 5.5,
+        "foreign_resident_children": 226145,
+        "marriage_migrants": 166882
+      },
+      {
+        "year": 2019,
+        "total_births": 302676,
+        "multicultural_births": 17939,
+        "multicultural_birth_share_pct": 5.9,
+        "foreign_resident_children": 251966,
+        "marriage_migrants": 173882
+      },
+      {
+        "year": 2020,
+        "total_births": 272337,
+        "multicultural_births": 16421,
+        "multicultural_birth_share_pct": 6.0,
+        "foreign_resident_children": 251977,
+        "marriage_migrants": null
+      },
+      {
+        "year": 2021,
+        "total_births": 260562,
+        "multicultural_births": 14322,
+        "multicultural_birth_share_pct": 5.5,
+        "foreign_resident_children": 273722,
+        "marriage_migrants": 174632
+      },
+      {
+        "year": 2022,
+        "total_births": 249186,
+        "multicultural_births": 12526,
+        "multicultural_birth_share_pct": 5.0,
+        "foreign_resident_children": 282077,
+        "marriage_migrants": 175756
+      },
+      {
+        "year": 2023,
+        "total_births": 230028,
+        "multicultural_births": 12150,
+        "multicultural_birth_share_pct": 5.3,
+        "foreign_resident_children": 289886,
+        "marriage_migrants": 180072
+      },
+      {
+        "year": 2024,
+        "total_births": 238317,
+        "multicultural_births": 13416,
+        "multicultural_birth_share_pct": 5.6,
+        "foreign_resident_children": 295304,
+        "marriage_migrants": 191839
+      }
+    ],
     "future_households_policy": [
       {
         "year": 2000,
@@ -104614,6 +104880,20 @@ window.populationBookCharts = {
       "csv": "foreign_stat_gap_sido_sources.csv",
       "source": "행정안전부 2024 지방자치단체 외국인주민 현황, KOSIS DT_1JA1503 인구총조사 외국인, KOSIS DT_1B040A11 법무부 등록외국인",
       "note": "국가데이터처 인구총조사 외국인 자료는 이 표에서 시도 단위로 제공되므로, 세 통계의 직접 비교는 시도 단위에서 제시했다."
+    },
+    "foreign_settlement_indicators": {
+      "title": "외국인 정착 지표: 장기체류·귀화·자녀·결혼이민자",
+      "kind": "line",
+      "csv": "foreign_settlement_indicators.csv",
+      "source": "행정안전부 지방자치단체 외국인주민 현황 통계표, 법무부 출입국자및체류외국인통계",
+      "note": "장기체류 5년 이상은 행정안전부 외국인주민 통계의 한국국적을 가지지 않은 자 체류기간별 자료에서 계산했다. 2020년 장기체류 값은 원표 파일 손상으로 결측 처리했다."
+    },
+    "foreign_family_birth_trends": {
+      "title": "외국인주민 자녀와 다문화 출생 추세",
+      "kind": "line",
+      "csv": "foreign_family_birth_trends.csv",
+      "source": "행정안전부 지방자치단체 외국인주민 현황, KOSIS DT_1BB0006 지역별 다문화 출생",
+      "note": "외국인주민 자녀는 특정 시점의 국내 출생 외국인주민 자녀 저량이고, 다문화 출생아 수는 해당 연도의 출생 흐름이다."
     },
     "vacant_housing_policy": {
       "title": "빈집 수와 전체 주택",

@@ -26,7 +26,7 @@ MANUSCRIPTS = ROOT / "manuscripts"
 CHAPTER_MANUSCRIPTS = MANUSCRIPTS / "chapters"
 SECTION_MANUSCRIPTS = MANUSCRIPTS / "sections"
 APPENDIX_FILE = "appendix-data-notes.html"
-ASSET_VERSION = "20260511-youth-income-life-satisfaction"
+ASSET_VERSION = "20260518-numbered-files"
 FEEDBACK_EMAIL = "kilkon@snu.ac.kr"
 PUBLIC_SITE_URL = "https://kilkon.github.io/fertility"
 
@@ -42,7 +42,7 @@ BOOK = [
     {
         "no": "1",
         "title": "우리는 인구를 어떻게 보아야 할 것인가",
-        "file": "chapter-1-population-perspectives.html",
+        "file": "chapter-1.html",
         "thesis": "인구는 출생아 수나 고령자 비율만이 아니라 경제, 가족, 지역, 문화, 공공서비스를 함께 움직이는 사회의 구조 변수다.",
         "sections": [
             {
@@ -62,37 +62,37 @@ BOOK = [
     {
         "no": "2",
         "title": "지표의 함정과 인구를 읽는 방법",
-        "file": "chapter-1.html",
+        "file": "chapter-2.html",
         "thesis": "같은 인구 문제도 어떤 지표로 보느냐에 따라 전혀 다른 결론이 나온다.",
         "sections": [
             {
                 "no": "2.1",
                 "title": "인구피라미드는 무엇을 드러내는가",
-                "file": "section-1-1-age-structure.html",
+                "file": "section-2-1-age-structure.html",
                 "chart": "population_pyramid_four_panel",
             },
             {
                 "no": "2.2",
                 "title": "인구 기준은 왜 서로 다른가",
-                "file": "section-1-2-population-measures.html",
+                "file": "section-2-2-population-measures.html",
                 "chart": "population_measure_comparison",
             },
             {
                 "no": "2.3",
                 "title": "왜 갑자기 2010년에 인구가 증가했는가",
-                "file": "section-1-3-2010-registration-jump.html",
+                "file": "section-2-3-2010-registration-jump.html",
                 "chart": "resident_registration_2010_jump",
             },
             {
                 "no": "2.4",
                 "title": "인구가 많아야 하는 이유가 있는가",
-                "file": "section-1-3-optimal-population.html",
+                "file": "section-2-4-optimal-population.html",
                 "chart": None,
             },
             {
                 "no": "2.5",
                 "title": "출산율은 어떻게 다양하게 측정되는가",
-                "file": "section-1-4-fertility-measures.html",
+                "file": "section-2-5-fertility-measures.html",
                 "chart": "fertility_measure_summary",
             },
         ],
@@ -100,37 +100,37 @@ BOOK = [
     {
         "no": "3",
         "title": "인구는 정말 감소하는가",
-        "file": "chapter-2-population-decline.html",
+        "file": "chapter-3.html",
         "thesis": "전국 인구 감소는 모든 지역이 동시에 줄어든다는 뜻이 아니다. 같은 20년 동안에도 성장축과 축소축이 함께 만들어진다.",
         "sections": [
             {
                 "no": "3.1",
                 "title": "인구가 증가한 지역은",
-                "file": "section-2-1-population-growth-regions.html",
+                "file": "section-3-1-population-growth-regions.html",
                 "chart": "sigungu_population_slope_map",
             },
             {
                 "no": "3.2",
                 "title": "고령층 인구가 증가했는가",
-                "file": "section-2-2-older-population-growth.html",
+                "file": "section-3-2-older-population-growth.html",
                 "chart": "sigungu_older_population_slope_map",
             },
             {
                 "no": "3.3",
                 "title": "생산연령인구는 증가했는가",
-                "file": "section-2-3-working-age-population-growth.html",
+                "file": "section-3-3-working-age-population-growth.html",
                 "chart": "sigungu_working_age_population_slope_map",
             },
             {
                 "no": "3.4",
                 "title": "인구 집중도는 심화되는가",
-                "file": "section-2-2-population-concentration.html",
+                "file": "section-3-4-population-concentration.html",
                 "chart": "sigungu_population_concentration",
             },
             {
                 "no": "3.5",
                 "title": "저출산은 한국만의 문제인가",
-                "file": "section-2-5-international-low-fertility.html",
+                "file": "section-3-5-international-low-fertility.html",
                 "chart": "international_tfr_asia",
             },
         ],
@@ -138,43 +138,43 @@ BOOK = [
     {
         "no": "4",
         "title": "저출산 정책의 성과는 어떻게 평가해야 하는가",
-        "file": "chapter-2.html",
+        "file": "chapter-4.html",
         "thesis": "저출산 정책은 출산율 반등만이 아니라 출생아 수, 코호트 잔존, 정주 조건, 재정 투입을 함께 놓고 평가해야 한다.",
         "sections": [
             {
                 "no": "4.1",
                 "title": "저출산 정책은 어떤 것이 있는가",
-                "file": "section-2-0-low-fertility-policy-types.html",
+                "file": "section-4-1-low-fertility-policy-types.html",
                 "chart": "low_fertility_policy_typology",
             },
             {
                 "no": "4.2",
                 "title": "저출산 정책이 성공한 나라는 있는가",
-                "file": "section-2-0-international-policy-success.html",
+                "file": "section-4-2-international-policy-success.html",
                 "chart": "pronatalist_policy_country_comparison",
             },
             {
                 "no": "4.3",
                 "title": "주거 지원은 과연 결혼과 출산을 늘리고 있는가",
-                "file": "section-2-1-housing-support-marriage-birth.html",
+                "file": "section-4-3-housing-support-marriage-birth.html",
                 "chart": "housing_support_policy_budget",
             },
             {
                 "no": "4.4",
                 "title": "지역 출산정책은 실제 인구를 남기는가",
-                "file": "section-2-1-yeonggwang-cohort.html",
+                "file": "section-4-4-yeonggwang-cohort.html",
                 "chart": "birth_incentive_region_retention",
             },
             {
                 "no": "4.5",
                 "title": "출산을 미루는 조건은 무엇인가",
-                "file": "section-2-2-fertility-conditions.html",
+                "file": "section-4-5-fertility-conditions.html",
                 "chart": "fertility_age_pattern",
             },
             {
                 "no": "4.6",
                 "title": "결혼과 육아의 조건은 실제로 좋아졌는가",
-                "file": "section-2-3-family-conditions-dashboard.html",
+                "file": "section-4-6-family-conditions-dashboard.html",
                 "chart": "family_condition_dashboard",
             },
         ],
@@ -182,31 +182,31 @@ BOOK = [
     {
         "no": "5",
         "title": "이동과 지역 격차가 인구를 다시 쓴다",
-        "file": "chapter-3.html",
+        "file": "chapter-5.html",
         "thesis": "출생만으로 지역 인구를 설명할 수 없다. 청년 이동, 외국인 유입, 국제결혼, 다문화 출생이 지역별 인구구조를 다시 만든다.",
         "sections": [
             {
                 "no": "5.1",
                 "title": "생활인구는 얼마나 클까",
-                "file": "section-3-0-living-population.html",
+                "file": "section-5-1-living-population.html",
                 "chart": "living_population_ratio_top",
             },
             {
                 "no": "5.2",
                 "title": "어느 광역시도의 인구 순이동이 가장 큰가",
-                "file": "section-3-0-sido-net-migration.html",
+                "file": "section-5-2-sido-net-migration.html",
                 "chart": "sido_net_migration_panel",
             },
             {
                 "no": "5.3",
                 "title": "청년 이동과 시군구 격차",
-                "file": "section-3-1-regional-gap.html",
+                "file": "section-5-3-regional-gap.html",
                 "chart": "sigungu_aging_top",
             },
             {
                 "no": "5.4",
                 "title": "외국인·다문화·국제결혼",
-                "file": "section-3-2-foreign-multicultural.html",
+                "file": "section-5-4-foreign-multicultural.html",
                 "chart": "multicultural_birth_rate",
             },
         ],
@@ -214,67 +214,67 @@ BOOK = [
     {
         "no": "6",
         "title": "출산 결정의 생활시간표",
-        "file": "chapter-4.html",
+        "file": "chapter-6.html",
         "thesis": "출산 결정은 어느 날 갑자기 내려지는 선택이 아니라 독립, 주거, 혼인, 임신·출산, 돌봄 복귀가 이어지는 생활시간표 위에서 만들어진다.",
         "sections": [
             {
                 "no": "6.1",
                 "title": "결혼과 출산은 왜 문화적 현상인가",
-                "file": "section-4-1-marriage-culture.html",
+                "file": "section-6-1-marriage-culture.html",
                 "chart": "marriage_attitude_unmarried_gender",
             },
             {
                 "no": "6.2",
                 "title": "혼인·이혼·출생의 연결",
-                "file": "section-4-1-family-formation.html",
+                "file": "section-6-2-family-formation.html",
                 "chart": "vital_events_policy",
             },
             {
                 "no": "6.3",
                 "title": "이혼의 두려움은 결혼을 막는가",
-                "file": "section-4-1-divorce-fear-marriage.html",
+                "file": "section-6-3-divorce-fear-marriage.html",
                 "chart": "divorce_rate_30s_40s_trend",
             },
             {
                 "no": "6.4",
                 "title": "소득이 높으면 출산율이 높아질까?",
-                "file": "section-4-1-income-fertility.html",
+                "file": "section-6-4-income-fertility.html",
                 "chart": "newlywed_income_decile_birth_trend",
             },
             {
                 "no": "6.5",
                 "title": "가구 수는 왜 인구와 다르게 움직이는가",
-                "file": "section-4-5-households.html",
+                "file": "section-6-5-households.html",
                 "chart": "household_population_gap_national",
             },
             {
                 "no": "6.6",
                 "title": "주거 수요는 왜 인구보다 늦게 변하는가",
-                "file": "section-4-6-housing-demand.html",
+                "file": "section-6-6-housing-demand.html",
                 "chart": "future_households_policy",
             },
             {
                 "no": "6.7",
                 "title": "남성이 육아를 담당하지 않는다?",
-                "file": "section-4-2-men-care-parental-leave.html",
+                "file": "section-6-7-men-care-parental-leave.html",
                 "chart": "parental_leave_gender_users",
             },
             {
                 "no": "6.8",
                 "title": "돌봄과 일가정양립",
-                "file": "section-4-3-care-work-balance.html",
+                "file": "section-6-8-care-work-balance.html",
                 "chart": "childcare_children",
             },
             {
                 "no": "6.9",
                 "title": "어린이집이 적어서 출산을 덜 하는가",
-                "file": "section-4-4-childcare-shortage.html",
+                "file": "section-6-9-childcare-shortage.html",
                 "chart": "childcare_supply_by_type",
             },
             {
                 "no": "6.10",
                 "title": "빈집은 생활권 약화의 신호인가",
-                "file": "section-4-7-vacant-housing.html",
+                "file": "section-6-10-vacant-housing.html",
                 "chart": "vacant_housing_policy",
             },
         ],
@@ -282,75 +282,81 @@ BOOK = [
     {
         "no": "7",
         "title": "외국인이 해결책인가",
-        "file": "chapter-5-foreigners.html",
+        "file": "chapter-7.html",
         "thesis": "외국인 유입은 인구감소의 빈칸을 일부 메울 수 있지만, 통계 정의와 지역 정착 조건을 구분하지 않으면 과대평가되기 쉽다.",
         "sections": [
             {
                 "no": "7.1",
                 "title": "외국인은 누구인가",
-                "file": "section-5-1-who-are-foreigners.html",
+                "file": "section-7-1-who-are-foreigners.html",
                 "chart": "foreigner_definition_comparison",
             },
             {
                 "no": "7.2",
                 "title": "외국인은 빠르게 증가하고 있는가",
-                "file": "section-5-2-foreign-population-growth.html",
+                "file": "section-7-2-foreign-population-growth.html",
                 "chart": "foreign_population_source_trends",
             },
             {
                 "no": "7.3",
                 "title": "외국인 통계는 왜 서로 다르게 보이는가",
-                "file": "section-5-3-foreign-statistical-gap.html",
+                "file": "section-7-3-foreign-statistical-gap.html",
                 "chart": "foreign_stat_gap_top_sigungu",
+            },
+            {
+                "no": "7.4",
+                "title": "외국인은 과연 정착을 하고 있는가",
+                "file": "section-7-4-foreign-settlement.html",
+                "chart": "foreign_settlement_indicators",
             },
         ],
     },
     {
         "no": "8",
         "title": "고령사회, 노동시장, 재정의 압력",
-        "file": "chapter-5.html",
+        "file": "chapter-8.html",
         "thesis": "저출산·고령화의 마지막 질문은 누가 일하고 누가 돌봄과 비용을 감당하는가이다.",
         "sections": [
             {
                 "no": "8.1",
                 "title": "노동시장과 고령층 경제활동",
-                "file": "section-5-1-labor-aging.html",
+                "file": "section-8-1-labor-aging.html",
                 "chart": "elderly_labor_dt_1de8031s",
             },
             {
                 "no": "8.2",
                 "title": "노령화 지수는 무엇이고 얼마나 빠르게 증가할까",
-                "file": "section-5-2-aging-index.html",
+                "file": "section-8-2-aging-index.html",
                 "chart": "aging_index_growth",
             },
             {
                 "no": "8.3",
                 "title": "생애주기와 재정",
-                "file": "section-5-3-lifecycle-fiscal.html",
+                "file": "section-8-3-lifecycle-fiscal.html",
                 "chart": "nta_lifecycle_deficit_profile",
             },
             {
                 "no": "8.4",
                 "title": "고령화 사회에서 의료비 지출은 얼마나 빠르게 증가하는가",
-                "file": "section-5-3-health-spending-aging.html",
+                "file": "section-8-4-health-spending-aging.html",
                 "chart": "nta_public_health_age_profile",
             },
             {
                 "no": "8.5",
                 "title": "고령화 예산은 얼마나 증가하는가",
-                "file": "section-5-4-aging-budget.html",
+                "file": "section-8-5-aging-budget.html",
                 "chart": "openfiscal_aging_budget_trends",
             },
             {
                 "no": "8.6",
                 "title": "고령층 연금수령액은 얼마나 증가하는가",
-                "file": "section-5-5-elderly-pension.html",
+                "file": "section-8-6-elderly-pension.html",
                 "chart": "elderly_pension_dt_1de8051s",
             },
             {
                 "no": "8.7",
                 "title": "고령층 연금수령액 구간 분포",
-                "file": "section-5-6-elderly-pension-distribution.html",
+                "file": "section-8-7-elderly-pension-distribution.html",
                 "chart": "elderly_pension_amount_distribution",
             },
         ],
@@ -358,37 +364,37 @@ BOOK = [
     {
         "no": "9",
         "title": "교육과 저출산",
-        "file": "chapter-6-education-low-fertility.html",
+        "file": "chapter-9.html",
         "thesis": "교육비와 교육경쟁은 출산 이후에야 나타나는 비용이 아니라, 출산을 결정하기 전부터 부모가 예상하는 장기 위험이다.",
         "sections": [
             {
                 "no": "9.1",
                 "title": "저출산을 초래할 정도로 교육비가 증가하고 있는가",
-                "file": "section-6-1-education-cost-fertility.html",
+                "file": "section-9-1-education-cost-fertility.html",
                 "chart": "private_education_cost_trend",
             },
             {
                 "no": "9.2",
                 "title": "사교육 경쟁은 언제 시작되는가",
-                "file": "section-6-2-private-education-by-school-level.html",
+                "file": "section-9-2-private-education-by-school-level.html",
                 "chart": "private_education_school_level",
             },
             {
                 "no": "9.3",
                 "title": "교육비 부담은 계층별로 얼마나 다른가",
-                "file": "section-6-3-education-cost-inequality.html",
+                "file": "section-9-3-education-cost-inequality.html",
                 "chart": "private_education_income_gap",
             },
             {
                 "no": "9.4",
                 "title": "학생 수가 줄면 교육 부담도 줄어드는가",
-                "file": "section-6-4-school-age-decline-education.html",
+                "file": "section-9-4-school-age-decline-education.html",
                 "chart": "school_age_private_education_pressure",
             },
             {
                 "no": "9.5",
                 "title": "부모는 왜 대학까지 책임지려 하는가",
-                "file": "section-6-5-education-expectation-burden.html",
+                "file": "section-9-5-education-expectation-burden.html",
                 "chart": "education_burden_perception",
             },
         ],
@@ -396,7 +402,7 @@ BOOK = [
     {
         "no": "10",
         "title": "그래서 어떤 저출산·고령화 정책이 필요한가",
-        "file": "chapter-7-policy-recommendations.html",
+        "file": "chapter-10.html",
         "thesis": "저출산·고령화 정책은 출산율과 노동력 확보를 넘어 삶의 질, 가치, 미래에 대한 신뢰를 회복하는 사회정책이어야 한다.",
         "sections": [],
     },
@@ -412,32 +418,32 @@ CHAPTER_NARRATIVE = {
         "이 책의 목적은 냉소가 아니다. 정책을 비판하기 위해 비판하는 것도 아니다. 오히려 필요한 정책을 더 분명하게 가려내기 위해서다. 추상적인 정책 제안은 누구도 반대하기 어렵지만, 그만큼 책임도 흐려진다. 데이터로 보면 질문이 구체화된다. 어느 연령대가 줄었는가, 어느 지역에서 빠져나갔는가, 어떤 사업의 돈이 늘었는가, 어떤 계층은 제도 밖에 남았는가. 이런 질문이 있어야 정책의 성공과 실패를 말할 수 있다.",
         "따라서 이 책은 한국의 인구문제를 하나의 숫자로 설명하지 않는다. 출산율은 청년의 삶, 가족 형성, 돌봄, 노동시장, 주거, 지역, 재정이 한꺼번에 압축된 결과다. 고령화율 역시 노인이 많아졌다는 통계가 아니라 누가 일하고, 누가 돌보고, 누가 비용을 부담하며, 어떤 제도가 오래 버틸 수 있는지를 묻는 신호다. 이 책은 그 신호를 가능한 한 차갑게 읽고, 그 위에서 더 현실적인 정책 논의를 시작하려 한다.",
     ],
-    "chapter-1.html": [
+    "chapter-6.html": [
         "이 장은 숫자를 신뢰하기 전에 숫자가 만들어지는 방식을 묻는다. 인구피라미드, 주민등록인구, 연앙인구, 인구총조사는 모두 한국 사회의 변화를 보여주지만, 같은 현실을 같은 방식으로 재현하지는 않는다.",
         "따라서 첫 장의 목표는 결론을 서두르지 않는 것이다. 어떤 지표를 선택했는지 밝히고, 그 지표가 보이는 것과 가리는 것을 구분해야 이후 출산, 이동, 고령화, 재정의 논의가 흔들리지 않는다.",
     ],
-    "chapter-2-population-decline.html": [
+    "chapter-8.html": [
         "인구 감소는 전국 총량의 문제처럼 보이지만, 실제 정책은 공간 위에서 작동한다. 같은 시기에도 어떤 지역은 주거지와 산업단지가 확장되며 빠르게 늘고, 어떤 지역은 원도심 쇠퇴와 청년 유출을 동시에 겪는다.",
         "따라서 이 장은 먼저 질문을 바꾼다. 한국 인구가 줄어든다는 말이 곧 모든 지자체가 줄어든다는 뜻인가. 지난 20년 동안 시군구별 인구 변화 속도를 추정하면, 인구감소의 실체는 균일한 하락이 아니라 매우 불균등한 재배치라는 점이 드러난다.",
         "그리고 전체 인구 변화만으로는 충분하지 않다. 고령층 인구 증가는 복지·의료·돌봄 부담의 공간적 압력을 보여 주고, 15-64세 생산연령인구 변화는 지역의 노동공급과 세원 기반을 보여 준다. 두 질문을 분리해서 보아야 같은 인구 증가도 전혀 다른 정책 의미를 갖는다는 점을 확인할 수 있다.",
     ],
-    "chapter-2.html": [
+    "chapter-6.html": [
         "저출산 정책은 흔히 합계출산율의 반등 여부로 평가된다. 그러나 정책의 목표가 한국 사회의 지속 가능성이라면 먼저 정책이 무엇을 겨냥하는지 구분해야 한다. 현금지원, 돌봄서비스, 육아휴직, 주거지원, 난임지원, 지역정책은 모두 저출산 대책이라는 이름으로 묶이지만 작동 방식과 점검 기준은 서로 다르다.",
         "이 장은 정책 수단의 지도를 먼저 그린 뒤 지역 사례로 내려간다. 특정 지역의 높은 출산율을 성공으로 단정하지 않고, 출생 이후의 코호트 잔존과 정주 조건을 확인함으로써 한국 저출산 정책의 평가 기준을 다시 세운다.",
     ],
-    "chapter-3.html": [
+    "chapter-8.html": [
         "출생만으로 지역 인구를 설명할 수 없다. 청년이 빠져나가고, 외국인이 들어오고, 다문화 가족이 형성되는 과정에서 지역의 연령구조와 가족구조는 다시 쓰인다.",
         "이 장은 전국 평균을 벗어나 시군구의 차이를 본다. 고령화율, 청년 이동, 외국인 유입, 다문화 출생을 함께 놓으면 인구감소는 단순한 수량 변화가 아니라 공간 구조의 변화로 읽힌다.",
     ],
-    "chapter-4.html": [
+    "chapter-6.html": [
         "출산은 개인의 의지만으로 설명되지 않는다. 혼인할 수 있는 조건, 안정적으로 살 집, 아이를 맡길 수 있는 돌봄, 일을 계속할 수 있는 제도가 함께 있을 때 가족 형성은 현실적인 선택지가 된다.",
         "이 장은 가족 형성을 둘러싼 생활 조건을 다룬다. 혼인과 출생의 관계를 확인하되, 그 관계를 떠받치는 주거, 돌봄, 일가정양립, 가구 변화까지 함께 읽는다.",
     ],
-    "chapter-5.html": [
+    "chapter-8.html": [
         "저출산과 고령화의 마지막 질문은 부담의 배분이다. 누가 일하고, 누가 돌보고, 누가 세금을 내고, 누가 공공서비스를 필요로 하는가가 인구구조 변화와 함께 달라진다.",
         "이 장은 청년 노동공급의 축소, 고령층 경제활동의 증가, 생애주기 재정 부담을 하나의 흐름으로 묶는다. 인구문제는 결국 세대 간 이전과 사회적 비용의 재구성 문제로 귀결된다.",
     ],
-    "chapter-6-education-low-fertility.html": [
+    "chapter-9.html": [
         "교육은 한국 저출산 논의에서 늘 등장하지만, 자주 ‘교육비가 부담이다’라는 문장 하나로 지나간다. 그러나 교육비는 단순한 지출 항목이 아니다. 부모가 아이를 낳기 전에 이미 예상하는 장기 비용이고, 자녀 수를 줄이는 방식으로 관리하려는 위험이며, 계층 이동의 가능성과 불안을 동시에 담고 있는 사회적 압력이다.",
         "이 장은 교육비를 출산 이후의 사후 부담이 아니라 출산 이전의 기대 비용으로 읽는다. 사교육비 총액과 1인당 월평균 비용, 참여율, 학교급별 차이, 소득계층별 격차, 부모의 대학 교육 기대를 함께 보면 한국의 교육경쟁이 왜 가족 형성의 조건을 좁히는지 더 선명해진다.",
     ],
@@ -1131,6 +1137,20 @@ CHART_META = {
         "source": "행정안전부 2024 지방자치단체 외국인주민 현황, KOSIS DT_1JA1503 인구총조사 외국인, KOSIS DT_1B040A11 법무부 등록외국인",
         "note": "국가데이터처 인구총조사 외국인 자료는 이 표에서 시도 단위로 제공되므로, 세 통계의 직접 비교는 시도 단위에서 제시했다.",
     },
+    "foreign_settlement_indicators": {
+        "title": "외국인 정착 지표: 장기체류·귀화·자녀·결혼이민자",
+        "kind": "line",
+        "csv": "foreign_settlement_indicators.csv",
+        "source": "행정안전부 지방자치단체 외국인주민 현황 통계표, 법무부 출입국자및체류외국인통계",
+        "note": "장기체류 5년 이상은 행정안전부 외국인주민 통계의 한국국적을 가지지 않은 자 체류기간별 자료에서 계산했다. 2020년 장기체류 값은 원표 파일 손상으로 결측 처리했다.",
+    },
+    "foreign_family_birth_trends": {
+        "title": "외국인주민 자녀와 다문화 출생 추세",
+        "kind": "line",
+        "csv": "foreign_family_birth_trends.csv",
+        "source": "행정안전부 지방자치단체 외국인주민 현황, KOSIS DT_1BB0006 지역별 다문화 출생",
+        "note": "외국인주민 자녀는 특정 시점의 국내 출생 외국인주민 자녀 저량이고, 다문화 출생아 수는 해당 연도의 출생 흐름이다.",
+    },
     "vacant_housing_policy": {
         "title": "빈집 수와 전체 주택",
         "kind": "line",
@@ -1345,12 +1365,12 @@ CHART_META = {
 
 
 SECTION_SUPPLEMENTAL_CHARTS = {
-    "section-1-1-age-structure.html": ["national_population_pressure"],
-    "section-1-2-population-measures.html": ["population_measure_gap"],
-    "section-1-3-2010-registration-jump.html": ["resident_registration_centenarian_trend"],
-    "section-1-4-fertility-measures.html": ["fertility_asfr_shift", "cohort_fertility_by_birth_year", "mean_birth_age_order"],
-    "section-2-5-international-low-fertility.html": ["international_tfr_europe", "fertility_family_structure_comparison"],
-    "section-2-1-housing-support-marriage-birth.html": [
+    "section-2-1-age-structure.html": ["national_population_pressure"],
+    "section-2-2-population-measures.html": ["population_measure_gap"],
+    "section-2-3-2010-registration-jump.html": ["resident_registration_centenarian_trend"],
+    "section-2-5-fertility-measures.html": ["fertility_asfr_shift", "cohort_fertility_by_birth_year", "mean_birth_age_order"],
+    "section-3-5-international-low-fertility.html": ["international_tfr_europe", "fertility_family_structure_comparison"],
+    "section-4-3-housing-support-marriage-birth.html": [
         "housing_tenure_young_newlywed",
         "housing_finance_burden_by_age",
         "youth_housing_consumption_pressure",
@@ -1359,39 +1379,40 @@ SECTION_SUPPLEMENTAL_CHARTS = {
         "capital_region_housing_marriage_birth",
         "housing_security_outcome_regression",
     ],
-    "section-2-1-yeonggwang-cohort.html": ["birth_incentive_region_summary", "national_population_pressure"],
-    "section-2-2-fertility-conditions.html": ["fertility_age_pattern", "vital_events_policy", "mean_birth_age_order", "newlywed_income_fertility", "youth_employment_context"],
-    "section-2-3-family-conditions-dashboard.html": ["vital_events_policy", "housing_security_outcomes_national", "maternity_parental_leave_financing_pressure", "childcare_time_flexible_facilities"],
-    "section-3-0-living-population.html": ["mobile_inflow_top_sigungu"],
-    "section-3-1-regional-gap.html": ["sigungu_aging_distribution"],
-    "section-3-2-foreign-multicultural.html": ["foreigner_registered_total"],
-    "section-5-2-foreign-population-growth.html": ["foreign_share_sigungu_distribution", "foreign_share_top6_panel"],
-    "section-5-3-foreign-statistical-gap.html": ["foreign_stat_gap_sido_sources"],
-    "section-4-1-family-formation.html": ["fertility_age_pattern", "mean_birth_age_order", "nonmarital_birth_trend"],
-    "section-4-1-divorce-fear-marriage.html": ["divorce_acceptance_trend", "divorce_acceptance_profile_2024"],
-    "section-4-1-income-fertility.html": [],
-    "section-4-2-men-care-parental-leave.html": [
+    "section-4-4-yeonggwang-cohort.html": ["birth_incentive_region_summary", "national_population_pressure"],
+    "section-4-5-fertility-conditions.html": ["fertility_age_pattern", "vital_events_policy", "mean_birth_age_order", "newlywed_income_fertility", "youth_employment_context"],
+    "section-4-6-family-conditions-dashboard.html": ["vital_events_policy", "housing_security_outcomes_national", "maternity_parental_leave_financing_pressure", "childcare_time_flexible_facilities"],
+    "section-5-1-living-population.html": ["mobile_inflow_top_sigungu"],
+    "section-5-3-regional-gap.html": ["sigungu_aging_distribution"],
+    "section-5-4-foreign-multicultural.html": ["foreigner_registered_total"],
+    "section-7-2-foreign-population-growth.html": ["foreign_share_sigungu_distribution", "foreign_share_top6_panel"],
+    "section-7-3-foreign-statistical-gap.html": ["foreign_stat_gap_sido_sources"],
+    "section-7-4-foreign-settlement.html": ["foreign_family_birth_trends"],
+    "section-6-2-family-formation.html": ["fertility_age_pattern", "mean_birth_age_order", "nonmarital_birth_trend"],
+    "section-6-3-divorce-fear-marriage.html": ["divorce_acceptance_trend", "divorce_acceptance_profile_2024"],
+    "section-6-4-income-fertility.html": [],
+    "section-6-7-men-care-parental-leave.html": [
         "maternity_leave_support",
         "parental_leave_per_user_support",
         "preschool_childcare_time_by_parent",
         "dual_earner_child_housework_time",
     ],
-    "section-4-3-care-work-balance.html": ["childcare_capacity_pressure"],
-    "section-4-4-childcare-shortage.html": ["childcare_users_by_type", "childcare_capacity_pressure"],
-    "section-4-5-households.html": ["household_population_gap_regions"],
-    "section-4-6-housing-demand.html": ["household_population_gap_national"],
-    "section-4-7-vacant-housing.html": ["vacant_housing_rate"],
-    "section-5-1-labor-aging.html": [],
-    "section-5-3-lifecycle-fiscal.html": ["fiscal_aging_pressure"],
-    "section-5-4-aging-budget.html": ["openfiscal_aging_budget_top_programs", "fiscal_aging_pressure"],
-    "section-5-5-elderly-pension.html": ["national_population_pressure"],
-    "section-6-2-private-education-by-school-level.html": ["high_school_private_education_drivers"],
-    "section-6-3-education-cost-inequality.html": ["newlywed_income_fertility"],
+    "section-6-8-care-work-balance.html": ["childcare_capacity_pressure"],
+    "section-6-9-childcare-shortage.html": ["childcare_users_by_type", "childcare_capacity_pressure"],
+    "section-6-5-households.html": ["household_population_gap_regions"],
+    "section-6-6-housing-demand.html": ["household_population_gap_national"],
+    "section-6-10-vacant-housing.html": ["vacant_housing_rate"],
+    "section-8-1-labor-aging.html": [],
+    "section-8-3-lifecycle-fiscal.html": ["fiscal_aging_pressure"],
+    "section-8-5-aging-budget.html": ["openfiscal_aging_budget_top_programs", "fiscal_aging_pressure"],
+    "section-8-6-elderly-pension.html": ["national_population_pressure"],
+    "section-9-2-private-education-by-school-level.html": ["high_school_private_education_drivers"],
+    "section-9-3-education-cost-inequality.html": ["newlywed_income_fertility"],
 }
 
 
 SECTION_FRONT_CONTEXT = {
-    "section-5-1-labor-aging.html": {
+    "section-8-1-labor-aging.html": {
         "heading": "구조적 배경: 고령화율·노년부양비·중위연령이 먼저 움직인다",
         "chart": "national_population_pressure",
         "paragraphs": [
@@ -1404,7 +1425,7 @@ SECTION_FRONT_CONTEXT = {
 
 
 SECTION_INDEPENDENT_ANALYSIS = {
-    "section-5-1-labor-aging.html": {
+    "section-8-1-labor-aging.html": {
         "heading": "지역 회귀분석: 고령층 노동시장의 속도는 지역마다 다르다",
         "chart": "elderly_regional_labor_60plus_slopes",
         "paragraphs": [
@@ -1419,7 +1440,7 @@ SECTION_INDEPENDENT_ANALYSIS = {
 
 
 SECTION_ANALYSIS = {
-    "section-1-1-age-structure.html": {
+    "section-2-1-age-structure.html": {
         "heading": "분석: 피라미드는 한국 현대사의 지층을 보여준다",
         "paragraphs": [
             "1980년 피라미드에서는 10대 후반과 20대 초반이 두껍다. 이들은 대체로 1950년대 후반부터 1960년대 초반에 태어난 전후 베이비붐 세대다. 반대로 20대 후반 일부가 상대적으로 얇게 보이는 것은 한국전쟁기와 전후 혼란기에 출생이 줄었던 흔적이다.",
@@ -1428,7 +1449,7 @@ SECTION_ANALYSIS = {
             "남녀를 나누어 보면 고령층에서 여성 쪽이 더 두껍다. 이는 여성 기대수명이 더 길기 때문이다. 따라서 고령화는 단순히 노인이 많아지는 현상이 아니라, 독거·돌봄·의료·빈곤 위험이 성별로 다르게 나타나는 구조 변화다."
         ],
     },
-    "section-1-2-population-measures.html": {
+    "section-2-2-population-measures.html": {
         "heading": "분석: 인구 기준을 바꾸면 결론도 바뀐다",
         "paragraphs": [
             "성비와 인구성장률은 인구를 읽기 전에 확인해야 할 배경 지표다. 같은 총인구라도 주민등록인구, 연앙인구, 인구총조사는 측정 목적이 다르기 때문에 출산율의 분모, 지역 인구의 기준, 정책 대상 규모가 달라질 수 있다.",
@@ -1436,7 +1457,7 @@ SECTION_ANALYSIS = {
             "따라서 이 절은 이후 모든 장의 기준표 역할을 한다. 지표를 비교한 뒤, 장별 분석에서 어떤 기준을 왜 선택했는지 계속 밝혀야 한다."
         ],
     },
-    "section-2-1-yeonggwang-cohort.html": {
+    "section-4-4-yeonggwang-cohort.html": {
         "heading": "분석: 높은 출산지원은 지역 잔존을 보장하지 않는다",
         "paragraphs": [
             "이 절은 영광군 한 곳의 사례를 5개 군 비교로 넓힌다. 영광군, 강진군, 고흥군, 해남군, 진도군은 출산장려금이나 양육수당을 적극적으로 운영해 온 지역으로 분류할 수 있지만, 같은 현금지원형 정책이라도 0세 인구가 4년 뒤 지역에 남는 정도는 크게 달랐다.",
@@ -1444,7 +1465,7 @@ SECTION_ANALYSIS = {
             "이 결과를 출산장려금의 실패나 성공으로 곧장 판정해서는 안 된다. 0세→4세 잔존율에는 출생지원금, 부모의 일자리, 주거, 어린이집 접근성, 초등학교 진학 전 이주, 주민등록 이전이 함께 섞여 있다. 다만 분명한 것은 있다. 출산정책의 성과를 출생아 수나 합계출산율에서 멈추면, 지역이 실제로 아이와 가족을 붙잡았는지 보지 못한다."
         ],
     },
-    "section-2-2-fertility-conditions.html": {
+    "section-4-5-fertility-conditions.html": {
         "heading": "분석: 출산 지연은 혼인·고용·소득이 만나는 지점에서 만들어진다",
         "paragraphs": [
             "전국 합계출산율은 2000년 1.480에서 2024년 0.750으로 낮아졌지만, 이 숫자는 원인이 아니라 결과에 가깝다. 같은 기간 혼인은 줄고, 첫째아 출산연령은 높아졌으며, 청년층의 노동시장 진입과 주거 형성은 더 늦고 불안정해졌다.",
@@ -1452,7 +1473,7 @@ SECTION_ANALYSIS = {
             "소득 자료도 단순하지 않다. 신혼부부 통계에서 소득은 대체로 근로·사업소득, 즉 고용의 결과다. 소득이 낮으면 양육비와 주거비를 감당하기 어렵고, 소득이 높아도 안정적 일자리와 장시간 노동, 경력 경쟁이 결혼과 출산의 시점을 늦출 수 있다. 소득은 출산을 자동으로 늘리는 스위치가 아니라, 고용 안정과 생애 시간표 속에서 해석해야 하는 조건이다."
         ],
     },
-    "section-3-1-regional-gap.html": {
+    "section-5-3-regional-gap.html": {
         "heading": "분석: 전국 평균은 지역의 속도 차이를 가린다",
         "paragraphs": [
             "2024년 시군구 고령화율 상위 지역을 보면 의성군 47.48%, 군위군 47.32%, 고흥군 45.69%처럼 일부 군 지역은 이미 주민 두 명 중 한 명 가까이가 65세 이상이다. 전국 평균만 보면 이 속도 차이가 사라진다.",
@@ -1460,7 +1481,7 @@ SECTION_ANALYSIS = {
             "따라서 GIS는 장식이 아니라 분석 도구다. 같은 지표를 시군구 지도에 올리면 어느 지역이 먼저 학교, 보육, 의료, 돌봄, 노동력 부족 문제를 겪을지 가늠할 수 있다."
         ],
     },
-    "section-3-2-foreign-multicultural.html": {
+    "section-5-4-foreign-multicultural.html": {
         "heading": "분석: 지역 인구는 내국인 출생만으로 설명되지 않는다",
         "paragraphs": [
             "전국 다문화 출생 비중은 2008년 2.9%에서 2024년 5.6%로 높아졌다. 출생아 수가 줄어드는 상황에서 다문화 출생의 비중이 커지는 것은 가족 형성 구조가 바뀌고 있다는 뜻이다.",
@@ -1468,7 +1489,7 @@ SECTION_ANALYSIS = {
             "추가 분석에서는 법무부 체류외국인과 행안부 외국인주민 자료를 지역별로 붙여, 어떤 지역에서 외국인 유입이 노동시장 보완인지 가족 형성의 통로인지 구분한다."
         ],
     },
-    "section-4-1-family-formation.html": {
+    "section-6-2-family-formation.html": {
         "heading": "분석: 혼인과 출생은 한국에서 강하게 묶여 있다",
         "paragraphs": [
             "한국의 출산은 여전히 혼인과 강하게 연결되어 있다. 따라서 출산율만 낮아졌다고 말하기보다 혼인율, 이혼율, 출생률이 지역과 시점에 따라 어떻게 함께 움직이는지 봐야 한다.",
@@ -1476,7 +1497,7 @@ SECTION_ANALYSIS = {
             "해석의 핵심은 혼인을 늘리면 출생이 자동으로 늘어난다는 단순 결론을 피하는 것이다. 혼인과 출생의 상관은 주거, 소득, 일자리, 성평등한 돌봄 조건에 의해 매개된다."
         ],
     },
-    "section-4-3-care-work-balance.html": {
+    "section-6-8-care-work-balance.html": {
         "heading": "분석: 보육 수요 감소는 돌봄 인프라 위기의 신호다",
         "paragraphs": [
             "어린이집 보육아동수는 2017년 145만 명 수준에서 2024년 94만 명 수준으로 줄었다. 이는 출생아 수 감소가 돌봄 인프라의 유지 가능성으로 이어지는 과정을 보여준다.",
@@ -1484,7 +1505,7 @@ SECTION_ANALYSIS = {
             "후속 분석에서는 육아휴직 이용자 수, 남성 육아휴직 비중, 산업별 육아휴직 이용 차이를 결합해 ‘돌봄을 누가 감당하는가’라는 질문으로 확장한다."
         ],
     },
-    "section-4-4-childcare-shortage.html": {
+    "section-6-9-childcare-shortage.html": {
         "heading": "분석: 어린이집 부족은 총량보다 접근성의 문제다",
         "paragraphs": [
             "어린이집이 적어서 출산을 덜 하는가라는 질문은 겉보기보다 까다롭다. 전국 총량만 보면 2024년 어린이집은 2만7387개소, 보육아동은 94만1303명이고 시설당 아동수는 34.4명이다. 2000년의 시설당 35.6명, 2014년의 34.2명과 큰 차이가 없다. 그래서 단순히 ‘시설당 아이가 너무 많다’고 말하기는 어렵다.",
@@ -1502,7 +1523,7 @@ SECTION_ANALYSIS = {
             "이 절의 다음 단계는 장래가구추계로 시도별 가구 정점연도를 계산하고, 빈집률 지도와 결합하는 것이다."
         ],
     },
-    "section-5-1-labor-aging.html": {
+    "section-8-1-labor-aging.html": {
         "heading": "분석: 청년 기반 축소는 노동시장 부족으로 이어진다",
         "paragraphs": [
             "e-나라지표 청년 고용동향의 생산가능인구 자료는 청년층 기반이 장기적으로 줄어드는 흐름을 보여준다. 청년 인구 감소는 혼인과 출산의 기반을 줄일 뿐 아니라 지역 노동시장 공급도 약하게 만든다.",
@@ -1510,7 +1531,7 @@ SECTION_ANALYSIS = {
             "추가 분석에서는 직종별사업체노동력조사의 규모별·지역별 인력부족률과 고령층 경제활동인구 자료를 결합해, 어떤 지역과 산업에서 인구구조 충격이 먼저 나타나는지 보인다."
         ],
     },
-    "section-5-2-aging-index.html": {
+    "section-8-2-aging-index.html": {
         "heading": "분석: 노령화지수는 사회의 중심축이 어디로 이동했는지를 보여준다",
         "paragraphs": [
             "노령화지수는 0~14세 유소년 인구 100명당 65세 이상 인구가 몇 명인지를 보여주는 지표다. 고령화율이 전체 인구 중 노인의 비중을 묻는다면, 노령화지수는 사회의 아래쪽 세대와 위쪽 세대의 상대적 크기를 직접 비교한다. 그래서 이 지수는 학교와 돌봄, 노동시장과 연금, 지역 공동체의 세대 균형이 어느 방향으로 기울고 있는지를 읽는 데 특히 유용하다.",
@@ -1520,7 +1541,7 @@ SECTION_ANALYSIS = {
             "따라서 노령화지수는 단순히 ‘노인이 많아졌다’는 지표가 아니다. 유소년 인구가 줄어드는 속도와 고령 인구가 늘어나는 속도가 만나면서 사회의 세대 피라미드가 뒤집히는 정도를 보여준다. 이 절을 5.1절 뒤에 두는 이유도 여기에 있다. 고령층 노동, 연금, 장기요양, 고령화 예산은 모두 이 구조 변화가 노동시장과 재정으로 번역된 결과다."
         ],
     },
-    "section-5-3-lifecycle-fiscal.html": {
+    "section-8-3-lifecycle-fiscal.html": {
         "heading": "분석: 인구 문제의 끝은 재정과 생애주기 부담이다",
         "paragraphs": [
             "열린재정 장기 재정 배경 지표에서 국가채무는 2013년 489.8에서 2029년 1788.9로 커지는 흐름을 보인다. 이 수치 자체가 저출산·고령화 비용을 직접 뜻하지는 않지만, 재정 여건을 함께 보아야 한다는 배경을 제공한다.",
@@ -1528,7 +1549,7 @@ SECTION_ANALYSIS = {
             "후속 분석에서는 국민이전계정 자료를 확보해 연령별 소비와 노동소득의 차이를 계산하고, 청년·대학·보육·노인돌봄 관련 열린재정 사업을 별도 묶음으로 추적한다."
         ],
     },
-    "section-5-3-health-spending-aging.html": {
+    "section-8-4-health-spending-aging.html": {
         "heading": "분석: 고령화의 압력은 의료비 곡선에서 가장 구체적으로 보인다",
         "paragraphs": [
             "연금은 고령화 재정을 설명할 때 가장 먼저 떠오르는 제도지만, 일상에서 더 직접적으로 체감되는 압력은 의료비다. 같은 노년이라도 65세, 75세, 85세 이후의 건강상태와 의료 이용은 크게 다르다.",
@@ -1536,7 +1557,7 @@ SECTION_ANALYSIS = {
             "이 절은 의료비를 단순한 지출 억제 대상으로 보지 않는다. 건강수명, 만성질환 관리, 지역 의료 접근성, 장기요양과 의료의 연결을 함께 보아야 고령사회 의료비 증가의 의미를 정확히 해석할 수 있다."
         ],
     },
-    "section-5-4-aging-budget.html": {
+    "section-8-5-aging-budget.html": {
         "heading": "분석: 고령화 예산은 항목보다 금액이 먼저 커졌다",
         "paragraphs": [
             "열린재정 세부사업 예산편성현황에서 세부사업명에 노인, 고령, 기초연금, 기초노령연금, 장기요양, 치매, 경로당, 독거노인 등이 들어간 사업을 추려 보면, 고령화 예산은 2007년 0.4조 원 수준에서 2026년 29.2조 원 수준으로 커진다. 같은 기간 고유 세부사업명 수는 62개에서 36개로 줄어들었다. 겉으로 보이는 정책 항목은 오히려 정리되었지만, 몇 개의 큰 제도성 지출이 예산 전체를 끌어올린 셈이다.",
@@ -1545,7 +1566,7 @@ SECTION_ANALYSIS = {
             "전문가의 관점에서 중요한 것은 이 예산을 단순히 ‘노인에게 쓰는 돈이 늘었다’고 읽지 않는 것이다. 고령층 규모가 커지고 평균수명이 길어지는 사회에서 기초연금, 장기요양, 노인일자리 지출은 복지 확대의 결과이면서 동시에 재정 경직성의 원인이 된다. 매년 의무적으로 늘어나는 지출이 커질수록 정부가 경기 대응, 청년·아동 투자, 지역서비스 혁신에 쓸 수 있는 재량은 좁아진다. 고령화 예산 분석은 결국 한국 재정이 어떤 세대 간 계약을 선택할 것인가를 묻는 작업이다."
         ],
     },
-    "section-5-5-elderly-pension.html": {
+    "section-8-6-elderly-pension.html": {
         "heading": "분석: 연금수령액은 늘었지만 성별 격차는 오래 남아 있다",
         "paragraphs": [
             "KOSIS 고령층 부가조사의 성별 연금수령여부 및 월평균수령액을 보면, 55~79세 연금수령자의 평균 월수령액은 2008년 40.8만원에서 2025년 86.1만원으로 늘었다. 명목 금액 기준으로 45.3만원, 111.0% 증가한 것이다. 같은 기간 연금수령률도 30.0%에서 51.7%로 높아졌다. 더 많은 고령층이 연금을 받게 되었고, 받는 사람의 평균 금액도 커진 셈이다.",
@@ -1554,7 +1575,7 @@ SECTION_ANALYSIS = {
             "따라서 5.5절은 평균수령액과 수령률의 두 선을 먼저 읽는다. 연금제도가 더 넓게 작동하고 금액도 커졌다는 사실은 분명하다. 그러나 평균은 한 사회의 노후소득을 설명하는 출발점일 뿐이다. 실제로 어느 금액대에 사람이 몰려 있는지는 다음 절에서 따로 보아야 한다."
         ],
     },
-    "section-5-6-elderly-pension-distribution.html": {
+    "section-8-7-elderly-pension-distribution.html": {
         "heading": "분석: 평균은 올라갔지만, 연금의 분포는 여전히 두껍고 낮다",
         "paragraphs": [
             "연금수령액의 평균이 높아졌다는 말은 중요하지만, 충분하지 않다. 평균은 낮은 금액을 받는 사람과 높은 금액을 받는 사람을 한 숫자로 섞어 버린다. 그래서 고령층 노후소득을 판단하려면 ‘평균이 얼마인가’와 함께 ‘어느 금액대에 얼마나 많은 사람이 몰려 있는가’를 따로 보아야 한다.",
@@ -1568,21 +1589,21 @@ SECTION_ANALYSIS = {
 
 
 SECTION_NARRATIVE = {
-    "section-1-1-age-structure.html": {
+    "section-2-1-age-structure.html": {
         "kicker": "인구구조를 읽는 첫 장면",
         "paragraphs": [
             "인구피라미드는 단순한 연령별 막대그래프가 아니다. 한 사회가 지나온 전쟁, 성장, 가족계획, 경제위기, 교육 확대, 수명 연장의 흔적이 한 화면에 겹쳐진 기록이다. 출산율이 낮아졌다는 말은 피라미드의 아래쪽이 좁아졌다는 뜻이고, 고령화가 진행된다는 말은 오래전에 태어난 큰 코호트가 위쪽으로 이동한다는 뜻이다.",
             "1980년, 1990년, 2020년, 2025년을 나란히 놓으면 변화는 더 분명해진다. 전후 베이비붐 세대는 시간이 흐르며 피라미드의 중심부에서 고령층으로 이동하고, 1997년 외환위기 이후 불안정해진 청년기의 삶은 이후 출생 코호트의 급격한 축소로 남는다. 이 절의 목적은 인구피라미드의 모양을 묘사하는 데 그치지 않고, 어느 세대가 왜 두껍고 어느 세대가 왜 얇은지 역사적 시간 속에서 읽는 데 있다.",
         ],
     },
-    "section-1-2-population-measures.html": {
+    "section-2-2-population-measures.html": {
         "kicker": "인구라는 숫자는 하나가 아니다",
         "paragraphs": [
             "인구를 논할 때 가장 먼저 부딪히는 문제는 숫자가 하나가 아니라는 사실이다. 주민등록인구는 행정서비스의 대상자를 보여주고, 인구총조사는 실제 거주 실태를 더 가까이 포착하며, 인구동태의 연앙인구는 출생률과 사망률의 분모가 된다. 어느 숫자를 쓰느냐에 따라 같은 지역도 늘어나는 곳이 되거나 줄어드는 곳이 될 수 있다.",
             "따라서 이 절은 이후 분석의 방법론적 기준을 세우는 장이다. 저출산이나 고령화를 말하기 전에, 우리가 어떤 인구를 세고 있는지 밝혀야 한다. 정책의 대상, 재정 배분, 지방자치단체의 정원, 지역소멸 논의는 모두 이 기준 선택의 영향을 받는다.",
         ],
     },
-    "section-2-1-yeonggwang-cohort.html": {
+    "section-4-4-yeonggwang-cohort.html": {
         "kicker": "전국 정책을 점검하는 지역 사례",
         "paragraphs": [
             "한국의 저출산 정책을 평가할 때 특정 지역의 높은 출산율이나 큰 출산장려금은 자주 성공 사례로 제시된다. 그러나 아이가 태어났다는 사실과 그 가족이 지역에 남았다는 사실은 같은 문장이 아니다. 이 절은 출산장려금을 적극적으로 운영하는 다섯 군을 골라, 출생연도 0세 인구가 4년 뒤 같은 지역의 4세 인구로 얼마나 남아 있는지 따라간다.",
@@ -1591,49 +1612,49 @@ SECTION_NARRATIVE = {
             "2013-2020년 출생 코호트를 2017-2024년 4세 인구와 연결해 보면 평균 잔존율은 고흥군 96.08%, 진도군 93.17%, 영광군 81.20%, 강진군 70.11%, 해남군 57.82% 순으로 갈린다. 이 차이는 지급액의 크기만으로 설명되지 않는다. 어떤 지역에서는 다른 지역에서 들어오는 아이가 출생 코호트를 보강했고, 어떤 지역에서는 출생 이후 초등학교 입학 전까지 가족이 빠져나가는 흐름이 더 강했다.",
         ],
     },
-    "section-2-2-fertility-conditions.html": {
+    "section-4-5-fertility-conditions.html": {
         "kicker": "출산은 왜 뒤로 밀리는가",
         "paragraphs": [
             "한 세대 전에는 결혼, 첫 출산, 둘째 출산이 비교적 짧은 시간 안에서 이어졌다. 지금은 그 순서가 끊어지기보다 뒤로 밀린다. 학교를 마치고, 일자리를 얻고, 소득을 안정시키고, 집을 마련하고, 돌봄을 예측할 수 있는 시간이 늦게 온다.",
             "이 절은 출산율을 하나의 원인처럼 다루지 않는다. 연령별 출산율, 혼인 건수, 첫째·둘째 출산연령, 신혼부부 소득구간별 자녀 보유, 청년 고용 기반을 함께 놓고 출산 지연이 어떤 생활 조건의 조합으로 만들어지는지 따라간다.",
         ],
     },
-    "section-3-1-regional-gap.html": {
+    "section-5-3-regional-gap.html": {
         "kicker": "전국 평균 뒤의 다른 속도들",
         "paragraphs": [
             "한국의 인구문제는 전국 평균으로는 잘 보이지 않는다. 어떤 지역은 아직 완만하게 늙어가지만, 어떤 군 지역은 이미 주민 두 명 중 한 명 가까이가 65세 이상인 구조에 들어섰다. 평균은 이 차이를 지운다.",
             "지역 격차를 보려면 고령화율과 함께 청년 이동을 읽어야 한다. 노인이 많아서 고령화가 진행되는 것이 아니라, 청년과 가족 형성 연령층이 빠져나가면서 지역의 연령구조가 더 빠르게 늙는 경우가 많다. 그래서 이 장의 지도는 장식이 아니라, 학교·돌봄·의료·노동시장 압력이 어디서 먼저 나타나는지 보여주는 분석 도구다.",
         ],
     },
-    "section-3-2-foreign-multicultural.html": {
+    "section-5-4-foreign-multicultural.html": {
         "kicker": "남는 사람과 새로 들어오는 사람",
         "paragraphs": [
             "지역 인구를 내국인 출생만으로 설명하는 시대는 이미 지나고 있다. 외국인 노동자, 유학생, 결혼이민자, 외국국적동포, 다문화 가족은 서로 다른 방식으로 지역사회에 들어오고 머문다. 이들은 단지 인구의 빈자리를 메우는 존재가 아니라, 지역 노동시장과 가족 형성의 구조 자체를 바꾼다.",
             "다문화 출생 비중이 높아진다는 것은 출생의 구성도 달라진다는 뜻이다. 출생아 수가 줄어드는 사회에서는 작은 비율 변화도 학교, 보육, 언어 지원, 지역사회 통합의 과제로 이어진다. 이 절은 외국인과 다문화를 주변적 주제가 아니라 지역 인구구조의 핵심 변수로 다룬다.",
         ],
     },
-    "section-4-1-family-formation.html": {
+    "section-6-2-family-formation.html": {
         "kicker": "혼인이 줄면 출생도 흔들린다",
         "paragraphs": [
             "한국에서 출산은 여전히 혼인과 강하게 연결되어 있다. 그러므로 저출산을 말한다는 것은 곧 혼인의 감소, 혼인 연령의 상승, 이혼과 재혼, 혼외출생의 낮은 비중을 함께 읽는 일이다. 출산율만 보면 가족 형성의 제도적 통로가 어떻게 좁아졌는지 놓치기 쉽다.",
             "하지만 혼인을 늘리면 출생이 자동으로 늘어난다는 식의 결론은 성급하다. 혼인은 주거비, 일자리, 성평등한 돌봄, 지역의 생활 인프라가 일정 수준 이상 갖추어졌을 때 선택 가능한 제도가 된다. 그래서 혼인과 출생의 관계는 상관계수보다 넓은 생활조건의 문제로 읽어야 한다.",
         ],
     },
-    "section-4-1-divorce-fear-marriage.html": {
+    "section-6-3-divorce-fear-marriage.html": {
         "kicker": "결혼은 약속이지만, 약속의 실패 가능성도 함께 상상된다",
         "paragraphs": [
             "결혼을 하지 않는 이유를 물으면 대개 돈, 주거, 일자리, 양육 부담이 먼저 나온다. 그러나 결혼은 경제계약만이 아니라 관계의 장기 약속이기도 하다. 그래서 어떤 사람에게 결혼의 부담은 ‘잘 살 수 있을까’가 아니라 ‘잘못되면 어떻게 될까’라는 두려움으로 나타난다.",
             "이 절은 이혼의 두려움이 결혼 회피의 핵심 원인이라고 단정하지 않는다. 대신 두 가지 자료를 나누어 본다. 하나는 30대와 40대의 실제 연령별 이혼율이고, 다른 하나는 사회가 이혼을 얼마나 수용하는지에 대한 인식이다. 실제 위험과 사회적 낙인이 함께 낮아지는지, 아니면 관계 실패에 대한 심리적 비용이 여전히 남아 있는지 따져본다.",
         ],
     },
-    "section-4-1-income-fertility.html": {
+    "section-6-4-income-fertility.html": {
         "kicker": "돈이 많으면 아이를 더 낳는다는 말은 얼마나 맞는가",
         "paragraphs": [
             "저출산 정책은 자주 소득 문제로 번역된다. 아이를 낳지 않는 이유가 돈이라면, 돈을 더 주면 아이를 더 낳을 것이라는 직관이 따라온다. 그러나 가족의 실제 결정은 그렇게 단순하지 않다. 소득은 양육비 부담을 덜어 주지만, 동시에 더 긴 노동시간, 경력 단절의 더 큰 기회비용, 더 높은 교육·주거 기대를 함께 동반할 수 있다.",
             "소득과 출산의 관계는 ‘돈이 있느냐 없느냐’의 단선으로 움직이지 않는다. 신혼부부 소득구간별 평균 출생아 수를 시계열로 놓으면, 소득 효과와 기회비용 효과가 어떻게 뒤섞이는지 조금 더 차분하게 볼 수 있다. 여기서 쓰는 자료는 KOSIS DT_1NW1019이며, 공식 명칭은 소득분위가 아니라 부부의 연간 근로·사업소득 구간이다.",
         ],
     },
-    "section-4-2-men-care-parental-leave.html": {
+    "section-6-7-men-care-parental-leave.html": {
         "kicker": "아빠가 육아를 하지 않는다는 말은 더 이상 그대로 맞지 않다",
         "paragraphs": [
             "한국의 저출산을 설명할 때 오래 반복된 문장이 있다. 아이를 낳아도 돌봄은 결국 여성에게 돌아간다는 말이다. 이 문장은 여전히 현실의 많은 부분을 설명한다. 그러나 최근의 육아휴직 통계를 보면 변화도 분명하다. 남성이 육아를 전혀 담당하지 않는 사회에서, 남성이 육아휴직 제도 안으로 빠르게 들어오는 사회로 이동하고 있다.",
@@ -1650,14 +1671,14 @@ SECTION_NARRATIVE = {
             "따라서 정책적 시사점은 단순히 남성 육아휴직자 수가 늘었다는 데서 끝나지 않는다. 첫째, 남성 육아휴직은 이미 주변적 제도가 아니므로 기업 인사관리와 대체인력 지원, 승진 불이익 방지 장치를 실제로 작동시켜야 한다. 둘째, 급여 수준을 높이는 정책은 이용을 늘리지만 재정 지출도 빠르게 키우므로, 보편적 권리 확대와 지속 가능한 재원 설계를 함께 논의해야 한다. 셋째, 남성의 육아휴직이 짧은 ‘이벤트’가 아니라 일상적 돌봄 시간으로 이어지려면 장시간 노동 축소, 정시퇴근, 어린이집 등·하원 시간과 근무시간의 조정, 남성의 돌봄 사용에 대한 조직문화 개선까지 연결해 보아야 한다.",
         ],
     },
-    "section-4-3-care-work-balance.html": {
+    "section-6-8-care-work-balance.html": {
         "kicker": "돌봄은 출산 이후의 문제가 아니다",
         "paragraphs": [
             "돌봄은 아이를 낳은 뒤에야 등장하는 사후 문제가 아니다. 보육시설의 접근성, 육아휴직의 실제 사용 가능성, 남성과 여성의 돌봄 분담은 아이를 낳을 수 있는 조건을 미리 결정한다. 출산 결정은 미래의 돌봄 시간을 상상하는 과정이기도 하다.",
             "보육아동수가 줄어드는 것은 단순히 수요가 감소했다는 뜻만은 아니다. 어린이집이 사라지고 돌봄 접근성이 낮아지면, 지역은 젊은 가족에게 더 머물기 어려운 곳이 된다. 따라서 돌봄 인프라의 축소는 저출산의 결과이면서 동시에 다음 저출산을 낳는 조건이 될 수 있다.",
         ],
     },
-    "section-4-4-childcare-shortage.html": {
+    "section-6-9-childcare-shortage.html": {
         "kicker": "가까운 어린이집은 출산의 배경조건이다",
         "paragraphs": [
             "아이를 낳을지 고민하는 사람은 출산 직후의 지원금만 계산하지 않는다. 복직할 수 있을지, 아이를 맡길 곳이 있는지, 등원 시간이 출근 시간과 맞는지, 갑자기 시설이 문을 닫지는 않을지까지 함께 생각한다. 이때 어린이집은 단순한 복지시설이 아니라 가족 형성을 가능하게 하는 생활 인프라가 된다.",
@@ -1676,7 +1697,7 @@ SECTION_NARRATIVE = {
             "빈집은 이런 시간차가 공간에 남긴 흔적이다. 빈집이 늘어난다는 것은 단순히 집이 남는다는 뜻이 아니라 학교, 상권, 의료, 교통이 함께 약해지는 생활권의 변화를 뜻한다. 이 절은 인구감소를 주거와 가구의 문제로 번역한다.",
         ],
     },
-    "section-5-1-labor-aging.html": {
+    "section-8-1-labor-aging.html": {
         "kicker": "고령층 노동은 예외가 아니라 구조가 되었다",
         "paragraphs": [
             "한국의 고령화는 노동시장 밖에서 벌어지는 인구 현상이 아니다. 55~79세 인구는 2010년 943만 명에서 2025년 1,645만 명으로 커졌고, 같은 기간 이 연령대의 경제활동인구는 487만 명에서 1,001만 명으로 늘었다. 취업자도 477만 명에서 978만 명으로 두 배가 넘게 증가했다. 숫자만 놓고 보면 ‘나이 든 사람이 더 많이 일한다’는 단순한 문장처럼 보이지만, 실제로는 은퇴의 경계가 뒤로 밀리고 노동시장 자체가 고령층을 전제로 재편되고 있다는 뜻이다.",
@@ -1686,7 +1707,7 @@ SECTION_NARRATIVE = {
             "따라서 고령층 취업 증가를 활력의 증거로만 읽어서도, 노인빈곤의 증거로만 읽어서도 부족하다. 정책적으로 중요한 질문은 ‘몇 명을 더 일하게 할 것인가’가 아니라, 어떤 사람에게는 괜찮은 일자리를 오래 열어 주고, 어떤 사람에게는 일을 멈출 수 있는 소득과 돌봄을 보장할 것인가이다. 고령사회 노동정책은 고용률을 올리는 기술이 아니라 은퇴, 재취업, 건강, 소득보장을 함께 설계하는 제도 문제가 된다.",
         ],
     },
-    "section-5-3-lifecycle-fiscal.html": {
+    "section-8-3-lifecycle-fiscal.html": {
         "kicker": "마지막 질문은 누가 부담하는가이다",
         "paragraphs": [
             "인구구조 변화의 끝에는 재정과 생애주기 부담의 문제가 놓인다. 아이가 적어지고 노인이 많아진다는 말은 단지 인구 구성의 변화가 아니라, 누가 생산하고 누가 소비하며 누가 돌봄과 이전을 부담하는지의 변화다.",
@@ -1697,55 +1718,55 @@ SECTION_NARRATIVE = {
 
 
 SECTION_READING_NOTE = {
-    "section-1-1-age-structure.html": [
+    "section-2-1-age-structure.html": [
         "이 그림은 네 장의 가족사진처럼 읽으면 좋다. 1980년의 두꺼운 아래쪽은 아이와 청년이 많던 사회를 보여주고, 2025년의 좁아진 아래쪽은 앞으로 학교와 노동시장에 들어올 세대가 작아졌다는 뜻이다.",
         "특히 고령층에서 여성 막대가 더 길어지는 부분은 단순한 성비 차이가 아니다. 오래 사는 사람이 많아질수록 돌봄, 의료, 독거, 빈곤의 문제가 여성 고령층에게 더 무겁게 놓일 수 있음을 보여준다.",
     ],
-    "section-1-2-population-measures.html": [
+    "section-2-2-population-measures.html": [
         "인구 통계가 서로 다르다는 말은 어느 한쪽이 틀렸다는 뜻이 아니다. 행정은 등록된 사람을 필요로 하고, 조사는 실제 거주를 확인하며, 출생률과 사망률은 연앙인구라는 계산용 분모를 쓴다.",
         "정책을 설계할 때 이 차이를 무시하면 지원 대상은 과대 또는 과소 계산된다. 그래서 이 절의 핵심은 숫자를 의심하자는 것이 아니라, 숫자가 쓰이는 자리를 정확히 보자는 데 있다.",
     ],
-    "section-2-1-yeonggwang-cohort.html": [
+    "section-4-4-yeonggwang-cohort.html": [
         "각 군의 왼쪽 그림은 KOSIS 공식 항목명으로 조출생률이다. X축은 ‘출생년도’이며, 값은 해당 연도 전체 인구 천 명당 출생아 수다. 합계출산율처럼 여성 1명이 평생 낳을 것으로 예상되는 평균 자녀 수를 뜻하지 않는다.",
         "오른쪽 그림은 0세→4세 코호트 잔존율이다. X축은 역시 ‘출생년도’이지만, 괄호 안에 4세로 관측되는 연도, 즉 출생년도+4년을 함께 표시했다.",
         "오른쪽 선이 100%에 가까울수록 출생연도 0세 인구가 네 살이 될 때까지 지역에 비교적 많이 남았다는 뜻이다. 100%를 넘는 해는 해당 코호트가 줄지 않은 것이 아니라, 네 살이 되기 전 다른 지역에서 들어온 아이가 더해졌다는 뜻으로 읽어야 한다.",
         "반대로 잔존율이 낮은 지역은 출산장려금이 전혀 효과가 없었다고 단정하기보다, 출생 이후 가족이 머무를 조건이 충분했는지 물어야 한다. 정책의 시험대는 출생신고서가 아니라 아이가 어린이집과 학교로 넘어가는 생활의 시간이다.",
     ],
-    "section-2-2-fertility-conditions.html": [
+    "section-4-5-fertility-conditions.html": [
         "연령별 출산율을 보면 한국의 저출산은 단순히 아이를 덜 낳는 현상이 아니라, 아이를 낳는 시점이 뒤로 밀리고 둘째 이후로 이어질 시간이 짧아지는 현상임을 알 수 있다.",
         "첫째아 출산연령이 높아진다는 것은 개인의 선택 변화만을 뜻하지 않는다. 안정된 일자리, 살 집, 돌봄을 기대할 수 있는 시간이 늦게 찾아온다는 사회적 신호이기도 하다.",
     ],
-    "section-3-1-regional-gap.html": [
+    "section-5-3-regional-gap.html": [
         "청년 이동 자료는 인구감소가 어디서 시작되는지 보여준다. 출생아 수가 줄기 전에 먼저 지역을 떠나는 것은 대개 교육과 일자리, 주거 기회를 찾는 20대와 30대다.",
         "서울과 경기도의 순이동을 함께 보면 수도권도 하나의 공간이 아님을 알 수 있다. 서울은 진입의 장소이면서 동시에 가족 형성기에 밀려나는 장소가 되고, 경기도는 그 이동을 받아내는 주거지로 기능한다.",
     ],
-    "section-3-2-foreign-multicultural.html": [
+    "section-5-4-foreign-multicultural.html": [
         "외국인과 다문화 출생은 저출산 논의의 주변부가 아니다. 아이가 줄어드는 사회에서 누가 지역에 들어와 일하고, 가족을 만들고, 학교와 마을의 구성원이 되는지는 인구정책의 중심 질문이 된다.",
         "다문화 출생 비중이 커진다는 것은 단지 출생 통계의 항목이 변한다는 뜻이 아니다. 보육, 교육, 언어, 지역사회 통합 정책이 출산정책과 따로 떨어져 있을 수 없다는 뜻이다.",
     ],
-    "section-4-1-family-formation.html": [
+    "section-6-2-family-formation.html": [
         "출생, 혼인, 이혼, 사망을 한 그림에 놓으면 가족 형성의 배경이 보인다. 출생이 줄고 혼인이 줄어드는 동안 사망은 늘어나며, 자연증가가 약해지는 사회로 이동한다.",
         "이 흐름은 결혼을 장려하면 출생이 늘어난다는 단순한 결론으로 이어지지 않는다. 혼인이 가능한 생활 조건이 좁아졌기 때문에 출생도 함께 줄어든다는 쪽에 더 가깝다.",
     ],
-    "section-4-1-divorce-fear-marriage.html": [
+    "section-6-3-divorce-fear-marriage.html": [
         "연령별 이혼율은 해당 연령 인구 천명당 이혼건수다. 이혼한 사람의 평균연령이 높아지면 30대 이혼율은 낮아지고 40대 이후 이혼율이 상대적으로 두꺼워질 수 있다.",
         "사회조사 이혼 인식은 ‘이혼을 권장하는가’가 아니라 ‘이혼을 사회적으로 받아들일 수 있는가’를 묻는 지표로 읽어야 한다. 수용도가 높아졌다고 해서 결혼의 위험 인식이 사라졌다는 뜻은 아니다.",
     ],
-    "section-4-1-income-fertility.html": [
+    "section-6-4-income-fertility.html": [
         "이 그림의 소득분류는 KOSIS 원표의 ‘소득구간별’ 항목이며, 부부의 연간 근로·사업소득을 기준으로 한다. 자산, 부모 지원, 주거비 부담, 비근로소득은 직접 반영하지 못한다.",
         "신혼부부 통계는 혼인신고 후 5년이 지나지 않은 부부를 보기 때문에 생애 전체 출산율이 아니다. 특히 고소득 맞벌이 부부는 결혼과 첫 출산을 늦출 가능성이 있어 평균 출생아 수가 낮게 보일 수 있다.",
     ],
-    "section-4-2-men-care-parental-leave.html": [
+    "section-6-7-men-care-parental-leave.html": [
         "육아휴직급여 수급자 수의 남성 비중은 2017년 13.4%에서 2025년 36.5%로 높아졌다. 여전히 여성이 더 많이 쓰지만, 남성 이용은 더 이상 예외적 현상으로 보기 어렵다.",
         "성별 환산액은 육아휴직급여 지원금액을 초회수급자 수로 나눈 값이다. 개인별 실제 평균 수령액이 아니라 제도 지출 강도를 보여주는 지표로 읽어야 한다.",
         "생활시간조사의 시간은 제도 이용자가 아니라 실제 하루 행동을 측정한다. 육아휴직 통계가 제도 접근성을 보여준다면, 생활시간조사는 가정 안에서 돌봄이 어떻게 배분되는지 보여준다.",
         "출산전후휴가급여는 여성의 출산 전후 노동권을 보호하는 제도이고, 육아휴직급여는 아이가 태어난 뒤 부모의 돌봄 시간을 보전하는 제도다. 두 제도를 함께 보아야 출산과 돌봄의 비용이 어디에서 커지는지 보인다.",
     ],
-    "section-4-3-care-work-balance.html": [
+    "section-6-8-care-work-balance.html": [
         "보육아동수가 줄어드는 것은 아이가 줄었다는 결과이지만, 어린이집 수가 함께 줄면 다음 세대의 부모에게는 더 큰 불안으로 돌아온다.",
         "돌봄 인프라는 한 번 사라지면 다시 세우기 어렵다. 그래서 보육 수요 감소를 단순히 예산 절감의 기회로 볼 것이 아니라, 지역이 가족을 붙잡을 능력이 약해지는 신호로 읽어야 한다.",
     ],
-    "section-4-4-childcare-shortage.html": [
+    "section-6-9-childcare-shortage.html": [
         "첫 번째 그림은 어린이집 유형별 개소 수다. 민간과 가정 어린이집이 줄어드는 동안 국공립과 직장 어린이집이 늘어나는지 보는 것이 핵심이다.",
         "두 번째 그림은 유형별 이용 아동 수다. 보육아동수 감소가 모든 유형에서 같은 속도로 나타나는지, 아니면 민간·가정 시설에 더 크게 집중되는지 비교한다.",
         "세 번째 그림은 전체 시설 수, 전체 보육아동수, 시설당 아동수를 함께 보여준다. 시설당 아동수가 크게 나빠지지 않아도, 생활권 단위에서는 가까운 어린이집이 사라질 수 있다는 점을 함께 읽어야 한다.",
@@ -1754,35 +1775,35 @@ SECTION_READING_NOTE = {
         "인구가 줄어도 가구가 바로 줄지 않는 이유는 삶의 단위가 바뀌기 때문이다. 혼자 사는 사람과 고령가구가 늘면 같은 인구라도 필요한 집의 수와 형태는 달라진다.",
         "빈집은 이 변화가 지역 공간에 남긴 흔적이다. 사람이 떠난 집이 늘어나는 곳에서는 학교, 상권, 병원, 대중교통도 함께 약해질 가능성이 크다.",
     ],
-    "section-5-1-labor-aging.html": [
+    "section-8-1-labor-aging.html": [
         "각 패널은 같은 DT_1DE8031S 표에서 나온 매년 5월 값이다. 고령층인구, 경제활동인구, 취업자, 실업자, 비경제활동인구는 천명 단위이고, 고용률과 실업률은 퍼센트 단위다.",
         "55~79세 전체 선은 고령층 노동시장의 총량을 보여준다. 55~64세 선은 정년 전후의 ‘연장된 중년 노동시장’을, 65~79세 선은 제도상 은퇴 이후에도 계속되는 ‘노후 노동시장’을 보여준다.",
         "취업자와 고용률만 보면 고령층 노동 확대가 선명하지만, 비경제활동인구도 함께 늘어난다. 이 절의 핵심은 고령층을 하나의 집단으로 보지 않고, 일할 수 있고 일하고 싶은 사람, 일해야만 하는 사람, 일을 멈춰야 하는 사람을 구분해 읽는 것이다.",
         "지역별 회귀분석은 전국 고령층 부가조사와 연령 범주가 완전히 같지 않다. KOSIS 시도별 경제활동인구조사에서 공통으로 제공되는 60세 이상을 사용했으며, 회귀계수는 인과효과가 아니라 2010-2025년 사이 지역별 변화 속도를 요약한 값이다.",
     ],
-    "section-5-2-aging-index.html": [
+    "section-8-2-aging-index.html": [
         "노령화지수의 기준선은 100이다. 100보다 작으면 유소년 인구가 고령 인구보다 많고, 100보다 크면 고령 인구가 유소년 인구보다 많다는 뜻이다.",
         "노령화지수는 고령화율보다 더 민감하게 움직인다. 분자는 고령 인구 증가, 분모는 유소년 인구 감소이기 때문에 저출산과 고령화가 동시에 진행될 때 지수는 빠르게 상승한다.",
         "이 지수의 상승은 학교와 보육시설의 축소, 고령층 돌봄과 의료 수요 증가, 노동시장 참여 연령의 상향, 연금과 재정 부담 증가를 한 흐름으로 이어 주는 배경 지표다.",
     ],
-    "section-5-3-lifecycle-fiscal.html": [
+    "section-8-3-lifecycle-fiscal.html": [
         "재정 지표는 인구문제의 끝에 놓인 질문을 보여준다. 누가 일하고, 누가 돌봄을 받고, 누가 비용을 내는가가 세대별로 달라지기 때문이다.",
         "고령화와 국가채무를 같은 축에서 보면 단순히 돈이 부족하다는 이야기가 아니다. 한 사회가 줄어드는 아이, 늙어가는 인구, 길어지는 노후를 어떤 순서와 기준으로 책임질 것인가의 문제다.",
     ],
-    "section-5-3-health-spending-aging.html": [
+    "section-8-4-health-spending-aging.html": [
         "이 그림의 X축은 연령이고, 85세 이상은 하나의 열린 구간으로 묶어 85에 표시했다. Y축은 국민이전계정의 1인 공공보건소비를 백만원 단위로 바꾼 값이다.",
         "선이 위로 이동했다는 것은 같은 나이에서도 공공보건 지출이 늘었다는 뜻이다. 고령층 인구가 늘어나는 효과까지 더하면 실제 총재정 압력은 이 그림보다 더 커진다.",
     ],
-    "section-5-4-aging-budget.html": [
+    "section-8-5-aging-budget.html": [
         "막대는 예산 금액이고 선은 세부사업 수다. 두 값이 같은 방향으로 움직이지 않는다는 점이 중요하다. 사업 수가 줄어도 예산은 늘 수 있고, 그때 재정 압력은 ‘많은 사업’이 아니라 ‘큰 제도’에서 나온다.",
         "기초연금 계열은 2008년 기초노령연금으로 시작해 2014년 기초연금 도입 이후 급격히 커진다. 이 변화는 단순한 복지사업 신설이 아니라 고령 인구 전체를 대상으로 하는 현금급여가 재정의 중심축이 되는 과정이다.",
         "이 분석은 사업명 키워드 방식이므로 고령층에게 간접적으로 영향을 주는 의료·주거·교통 예산을 모두 포괄하지는 않는다. 대신 ‘이름에서부터 노인·고령화 정책으로 식별되는 예산’이 얼마나 커졌는지 보수적으로 확인하는 지표로 읽어야 한다.",
     ],
-    "section-5-5-elderly-pension.html": [
+    "section-8-6-elderly-pension.html": [
         "왼쪽 축은 월평균 연금수령액이고 오른쪽 축은 연금수령률이다. 평균수령액은 연금을 받는 사람만을 대상으로 한 값이며, 연금수령률은 55~79세 전체 중 연금수령자의 비율이다.",
         "남녀 선의 간격을 주의해서 봐야 한다. 여성의 수령액 증가율은 높지만 출발점이 낮았고, 2025년에도 평균 수령액은 남성보다 훨씬 낮다. 노년기의 소득 격차는 노년기에 갑자기 생기는 것이 아니라 청장년기의 노동시장 이력이 누적된 결과다.",
     ],
-    "section-5-6-elderly-pension-distribution.html": [
+    "section-8-7-elderly-pension-distribution.html": [
         "이 그림은 평균수령액이 아니라 연금수령자 내부의 분포를 보여준다. 각 막대는 해당 연도 연금수령자 100명 중 몇 명이 어느 월수령액 구간에 있는지를 뜻한다.",
         "2008년과 2025년을 비교하면 낮은 금액 구간이 급격히 줄고 25만원 이상 구간이 두꺼워진다. 그러나 2025년에도 중심은 25~100만원 구간에 있다. 연금의 양적 확대가 곧 충분한 노후소득으로 이어지는 것은 아니다.",
         "100만원 이상 구간이 늘어난 것도 중요하다. 연금제도의 성숙은 고액 수령층을 키우지만, 동시에 가입 이력과 노동시장 경력의 차이를 노년기 소득 격차로 남긴다. 이 그림은 노후소득 정책이 평균이 아니라 분포를 보아야 하는 이유를 보여준다.",
@@ -1791,7 +1812,7 @@ SECTION_READING_NOTE = {
 
 
 SECTION_DATA_EXPANSION = {
-    "section-4-1-income-fertility.html": [
+    "section-6-4-income-fertility.html": [
         {
             "question": "소득이 높으면 출산율이 높아질까?",
             "data": "KOSIS DT_1NW1019 신혼부부의 소득(근로·사업소득) 구간별 출산자녀 현황",
@@ -1800,7 +1821,7 @@ SECTION_DATA_EXPANSION = {
             "interpretation": "소득이 높을수록 평균 출생아 수가 자동으로 높아지지 않는다. 신혼부부의 출산은 소득 여력뿐 아니라 혼인 시점, 맞벌이 경력비용, 주거비, 돌봄 가능성, 교육비 기대가 함께 만드는 결정이다.",
         }
     ],
-    "section-6-1-education-cost-fertility.html": [
+    "section-9-1-education-cost-fertility.html": [
         {
             "question": "사교육비는 실제로 줄고 있는가, 아니면 학생 수 감소 속에서도 1인당 부담이 커지고 있는가?",
             "data": "KOSIS DT_1PE003 사교육비 총액, DT_1PE201 전체학생 1인당 월평균 사교육비, DT_1PE301 사교육 참여율",
@@ -1809,7 +1830,7 @@ SECTION_DATA_EXPANSION = {
             "interpretation": "출산 결정에서 중요한 것은 현재 지출액만이 아니라 아이 한 명을 낳으면 장기간 교육경쟁 비용을 떠안는다는 예상이다.",
         }
     ],
-    "section-6-2-private-education-by-school-level.html": [
+    "section-9-2-private-education-by-school-level.html": [
         {
             "question": "사교육 경쟁은 대학입시 직전에 시작되는가, 아니면 초등 단계부터 이미 일상화되어 있는가?",
             "data": "KOSIS DT_1PE201 학교급별 1인당 월평균 사교육비, DT_1PE301 학교급별 사교육 참여율",
@@ -1825,7 +1846,7 @@ SECTION_DATA_EXPANSION = {
             "interpretation": "고등학생 사교육 증가는 입시 직전의 한 과목 문제가 아니라 수능·내신·학생부·진학상담 불안이 동시에 커진 결과다. 다만 2025년에는 전체 참여율이 내려가므로 2024년까지의 상승과 최신 하락을 구분해 읽어야 한다.",
         }
     ],
-    "section-6-3-education-cost-inequality.html": [
+    "section-9-3-education-cost-inequality.html": [
         {
             "question": "교육비 부담은 모든 가구에 같은가, 아니면 계층별로 전혀 다른 교육경쟁을 만들고 있는가?",
             "data": "KOSIS DT_1PE209 가구소득별 1인당 월평균 사교육비, DT_1PE309 가구소득별 사교육 참여율",
@@ -1841,7 +1862,7 @@ SECTION_DATA_EXPANSION = {
             "interpretation": "결혼 초기에는 소득이 가장 높은 구간에서 평균 출생아 수가 낮고 무자녀 비중이 높다. 다만 이는 평생 출산율이 낮다는 뜻이 아니라 고소득 맞벌이·주거·경력비용 때문에 출산 시점이 늦어지는 효과를 함께 반영한다.",
         }
     ],
-    "section-6-4-school-age-decline-education.html": [
+    "section-9-4-school-age-decline-education.html": [
         {
             "question": "학생 수가 줄면 교육비 부담도 자연스럽게 줄어드는가?",
             "data": "KOSIS 장래인구추계 0-14세 인구 추산치, 초중고사교육비조사 사교육비 총액·1인당 비용·참여율",
@@ -1850,7 +1871,7 @@ SECTION_DATA_EXPANSION = {
             "interpretation": "아이 수 감소가 경쟁 완화로 자동 전환되지 않는다면, 저출산은 교육비 문제를 줄이는 것이 아니라 더 적은 아이에게 더 많은 투자가 몰리는 구조를 만들 수 있다.",
         }
     ],
-    "section-6-5-education-expectation-burden.html": [
+    "section-9-5-education-expectation-burden.html": [
         {
             "question": "부모는 왜 자녀 교육을 대학까지 책임져야 한다고 느끼는가?",
             "data": "KOSIS DT_1SSED100R 자녀 교육비 부담 인식, DT_1SSED110R 가장 부담되는 자녀 교육비 항목, DT_1SSED080R 부모가 기대하는 자녀 교육수준, 사회조사 계층이동 인식, CEO스코어·한경비즈니스 기업 리더십 공개 분석",
@@ -1859,7 +1880,7 @@ SECTION_DATA_EXPANSION = {
             "interpretation": "부모의 대학 책임감은 실제 계층 불안에 뿌리를 두지만, 성공 가능성을 전부 부모 자산으로 환원하면 과장된다. 핵심은 대학 이후 첫 출발의 위험을 가족이 사적으로 떠안는 구조다.",
         }
     ],
-    "section-1-1-age-structure.html": [
+    "section-2-1-age-structure.html": [
         {
             "question": "피라미드의 움푹 들어간 연령대는 어느 세대인가?",
             "data": "KOSIS DT_1BPA001 성·연령별 1세별 추계인구, 1980·1990·2020·2025년",
@@ -1875,7 +1896,7 @@ SECTION_DATA_EXPANSION = {
             "interpretation": "저출산은 출생아 수 문제가 아니라 교육, 노동, 돌봄 수요의 순차적 축소로 이동한다.",
         },
     ],
-    "section-1-2-population-measures.html": [
+    "section-2-2-population-measures.html": [
         {
             "question": "주민등록인구, 장래추계, 인구총조사는 무엇을 다르게 보는가?",
             "data": "KOSIS DT_1B040A3 주민등록인구현황, DT_1IN1502 인구총조사 총인구, DT_1BPB002 장래인구추계",
@@ -1891,7 +1912,7 @@ SECTION_DATA_EXPANSION = {
             "interpretation": "전국 감소보다 중요한 것은 감소와 집중이 동시에 진행되는 공간 구조다.",
         },
     ],
-    "section-1-3-2010-registration-jump.html": [
+    "section-2-3-2010-registration-jump.html": [
         {
             "question": "2010년 주민등록인구 증가는 실제 인구 증가였는가, 통계 기준의 변화였는가?",
             "data": "KOSIS DT_1B040A3 주민등록인구현황, 행정안전부 거주불명등록 제도 보도자료",
@@ -1907,7 +1928,7 @@ SECTION_DATA_EXPANSION = {
             "interpretation": "100세 이상 인구는 장수 증가의 신호이면서 동시에 거주불명자 정리와 말소 기준 변화에 취약한 행정통계의 민감한 구간이다.",
         },
     ],
-    "section-2-1-population-growth-regions.html": [
+    "section-3-1-population-growth-regions.html": [
         {
             "question": "지난 20년 동안 인구가 증가한 시군구는 어디인가?",
             "data": "KOSIS DT_1B040A3 행정구역(시군구)별 성별 주민등록인구수, 2004-2024년",
@@ -1921,7 +1942,7 @@ SECTION_DATA_EXPANSION = {
             "interpretation": "전국 인구 감소는 모든 지역의 동시 감소가 아니라 성장축과 축소축의 동시 진행을 뜻한다.",
         }
     ],
-    "section-2-2-population-concentration.html": [
+    "section-3-4-population-concentration.html": [
         {
             "question": "거점별 인구 집중도는 실제로 심화되고 있는가?",
             "data": "KOSIS DT_1B040A3 행정구역(시군구)별 성별 주민등록인구수, 2004-2024년",
@@ -1935,7 +1956,7 @@ SECTION_DATA_EXPANSION = {
             "interpretation": "전국 상위 시군구 비중은 급격히 뛰지는 않지만, 수도권과 성장거점 20개 지역의 비중은 뚜렷하게 커져 인구 집중은 특정 성장축 중심으로 진행된다.",
         }
     ],
-    "section-2-5-international-low-fertility.html": [
+    "section-3-5-international-low-fertility.html": [
         {
             "question": "저출산은 한국만의 문제인가?",
             "data": "World Bank 합계출산율, 대만 공식 성별지표 플랫폼, OECD Family Database, Eurostat 모친 출생국별 출생 자료",
@@ -1950,7 +1971,7 @@ SECTION_DATA_EXPANSION = {
             "interpretation": "동아시아 저출산은 결혼 중심 출산규범과 높은 양육·교육·주거비, 성별 돌봄 불평등이 결합된 현상이며, 유럽의 이민자 출산과 비혼 출산은 출산율 하락을 완충하지만 그 자체로 대체수준을 회복시키지는 못한다. 중국 사례는 산아제한은 행정적으로 관철될 수 있어도 출산장려는 청년의 생애전망과 가족 형성의 신뢰를 회복하지 못하면 작동하기 어렵다는 점을 보여준다.",
         }
     ],
-    "section-2-0-international-policy-success.html": [
+    "section-4-2-international-policy-success.html": [
         {
             "question": "저출산 정책이 성공한 나라는 있는가?",
             "data": "World Bank 합계출산율, 국가데이터처 2024 출생·사망통계, SingStat Births and Fertility, Hungary KSH STADAT, Eurostat demo_find, 일본 후생노동성 인구동태통계, 각국 공식 가족정책 자료",
@@ -1959,7 +1980,7 @@ SECTION_DATA_EXPANSION = {
             "interpretation": "헝가리는 일정한 반등을 보였지만 지속성과 포괄성에 한계가 있고, 싱가포르와 일본은 강한 제도에도 초저출산을 되돌리지 못했다. 한국의 과제는 제도 이름을 수입하는 것이 아니라 청년의 생활시간표를 실제로 바꾸는 조건을 만드는 것이다.",
         }
     ],
-    "section-2-1-housing-support-marriage-birth.html": [
+    "section-4-3-housing-support-marriage-birth.html": [
         {
             "question": "주거지원 정책은 어떤 방식으로 결혼과 출산을 늘리려 하는가?",
             "data": "국토교통부 2025년 업무계획, 저출산고령사회위원회 주거정책 보도자료, 국회예산정책처 2026년도 예산안 총괄 분석",
@@ -2010,7 +2031,7 @@ SECTION_DATA_EXPANSION = {
             "interpretation": "수도권에서는 주택보유율과 조출생률의 양의 관계가 상대적으로 더 분명하지만, 조혼인율은 단순히 주택보유율만으로 설명되지 않는다. 서울의 낮은 주택보유율과 높은 일자리 접근성, 경기의 주거 수용지 역할을 함께 읽어야 한다.",
         },
     ],
-    "section-2-1-yeonggwang-cohort.html": [
+    "section-4-4-yeonggwang-cohort.html": [
         {
             "question": "조출생률이 높아진 해의 아이들은 네 살까지 지역에 남는가?",
             "data": "KOSIS 시군구 조출생률과 지역 1세별 주민등록인구, 영광군·강진군·고흥군·해남군·진도군의 출생연도별 0세·4세 코호트",
@@ -2026,7 +2047,7 @@ SECTION_DATA_EXPANSION = {
             "interpretation": "같은 전남 군 지역이고 현금성 출산지원이 있어도 잔존율은 크게 갈린다. 정책 평가는 지급액보다 가족이 계속 살 수 있는 조건을 함께 보아야 한다.",
         },
     ],
-    "section-2-2-fertility-conditions.html": [
+    "section-4-5-fertility-conditions.html": [
         {
             "question": "출산 지연은 어느 연령대에서 먼저 나타나는가?",
             "data": "KOSIS 연령별 출산율과 출산순위별 평균 출산연령",
@@ -2042,7 +2063,7 @@ SECTION_DATA_EXPANSION = {
             "interpretation": "한국에서는 혼인이 출산의 주요 통로이고, 소득은 고용 안정의 결과다. 따라서 출산 지연은 혼인 지연, 일자리 안정, 소득 형성, 주거·돌봄 기대가 동시에 늦어지는 과정으로 이해해야 한다.",
         },
     ],
-    "section-2-3-family-conditions-dashboard.html": [
+    "section-4-6-family-conditions-dashboard.html": [
         {
             "question": "저출산 정책이 결혼과 육아의 생활조건을 실제로 바꾸었는가?",
             "data": "KOSIS 인구동태·주택소유통계·신혼부부통계, e-나라지표 청년고용·출산전후휴가 및 육아휴직급여 현황, KOSIS 어린이집 특수보육 현황",
@@ -2063,7 +2084,7 @@ SECTION_DATA_EXPANSION = {
             "interpretation": "제도 이용과 지출은 늘었지만 혼인·출생·주거·청년 고용의 핵심 배경조건은 같은 속도로 좋아지지 않았다. 소득은 명목 기준으로 늘었고 삶의 만족도도 완만히 회복되지만, 수도권 청년이 다른 지역보다 더 낮다고 단정할 공개 교차표는 부족하다. 따라서 정책 성과 평가는 예산 집행이나 제도 수가 아니라 생활조건과 생애전망의 변화를 함께 보아야 한다.",
         }
     ],
-    "section-3-0-living-population.html": [
+    "section-5-1-living-population.html": [
         {
             "question": "주민등록인구가 적은 지역은 실제 생활 수요도 작은가?",
             "data": "행정안전부·국가데이터처 2025년 3분기 인구감소지역 생활인구 산정 결과",
@@ -2102,7 +2123,7 @@ SECTION_DATA_EXPANSION = {
             "interpretation": "강남·송파·서초·화성처럼 일자리와 생활서비스가 결합된 지역은 등록인구보다 훨씬 큰 이동 수요를 가진다. 지방 인구정책은 '몇 명이 사는가'와 함께 '누가 언제 들어와 무엇을 쓰는가'를 함께 보아야 한다.",
         },
     ],
-    "section-3-0-sido-net-migration.html": [
+    "section-5-2-sido-net-migration.html": [
         {
             "question": "어느 광역시도의 인구 순이동이 가장 큰가?",
             "data": "KOSIS DT_1B26001_A03 시군구/연령(5세)별 이동자수, 2000-2024년 광역시도 순이동",
@@ -2118,7 +2139,7 @@ SECTION_DATA_EXPANSION = {
             "interpretation": "서울은 20대 유입의 도시이지만 30대와 가족 형성기 인구를 계속 붙잡지 못하고, 경기도는 그 이동을 받아내는 정착지로 기능한다. 저출산 정책은 서울의 주거비와 경기도의 통근·돌봄 인프라를 함께 보아야 한다.",
         }
     ],
-    "section-3-1-regional-gap.html": [
+    "section-5-3-regional-gap.html": [
         {
             "question": "어느 시군구가 먼저 초고령 구조에 들어갔는가?",
             "data": "KOSIS DT_1B04006 시군구별 1세별 주민등록인구, 2024년 고령화율",
@@ -2134,7 +2155,7 @@ SECTION_DATA_EXPANSION = {
             "interpretation": "지역 인구감소는 출생 감소보다 청년 이동에서 먼저 관찰될 수 있다.",
         },
     ],
-    "section-3-2-foreign-multicultural.html": [
+    "section-5-4-foreign-multicultural.html": [
         {
             "question": "외국인 유입은 노동, 유학, 결혼 중 무엇으로 구성되는가?",
             "data": "법무부/KOSIS 체류외국인 체류자격별 자료, 등록외국인 시군구·체류자격 자료",
@@ -2157,7 +2178,7 @@ SECTION_DATA_EXPANSION = {
             "interpretation": "출생아 수가 줄수록 다문화 출생은 지역 교육과 돌봄 체계에서 더 중요한 비중을 갖는다.",
         },
     ],
-    "section-5-1-who-are-foreigners.html": [
+    "section-7-1-who-are-foreigners.html": [
         {
             "question": "통계에서 말하는 외국인은 같은 사람을 가리키는가?",
             "data": "행정안전부 지방자치단체 외국인주민 현황, 국가데이터처 인구총조사, 법무부 출입국자및체류외국인통계의 정의 비교",
@@ -2166,7 +2187,7 @@ SECTION_DATA_EXPANSION = {
             "interpretation": "외국인 통계는 목적에 따라 정책수요, 거주인구, 출입국 행정대상을 서로 다르게 포착한다. 정의를 섞으면 외국인 유입의 규모와 정책 효과를 과대평가하거나 과소평가할 수 있다.",
         }
     ],
-    "section-5-2-foreign-population-growth.html": [
+    "section-7-2-foreign-population-growth.html": [
         {
             "question": "외국인 규모는 어떤 통계로 보느냐에 따라 얼마나 달라지는가?",
             "data": "행정안전부 외국인주민 현황, KOSIS DT_1JA1503 인구총조사 외국인, KOSIS DT_1B040A5A 체류외국인, KOSIS DT_1B040A11 등록외국인",
@@ -2192,7 +2213,7 @@ SECTION_DATA_EXPANSION = {
             "interpretation": "외국인 유입은 전국 평균보다 산업단지, 항만, 농어촌 계절노동, 수도권 주거·일자리 생활권이 결합된 특정 지역에서 훨씬 강하게 나타난다. 따라서 외국인을 인구감소의 보편적 해법으로 보기보다 지역 노동시장과 생활권 통합 정책으로 다루어야 한다.",
         },
     ],
-    "section-5-3-foreign-statistical-gap.html": [
+    "section-7-3-foreign-statistical-gap.html": [
         {
             "question": "세 외국인 통계는 같은 사람을 세고 있는가?",
             "data": "행정안전부 외국인주민 현황, KOSIS DT_1JA1503 인구총조사 외국인, KOSIS DT_1B040A11 등록외국인",
@@ -2216,7 +2237,31 @@ SECTION_DATA_EXPANSION = {
             "interpretation": "차이가 큰 지역은 외국인 노동자만 많은 곳이 아니라 귀화자, 외국인주민 자녀, 결혼이민자, 외국국적동포와 같은 생활권 주민이 함께 두꺼워진 곳이다. 따라서 단순한 체류관리보다 교육, 보육, 주거, 의료, 통번역, 지역사회 관계 정책이 더 중요해진다.",
         },
     ],
-    "section-4-1-family-formation.html": [
+    "section-7-4-foreign-settlement.html": [
+        {
+            "question": "외국인은 단기 노동자로 머무는가, 장기 주민으로 정착하는가?",
+            "data": "행정안전부 지방자치단체 외국인주민 현황의 유형별·체류기간별 자료, 법무부 체류자격별 외국인 통계",
+            "files": [
+                "data/derived/foreign_settlement_indicators.csv",
+                "data/raw/mois_foreign_residents/2024.xlsx",
+                "data/foreign_residents_DT_1B040A5A.csv",
+                "data/registered_foreigners_DT_1B040A11.csv",
+            ],
+            "analysis": "한국국적 취득자, 외국인주민 자녀, 결혼이민자, 5년 이상 장기체류 외국인 규모를 연도별로 정리하고, 2024년 체류자격별 영주·거주·결혼이민 규모를 보조적으로 확인한다.",
+            "interpretation": "정착은 외국인 총량 증가와 다르다. 귀화, 가족 형성, 자녀 출생, 장기 체류가 늘어날수록 이민정책은 노동력 수급이 아니라 지역사회 통합과 권리 보장의 문제로 바뀐다.",
+        },
+        {
+            "question": "외국인과 이주배경 가족은 다음 세대 형성에 얼마나 참여하고 있는가?",
+            "data": "KOSIS DT_1BB0006 지역별 다문화 출생, 행정안전부 외국인주민 자녀 통계",
+            "files": [
+                "data/derived/foreign_family_birth_trends.csv",
+                "data/international_marriage_DT_1BB0006.csv",
+            ],
+            "analysis": "다문화 출생아 수와 전체 출생아 중 다문화 출생 비중, 행정안전부 외국인주민 자녀 저량을 함께 제시한다.",
+            "interpretation": "다문화 출생아 수는 전체 출생아 감소 속에서 절대 규모보다 비중의 의미가 커진다. 외국인주민 자녀 증가는 학교, 보육, 언어지원, 지역사회 통합정책이 인구정책의 핵심 영역이 되었음을 뜻한다.",
+        },
+    ],
+    "section-6-2-family-formation.html": [
         {
             "question": "한국에서 출생은 혼인과 얼마나 강하게 묶여 있는가?",
             "data": "KOSIS 인구동태의 출생, 혼인, 이혼, 법적혼인상태별 출생 자료",
@@ -2232,7 +2277,7 @@ SECTION_DATA_EXPANSION = {
             "interpretation": "혼인외 출생 비중은 최근 상승했지만 여전히 낮다. 따라서 한국에서는 혼인이 줄거나 늦어질 때 출생 감소를 완충하는 제도적 통로가 좁다.",
         },
     ],
-    "section-4-1-marriage-culture.html": [
+    "section-6-1-marriage-culture.html": [
         {
             "question": "결혼과 출산은 왜 문화적 현상인가?",
             "data": "국가데이터처 2010년·2024년 사회조사, 2023년 청년 의식변화 기획보도, 저출산고령사회위원회 25-29세 여성 인식조사, KOSIS 합계출산율, 한국행정연구원 사회통합실태조사",
@@ -2247,7 +2292,7 @@ SECTION_DATA_EXPANSION = {
             "interpretation": "결혼 규범은 약해졌지만 출산과 양육 제도는 여전히 혼인을 중심으로 작동한다. 2010년대 후반의 남녀 갈등과 사회적 비관은 이 간극을 더 크게 만드는 문화적 조건으로 해석하되, 인과효과로 단정하지 않는다.",
         }
     ],
-    "section-4-1-divorce-fear-marriage.html": [
+    "section-6-3-divorce-fear-marriage.html": [
         {
             "question": "30대와 40대의 이혼율은 증가하고 있는가?",
             "data": "KOSIS DT_1B85009 시도/성/연령별 이혼율, 전국 계, 2000-2024년",
@@ -2263,7 +2308,7 @@ SECTION_DATA_EXPANSION = {
             "interpretation": "이혼 수용도는 높아졌지만, 결혼하지 않는 이유의 주류는 여전히 결혼자금, 양육 부담, 고용 불안이다. 이혼 두려움은 핵심 원인이라기보다 결혼의 장기 위험을 크게 느끼게 하는 보조 요인으로 해석해야 한다.",
         },
     ],
-    "section-4-2-men-care-parental-leave.html": [
+    "section-6-7-men-care-parental-leave.html": [
         {
             "question": "출산휴가자는 줄고 있는가, 늘고 있는가?",
             "data": "e-나라지표 150401 출산전후휴가 및 육아휴직급여 현황",
@@ -2314,7 +2359,7 @@ SECTION_DATA_EXPANSION = {
             "interpretation": "맞벌이 가구에서 남편의 가사노동 비중은 상승했지만 2024년에도 30%에 미치지 못한다. 저출산 정책은 휴직급여뿐 아니라 일상 시간의 재배분을 겨냥해야 한다.",
         },
     ],
-    "section-4-3-care-work-balance.html": [
+    "section-6-8-care-work-balance.html": [
         {
             "question": "부모가 실제 생활권에서 필요한 시간에 믿고 맡길 수 있는가?",
             "data": "KOSIS DT_15407_NN009 특수보육어린이집 현황, 중앙육아종합지원센터 시간제보육 및 어린이집 이용시간 안내",
@@ -2337,7 +2382,7 @@ SECTION_DATA_EXPANSION = {
             "interpretation": "저출산 대책은 현금지원보다 돌봄 인프라와 노동시간 제도의 결합으로 평가해야 한다.",
         },
     ],
-    "section-4-4-childcare-shortage.html": [
+    "section-6-9-childcare-shortage.html": [
         {
             "question": "어린이집 유형별 개소 수는 어떻게 바뀌었는가?",
             "data": "KOSIS DT_15407_NN001 어린이집 설치·운영 현황",
@@ -2376,7 +2421,7 @@ SECTION_DATA_EXPANSION = {
             "interpretation": "빈집은 주택 문제가 아니라 학교, 상권, 의료, 교통 접근성이 함께 약해지는 생활권 지표다.",
         },
     ],
-    "section-4-5-households.html": [
+    "section-6-5-households.html": [
         {
             "question": "가구 수는 왜 인구와 다르게 움직이는가?",
             "data": "KOSIS INH_1JC1501 가구수(시도/시/군/구), DT_1B040A3 시군구 주민등록인구",
@@ -2399,7 +2444,7 @@ SECTION_DATA_EXPANSION = {
             "interpretation": "청년 1인가구 증가는 가족 형성의 지연을, 고령 1인가구 증가는 생애 후반 가족 분화와 돌봄 수요 증가를 보여준다.",
         },
     ],
-    "section-4-6-housing-demand.html": [
+    "section-6-6-housing-demand.html": [
         {
             "question": "주거 수요는 왜 인구보다 늦게 줄어드는가?",
             "data": "KOSIS DT_1BZ0503 가구주의 연령/가구원수별 추계가구-전국",
@@ -2408,7 +2453,7 @@ SECTION_DATA_EXPANSION = {
             "interpretation": "주거 수요는 사람 수보다 가구 형태에 더 직접적으로 반응한다. 작은 가구가 늘면 인구 감소가 곧 주택 수요 감소로 이어지지 않는다.",
         },
     ],
-    "section-4-7-vacant-housing.html": [
+    "section-6-10-vacant-housing.html": [
         {
             "question": "빈집은 생활권 약화의 신호인가?",
             "data": "KOSIS DT_1YL202005 미거주주택(빈집)비율, 국가데이터처 인구주택총조사, 관계부처합동 2022년 빈집실태조사",
@@ -2417,7 +2462,7 @@ SECTION_DATA_EXPANSION = {
             "interpretation": "빈집은 단순한 주택 잔여물이 아니라 인구, 가구, 생활서비스가 어긋나는 지역에서 나타나는 공간적 신호다. KOSIS 통계는 넓은 공실 저량을 보는 탐색 지표이고, 국토부 등 빈집실태조사는 실제 정비·활용·철거 대상에 가까운 집행 지표다.",
         },
     ],
-    "section-5-1-labor-aging.html": [
+    "section-8-1-labor-aging.html": [
         {
             "question": "고령층에서 취업자는 얼마나 빠르게 증가하고 있을까?",
             "data": "KOSIS DT_1DE8031S 경제활동인구조사 고령층 부가조사, 2010-2025년 매년 5월",
@@ -2468,7 +2513,7 @@ SECTION_DATA_EXPANSION = {
             "interpretation": "고령층 노동은 특정 산업의 주변부에만 존재하지 않는다. 서비스·판매, 단순노무, 기능·기계조작, 농림어업, 공공·개인서비스가 고령층 일자리의 실제 지형을 만든다.",
         },
     ],
-    "section-5-2-aging-index.html": [
+    "section-8-2-aging-index.html": [
         {
             "question": "노령화지수는 무엇을 측정하는가?",
             "data": "KOSIS DT_1BPB002 주요 인구지표의 0-14세 구성비, 65세 이상 구성비, 노령화지수",
@@ -2484,7 +2529,7 @@ SECTION_DATA_EXPANSION = {
             "interpretation": "한국은 2017년에 노령화지수 100을 넘었고, 2026년에 200, 2030년에 300, 2050년에 500을 넘는 구조로 이동한다.",
         },
     ],
-    "section-5-3-lifecycle-fiscal.html": [
+    "section-8-3-lifecycle-fiscal.html": [
         {
             "question": "생애주기에서 적자와 흑자는 어느 나이에 발생하는가?",
             "data": "KOSIS DT_1NTA2003 국민이전계정 생애주기적자계정(1인규모)의 소비, 노동소득, 생애주기적자",
@@ -2493,7 +2538,7 @@ SECTION_DATA_EXPANSION = {
             "interpretation": "아동기와 노년기는 노동소득보다 소비가 큰 적자 구간이고, 중장년기는 노동소득이 소비를 넘는 흑자 구간이다. 저출산·고령화는 이 흑자 구간의 인구가 줄고 적자 구간의 기간과 규모가 커지는 문제다.",
         },
     ],
-    "section-5-3-health-spending-aging.html": [
+    "section-8-4-health-spending-aging.html": [
         {
             "question": "연령별 1인 공공보건소비는 어느 나이부터 빠르게 증가하는가?",
             "data": "KOSIS DT_1NTA2003 생애주기적자계정(1인규모)의 공공보건소비",
@@ -2509,7 +2554,7 @@ SECTION_DATA_EXPANSION = {
             "interpretation": "총의료비 증가는 고령층 인구 증가와 1인당 비용 상승이 동시에 작동한 결과다. 따라서 해법은 단순 삭감이 아니라 예방, 만성질환 관리, 지역 의료 접근성, 장기요양과 의료의 연결을 포함해야 한다.",
         },
     ],
-    "section-5-4-aging-budget.html": [
+    "section-8-5-aging-budget.html": [
         {
             "question": "고령화 관련 세부사업 수는 늘었는가?",
             "data": "열린재정 VW_OPFI940 세부사업 예산편성현황(총지출), 2007-2026년",
@@ -2532,7 +2577,7 @@ SECTION_DATA_EXPANSION = {
             "interpretation": "고령화 예산은 넓게 흩어진 작은 사업들의 합이 아니라 기초연금지급, 장기요양보험, 노인일자리 같은 몇 개의 큰 제도에 의해 방향이 결정된다.",
         },
     ],
-    "section-5-5-elderly-pension.html": [
+    "section-8-6-elderly-pension.html": [
         {
             "question": "고령층의 월평균 연금수령액은 얼마나 증가했는가?",
             "data": "KOSIS DT_1DE8051S 성별 연금수령여부 및 월평균수령액, 2008-2025년 매년 5월",
@@ -2548,7 +2593,7 @@ SECTION_DATA_EXPANSION = {
             "interpretation": "수령률 상승은 제도 포괄성이 넓어진다는 뜻이지만, 받는 금액의 충분성과 성별 격차를 함께 보아야 한다.",
         },
     ],
-    "section-5-6-elderly-pension-distribution.html": [
+    "section-8-7-elderly-pension-distribution.html": [
         {
             "question": "연금수령액 구간은 낮은 금액에서 높은 금액으로 이동했는가?",
             "data": "KOSIS DT_1DE8051S의 월평균 10만원 미만, 10~25만원, 25~50만원, 50~100만원, 100만원 이상 구간",
@@ -6089,6 +6134,154 @@ def build_derived_data() -> dict[str, list[dict[str, object]]]:
             write_csv(sido_gap, "foreign_stat_gap_sido_sources.csv")
             charts["foreign_stat_gap_sido_sources"] = sido_gap.to_dict("records")
 
+    settlement_rows: list[dict[str, float | int | str]] = []
+    mois_dir = DATA / "raw" / "mois_foreign_residents"
+    for year in range(2018, 2025):
+        workbook = mois_dir / f"{year}.xlsx"
+        row_data: dict[str, float | int | str] = {"year": year}
+        if workbook.exists() and workbook.read_bytes()[:4] == b"PK\x03\x04":
+            try:
+                xl = pd.ExcelFile(workbook)
+                type_sheet = next((name for name in xl.sheet_names if name.startswith("1-1")), xl.sheet_names[0])
+                type_df = pd.read_excel(workbook, sheet_name=type_sheet, header=None)
+                national = type_df[type_df.iloc[:, 0].astype(str).str.strip() == "전국"]
+                if not national.empty:
+                    national_row = national.iloc[0]
+                    row_data.update(
+                        {
+                            "foreign_residents_total": pd.to_numeric(national_row.iloc[3], errors="coerce"),
+                            "non_korean_foreigners": pd.to_numeric(national_row.iloc[6], errors="coerce"),
+                            "foreign_workers": pd.to_numeric(national_row.iloc[9], errors="coerce"),
+                            "marriage_migrants": pd.to_numeric(national_row.iloc[12], errors="coerce"),
+                            "foreign_students": pd.to_numeric(national_row.iloc[15], errors="coerce"),
+                            "overseas_koreans_foreign_nationality": pd.to_numeric(national_row.iloc[18], errors="coerce"),
+                            "naturalized_koreans": pd.to_numeric(national_row.iloc[24], errors="coerce"),
+                            "foreign_resident_children": pd.to_numeric(national_row.iloc[27], errors="coerce"),
+                        }
+                    )
+
+                stay_sheet = next((name for name in xl.sheet_names if name.startswith("3-1")), "")
+                if stay_sheet:
+                    stay_df = pd.read_excel(workbook, sheet_name=stay_sheet, header=None)
+                    duration_totals: dict[str, float] = {}
+                    national_index = stay_df[stay_df.iloc[:, 0].astype(str).str.strip() == "전국"].index
+                    if len(national_index):
+                        national_start = int(national_index[0])
+                        stay_df = stay_df.iloc[national_start : national_start + 9]
+                    for _, duration_row in stay_df.iterrows():
+                        label = str(duration_row.iloc[0]).strip()
+                        if label in {"전국", "1년미만", "1년~2년미만", "2년~3년미만", "3년~4년미만", "4년~5년미만", "5년~10년미만", "10년이상"}:
+                            duration_totals[label] = pd.to_numeric(duration_row.iloc[1], errors="coerce")
+                    row_data["longterm_5plus"] = duration_totals.get("5년~10년미만", np.nan) + duration_totals.get("10년이상", np.nan)
+                    row_data["longterm_10plus"] = duration_totals.get("10년이상", np.nan)
+                    total_non_korean = duration_totals.get("전국", row_data.get("non_korean_foreigners", np.nan))
+                    row_data["longterm_5plus_share_pct"] = (
+                        row_data["longterm_5plus"] / total_non_korean * 100
+                        if pd.notna(row_data.get("longterm_5plus")) and pd.notna(total_non_korean) and total_non_korean
+                        else np.nan
+                    )
+            except Exception:
+                pass
+        elif year == 2020:
+            # 2020년 원표 파일은 구형 OLE 형식 손상으로 판독이 불안정하다.
+            # 행정안전부 2020년 지방자치단체 외국인주민 현황 보도자료의 전국 유형별 값을 사용한다.
+            row_data.update(
+                {
+                    "foreign_residents_total": 2146748,
+                    "non_korean_foreigners": 1695643,
+                    "naturalized_koreans": 199128,
+                    "foreign_resident_children": 251977,
+                    "longterm_5plus": np.nan,
+                    "longterm_10plus": np.nan,
+                    "longterm_5plus_share_pct": np.nan,
+                }
+            )
+
+        if len(row_data) > 1:
+            settlement_rows.append(row_data)
+
+    settlement = pd.DataFrame(settlement_rows)
+    if not settlement.empty:
+        for col in settlement.columns:
+            if col != "year":
+                settlement[col] = pd.to_numeric(settlement[col], errors="coerce")
+        settlement["year"] = settlement["year"].astype(int)
+
+        stay_path = DATA / "foreign_residents_DT_1B040A5A.csv"
+        if stay_path.exists():
+            stay_status = pd.read_csv(stay_path)
+            status_map = {
+                "Permanent Resident(F-5)": "stay_permanent_f5",
+                "Resident(F-2)": "stay_resident_f2",
+                "Marriage Migrant(F-6)": "stay_marriage_f6",
+                "Overseas Koreans(F-4)": "stay_overseas_korean_f4",
+            }
+            status_rows: list[dict[str, float | int | str]] = []
+            for _, row in stay_status.iterrows():
+                eng = row.get("C3_NM_ENG")
+                if row.get("C1_NM") == "총계" and row.get("C2_NM") == "계" and eng in status_map:
+                    status_rows.append(
+                        {
+                            "year": pd.to_numeric(row.get("PRD_DE"), errors="coerce"),
+                            status_map[eng]: pd.to_numeric(row.get("DT"), errors="coerce"),
+                        }
+                    )
+            if status_rows:
+                status = pd.DataFrame(status_rows).groupby("year", as_index=False).sum(numeric_only=True)
+                status["year"] = status["year"].astype(int)
+                settlement = settlement.merge(status, on="year", how="left")
+
+        for col in [
+            "foreign_residents_total",
+            "non_korean_foreigners",
+            "foreign_workers",
+            "marriage_migrants",
+            "foreign_students",
+            "overseas_koreans_foreign_nationality",
+            "naturalized_koreans",
+            "foreign_resident_children",
+            "longterm_5plus",
+            "longterm_10plus",
+            "stay_permanent_f5",
+            "stay_resident_f2",
+            "stay_marriage_f6",
+            "stay_overseas_korean_f4",
+        ]:
+            if col in settlement.columns:
+                settlement[col] = settlement[col].round(0).astype("Int64")
+        if "longterm_5plus_share_pct" in settlement.columns:
+            settlement["longterm_5plus_share_pct"] = settlement["longterm_5plus_share_pct"].round(1)
+        settlement = settlement.sort_values("year")
+        write_csv(settlement, "foreign_settlement_indicators.csv")
+        charts["foreign_settlement_indicators"] = settlement.to_dict("records")
+
+        birth_path = DATA / "international_marriage_DT_1BB0006.csv"
+        if birth_path.exists():
+            birth = pd.read_csv(birth_path)
+            c1_code = birth["C1"].astype(str).str.replace(r"\.0$", "", regex=True).str.zfill(2)
+            birth = birth[(c1_code == "00") & (birth["ITM_ID"].isin(["T00", "T01", "T02"]))].copy()
+            birth["year"] = pd.to_numeric(birth["PRD_DE"], errors="coerce")
+            birth["value"] = pd.to_numeric(birth["DT"], errors="coerce")
+            birth_wide = (
+                birth.pivot_table(index="year", columns="ITM_ID", values="value", aggfunc="first")
+                .reset_index()
+                .rename(columns={"T00": "total_births", "T01": "multicultural_births", "T02": "multicultural_birth_share_pct"})
+            )
+            birth_wide["year"] = birth_wide["year"].astype(int)
+            family_births = birth_wide.merge(
+                settlement[["year", "foreign_resident_children", "marriage_migrants"]],
+                on="year",
+                how="left",
+            )
+            for col in ["total_births", "multicultural_births", "foreign_resident_children", "marriage_migrants"]:
+                if col in family_births.columns:
+                    family_births[col] = pd.to_numeric(family_births[col], errors="coerce").round(0).astype("Int64")
+            if "multicultural_birth_share_pct" in family_births.columns:
+                family_births["multicultural_birth_share_pct"] = pd.to_numeric(family_births["multicultural_birth_share_pct"], errors="coerce").round(1)
+            family_births = family_births.sort_values("year")
+            write_csv(family_births, "foreign_family_birth_trends.csv")
+            charts["foreign_family_birth_trends"] = family_births.to_dict("records")
+
     households_path = DATA / "future_households_DT_1BZ0503.csv"
     if households_path.exists():
         households = pd.read_csv(households_path)
@@ -6518,7 +6711,7 @@ def default_section_markdown(chapter: dict, section: dict) -> str:
         lines.extend(independent["paragraphs"])
         lines.append(chart_shortcode(independent["chart"]))
 
-    if section["file"] == "section-5-4-aging-budget.html":
+    if section["file"] == "section-8-5-aging-budget.html":
         lines.append("{{aging_budget_program_table}}")
 
     return "\n\n".join(lines).strip() + "\n"
@@ -6656,7 +6849,7 @@ def section_body(chapter: dict, section: dict) -> str:
   <p class="source-note">{esc(independent_chart["note"])}</p>
 </section>"""
     ending_table_html = ""
-    if section["file"] == "section-5-4-aging-budget.html":
+    if section["file"] == "section-8-5-aging-budget.html":
         ending_table_html = aging_budget_program_table_html()
     csv_href = f"../data/derived/{meta['csv']}"
     return f"""<section class="section-header-block">

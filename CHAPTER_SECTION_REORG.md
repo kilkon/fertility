@@ -32,56 +32,56 @@
 
 - 역할: 인구지표와 측정 기준 정리
 - 정본 파일명 제안: `chapter-1-metrics.html`
-- 현재 파일 대응: `chapter-1.html`
+- 현재 파일 대응: `chapter-6.html`
 
 ### 2장. 인구는 정말 감소하는가
 
 - 역할: 총인구, 생산연령인구, 고령층, 집중화 분석
-- 정본 파일명 제안: `chapter-2-population-decline.html`
-- 현재 파일 대응: `chapter-2-population-decline.html`
-- 정리 메모: 현재 `chapter-2.html`는 이 장이 아니라 다음 장 내용이므로 별도 분리 필요
+- 정본 파일명 제안: `chapter-8.html`
+- 현재 파일 대응: `chapter-8.html`
+- 정리 메모: 현재 `chapter-6.html`는 이 장이 아니라 다음 장 내용이므로 별도 분리 필요
 
 ### 3장. 저출산 정책의 성과는 어떻게 평가해야 하는가
 
 - 역할: 정책 유형, 예산, 국제비교, 주거지원, 지역정책 평가
 - 정본 파일명 제안: `chapter-3-policy-evaluation.html`
-- 현재 파일 대응: `chapter-2.html`
+- 현재 파일 대응: `chapter-6.html`
 
 ### 4장. 이동과 지역 격차가 인구를 다시 쓴다
 
 - 역할: 생활인구, 순이동, 청년 이동, 외국인·국제결혼
 - 정본 파일명 제안: `chapter-4-migration-regional-gap.html`
-- 현재 파일 대응: `chapter-3.html`
+- 현재 파일 대응: `chapter-8.html`
 
 ### 5장. 출산 결정과 가족 형성의 생활 조건
 
 - 역할: 혼인, 이혼, 소득, 가구, 주거, 돌봄, 빈집
 - 정본 파일명 제안: `chapter-5-family-formation.html`
-- 현재 파일 대응: `chapter-4.html`
+- 현재 파일 대응: `chapter-6.html`
 
 ### 6장. 외국인은 해결책인가
 
 - 역할: 외국인 규모, 유형, 정착 가능성, 지역 효과
 - 정본 파일명 제안: `chapter-6-foreigners.html`
-- 현재 파일 대응: `chapter-5-foreigners.html`
+- 현재 파일 대응: `chapter-7.html`
 
 ### 7장. 고령사회, 노동시장, 재정의 압력
 
 - 역할: 경제활동, 의료비, 재정, 연금
 - 정본 파일명 제안: `chapter-7-aging-labor-fiscal.html`
-- 현재 파일 대응: `chapter-5.html`
+- 현재 파일 대응: `chapter-8.html`
 
 ### 8장. 교육과 저출산
 
 - 역할: 교육비, 사교육, 계층 격차, 학생 수 감소의 역설
 - 정본 파일명 제안: `chapter-8-education-low-fertility.html`
-- 현재 파일 대응: `chapter-6-education-low-fertility.html`
+- 현재 파일 대응: `chapter-9.html`
 
 ### 9장. 그래서 어떤 저출산·고령화 정책이 필요한가
 
 - 역할: 앞선 분석을 정책 원칙으로 종합
 - 정본 파일명 제안: `chapter-9-policy-recommendations.html`
-- 현재 파일 대응: `chapter-7-policy-recommendations.html`
+- 현재 파일 대응: `chapter-10.html`
 
 ## 권장 절 구조
 
@@ -168,15 +168,15 @@
 ### 장 파일
 
 - `chapter-0.html` -> 유지 가능, 다만 장기적으로 `chapter-0-intro.html` 권장
-- `chapter-1.html` -> 유지 가능, 다만 장기적으로 `chapter-1-metrics.html` 권장
-- `chapter-2-population-decline.html` -> 2장 정본으로 유지
-- `chapter-2.html` -> 실질적으로 3장 내용이므로 `chapter-3-policy-evaluation.html`로 이동 권장
-- `chapter-3.html` -> 실질적으로 4장 내용이므로 `chapter-4-migration-regional-gap.html`로 이동 권장
-- `chapter-4.html` -> 실질적으로 5장 내용이므로 `chapter-5-family-formation.html`로 이동 권장
-- `chapter-5-foreigners.html` -> 실질적으로 6장 정본
-- `chapter-5.html` -> 실질적으로 7장 내용이므로 `chapter-7-aging-labor-fiscal.html` 권장
-- `chapter-6-education-low-fertility.html` -> 실질적으로 8장 정본
-- `chapter-7-policy-recommendations.html` -> 실질적으로 9장 정본
+- `chapter-6.html` -> 유지 가능, 다만 장기적으로 `chapter-1-metrics.html` 권장
+- `chapter-8.html` -> 2장 정본으로 유지
+- `chapter-6.html` -> 실질적으로 3장 내용이므로 `chapter-3-policy-evaluation.html`로 이동 권장
+- `chapter-8.html` -> 실질적으로 4장 내용이므로 `chapter-4-migration-regional-gap.html`로 이동 권장
+- `chapter-6.html` -> 실질적으로 5장 내용이므로 `chapter-5-family-formation.html`로 이동 권장
+- `chapter-7.html` -> 실질적으로 6장 정본
+- `chapter-8.html` -> 실질적으로 7장 내용이므로 `chapter-7-aging-labor-fiscal.html` 권장
+- `chapter-9.html` -> 실질적으로 8장 정본
+- `chapter-10.html` -> 실질적으로 9장 정본
 
 ### 절 파일
 
@@ -188,8 +188,8 @@
 
 예시:
 
-- `section-1-3-2010-registration-jump.html` -> `section-1-3-registration-jump-2010.html`
-- `section-1-3-optimal-population.html` -> 실제 논리상 `section-1-4-optimal-population.html`
+- `section-2-3-2010-registration-jump.html` -> `section-1-3-registration-jump-2010.html`
+- `section-2-4-optimal-population.html` -> 실제 논리상 `section-1-4-optimal-population.html`
 - `section-2-1-policy-overview.html` -> 실제 논리상 `section-3-1-policy-overview.html`
 - `section-3-3-youth-migration-sigungu-gap.html` -> 실제 논리상 `section-4-3-youth-migration-sigungu-gap.html`
 - `section-4-9-childcare-shortage-birth-gap.html` -> 실제 논리상 `section-5-9-childcare-shortage-birth-gap.html`

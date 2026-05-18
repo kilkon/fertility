@@ -4064,6 +4064,70 @@
         parent.classList.add("foreign-share-panel-chart");
         parent.innerHTML = renderForeignShareTop6Panel(rows);
         return;
+      } else if (id === "foreign_settlement_indicators") {
+        const years = rows.map((row) => row.year);
+        config = {
+          type: "line",
+          data: {
+            labels: years,
+            datasets: [
+              lineDataset("5년 이상 장기체류", rows, "longterm_5plus", "rgba(37,99,235,1)"),
+              lineDataset("한국국적 취득자", rows, "naturalized_koreans", "rgba(185,28,28,1)"),
+              lineDataset("외국인주민 자녀", rows, "foreign_resident_children", "rgba(15,118,110,1)"),
+              lineDataset("결혼이민자", rows, "marriage_migrants", "rgba(147,51,234,1)")
+            ]
+          },
+          options: {
+            ...common,
+            scales: {
+              x: { grid: { display: false }, title: { display: true, text: "연도" } },
+              y: {
+                grid: { color: "rgba(15,23,42,.08)" },
+                title: { display: true, text: "명" },
+                ticks: { callback: (value) => Number(value).toLocaleString("ko-KR") }
+              }
+            }
+          }
+        };
+      } else if (id === "foreign_family_birth_trends") {
+        config = {
+          type: "line",
+          data: {
+            labels: rows.map((row) => row.year),
+            datasets: [
+              {
+                ...lineDataset("외국인주민 자녀", rows, "foreign_resident_children", "rgba(15,118,110,1)"),
+                yAxisID: "people"
+              },
+              {
+                ...lineDataset("다문화 출생아 수", rows, "multicultural_births", "rgba(37,99,235,1)"),
+                yAxisID: "people"
+              },
+              {
+                ...lineDataset("다문화 출생 비중", rows, "multicultural_birth_share_pct", "rgba(185,28,28,1)"),
+                yAxisID: "rate"
+              }
+            ]
+          },
+          options: {
+            ...common,
+            scales: {
+              x: { grid: { display: false }, title: { display: true, text: "연도" } },
+              people: {
+                position: "left",
+                grid: { color: "rgba(15,23,42,.08)" },
+                title: { display: true, text: "명" },
+                ticks: { callback: (value) => Number(value).toLocaleString("ko-KR") }
+              },
+              rate: {
+                position: "right",
+                grid: { display: false },
+                title: { display: true, text: "%" },
+                ticks: { callback: (value) => `${value}%` }
+              }
+            }
+          }
+        };
       } else if (id === "foreigner_registered_total") {
         config = {
           type: "line",
@@ -4758,16 +4822,41 @@
     });
   }
 
-  function focusMobileToc() {
+  function syncTocToCurrentPage() {
     const toc = document.querySelector(".toc");
-    const active = toc?.querySelector(".active");
-    if (!toc || !active || !window.matchMedia("(max-width: 900px)").matches) return;
-    active.scrollIntoView({ block: "nearest", inline: "center" });
+    if (!toc) return;
+
+    const currentPath = decodeURIComponent(window.location.pathname.split("/").pop() || "");
+    const currentLink = Array.from(toc.querySelectorAll("a[href]")).find((link) => {
+      const hrefPath = decodeURIComponent((link.getAttribute("href") || "").split("#")[0].split("/").pop() || "");
+      return hrefPath && hrefPath === currentPath;
+    });
+    if (currentLink && !currentLink.classList.contains("active")) {
+      toc.querySelectorAll(".active").forEach((el) => el.classList.remove("active"));
+      currentLink.classList.add("active");
+    }
+
+    const active = currentLink || toc.querySelector(".active");
+    if (!active) return;
+
+    if (window.matchMedia("(max-width: 900px)").matches) {
+      active.scrollIntoView({ block: "nearest", inline: "center" });
+      return;
+    }
+
+    const activeTop = active.offsetTop;
+    const targetTop = activeTop - (toc.clientHeight / 2) + (active.clientHeight / 2);
+    toc.scrollTo({
+      top: Math.max(0, targetTop),
+      behavior: "auto"
+    });
   }
 
   document.addEventListener("DOMContentLoaded", () => {
-    focusMobileToc();
+    syncTocToCurrentPage();
     renderQuestionPlans();
     renderBookCharts();
   });
+  window.addEventListener("pageshow", syncTocToCurrentPage);
+  window.addEventListener("resize", () => window.requestAnimationFrame(syncTocToCurrentPage));
 })();
