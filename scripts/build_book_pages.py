@@ -58,6 +58,12 @@ BOOK = [
                 "file": "section-1-2-growth-decline-perspectives.html",
                 "chart": None,
             },
+            {
+                "no": "1.3",
+                "title": "인구의 양과 질은 같은 문제인가",
+                "file": "section-1-3-quantity-quality.html",
+                "chart": None,
+            },
         ],
     },
     {
