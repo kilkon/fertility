@@ -2699,6 +2699,14 @@ def esc(text: object) -> str:
     )
 
 
+def html_ascii(text: object) -> str:
+    return "".join(f"&#x{ord(ch):X};" if ord(ch) > 127 else ch for ch in str(text))
+
+
+def esc_ascii(text: object) -> str:
+    return html_ascii(esc(text))
+
+
 def manuscript_name(html_file: str) -> str:
     return f"{Path(html_file).stem}.md"
 
@@ -6581,21 +6589,21 @@ def build_derived_data() -> dict[str, list[dict[str, object]]]:
 
 def nav_html(current: str = "") -> str:
     parts = [
-        '<nav class="toc" aria-label="책 목차">',
-        '<button class="toc-toggle" type="button" data-toc-toggle aria-expanded="true">접기</button>',
-        '<h2 class="toc-title">인구·저출산·고령화</h2>',
-        '<a href="../index.html">표지</a>',
+        f'<nav class="toc" aria-label="{esc_ascii("책 목차")}">',
+        f'<button class="toc-toggle" type="button" data-toc-toggle aria-expanded="true">{esc_ascii("접기")}</button>',
+        f'<h2 class="toc-title">{esc_ascii("인구·저출산·고령화")}</h2>',
+        f'<a href="../index.html">{esc_ascii("표지")}</a>',
     ]
     for chapter in BOOK:
         cls = "chapter active" if current == chapter["file"] else "chapter"
-        parts.append(f'<a class="{cls}" href="../chapters/{chapter["file"]}">{chapter["no"]}. {esc(chapter["title"])}</a>')
+        parts.append(f'<a class="{cls}" href="../chapters/{chapter["file"]}">{chapter["no"]}. {esc_ascii(chapter["title"])}</a>')
         for section in chapter["sections"]:
             active = " active" if current == section["file"] else ""
-            parts.append(f'<a class="toc-section{active}" href="../sections/{section["file"]}">{section["no"]} {esc(section["title"])}</a>')
+            parts.append(f'<a class="toc-section{active}" href="../sections/{section["file"]}">{section["no"]} {esc_ascii(section["title"])}</a>')
     appendix_active = " active" if current == APPENDIX_FILE else ""
-    parts.append(f'<a class="chapter{appendix_active}" href="../sections/{APPENDIX_FILE}">부록. 자료와 분석 설계</a>')
+    parts.append(f'<a class="chapter{appendix_active}" href="../sections/{APPENDIX_FILE}">{esc_ascii("부록. 자료와 분석 설계")}</a>')
     references_active = " active" if current == APPENDIX_REFERENCES_FILE else ""
-    parts.append(f'<a class="chapter{references_active}" href="../sections/{APPENDIX_REFERENCES_FILE}">부록. 참고문헌</a>')
+    parts.append(f'<a class="chapter{references_active}" href="../sections/{APPENDIX_REFERENCES_FILE}">{esc_ascii("부록. 참고문헌")}</a>')
     parts.append("</nav>")
     return "\n".join(parts)
 
