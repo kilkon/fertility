@@ -2836,6 +2836,13 @@ def render_markdown(markdown: str, rel: str = "..") -> str:
             blocks.append(f"<h{level}>{inline_markdown(heading_match.group(2))}</h{level}>")
             i += 1
             continue
+        if line.startswith("> "):
+            quote_lines = []
+            while i < len(lines) and lines[i].strip().startswith("> "):
+                quote_lines.append(lines[i].strip()[2:].strip())
+                i += 1
+            blocks.append(f"<blockquote>{inline_markdown(' '.join(quote_lines))}</blockquote>")
+            continue
         if line.startswith("|") and "|" in line[1:]:
             table_lines = []
             while i < len(lines) and lines[i].strip().startswith("|"):
@@ -2871,6 +2878,7 @@ def render_markdown(markdown: str, rel: str = "..") -> str:
                 not next_line
                 or next_line.startswith("##")
                 or next_line.startswith("- ")
+                or next_line.startswith("> ")
                 or next_line.startswith("|")
                 or next_line.startswith("![")
                 or next_line.startswith("{{")

@@ -26,6 +26,16 @@
   line-height: 1.42;
 }
 
+.markdown-manuscript blockquote {
+  margin: 24px 0;
+  padding: 4px 0 4px 18px;
+  border-left: 4px solid var(--teal);
+  color: var(--ink);
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 850;
+  line-height: 1.55;
+}
+
 .book-chart {
   height: 420px;
 }
