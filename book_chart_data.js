@@ -46448,7 +46448,7 @@ window.populationBookCharts = {
         "older_share": NaN,
         "older_population_share": NaN,
         "old_age_dependency_ratio": NaN,
-        "exposure_group": NaN,
+        "exposure_group": "nan",
         "bubble_radius": 3.0
       },
       {
@@ -46462,7 +46462,7 @@ window.populationBookCharts = {
         "older_share": NaN,
         "older_population_share": NaN,
         "old_age_dependency_ratio": NaN,
-        "exposure_group": NaN,
+        "exposure_group": "nan",
         "bubble_radius": 3.0
       },
       {
@@ -46476,7 +46476,7 @@ window.populationBookCharts = {
         "older_share": NaN,
         "older_population_share": NaN,
         "old_age_dependency_ratio": NaN,
-        "exposure_group": NaN,
+        "exposure_group": "nan",
         "bubble_radius": 3.0
       },
       {
@@ -46490,7 +46490,7 @@ window.populationBookCharts = {
         "older_share": NaN,
         "older_population_share": NaN,
         "old_age_dependency_ratio": NaN,
-        "exposure_group": NaN,
+        "exposure_group": "nan",
         "bubble_radius": 3.0
       },
       {
@@ -46504,7 +46504,7 @@ window.populationBookCharts = {
         "older_share": NaN,
         "older_population_share": NaN,
         "old_age_dependency_ratio": NaN,
-        "exposure_group": NaN,
+        "exposure_group": "nan",
         "bubble_radius": 3.0
       },
       {
@@ -46518,7 +46518,7 @@ window.populationBookCharts = {
         "older_share": NaN,
         "older_population_share": NaN,
         "old_age_dependency_ratio": NaN,
-        "exposure_group": NaN,
+        "exposure_group": "nan",
         "bubble_radius": 3.0
       },
       {
@@ -46532,7 +46532,7 @@ window.populationBookCharts = {
         "older_share": NaN,
         "older_population_share": NaN,
         "old_age_dependency_ratio": NaN,
-        "exposure_group": NaN,
+        "exposure_group": "nan",
         "bubble_radius": 3.0
       },
       {
@@ -46546,7 +46546,7 @@ window.populationBookCharts = {
         "older_share": NaN,
         "older_population_share": NaN,
         "old_age_dependency_ratio": NaN,
-        "exposure_group": NaN,
+        "exposure_group": "nan",
         "bubble_radius": 3.0
       },
       {
@@ -46560,7 +46560,7 @@ window.populationBookCharts = {
         "older_share": NaN,
         "older_population_share": NaN,
         "old_age_dependency_ratio": NaN,
-        "exposure_group": NaN,
+        "exposure_group": "nan",
         "bubble_radius": 3.0
       },
       {
@@ -46574,7 +46574,7 @@ window.populationBookCharts = {
         "older_share": NaN,
         "older_population_share": NaN,
         "old_age_dependency_ratio": NaN,
-        "exposure_group": NaN,
+        "exposure_group": "nan",
         "bubble_radius": 3.0
       },
       {
@@ -46588,7 +46588,7 @@ window.populationBookCharts = {
         "older_share": NaN,
         "older_population_share": NaN,
         "old_age_dependency_ratio": NaN,
-        "exposure_group": NaN,
+        "exposure_group": "nan",
         "bubble_radius": 3.0
       },
       {
@@ -46602,7 +46602,7 @@ window.populationBookCharts = {
         "older_share": NaN,
         "older_population_share": NaN,
         "old_age_dependency_ratio": NaN,
-        "exposure_group": NaN,
+        "exposure_group": "nan",
         "bubble_radius": 3.0
       },
       {
@@ -46616,7 +46616,7 @@ window.populationBookCharts = {
         "older_share": NaN,
         "older_population_share": NaN,
         "old_age_dependency_ratio": NaN,
-        "exposure_group": NaN,
+        "exposure_group": "nan",
         "bubble_radius": 3.0
       }
     ],
@@ -104495,6 +104495,558 @@ window.populationBookCharts = {
         "one_child_total_cost": 48.0
       }
     ],
+    "migration_model_coefficients": [
+      {
+        "model": "시도-연도 패널 OLS",
+        "variable": "youth_employment_rate_15_29",
+        "variable_label": "청년고용률",
+        "coefficient": 0.0708,
+        "standard_error": 0.3415,
+        "t_stat": 0.207,
+        "p_value_normal_approx": 0.8358,
+        "standardized_beta": 0.025,
+        "r2": 0.647,
+        "n": 85,
+        "model_note": "연도 고정효과 포함, 수도권 더미 포함"
+      },
+      {
+        "model": "시도-연도 패널 OLS",
+        "variable": "log_grdp_per_capita",
+        "variable_label": "1인당 GRDP(로그)",
+        "coefficient": 7.6093,
+        "standard_error": 4.1837,
+        "t_stat": 1.819,
+        "p_value_normal_approx": 0.0689,
+        "standardized_beta": 0.147,
+        "r2": 0.647,
+        "n": 85,
+        "model_note": "연도 고정효과 포함, 수도권 더미 포함"
+      },
+      {
+        "model": "시도-연도 패널 OLS",
+        "variable": "businesses_per_1000_people",
+        "variable_label": "사업체 밀도",
+        "coefficient": -0.5862,
+        "standard_error": 0.0785,
+        "t_stat": -7.468,
+        "p_value_normal_approx": 0.0,
+        "standardized_beta": -0.598,
+        "r2": 0.647,
+        "n": 85,
+        "model_note": "연도 고정효과 포함, 수도권 더미 포함"
+      },
+      {
+        "model": "시도-연도 패널 OLS",
+        "variable": "under40_homeownership_rate",
+        "variable_label": "40세 미만 주택소유율",
+        "coefficient": -1.3211,
+        "standard_error": 0.2529,
+        "t_stat": -5.223,
+        "p_value_normal_approx": 0.0,
+        "standardized_beta": -0.474,
+        "r2": 0.647,
+        "n": 85,
+        "model_note": "연도 고정효과 포함, 수도권 더미 포함"
+      },
+      {
+        "model": "시도-연도 패널 OLS",
+        "variable": "capital_area_numeric",
+        "variable_label": "수도권 더미",
+        "coefficient": 7.0028,
+        "standard_error": 3.5685,
+        "t_stat": 1.962,
+        "p_value_normal_approx": 0.0497,
+        "standardized_beta": 0.199,
+        "r2": 0.647,
+        "n": 85,
+        "model_note": "연도 고정효과 포함, 수도권 더미 포함"
+      },
+      {
+        "model": "지역·연도 고정효과",
+        "variable": "youth_employment_rate_15_29",
+        "variable_label": "청년고용률",
+        "coefficient": -0.5119,
+        "standard_error": 0.3182,
+        "t_stat": -1.609,
+        "p_value_normal_approx": 0.1077,
+        "standardized_beta": -0.179,
+        "r2": 0.926,
+        "n": 85,
+        "model_note": "지역 고정효과와 연도 고정효과 포함, 수도권 더미 제외"
+      },
+      {
+        "model": "지역·연도 고정효과",
+        "variable": "log_grdp_per_capita",
+        "variable_label": "1인당 GRDP(로그)",
+        "coefficient": 21.7355,
+        "standard_error": 25.4961,
+        "t_stat": 0.853,
+        "p_value_normal_approx": 0.3939,
+        "standardized_beta": 0.421,
+        "r2": 0.926,
+        "n": 85,
+        "model_note": "지역 고정효과와 연도 고정효과 포함, 수도권 더미 제외"
+      },
+      {
+        "model": "지역·연도 고정효과",
+        "variable": "businesses_per_1000_people",
+        "variable_label": "사업체 밀도",
+        "coefficient": 0.6686,
+        "standard_error": 0.2761,
+        "t_stat": 2.422,
+        "p_value_normal_approx": 0.0154,
+        "standardized_beta": 0.682,
+        "r2": 0.926,
+        "n": 85,
+        "model_note": "지역 고정효과와 연도 고정효과 포함, 수도권 더미 제외"
+      },
+      {
+        "model": "지역·연도 고정효과",
+        "variable": "under40_homeownership_rate",
+        "variable_label": "40세 미만 주택소유율",
+        "coefficient": -3.3258,
+        "standard_error": 0.7206,
+        "t_stat": -4.616,
+        "p_value_normal_approx": 0.0,
+        "standardized_beta": -1.194,
+        "r2": 0.926,
+        "n": 85,
+        "model_note": "지역 고정효과와 연도 고정효과 포함, 수도권 더미 제외"
+      }
+    ],
+    "migration_gravity_coefficients": [
+      {
+        "model": "로그 OLS",
+        "variable": "log_origin_population",
+        "variable_label": "전출지 인구(로그)",
+        "coefficient": 0.8344694088109912,
+        "standard_error": 0.0033399941200886,
+        "p_value": 0.0,
+        "n": 47455,
+        "r2": 0.799,
+        "model_note": "양의 이동량만 사용한 로그-선형 중력모형"
+      },
+      {
+        "model": "로그 OLS",
+        "variable": "log_dest_population",
+        "variable_label": "전입지 인구(로그)",
+        "coefficient": 0.8698088627896169,
+        "standard_error": 0.0043819129897316,
+        "p_value": 0.0,
+        "n": 47455,
+        "r2": 0.799,
+        "model_note": "양의 이동량만 사용한 로그-선형 중력모형"
+      },
+      {
+        "model": "로그 OLS",
+        "variable": "log_distance_km",
+        "variable_label": "중심거리(로그)",
+        "coefficient": -0.6525426253054853,
+        "standard_error": 0.0065751559762671,
+        "p_value": 0.0,
+        "n": 47455,
+        "r2": 0.799,
+        "model_note": "양의 이동량만 사용한 로그-선형 중력모형"
+      },
+      {
+        "model": "로그 OLS",
+        "variable": "same_sido",
+        "variable_label": "같은 광역시도",
+        "coefficient": 0.6481449298796714,
+        "standard_error": 0.0160741476076323,
+        "p_value": 0.0,
+        "n": 47455,
+        "r2": 0.799,
+        "model_note": "양의 이동량만 사용한 로그-선형 중력모형"
+      },
+      {
+        "model": "로그 OLS",
+        "variable": "same_macro_area",
+        "variable_label": "같은 권역",
+        "coefficient": 0.5521254857791515,
+        "standard_error": 0.0139287533916836,
+        "p_value": 0.0,
+        "n": 47455,
+        "r2": 0.799,
+        "model_note": "양의 이동량만 사용한 로그-선형 중력모형"
+      },
+      {
+        "model": "로그 OLS",
+        "variable": "log_dest_grdp_pc",
+        "variable_label": "전입지 1인당 GRDP(광역)",
+        "coefficient": 0.1530814887244047,
+        "standard_error": 0.0161793572711829,
+        "p_value": 3.034671964386482e-21,
+        "n": 47455,
+        "r2": 0.799,
+        "model_note": "양의 이동량만 사용한 로그-선형 중력모형"
+      },
+      {
+        "model": "로그 OLS",
+        "variable": "log_dest_business_density",
+        "variable_label": "전입지 사업체밀도",
+        "coefficient": 0.110013084221989,
+        "standard_error": 0.0150239901551232,
+        "p_value": 2.4340342325233626e-13,
+        "n": 47455,
+        "r2": 0.799,
+        "model_note": "양의 이동량만 사용한 로그-선형 중력모형"
+      },
+      {
+        "model": "로그 OLS",
+        "variable": "capital_destination",
+        "variable_label": "전입지가 수도권",
+        "coefficient": -0.0579861401825049,
+        "standard_error": 0.0088660468018218,
+        "p_value": 6.14171195608923e-11,
+        "n": 47455,
+        "r2": 0.799,
+        "model_note": "양의 이동량만 사용한 로그-선형 중력모형"
+      },
+      {
+        "model": "PPML",
+        "variable": "log_origin_population",
+        "variable_label": "전출지 인구(로그)",
+        "coefficient": 0.8034746159267989,
+        "standard_error": 0.0006778846557952,
+        "p_value": 0.0,
+        "n": 51980,
+        "r2": 0.616,
+        "model_note": "0 이동쌍을 포함할 수 있는 포아송 유사최대우도 중력모형"
+      },
+      {
+        "model": "PPML",
+        "variable": "log_dest_population",
+        "variable_label": "전입지 인구(로그)",
+        "coefficient": 0.9189731337578292,
+        "standard_error": 0.000788112078346,
+        "p_value": 0.0,
+        "n": 51980,
+        "r2": 0.616,
+        "model_note": "0 이동쌍을 포함할 수 있는 포아송 유사최대우도 중력모형"
+      },
+      {
+        "model": "PPML",
+        "variable": "log_distance_km",
+        "variable_label": "중심거리(로그)",
+        "coefficient": -0.8109077885300675,
+        "standard_error": 0.0006996033003434,
+        "p_value": 0.0,
+        "n": 51980,
+        "r2": 0.616,
+        "model_note": "0 이동쌍을 포함할 수 있는 포아송 유사최대우도 중력모형"
+      },
+      {
+        "model": "PPML",
+        "variable": "same_sido",
+        "variable_label": "같은 광역시도",
+        "coefficient": 0.5379620201595254,
+        "standard_error": 0.0013173914269161,
+        "p_value": 0.0,
+        "n": 51980,
+        "r2": 0.616,
+        "model_note": "0 이동쌍을 포함할 수 있는 포아송 유사최대우도 중력모형"
+      },
+      {
+        "model": "PPML",
+        "variable": "same_macro_area",
+        "variable_label": "같은 권역",
+        "coefficient": 0.4509733828442899,
+        "standard_error": 0.0018858854405327,
+        "p_value": 0.0,
+        "n": 51980,
+        "r2": 0.616,
+        "model_note": "0 이동쌍을 포함할 수 있는 포아송 유사최대우도 중력모형"
+      },
+      {
+        "model": "PPML",
+        "variable": "log_dest_grdp_pc",
+        "variable_label": "전입지 1인당 GRDP(광역)",
+        "coefficient": -0.2303718004065313,
+        "standard_error": 0.0025208235187396,
+        "p_value": 0.0,
+        "n": 51980,
+        "r2": 0.616,
+        "model_note": "0 이동쌍을 포함할 수 있는 포아송 유사최대우도 중력모형"
+      },
+      {
+        "model": "PPML",
+        "variable": "log_dest_business_density",
+        "variable_label": "전입지 사업체밀도",
+        "coefficient": 0.1283335989228965,
+        "standard_error": 0.0020002110700436,
+        "p_value": 0.0,
+        "n": 51980,
+        "r2": 0.616,
+        "model_note": "0 이동쌍을 포함할 수 있는 포아송 유사최대우도 중력모형"
+      },
+      {
+        "model": "PPML",
+        "variable": "capital_destination",
+        "variable_label": "전입지가 수도권",
+        "coefficient": -0.7847459104355943,
+        "standard_error": 0.0014007023660934,
+        "p_value": 0.0,
+        "n": 51980,
+        "r2": 0.616,
+        "model_note": "0 이동쌍을 포함할 수 있는 포아송 유사최대우도 중력모형"
+      },
+      {
+        "model": "출발·도착지 고정효과 OLS",
+        "variable": "log_distance_km",
+        "variable_label": "중심거리(로그)",
+        "coefficient": -0.7862902721090166,
+        "standard_error": 0.0064955252289713,
+        "p_value": 0.0,
+        "n": 47455,
+        "r2": 0.847,
+        "model_note": "출발지와 도착지의 고정 특성을 통제한 로그-선형 모형"
+      },
+      {
+        "model": "출발·도착지 고정효과 OLS",
+        "variable": "same_sido",
+        "variable_label": "같은 광역시도",
+        "coefficient": 0.5315983472171217,
+        "standard_error": 0.0144394701630043,
+        "p_value": 1.0377265378388493e-296,
+        "n": 47455,
+        "r2": 0.847,
+        "model_note": "출발지와 도착지의 고정 특성을 통제한 로그-선형 모형"
+      },
+      {
+        "model": "출발·도착지 고정효과 OLS",
+        "variable": "same_macro_area",
+        "variable_label": "같은 권역",
+        "coefficient": 0.4840957267520457,
+        "standard_error": 0.0129787080214652,
+        "p_value": 1.6893822786910146e-304,
+        "n": 47455,
+        "r2": 0.847,
+        "model_note": "출발지와 도착지의 고정 특성을 통제한 로그-선형 모형"
+      }
+    ],
+    "migration_gravity_top_flows": [
+      {
+        "route": "수원시 → 화성시",
+        "origin_code": 41110,
+        "dest_code": 41590,
+        "origin_name": "수원시",
+        "dest_name": "화성시",
+        "origin_sido": 41,
+        "dest_sido": 41,
+        "distance_km": 18.455520911617437,
+        "flow": 16046
+      },
+      {
+        "route": "고양시 → 파주시",
+        "origin_code": 41280,
+        "dest_code": 41480,
+        "origin_name": "고양시",
+        "dest_name": "파주시",
+        "origin_sido": 41,
+        "dest_sido": 41,
+        "distance_km": 21.3272217745594,
+        "flow": 13300
+      },
+      {
+        "route": "수원시 → 용인시",
+        "origin_code": 41110,
+        "dest_code": 41460,
+        "origin_name": "수원시",
+        "dest_name": "용인시",
+        "origin_sido": 41,
+        "dest_sido": 41,
+        "distance_km": 20.036780530018504,
+        "flow": 11094
+      },
+      {
+        "route": "천안시 → 아산시",
+        "origin_code": 44130,
+        "dest_code": 44200,
+        "origin_name": "천안시",
+        "dest_name": "아산시",
+        "origin_sido": 44,
+        "dest_sido": 44,
+        "distance_km": 19.80965082177079,
+        "flow": 10602
+      },
+      {
+        "route": "성남시 → 용인시",
+        "origin_code": 41130,
+        "dest_code": 41460,
+        "origin_name": "성남시",
+        "dest_name": "용인시",
+        "origin_sido": 41,
+        "dest_sido": 41,
+        "distance_km": 22.668701244113848,
+        "flow": 10200
+      },
+      {
+        "route": "송파구 → 강동구",
+        "origin_code": 11710,
+        "dest_code": 11740,
+        "origin_name": "송파구",
+        "dest_name": "강동구",
+        "origin_sido": 11,
+        "dest_sido": 11,
+        "distance_km": 12.039455895274472,
+        "flow": 9558
+      },
+      {
+        "route": "화성시 → 수원시",
+        "origin_code": 41590,
+        "dest_code": 41110,
+        "origin_name": "화성시",
+        "dest_name": "수원시",
+        "origin_sido": 41,
+        "dest_sido": 41,
+        "distance_km": 18.455520911617437,
+        "flow": 9550
+      },
+      {
+        "route": "용인시 → 수원시",
+        "origin_code": 41460,
+        "dest_code": 41110,
+        "origin_name": "용인시",
+        "dest_name": "수원시",
+        "origin_sido": 41,
+        "dest_sido": 41,
+        "distance_km": 20.036780530018504,
+        "flow": 8942
+      },
+      {
+        "route": "서구 → 유성구",
+        "origin_code": 30170,
+        "dest_code": 30200,
+        "origin_name": "서구",
+        "dest_name": "유성구",
+        "origin_sido": 30,
+        "dest_sido": 30,
+        "distance_km": 10.771344496421742,
+        "flow": 8896
+      },
+      {
+        "route": "용인시 → 성남시",
+        "origin_code": 41460,
+        "dest_code": 41130,
+        "origin_name": "용인시",
+        "dest_name": "성남시",
+        "origin_sido": 41,
+        "dest_sido": 41,
+        "distance_km": 22.668701244113848,
+        "flow": 7984
+      },
+      {
+        "route": "성남시 → 광주시",
+        "origin_code": 41130,
+        "dest_code": 41610,
+        "origin_name": "성남시",
+        "dest_name": "광주시",
+        "origin_sido": 41,
+        "dest_sido": 41,
+        "distance_km": 14.991022532249747,
+        "flow": 7671
+      },
+      {
+        "route": "아산시 → 천안시",
+        "origin_code": 44200,
+        "dest_code": 44130,
+        "origin_name": "아산시",
+        "dest_name": "천안시",
+        "origin_sido": 44,
+        "dest_sido": 44,
+        "distance_km": 19.80965082177079,
+        "flow": 7609
+      },
+      {
+        "route": "의정부시 → 양주시",
+        "origin_code": 41150,
+        "dest_code": 41630,
+        "origin_name": "의정부시",
+        "dest_name": "양주시",
+        "origin_sido": 41,
+        "dest_sido": 41,
+        "distance_km": 9.991200654013303,
+        "flow": 7519
+      },
+      {
+        "route": "화성시 → 오산시",
+        "origin_code": 41590,
+        "dest_code": 41370,
+        "origin_name": "화성시",
+        "dest_name": "오산시",
+        "origin_sido": 41,
+        "dest_sido": 41,
+        "distance_km": 17.00073263308932,
+        "flow": 7444
+      },
+      {
+        "route": "파주시 → 고양시",
+        "origin_code": 41480,
+        "dest_code": 41280,
+        "origin_name": "파주시",
+        "dest_name": "고양시",
+        "origin_sido": 41,
+        "dest_sido": 41,
+        "distance_km": 21.3272217745594,
+        "flow": 7410
+      },
+      {
+        "route": "광산구 → 북구",
+        "origin_code": 29200,
+        "dest_code": 29170,
+        "origin_name": "광산구",
+        "dest_name": "북구",
+        "origin_sido": 29,
+        "dest_sido": 29,
+        "distance_km": 15.987382219991911,
+        "flow": 7407
+      },
+      {
+        "route": "유성구 → 서구",
+        "origin_code": 30200,
+        "dest_code": 30170,
+        "origin_name": "유성구",
+        "dest_name": "서구",
+        "origin_sido": 30,
+        "dest_sido": 30,
+        "distance_km": 10.771344496421742,
+        "flow": 7090
+      },
+      {
+        "route": "송파구 → 강남구",
+        "origin_code": 11710,
+        "dest_code": 11680,
+        "origin_name": "송파구",
+        "dest_name": "강남구",
+        "origin_sido": 11,
+        "dest_sido": 11,
+        "distance_km": 4.720879006825013,
+        "flow": 6944
+      },
+      {
+        "route": "서초구 → 강남구",
+        "origin_code": 11650,
+        "dest_code": 11680,
+        "origin_name": "서초구",
+        "dest_name": "강남구",
+        "origin_sido": 11,
+        "dest_sido": 11,
+        "distance_km": 3.817686645592644,
+        "flow": 6620
+      },
+      {
+        "route": "안산시 → 화성시",
+        "origin_code": 41270,
+        "dest_code": 41590,
+        "origin_name": "안산시",
+        "dest_name": "화성시",
+        "origin_sido": 41,
+        "dest_sido": 41,
+        "distance_km": 17.277990757929782,
+        "flow": 6537
+      }
+    ],
     "nec_age_turnout_recent": [
       {
         "election_label": "2022 대선",
@@ -105712,6 +106264,27 @@ window.populationBookCharts = {
       "csv": "young_migration_policy.csv",
       "source": "KOSIS DT_1B26001_A03 시군구/연령(5세)별 이동자수",
       "note": "20대는 20-24세와 25-29세, 30대는 30-34세와 35-39세 순이동을 합산했다. 서울은 청년기 진입, 경기도는 가족 형성기 정착의 흐름을 함께 보여준다."
+    },
+    "migration_model_coefficients": {
+      "title": "청년 순이동률 설명모형의 표준화 계수",
+      "kind": "bar",
+      "csv": "migration_model_coefficients.csv",
+      "source": "KOSIS 시도 순이동·청년인구·청년고용률·1인당 GRDP·사업체밀도, 주거소유통계 파생자료 결합",
+      "note": "종속변수는 20-34세 순이동을 19-39세 청년인구 1,000명당 순이동률로 환산한 값이다. 2020-2024년 17개 시도 패널의 탐색적 회귀이며, 표준화 계수는 인과효과가 아니라 변수 간 조건부 관련성으로 해석해야 한다."
+    },
+    "migration_gravity_coefficients": {
+      "title": "시군구 간 이동 중력모형 계수",
+      "kind": "bar",
+      "csv": "migration_gravity_coefficients.csv",
+      "source": "KOSIS DT_1B26003_A02 전출지/전입지(시군구)별 이동자수, KOSIS 주민등록연앙인구, 사업체밀도·GRDP 파생자료, 시군구 중심점 거리",
+      "note": "2024년 시군구 간 총 이동 OD쌍을 이용한 탐색적 중력모형이다. PPML은 0 이동쌍을 포함하고, 로그 OLS와 출발·도착지 고정효과 OLS는 양의 이동쌍만 사용한다. 계수는 인과효과가 아니라 이동량과 지역 속성의 조건부 관련성이다."
+    },
+    "migration_gravity_top_flows": {
+      "title": "2024년 시군구 간 상위 이동축",
+      "kind": "bar",
+      "csv": "migration_gravity_top_flows.csv",
+      "source": "KOSIS DT_1B26003_A02 전출지/전입지(시군구)별 이동자수, 시군구 중심점 거리 파생자료",
+      "note": "전출지와 전입지가 다른 시군구 간 이동 중 이동자 수가 큰 순서로 정렬했다. 거리는 행정구역 중심점 사이의 근사 거리이므로 실제 통근·이동시간과 다를 수 있다."
     },
     "fertility_driver_standardized_effects": {
       "title": "저출산 핵심요인 후보의 표준화 계수 비교",

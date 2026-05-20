@@ -79,6 +79,7 @@
 - [5.2. 어느 광역시도의 인구 순이동이 가장 큰가](../sections/section-5-2-sido-net-migration.html)
 - [5.3. 청년 이동과 시군구 격차](../sections/section-5-3-regional-gap.html)
 - [5.4. 외국인·다문화·국제결혼](../sections/section-5-4-foreign-multicultural.html)
+- [5.5. 인구이동을 설명하는 계량모형은 어떤 것이 있을까](../sections/section-5-5-migration-econometric-model.html)
 
 ## 참고문헌
 

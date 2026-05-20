@@ -216,6 +216,12 @@ BOOK = [
                 "file": "section-5-4-foreign-multicultural.html",
                 "chart": "multicultural_birth_rate",
             },
+            {
+                "no": "5.5",
+                "title": "인구이동을 설명하는 계량모형은 어떤 것이 있을까",
+                "file": "section-5-5-migration-econometric-model.html",
+                "chart": "migration_model_coefficients",
+            },
         ],
     },
     {
@@ -1392,6 +1398,27 @@ CHART_META = {
         "csv": "young_migration_policy.csv",
         "source": "KOSIS DT_1B26001_A03 시군구/연령(5세)별 이동자수",
         "note": "20대는 20-24세와 25-29세, 30대는 30-34세와 35-39세 순이동을 합산했다. 서울은 청년기 진입, 경기도는 가족 형성기 정착의 흐름을 함께 보여준다.",
+    },
+    "migration_model_coefficients": {
+        "title": "청년 순이동률 설명모형의 표준화 계수",
+        "kind": "bar",
+        "csv": "migration_model_coefficients.csv",
+        "source": "KOSIS 시도 순이동·청년인구·청년고용률·1인당 GRDP·사업체밀도, 주거소유통계 파생자료 결합",
+        "note": "종속변수는 20-34세 순이동을 19-39세 청년인구 1,000명당 순이동률로 환산한 값이다. 2020-2024년 17개 시도 패널의 탐색적 회귀이며, 표준화 계수는 인과효과가 아니라 변수 간 조건부 관련성으로 해석해야 한다.",
+    },
+    "migration_gravity_coefficients": {
+        "title": "시군구 간 이동 중력모형 계수",
+        "kind": "bar",
+        "csv": "migration_gravity_coefficients.csv",
+        "source": "KOSIS DT_1B26003_A02 전출지/전입지(시군구)별 이동자수, KOSIS 주민등록연앙인구, 사업체밀도·GRDP 파생자료, 시군구 중심점 거리",
+        "note": "2024년 시군구 간 총 이동 OD쌍을 이용한 탐색적 중력모형이다. PPML은 0 이동쌍을 포함하고, 로그 OLS와 출발·도착지 고정효과 OLS는 양의 이동쌍만 사용한다. 계수는 인과효과가 아니라 이동량과 지역 속성의 조건부 관련성이다.",
+    },
+    "migration_gravity_top_flows": {
+        "title": "2024년 시군구 간 상위 이동축",
+        "kind": "bar",
+        "csv": "migration_gravity_top_flows.csv",
+        "source": "KOSIS DT_1B26003_A02 전출지/전입지(시군구)별 이동자수, 시군구 중심점 거리 파생자료",
+        "note": "전출지와 전입지가 다른 시군구 간 이동 중 이동자 수가 큰 순서로 정렬했다. 거리는 행정구역 중심점 사이의 근사 거리이므로 실제 통근·이동시간과 다를 수 있다.",
     },
     "fertility_driver_standardized_effects": {
         "title": "저출산 핵심요인 후보의 표준화 계수 비교",
@@ -6591,6 +6618,9 @@ def build_derived_data() -> dict[str, list[dict[str, object]]]:
         ("fertility_driver_standardized_effects", "fertility_driver_standardized_effects.csv"),
         ("fertility_driver_age_contribution", "fertility_driver_age_contribution.csv"),
         ("becker_quantity_quality_simulation", "becker_quantity_quality_simulation.csv"),
+        ("migration_model_coefficients", "migration_model_coefficients.csv"),
+        ("migration_gravity_coefficients", "migration_gravity_coefficients.csv"),
+        ("migration_gravity_top_flows", "migration_gravity_top_flows.csv"),
         ("nec_age_turnout_recent", "nec_age_turnout_recent.csv"),
         ("nec_voter_engagement_2024", "nec_voter_engagement_2024.csv"),
     ]:

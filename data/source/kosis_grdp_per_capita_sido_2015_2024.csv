@@ -1,0 +1,181 @@
+﻿C1_OBJ_NM,DT,C1,PRD_SE,UNIT_NM_ENG,ITM_ID,TBL_ID,ITM_NM,TBL_NM,PRD_DE,LST_CHN_DE,C1_NM_ENG,C1_NM,UNIT_NM,ITM_NM_ENG,ORG_ID,C1_OBJ_NM_ENG
+시도별,34169,00,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2015,2024-09-02,Whole country,전국,천원,Regional GDP per Capita,101,By province
+시도별,35825,00,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2016,2024-09-02,Whole country,전국,천원,Regional GDP per Capita,101,By province
+시도별,37690,00,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2017,2024-09-02,Whole country,전국,천원,Regional GDP per Capita,101,By province
+시도별,38922,00,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2018,2024-09-02,Whole country,전국,천원,Regional GDP per Capita,101,By province
+시도별,39467,00,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2019,2024-09-02,Whole country,전국,천원,Regional GDP per Capita,101,By province
+시도별,39789,00,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2020,2024-09-02,Whole country,전국,천원,Regional GDP per Capita,101,By province
+시도별,42963,00,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2021,2024-09-02,Whole country,전국,천원,Regional GDP per Capita,101,By province
+시도별,45045,00,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2022,2024-09-02,Whole country,전국,천원,Regional GDP per Capita,101,By province
+시도별,46640,00,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2023,2025-12-17,Whole country,전국,천원,Regional GDP per Capita,101,By province
+시도별,49483,00,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2024,2025-12-17,Whole country,전국,천원,Regional GDP per Capita,101,By province
+시도별,38911,11,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2015,2024-09-02,Seoul,서울특별시,천원,Regional GDP per Capita,101,By province
+시도별,41359,11,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2016,2024-09-02,Seoul,서울특별시,천원,Regional GDP per Capita,101,By province
+시도별,43731,11,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2017,2024-09-02,Seoul,서울특별시,천원,Regional GDP per Capita,101,By province
+시도별,46547,11,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2018,2024-09-02,Seoul,서울특별시,천원,Regional GDP per Capita,101,By province
+시도별,48248,11,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2019,2024-09-02,Seoul,서울특별시,천원,Regional GDP per Capita,101,By province
+시도별,49165,11,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2020,2024-09-02,Seoul,서울특별시,천원,Regional GDP per Capita,101,By province
+시도별,53373,11,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2021,2024-09-02,Seoul,서울특별시,천원,Regional GDP per Capita,101,By province
+시도별,56094,11,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2022,2024-09-02,Seoul,서울특별시,천원,Regional GDP per Capita,101,By province
+시도별,58829,11,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2023,2025-12-17,Seoul,서울특별시,천원,Regional GDP per Capita,101,By province
+시도별,61215,11,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2024,2025-12-17,Seoul,서울특별시,천원,Regional GDP per Capita,101,By province
+시도별,25707,21,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2015,2024-09-02,Busan,부산광역시,천원,Regional GDP per Capita,101,By province
+시도별,26800,21,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2016,2024-09-02,Busan,부산광역시,천원,Regional GDP per Capita,101,By province
+시도별,27210,21,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2017,2024-09-02,Busan,부산광역시,천원,Regional GDP per Capita,101,By province
+시도별,28355,21,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2018,2024-09-02,Busan,부산광역시,천원,Regional GDP per Capita,101,By province
+시도별,29436,21,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2019,2024-09-02,Busan,부산광역시,천원,Regional GDP per Capita,101,By province
+시도별,29272,21,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2020,2024-09-02,Busan,부산광역시,천원,Regional GDP per Capita,101,By province
+시도별,31950,21,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2021,2024-09-02,Busan,부산광역시,천원,Regional GDP per Capita,101,By province
+시도별,34465,21,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2022,2024-09-02,Busan,부산광역시,천원,Regional GDP per Capita,101,By province
+시도별,35431,21,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2023,2025-12-17,Busan,부산광역시,천원,Regional GDP per Capita,101,By province
+시도별,37085,21,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2024,2025-12-17,Busan,부산광역시,천원,Regional GDP per Capita,101,By province
+시도별,22685,22,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2015,2024-09-02,Daegu,대구광역시,천원,Regional GDP per Capita,101,By province
+시도별,23382,22,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2016,2024-09-02,Daegu,대구광역시,천원,Regional GDP per Capita,101,By province
+시도별,24170,22,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2017,2024-09-02,Daegu,대구광역시,천원,Regional GDP per Capita,101,By province
+시도별,24820,22,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2018,2024-09-02,Daegu,대구광역시,천원,Regional GDP per Capita,101,By province
+시도별,25653,22,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2019,2024-09-02,Daegu,대구광역시,천원,Regional GDP per Capita,101,By province
+시도별,25928,22,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2020,2024-09-02,Daegu,대구광역시,천원,Regional GDP per Capita,101,By province
+시도별,27770,22,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2021,2024-09-02,Daegu,대구광역시,천원,Regional GDP per Capita,101,By province
+시도별,29654,22,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2022,2024-09-02,Daegu,대구광역시,천원,Regional GDP per Capita,101,By province
+시도별,30664,22,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2023,2025-12-17,Daegu,대구광역시,천원,Regional GDP per Capita,101,By province
+시도별,31374,22,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2024,2025-12-17,Daegu,대구광역시,천원,Regional GDP per Capita,101,By province
+시도별,28376,23,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2015,2024-09-02,Incheon,인천광역시,천원,Regional GDP per Capita,101,By province
+시도별,29864,23,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2016,2024-09-02,Incheon,인천광역시,천원,Regional GDP per Capita,101,By province
+시도별,31198,23,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2017,2024-09-02,Incheon,인천광역시,천원,Regional GDP per Capita,101,By province
+시도별,31688,23,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2018,2024-09-02,Incheon,인천광역시,천원,Regional GDP per Capita,101,By province
+시도별,32272,23,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2019,2024-09-02,Incheon,인천광역시,천원,Regional GDP per Capita,101,By province
+시도별,32292,23,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2020,2024-09-02,Incheon,인천광역시,천원,Regional GDP per Capita,101,By province
+시도별,35388,23,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2021,2024-09-02,Incheon,인천광역시,천원,Regional GDP per Capita,101,By province
+시도별,38065,23,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2022,2024-09-02,Incheon,인천광역시,천원,Regional GDP per Capita,101,By province
+시도별,39104,23,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2023,2025-12-17,Incheon,인천광역시,천원,Regional GDP per Capita,101,By province
+시도별,41187,23,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2024,2025-12-17,Incheon,인천광역시,천원,Regional GDP per Capita,101,By province
+시도별,24731,24,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2015,2024-09-02,Gwangju,광주광역시,천원,Regional GDP per Capita,101,By province
+시도별,26248,24,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2016,2024-09-02,Gwangju,광주광역시,천원,Regional GDP per Capita,101,By province
+시도별,27449,24,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2017,2024-09-02,Gwangju,광주광역시,천원,Regional GDP per Capita,101,By province
+시도별,28594,24,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2018,2024-09-02,Gwangju,광주광역시,천원,Regional GDP per Capita,101,By province
+시도별,29807,24,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2019,2024-09-02,Gwangju,광주광역시,천원,Regional GDP per Capita,101,By province
+시도별,30823,24,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2020,2024-09-02,Gwangju,광주광역시,천원,Regional GDP per Capita,101,By province
+시도별,32098,24,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2021,2024-09-02,Gwangju,광주광역시,천원,Regional GDP per Capita,101,By province
+시도별,33497,24,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2022,2024-09-02,Gwangju,광주광역시,천원,Regional GDP per Capita,101,By province
+시도별,35143,24,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2023,2025-12-17,Gwangju,광주광역시,천원,Regional GDP per Capita,101,By province
+시도별,37675,24,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2024,2025-12-17,Gwangju,광주광역시,천원,Regional GDP per Capita,101,By province
+시도별,24568,25,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2015,2024-09-02,Daejeon,대전광역시,천원,Regional GDP per Capita,101,By province
+시도별,26265,25,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2016,2024-09-02,Daejeon,대전광역시,천원,Regional GDP per Capita,101,By province
+시도별,27281,25,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2017,2024-09-02,Daejeon,대전광역시,천원,Regional GDP per Capita,101,By province
+시도별,28027,25,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2018,2024-09-02,Daejeon,대전광역시,천원,Regional GDP per Capita,101,By province
+시도별,29870,25,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2019,2024-09-02,Daejeon,대전광역시,천원,Regional GDP per Capita,101,By province
+시도별,31276,25,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2020,2024-09-02,Daejeon,대전광역시,천원,Regional GDP per Capita,101,By province
+시도별,32928,25,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2021,2024-09-02,Daejeon,대전광역시,천원,Regional GDP per Capita,101,By province
+시도별,34409,25,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2022,2024-09-02,Daejeon,대전광역시,천원,Regional GDP per Capita,101,By province
+시도별,36174,25,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2023,2025-12-17,Daejeon,대전광역시,천원,Regional GDP per Capita,101,By province
+시도별,38220,25,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2024,2025-12-17,Daejeon,대전광역시,천원,Regional GDP per Capita,101,By province
+시도별,65408,26,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2015,2024-09-02,Ulsan,울산광역시,천원,Regional GDP per Capita,101,By province
+시도별,65031,26,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2016,2024-09-02,Ulsan,울산광역시,천원,Regional GDP per Capita,101,By province
+시도별,66786,26,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2017,2024-09-02,Ulsan,울산광역시,천원,Regional GDP per Capita,101,By province
+시도별,65897,26,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2018,2024-09-02,Ulsan,울산광역시,천원,Regional GDP per Capita,101,By province
+시도별,65486,26,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2019,2024-09-02,Ulsan,울산광역시,천원,Regional GDP per Capita,101,By province
+시도별,59529,26,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2020,2024-09-02,Ulsan,울산광역시,천원,Regional GDP per Capita,101,By province
+시도별,70889,26,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2021,2024-09-02,Ulsan,울산광역시,천원,Regional GDP per Capita,101,By province
+시도별,76234,26,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2022,2024-09-02,Ulsan,울산광역시,천원,Regional GDP per Capita,101,By province
+시도별,80821,26,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2023,2025-12-17,Ulsan,울산광역시,천원,Regional GDP per Capita,101,By province
+시도별,85194,26,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2024,2025-12-17,Ulsan,울산광역시,천원,Regional GDP per Capita,101,By province
+시도별,53194,29,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2015,2024-09-02,Sejong City,세종특별자치시,천원,Regional GDP per Capita,101,By province
+시도별,46767,29,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2016,2024-09-02,Sejong City,세종특별자치시,천원,Regional GDP per Capita,101,By province
+시도별,44964,29,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2017,2024-09-02,Sejong City,세종특별자치시,천원,Regional GDP per Capita,101,By province
+시도별,41137,29,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2018,2024-09-02,Sejong City,세종특별자치시,천원,Regional GDP per Capita,101,By province
+시도별,40597,29,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2019,2024-09-02,Sejong City,세종특별자치시,천원,Regional GDP per Capita,101,By province
+시도별,40212,29,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2020,2024-09-02,Sejong City,세종특별자치시,천원,Regional GDP per Capita,101,By province
+시도별,42797,29,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2021,2024-09-02,Sejong City,세종특별자치시,천원,Regional GDP per Capita,101,By province
+시도별,42207,29,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2022,2024-09-02,Sejong City,세종특별자치시,천원,Regional GDP per Capita,101,By province
+시도별,43227,29,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2023,2025-12-17,Sejong City,세종특별자치시,천원,Regional GDP per Capita,101,By province
+시도별,44610,29,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2024,2025-12-17,Sejong City,세종특별자치시,천원,Regional GDP per Capita,101,By province
+시도별,32590,31,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2015,2024-09-02,Gyeonggi-do,경기도,천원,Regional GDP per Capita,101,By province
+시도별,34399,31,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2016,2024-09-02,Gyeonggi-do,경기도,천원,Regional GDP per Capita,101,By province
+시도별,37146,31,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2017,2024-09-02,Gyeonggi-do,경기도,천원,Regional GDP per Capita,101,By province
+시도별,38541,31,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2018,2024-09-02,Gyeonggi-do,경기도,천원,Regional GDP per Capita,101,By province
+시도별,38135,31,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2019,2024-09-02,Gyeonggi-do,경기도,천원,Regional GDP per Capita,101,By province
+시도별,38890,31,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2020,2024-09-02,Gyeonggi-do,경기도,천원,Regional GDP per Capita,101,By province
+시도별,41392,31,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2021,2024-09-02,Gyeonggi-do,경기도,천원,Regional GDP per Capita,101,By province
+시도별,42903,31,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2022,2024-09-02,Gyeonggi-do,경기도,천원,Regional GDP per Capita,101,By province
+시도별,43155,31,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2023,2025-12-17,Gyeonggi-do,경기도,천원,Regional GDP per Capita,101,By province
+시도별,46996,31,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2024,2025-12-17,Gyeonggi-do,경기도,천원,Regional GDP per Capita,101,By province
+시도별,27608,32,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2015,2024-09-02,Gangwon State,강원특별자치도,천원,Regional GDP per Capita,101,By province
+시도별,29380,32,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2016,2024-09-02,Gangwon State,강원특별자치도,천원,Regional GDP per Capita,101,By province
+시도별,31200,32,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2017,2024-09-02,Gangwon State,강원특별자치도,천원,Regional GDP per Capita,101,By province
+시도별,32267,32,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2018,2024-09-02,Gangwon State,강원특별자치도,천원,Regional GDP per Capita,101,By province
+시도별,33780,32,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2019,2024-09-02,Gangwon State,강원특별자치도,천원,Regional GDP per Capita,101,By province
+시도별,33945,32,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2020,2024-09-02,Gangwon State,강원특별자치도,천원,Regional GDP per Capita,101,By province
+시도별,36350,32,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2021,2024-09-02,Gangwon State,강원특별자치도,천원,Regional GDP per Capita,101,By province
+시도별,37797,32,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2022,2024-09-02,Gangwon State,강원특별자치도,천원,Regional GDP per Capita,101,By province
+시도별,40749,32,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2023,2025-12-17,Gangwon State,강원특별자치도,천원,Regional GDP per Capita,101,By province
+시도별,42563,32,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2024,2025-12-17,Gangwon State,강원특별자치도,천원,Regional GDP per Capita,101,By province
+시도별,36656,33,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2015,2024-09-02,Chungcheongbuk-do,충청북도,천원,Regional GDP per Capita,101,By province
+시도별,39848,33,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2016,2024-09-02,Chungcheongbuk-do,충청북도,천원,Regional GDP per Capita,101,By province
+시도별,43254,33,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2017,2024-09-02,Chungcheongbuk-do,충청북도,천원,Regional GDP per Capita,101,By province
+시도별,46002,33,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2018,2024-09-02,Chungcheongbuk-do,충청북도,천원,Regional GDP per Capita,101,By province
+시도별,46777,33,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2019,2024-09-02,Chungcheongbuk-do,충청북도,천원,Regional GDP per Capita,101,By province
+시도별,46462,33,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2020,2024-09-02,Chungcheongbuk-do,충청북도,천원,Regional GDP per Capita,101,By province
+시도별,49519,33,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2021,2024-09-02,Chungcheongbuk-do,충청북도,천원,Regional GDP per Capita,101,By province
+시도별,52252,33,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2022,2024-09-02,Chungcheongbuk-do,충청북도,천원,Regional GDP per Capita,101,By province
+시도별,53827,33,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2023,2025-12-17,Chungcheongbuk-do,충청북도,천원,Regional GDP per Capita,101,By province
+시도별,56328,33,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2024,2025-12-17,Chungcheongbuk-do,충청북도,천원,Regional GDP per Capita,101,By province
+시도별,49568,34,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2015,2024-09-02,Chungcheongnam-do,충청남도,천원,Regional GDP per Capita,101,By province
+시도별,51891,34,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2016,2024-09-02,Chungcheongnam-do,충청남도,천원,Regional GDP per Capita,101,By province
+시도별,55839,34,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2017,2024-09-02,Chungcheongnam-do,충청남도,천원,Regional GDP per Capita,101,By province
+시도별,56126,34,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2018,2024-09-02,Chungcheongnam-do,충청남도,천원,Regional GDP per Capita,101,By province
+시도별,54857,34,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2019,2024-09-02,Chungcheongnam-do,충청남도,천원,Regional GDP per Capita,101,By province
+시도별,56448,34,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2020,2024-09-02,Chungcheongnam-do,충청남도,천원,Regional GDP per Capita,101,By province
+시도별,62474,34,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2021,2024-09-02,Chungcheongnam-do,충청남도,천원,Regional GDP per Capita,101,By province
+시도별,64469,34,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2022,2024-09-02,Chungcheongnam-do,충청남도,천원,Regional GDP per Capita,101,By province
+시도별,64310,34,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2023,2025-12-17,Chungcheongnam-do,충청남도,천원,Regional GDP per Capita,101,By province
+시도별,67758,34,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2024,2025-12-17,Chungcheongnam-do,충청남도,천원,Regional GDP per Capita,101,By province
+시도별,26827,35,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2015,2024-09-02,Jeonbuk State,전북특별자치도,천원,Regional GDP per Capita,101,By province
+시도별,27300,35,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2016,2024-09-02,Jeonbuk State,전북특별자치도,천원,Regional GDP per Capita,101,By province
+시도별,28545,35,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2017,2024-09-02,Jeonbuk State,전북특별자치도,천원,Regional GDP per Capita,101,By province
+시도별,29319,35,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2018,2024-09-02,Jeonbuk State,전북특별자치도,천원,Regional GDP per Capita,101,By province
+시도별,30400,35,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2019,2024-09-02,Jeonbuk State,전북특별자치도,천원,Regional GDP per Capita,101,By province
+시도별,31213,35,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2020,2024-09-02,Jeonbuk State,전북특별자치도,천원,Regional GDP per Capita,101,By province
+시도별,33164,35,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2021,2024-09-02,Jeonbuk State,전북특별자치도,천원,Regional GDP per Capita,101,By province
+시도별,34484,35,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2022,2024-09-02,Jeonbuk State,전북특별자치도,천원,Regional GDP per Capita,101,By province
+시도별,36052,35,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2023,2025-12-17,Jeonbuk State,전북특별자치도,천원,Regional GDP per Capita,101,By province
+시도별,37980,35,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2024,2025-12-17,Jeonbuk State,전북특별자치도,천원,Regional GDP per Capita,101,By province
+시도별,40834,36,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2015,2024-09-02,Jeollanam-do,전라남도,천원,Regional GDP per Capita,101,By province
+시도별,42473,36,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2016,2024-09-02,Jeollanam-do,전라남도,천원,Regional GDP per Capita,101,By province
+시도별,43582,36,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2017,2024-09-02,Jeollanam-do,전라남도,천원,Regional GDP per Capita,101,By province
+시도별,44086,36,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2018,2024-09-02,Jeollanam-do,전라남도,천원,Regional GDP per Capita,101,By province
+시도별,44535,36,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2019,2024-09-02,Jeollanam-do,전라남도,천원,Regional GDP per Capita,101,By province
+시도별,45339,36,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2020,2024-09-02,Jeollanam-do,전라남도,천원,Regional GDP per Capita,101,By province
+시도별,52489,36,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2021,2024-09-02,Jeollanam-do,전라남도,천원,Regional GDP per Capita,101,By province
+시도별,54179,36,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2022,2024-09-02,Jeollanam-do,전라남도,천원,Regional GDP per Capita,101,By province
+시도별,55892,36,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2023,2025-12-17,Jeollanam-do,전라남도,천원,Regional GDP per Capita,101,By province
+시도별,59177,36,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2024,2025-12-17,Jeollanam-do,전라남도,천원,Regional GDP per Capita,101,By province
+시도별,40916,37,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2015,2024-09-02,Gyeongsangbuk-do,경상북도,천원,Regional GDP per Capita,101,By province
+시도별,41820,37,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2016,2024-09-02,Gyeongsangbuk-do,경상북도,천원,Regional GDP per Capita,101,By province
+시도별,43005,37,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2017,2024-09-02,Gyeongsangbuk-do,경상북도,천원,Regional GDP per Capita,101,By province
+시도별,43129,37,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2018,2024-09-02,Gyeongsangbuk-do,경상북도,천원,Regional GDP per Capita,101,By province
+시도별,42598,37,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2019,2024-09-02,Gyeongsangbuk-do,경상북도,천원,Regional GDP per Capita,101,By province
+시도별,42263,37,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2020,2024-09-02,Gyeongsangbuk-do,경상북도,천원,Regional GDP per Capita,101,By province
+시도별,44957,37,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2021,2024-09-02,Gyeongsangbuk-do,경상북도,천원,Regional GDP per Capita,101,By province
+시도별,46243,37,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2022,2024-09-02,Gyeongsangbuk-do,경상북도,천원,Regional GDP per Capita,101,By province
+시도별,48791,37,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2023,2025-12-17,Gyeongsangbuk-do,경상북도,천원,Regional GDP per Capita,101,By province
+시도별,52298,37,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2024,2025-12-17,Gyeongsangbuk-do,경상북도,천원,Regional GDP per Capita,101,By province
+시도별,32739,38,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2015,2024-09-02,Gyeongsangnam-do,경상남도,천원,Regional GDP per Capita,101,By province
+시도별,34005,38,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2016,2024-09-02,Gyeongsangnam-do,경상남도,천원,Regional GDP per Capita,101,By province
+시도별,33985,38,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2017,2024-09-02,Gyeongsangnam-do,경상남도,천원,Regional GDP per Capita,101,By province
+시도별,34291,38,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2018,2024-09-02,Gyeongsangnam-do,경상남도,천원,Regional GDP per Capita,101,By province
+시도별,35355,38,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2019,2024-09-02,Gyeongsangnam-do,경상남도,천원,Regional GDP per Capita,101,By province
+시도별,34325,38,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2020,2024-09-02,Gyeongsangnam-do,경상남도,천원,Regional GDP per Capita,101,By province
+시도별,35661,38,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2021,2024-09-02,Gyeongsangnam-do,경상남도,천원,Regional GDP per Capita,101,By province
+시도별,38612,38,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2022,2024-09-02,Gyeongsangnam-do,경상남도,천원,Regional GDP per Capita,101,By province
+시도별,42638,38,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2023,2025-12-17,Gyeongsangnam-do,경상남도,천원,Regional GDP per Capita,101,By province
+시도별,46550,38,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2024,2025-12-17,Gyeongsangnam-do,경상남도,천원,Regional GDP per Capita,101,By province
+시도별,30275,39,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2015,2024-09-02,Jeju,제주특별자치도,천원,Regional GDP per Capita,101,By province
+시도별,32389,39,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2016,2024-09-02,Jeju,제주특별자치도,천원,Regional GDP per Capita,101,By province
+시도별,34134,39,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2017,2024-09-02,Jeju,제주특별자치도,천원,Regional GDP per Capita,101,By province
+시도별,33673,39,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2018,2024-09-02,Jeju,제주특별자치도,천원,Regional GDP per Capita,101,By province
+시도별,33545,39,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2019,2024-09-02,Jeju,제주특별자치도,천원,Regional GDP per Capita,101,By province
+시도별,32404,39,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2020,2024-09-02,Jeju,제주특별자치도,천원,Regional GDP per Capita,101,By province
+시도별,33861,39,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2021,2024-09-02,Jeju,제주특별자치도,천원,Regional GDP per Capita,101,By province
+시도별,35999,39,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2022,2024-09-02,Jeju,제주특별자치도,천원,Regional GDP per Capita,101,By province
+시도별,38570,39,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2023,2025-12-17,Jeju,제주특별자치도,천원,Regional GDP per Capita,101,By province
+시도별,39914,39,A,1000 won,T1,INH_1C96_02,1인당 지역내총생산,1인당 GRDP(시도),2024,2025-12-17,Jeju,제주특별자치도,천원,Regional GDP per Capita,101,By province

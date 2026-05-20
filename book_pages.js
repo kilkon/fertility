@@ -4769,6 +4769,157 @@
             }
           }
         };
+      } else if (id === "migration_model_coefficients") {
+        const modelOrder = ["시도-연도 패널 OLS", "지역·연도 고정효과"];
+        const colors = ["rgba(37,99,235,.74)", "rgba(15,118,110,.74)"];
+        const labels = [...new Set(rows.map((row) => row.variable_label))];
+        const valueFor = (model, label) => {
+          const row = rows.find((item) => item.model === model && item.variable_label === label);
+          return row ? Number(row.standardized_beta) : null;
+        };
+        config = {
+          type: "bar",
+          data: {
+            labels,
+            datasets: modelOrder.map((model, index) => ({
+              label: model,
+              data: labels.map((label) => valueFor(model, label)),
+              backgroundColor: colors[index % colors.length]
+            }))
+          },
+          options: {
+            ...common,
+            indexAxis: "y",
+            scales: {
+              x: {
+                grid: { color: "rgba(15,23,42,.08)" },
+                title: { display: true, text: "Standardized coefficient" },
+                ticks: { callback: (value) => Number(value).toFixed(1) }
+              },
+              y: { grid: { display: false }, ticks: { autoSkip: false, font: { size: 11 } } }
+            },
+            plugins: {
+              ...common.plugins,
+              tooltip: {
+                callbacks: {
+                  afterBody: (items) => {
+                    const item = items[0];
+                    const model = item.dataset.label;
+                    const label = labels[item.dataIndex];
+                    const row = rows.find((entry) => entry.model === model && entry.variable_label === label);
+                    if (!row) return "";
+                    return [
+                      `coef=${Number(row.coefficient).toFixed(3)}, se=${Number(row.standard_error).toFixed(3)}`,
+                      `n=${row.n}, R2=${row.r2}`,
+                      row.model_note
+                    ];
+                  }
+                }
+              }
+            }
+          }
+        };
+      } else if (id === "migration_gravity_coefficients") {
+        const variableOrder = [
+          "log_origin_population",
+          "log_dest_population",
+          "log_distance_km",
+          "same_sido",
+          "same_macro_area",
+          "log_dest_business_density",
+          "log_dest_grdp_pc",
+          "capital_destination"
+        ];
+        const labels = variableOrder
+          .map((variable) => rows.find((row) => row.variable === variable)?.variable_label)
+          .filter(Boolean);
+        const modelOrder = ["로그 OLS", "PPML", "출발·도착지 고정효과 OLS"];
+        const colors = ["rgba(37,99,235,.72)", "rgba(15,118,110,.72)", "rgba(147,51,234,.72)"];
+        const valueFor = (model, label) => {
+          const row = rows.find((item) => item.model === model && item.variable_label === label);
+          return row ? Number(row.coefficient) : null;
+        };
+        config = {
+          type: "bar",
+          data: {
+            labels,
+            datasets: modelOrder.map((model, index) => ({
+              label: model,
+              data: labels.map((label) => valueFor(model, label)),
+              backgroundColor: colors[index % colors.length]
+            }))
+          },
+          options: {
+            ...common,
+            indexAxis: "y",
+            scales: {
+              x: {
+                grid: { color: "rgba(15,23,42,.08)" },
+                title: { display: true, text: "Coefficient" },
+                ticks: { callback: (value) => Number(value).toFixed(1) }
+              },
+              y: { grid: { display: false }, ticks: { autoSkip: false, font: { size: 11 } } }
+            },
+            plugins: {
+              ...common.plugins,
+              tooltip: {
+                callbacks: {
+                  afterBody: (items) => {
+                    const item = items[0];
+                    const model = item.dataset.label;
+                    const label = labels[item.dataIndex];
+                    const row = rows.find((entry) => entry.model === model && entry.variable_label === label);
+                    if (!row) return "";
+                    return [
+                      `se=${Number(row.standard_error).toFixed(3)}, p=${Number(row.p_value).toExponential(1)}`,
+                      `n=${Number(row.n).toLocaleString("ko-KR")}, R2=${row.r2}`,
+                      row.model_note
+                    ];
+                  }
+                }
+              }
+            }
+          }
+        };
+      } else if (id === "migration_gravity_top_flows") {
+        const sortedRows = [...rows].sort((a, b) => Number(b.flow) - Number(a.flow)).slice(0, 12).reverse();
+        config = {
+          type: "bar",
+          data: {
+            labels: sortedRows.map((row) => row.route),
+            datasets: [
+              {
+                label: "이동자 수",
+                data: sortedRows.map((row) => Number(row.flow)),
+                backgroundColor: "rgba(15,118,110,.74)"
+              }
+            ]
+          },
+          options: {
+            ...common,
+            indexAxis: "y",
+            scales: {
+              x: {
+                grid: { color: "rgba(15,23,42,.08)" },
+                title: { display: true, text: "이동자 수" },
+                ticks: { callback: (value) => Number(value).toLocaleString("ko-KR") }
+              },
+              y: { grid: { display: false }, ticks: { autoSkip: false, font: { size: 11 } } }
+            },
+            plugins: {
+              ...common.plugins,
+              tooltip: {
+                callbacks: {
+                  label: (context) => `${context.dataset.label}: ${Number(context.raw).toLocaleString("ko-KR")}명`,
+                  afterBody: (items) => {
+                    const row = sortedRows[items[0].dataIndex];
+                    return `중심거리: ${Number(row.distance_km).toFixed(1)}km`;
+                  }
+                }
+              }
+            }
+          }
+        };
       } else if (id === "fertility_driver_standardized_effects") {
         const sortedRows = [...rows].sort((a, b) => Number(a.std_beta) - Number(b.std_beta));
         config = {

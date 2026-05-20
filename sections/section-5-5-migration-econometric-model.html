@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>5.5. 인구이동을 설명하는 계량모형은 어떤 것이 있을까</title>
+  <link rel="stylesheet" href="../site.css?v=20260518-fertility-drivers">
+  <link rel="stylesheet" href="../_book_pages.css?v=20260518-fertility-drivers">
+</head>
+<body>
+  <div class="layout">
+    <nav class="toc" aria-label="&#xCC45; &#xBAA9;&#xCC28;">
+<button class="toc-toggle" type="button" data-toc-toggle aria-expanded="true">&#xC811;&#xAE30;</button>
+<h2 class="toc-title">&#xC778;&#xAD6C;&#xB7;&#xC800;&#xCD9C;&#xC0B0;&#xB7;&#xACE0;&#xB839;&#xD654;</h2>
+<a href="../index.html">&#xD45C;&#xC9C0;</a>
+<a class="chapter" href="../chapters/chapter-0.html">0. &#xC65C; &#xC774; &#xCC45;&#xC744; &#xC37C;&#xB294;&#xAC00;</a>
+<a class="chapter" href="../chapters/chapter-1.html">1. &#xC6B0;&#xB9AC;&#xB294; &#xC778;&#xAD6C;&#xB97C; &#xC5B4;&#xB5BB;&#xAC8C; &#xBCF4;&#xC544;&#xC57C; &#xD560; &#xAC83;&#xC778;&#xAC00;</a>
+<a class="toc-section" href="../sections/section-1-1-population-as-structure.html">1.1 &#xC778;&#xAD6C;&#xB294; &#xC65C; &#xC0AC;&#xD68C;&#xC758; &#xAD6C;&#xC870; &#xBCC0;&#xC218;&#xC778;&#xAC00;</a>
+<a class="toc-section" href="../sections/section-1-2-growth-decline-perspectives.html">1.2 &#xC778;&#xAD6C; &#xC99D;&#xAC00;&#xC640; &#xAC10;&#xC18C;&#xB97C; &#xC5B4;&#xB5BB;&#xAC8C; &#xB2E4;&#xB974;&#xAC8C; &#xBCF4;&#xB294;&#xAC00;</a>
+<a class="toc-section" href="../sections/section-1-3-quantity-quality.html">1.3 &#xC778;&#xAD6C;&#xC758; &#xC591;&#xACFC; &#xC9C8;&#xC740; &#xAC19;&#xC740; &#xBB38;&#xC81C;&#xC778;&#xAC00;</a>
+<a class="chapter" href="../chapters/chapter-2.html">2. &#xC9C0;&#xD45C;&#xC758; &#xD568;&#xC815;&#xACFC; &#xC778;&#xAD6C;&#xB97C; &#xC77D;&#xB294; &#xBC29;&#xBC95;</a>
+<a class="toc-section" href="../sections/section-2-1-age-structure.html">2.1 &#xC778;&#xAD6C;&#xD53C;&#xB77C;&#xBBF8;&#xB4DC;&#xB294; &#xBB34;&#xC5C7;&#xC744; &#xB4DC;&#xB7EC;&#xB0B4;&#xB294;&#xAC00;</a>
+<a class="toc-section" href="../sections/section-2-2-population-measures.html">2.2 &#xC778;&#xAD6C; &#xAE30;&#xC900;&#xC740; &#xC65C; &#xC11C;&#xB85C; &#xB2E4;&#xB978;&#xAC00;</a>
+<a class="toc-section" href="../sections/section-2-3-2010-registration-jump.html">2.3 &#xC65C; &#xAC11;&#xC790;&#xAE30; 2010&#xB144;&#xC5D0; &#xC778;&#xAD6C;&#xAC00; &#xC99D;&#xAC00;&#xD588;&#xB294;&#xAC00;</a>
+<a class="toc-section" href="../sections/section-2-4-optimal-population.html">2.4 &#xC778;&#xAD6C;&#xAC00; &#xB9CE;&#xC544;&#xC57C; &#xD558;&#xB294; &#xC774;&#xC720;&#xAC00; &#xC788;&#xB294;&#xAC00;</a>
+<a class="toc-section" href="../sections/section-2-5-fertility-measures.html">2.5 &#xCD9C;&#xC0B0;&#xC728;&#xC740; &#xC5B4;&#xB5BB;&#xAC8C; &#xB2E4;&#xC591;&#xD558;&#xAC8C; &#xCE21;&#xC815;&#xB418;&#xB294;&#xAC00;</a>
+<a class="chapter" href="../chapters/chapter-3.html">3. &#xC778;&#xAD6C;&#xB294; &#xC815;&#xB9D0; &#xAC10;&#xC18C;&#xD558;&#xB294;&#xAC00;</a>
+<a class="toc-section" href="../sections/section-3-1-population-growth-regions.html">3.1 &#xC778;&#xAD6C;&#xAC00; &#xC99D;&#xAC00;&#xD55C; &#xC9C0;&#xC5ED;&#xC740;</a>
+<a class="toc-section" href="../sections/section-3-2-older-population-growth.html">3.2 &#xACE0;&#xB839;&#xCE35; &#xC778;&#xAD6C;&#xAC00; &#xC99D;&#xAC00;&#xD588;&#xB294;&#xAC00;</a>
+<a class="toc-section" href="../sections/section-3-3-working-age-population-growth.html">3.3 &#xC0DD;&#xC0B0;&#xC5F0;&#xB839;&#xC778;&#xAD6C;&#xB294; &#xC99D;&#xAC00;&#xD588;&#xB294;&#xAC00;</a>
+<a class="toc-section" href="../sections/section-3-4-population-concentration.html">3.4 &#xC778;&#xAD6C; &#xC9D1;&#xC911;&#xB3C4;&#xB294; &#xC2EC;&#xD654;&#xB418;&#xB294;&#xAC00;</a>
+<a class="toc-section" href="../sections/section-3-5-international-low-fertility.html">3.5 &#xC800;&#xCD9C;&#xC0B0;&#xC740; &#xD55C;&#xAD6D;&#xB9CC;&#xC758; &#xBB38;&#xC81C;&#xC778;&#xAC00;</a>
+<a class="chapter" href="../chapters/chapter-4.html">4. &#xC800;&#xCD9C;&#xC0B0; &#xC815;&#xCC45;&#xC758; &#xC131;&#xACFC;&#xB294; &#xC5B4;&#xB5BB;&#xAC8C; &#xD3C9;&#xAC00;&#xD574;&#xC57C; &#xD558;&#xB294;&#xAC00;</a>
+<a class="toc-section" href="../sections/section-4-1-low-fertility-policy-types.html">4.1 &#xC800;&#xCD9C;&#xC0B0; &#xC815;&#xCC45;&#xC740; &#xC5B4;&#xB5A4; &#xAC83;&#xC774; &#xC788;&#xB294;&#xAC00;</a>
+<a class="toc-section" href="../sections/section-4-2-international-policy-success.html">4.2 &#xC800;&#xCD9C;&#xC0B0; &#xC815;&#xCC45;&#xC774; &#xC131;&#xACF5;&#xD55C; &#xB098;&#xB77C;&#xB294; &#xC788;&#xB294;&#xAC00;</a>
+<a class="toc-section" href="../sections/section-4-3-housing-support-marriage-birth.html">4.3 &#xC8FC;&#xAC70; &#xC9C0;&#xC6D0;&#xC740; &#xACFC;&#xC5F0; &#xACB0;&#xD63C;&#xACFC; &#xCD9C;&#xC0B0;&#xC744; &#xB298;&#xB9AC;&#xACE0; &#xC788;&#xB294;&#xAC00;</a>
+<a class="toc-section" href="../sections/section-4-4-yeonggwang-cohort.html">4.4 &#xC9C0;&#xC5ED; &#xCD9C;&#xC0B0;&#xC815;&#xCC45;&#xC740; &#xC2E4;&#xC81C; &#xC778;&#xAD6C;&#xB97C; &#xB0A8;&#xAE30;&#xB294;&#xAC00;</a>
+<a class="toc-section" href="../sections/section-4-5-fertility-conditions.html">4.5 &#xCD9C;&#xC0B0;&#xC744; &#xBBF8;&#xB8E8;&#xB294; &#xC870;&#xAC74;&#xC740; &#xBB34;&#xC5C7;&#xC778;&#xAC00;</a>
+<a class="toc-section" href="../sections/section-4-6-family-conditions-dashboard.html">4.6 &#xACB0;&#xD63C;&#xACFC; &#xC721;&#xC544;&#xC758; &#xC870;&#xAC74;&#xC740; &#xC2E4;&#xC81C;&#xB85C; &#xC88B;&#xC544;&#xC84C;&#xB294;&#xAC00;</a>
+<a class="chapter" href="../chapters/chapter-5.html">5. &#xC774;&#xB3D9;&#xACFC; &#xC9C0;&#xC5ED; &#xACA9;&#xCC28;&#xAC00; &#xC778;&#xAD6C;&#xB97C; &#xB2E4;&#xC2DC; &#xC4F4;&#xB2E4;</a>
+<a class="toc-section" href="../sections/section-5-1-living-population.html">5.1 &#xC0DD;&#xD65C;&#xC778;&#xAD6C;&#xB294; &#xC5BC;&#xB9C8;&#xB098; &#xD074;&#xAE4C;</a>
+<a class="toc-section" href="../sections/section-5-2-sido-net-migration.html">5.2 &#xC5B4;&#xB290; &#xAD11;&#xC5ED;&#xC2DC;&#xB3C4;&#xC758; &#xC778;&#xAD6C; &#xC21C;&#xC774;&#xB3D9;&#xC774; &#xAC00;&#xC7A5; &#xD070;&#xAC00;</a>
+<a class="toc-section" href="../sections/section-5-3-regional-gap.html">5.3 &#xCCAD;&#xB144; &#xC774;&#xB3D9;&#xACFC; &#xC2DC;&#xAD70;&#xAD6C; &#xACA9;&#xCC28;</a>
+<a class="toc-section" href="../sections/section-5-4-foreign-multicultural.html">5.4 &#xC678;&#xAD6D;&#xC778;&#xB7;&#xB2E4;&#xBB38;&#xD654;&#xB7;&#xAD6D;&#xC81C;&#xACB0;&#xD63C;</a>
+<a class="toc-section active" href="../sections/section-5-5-migration-econometric-model.html">5.5 &#xC778;&#xAD6C;&#xC774;&#xB3D9;&#xC744; &#xC124;&#xBA85;&#xD558;&#xB294; &#xACC4;&#xB7C9;&#xBAA8;&#xD615;&#xC740; &#xC5B4;&#xB5A4; &#xAC83;&#xC774; &#xC788;&#xC744;&#xAE4C;</a>
+<a class="chapter" href="../chapters/chapter-6.html">6. &#xCD9C;&#xC0B0; &#xACB0;&#xC815;&#xC758; &#xC0DD;&#xD65C;&#xC2DC;&#xAC04;&#xD45C;</a>
+<a class="toc-section" href="../sections/section-6-1-marriage-culture.html">6.1 &#xACB0;&#xD63C;&#xACFC; &#xCD9C;&#xC0B0;&#xC740; &#xC65C; &#xBB38;&#xD654;&#xC801; &#xD604;&#xC0C1;&#xC778;&#xAC00;</a>
+<a class="toc-section" href="../sections/section-6-2-family-formation.html">6.2 &#xD63C;&#xC778;&#xB7;&#xC774;&#xD63C;&#xB7;&#xCD9C;&#xC0DD;&#xC758; &#xC5F0;&#xACB0;</a>
+<a class="toc-section" href="../sections/section-6-3-divorce-fear-marriage.html">6.3 &#xC774;&#xD63C;&#xC758; &#xB450;&#xB824;&#xC6C0;&#xC740; &#xACB0;&#xD63C;&#xC744; &#xB9C9;&#xB294;&#xAC00;</a>
+<a class="toc-section" href="../sections/section-6-4-income-fertility.html">6.4 &#xC18C;&#xB4DD;&#xC774; &#xB192;&#xC73C;&#xBA74; &#xCD9C;&#xC0B0;&#xC728;&#xC774; &#xB192;&#xC544;&#xC9C8;&#xAE4C;?</a>
+<a class="toc-section" href="../sections/section-6-5-households.html">6.5 &#xAC00;&#xAD6C; &#xC218;&#xB294; &#xC65C; &#xC778;&#xAD6C;&#xC640; &#xB2E4;&#xB974;&#xAC8C; &#xC6C0;&#xC9C1;&#xC774;&#xB294;&#xAC00;</a>
+<a class="toc-section" href="../sections/section-6-6-housing-demand.html">6.6 &#xC8FC;&#xAC70; &#xC218;&#xC694;&#xB294; &#xC65C; &#xC778;&#xAD6C;&#xBCF4;&#xB2E4; &#xB2A6;&#xAC8C; &#xBCC0;&#xD558;&#xB294;&#xAC00;</a>
+<a class="toc-section" href="../sections/section-6-7-men-care-parental-leave.html">6.7 &#xB0A8;&#xC131;&#xC774; &#xC721;&#xC544;&#xB97C; &#xB2F4;&#xB2F9;&#xD558;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;?</a>
+<a class="toc-section" href="../sections/section-6-8-care-work-balance.html">6.8 &#xB3CC;&#xBD04;&#xACFC; &#xC77C;&#xAC00;&#xC815;&#xC591;&#xB9BD;</a>
+<a class="toc-section" href="../sections/section-6-9-childcare-shortage.html">6.9 &#xC5B4;&#xB9B0;&#xC774;&#xC9D1;&#xC774; &#xC801;&#xC5B4;&#xC11C; &#xCD9C;&#xC0B0;&#xC744; &#xB35C; &#xD558;&#xB294;&#xAC00;</a>
+<a class="toc-section" href="../sections/section-6-10-vacant-housing.html">6.10 &#xBE48;&#xC9D1;&#xC740; &#xC0DD;&#xD65C;&#xAD8C; &#xC57D;&#xD654;&#xC758; &#xC2E0;&#xD638;&#xC778;&#xAC00;</a>
+<a class="toc-section" href="../sections/section-6-11-fertility-core-drivers.html">6.11 &#xB3C4;&#xB300;&#xCCB4; &#xBB34;&#xC5C7;&#xC774; &#xC800;&#xCD9C;&#xC0B0;&#xC758; &#xD575;&#xC2EC;&#xC694;&#xC778;&#xC778;&#xAC00;</a>
+<a class="chapter" href="../chapters/chapter-7.html">7. &#xC678;&#xAD6D;&#xC778;&#xC774; &#xD574;&#xACB0;&#xCC45;&#xC778;&#xAC00;</a>
+<a class="toc-section" href="../sections/section-7-1-who-are-foreigners.html">7.1 &#xC678;&#xAD6D;&#xC778;&#xC740; &#xB204;&#xAD6C;&#xC778;&#xAC00;</a>
+<a class="toc-section" href="../sections/section-7-2-foreign-population-growth.html">7.2 &#xC678;&#xAD6D;&#xC778;&#xC740; &#xBE60;&#xB974;&#xAC8C; &#xC99D;&#xAC00;&#xD558;&#xACE0; &#xC788;&#xB294;&#xAC00;</a>
+<a class="toc-section" href="../sections/section-7-3-foreign-statistical-gap.html">7.3 &#xC678;&#xAD6D;&#xC778; &#xD1B5;&#xACC4;&#xB294; &#xC65C; &#xC11C;&#xB85C; &#xB2E4;&#xB974;&#xAC8C; &#xBCF4;&#xC774;&#xB294;&#xAC00;</a>
+<a class="toc-section" href="../sections/section-7-4-foreign-settlement.html">7.4 &#xC678;&#xAD6D;&#xC778;&#xC740; &#xACFC;&#xC5F0; &#xC815;&#xCC29;&#xC744; &#xD558;&#xACE0; &#xC788;&#xB294;&#xAC00;</a>
+<a class="chapter" href="../chapters/chapter-8.html">8. &#xACE0;&#xB839;&#xC0AC;&#xD68C;, &#xB178;&#xB3D9;&#xC2DC;&#xC7A5;, &#xC7AC;&#xC815;&#xC758; &#xC555;&#xB825;</a>
+<a class="toc-section" href="../sections/section-8-1-labor-aging.html">8.1 &#xB178;&#xB3D9;&#xC2DC;&#xC7A5;&#xACFC; &#xACE0;&#xB839;&#xCE35; &#xACBD;&#xC81C;&#xD65C;&#xB3D9;</a>
+<a class="toc-section" href="../sections/section-8-2-aging-index.html">8.2 &#xB178;&#xB839;&#xD654; &#xC9C0;&#xC218;&#xB294; &#xBB34;&#xC5C7;&#xC774;&#xACE0; &#xC5BC;&#xB9C8;&#xB098; &#xBE60;&#xB974;&#xAC8C; &#xC99D;&#xAC00;&#xD560;&#xAE4C;</a>
+<a class="toc-section" href="../sections/section-8-3-lifecycle-fiscal.html">8.3 &#xC0DD;&#xC560;&#xC8FC;&#xAE30;&#xC640; &#xC7AC;&#xC815;</a>
+<a class="toc-section" href="../sections/section-8-4-health-spending-aging.html">8.4 &#xACE0;&#xB839;&#xD654; &#xC0AC;&#xD68C;&#xC5D0;&#xC11C; &#xC758;&#xB8CC;&#xBE44; &#xC9C0;&#xCD9C;&#xC740; &#xC5BC;&#xB9C8;&#xB098; &#xBE60;&#xB974;&#xAC8C; &#xC99D;&#xAC00;&#xD558;&#xB294;&#xAC00;</a>
+<a class="toc-section" href="../sections/section-8-5-aging-budget.html">8.5 &#xACE0;&#xB839;&#xD654; &#xC608;&#xC0B0;&#xC740; &#xC5BC;&#xB9C8;&#xB098; &#xC99D;&#xAC00;&#xD558;&#xB294;&#xAC00;</a>
+<a class="toc-section" href="../sections/section-8-6-elderly-pension.html">8.6 &#xACE0;&#xB839;&#xCE35; &#xC5F0;&#xAE08;&#xC218;&#xB839;&#xC561;&#xC740; &#xC5BC;&#xB9C8;&#xB098; &#xC99D;&#xAC00;&#xD558;&#xB294;&#xAC00;</a>
+<a class="toc-section" href="../sections/section-8-7-elderly-pension-distribution.html">8.7 &#xACE0;&#xB839;&#xCE35; &#xC5F0;&#xAE08;&#xC218;&#xB839;&#xC561; &#xAD6C;&#xAC04; &#xBD84;&#xD3EC;</a>
+<a class="chapter" href="../chapters/chapter-9.html">9. &#xAD50;&#xC721;&#xACFC; &#xC800;&#xCD9C;&#xC0B0;</a>
+<a class="toc-section" href="../sections/section-9-1-education-cost-fertility.html">9.1 &#xC800;&#xCD9C;&#xC0B0;&#xC744; &#xCD08;&#xB798;&#xD560; &#xC815;&#xB3C4;&#xB85C; &#xAD50;&#xC721;&#xBE44;&#xAC00; &#xC99D;&#xAC00;&#xD558;&#xACE0; &#xC788;&#xB294;&#xAC00;</a>
+<a class="toc-section" href="../sections/section-9-2-private-education-by-school-level.html">9.2 &#xC0AC;&#xAD50;&#xC721; &#xACBD;&#xC7C1;&#xC740; &#xC5B8;&#xC81C; &#xC2DC;&#xC791;&#xB418;&#xB294;&#xAC00;</a>
+<a class="toc-section" href="../sections/section-9-3-education-cost-inequality.html">9.3 &#xAD50;&#xC721;&#xBE44; &#xBD80;&#xB2F4;&#xC740; &#xACC4;&#xCE35;&#xBCC4;&#xB85C; &#xC5BC;&#xB9C8;&#xB098; &#xB2E4;&#xB978;&#xAC00;</a>
+<a class="toc-section" href="../sections/section-9-4-school-age-decline-education.html">9.4 &#xD559;&#xC0DD; &#xC218;&#xAC00; &#xC904;&#xBA74; &#xAD50;&#xC721; &#xBD80;&#xB2F4;&#xB3C4; &#xC904;&#xC5B4;&#xB4DC;&#xB294;&#xAC00;</a>
+<a class="toc-section" href="../sections/section-9-5-education-expectation-burden.html">9.5 &#xBD80;&#xBAA8;&#xB294; &#xC65C; &#xB300;&#xD559;&#xAE4C;&#xC9C0; &#xCC45;&#xC784;&#xC9C0;&#xB824; &#xD558;&#xB294;&#xAC00;</a>
+<a class="chapter" href="../chapters/chapter-10.html">10. &#xC815;&#xCE58;&#xC640; &#xC800;&#xCD9C;&#xC0B0;&#xB7;&#xACE0;&#xB839;&#xD654;</a>
+<a class="toc-section" href="../sections/section-10-1-crisis-politics.html">10.1 &#xC815;&#xCE58;&#xB294; &#xC65C; &#xC778;&#xAD6C;&#xBB38;&#xC81C;&#xB97C; &#xC704;&#xAE30;&#xB85C; &#xB9D0;&#xD558;&#xB294;&#xAC00;</a>
+<a class="toc-section" href="../sections/section-10-2-generational-allocation.html">10.2 &#xC138;&#xB300; &#xAC04; &#xC790;&#xC6D0;&#xBC30;&#xBD84;&#xC740; &#xACF5;&#xC815;&#xD55C;&#xAC00;</a>
+<a class="toc-section" href="../sections/section-10-3-regional-representation.html">10.3 &#xC9C0;&#xC5ED;&#xB300;&#xD45C;&#xC131;&#xC740; &#xC778;&#xAD6C;&#xBCC0;&#xD654;&#xC5D0; &#xC5B4;&#xB5BB;&#xAC8C; &#xD754;&#xB4E4;&#xB9AC;&#xB294;&#xAC00;</a>
+<a class="chapter" href="../chapters/chapter-11.html">11. &#xADF8;&#xB798;&#xC11C; &#xC5B4;&#xB5A4; &#xC800;&#xCD9C;&#xC0B0;&#xB7;&#xACE0;&#xB839;&#xD654; &#xC815;&#xCC45;&#xC774; &#xD544;&#xC694;&#xD55C;&#xAC00;</a>
+<a class="chapter" href="../sections/appendix-data-notes.html">&#xBD80;&#xB85D;. &#xC790;&#xB8CC;&#xC640; &#xBD84;&#xC11D; &#xC124;&#xACC4;</a>
+<a class="chapter" href="../sections/appendix-references.html">&#xBD80;&#xB85D;. &#xCC38;&#xACE0;&#xBB38;&#xD5CC;</a>
+</nav>
+    <main class="page book-page">
+      <section class="section-header-block">
+  <p class="series">Chapter 5</p>
+  <h1>5.5. 인구이동을 설명하는 계량모형은 어떤 것이 있을까</h1>
+  <p class="lead">출생만으로 지역 인구를 설명할 수 없다. 청년 이동, 외국인 유입, 국제결혼, 다문화 출생이 지역별 인구구조를 다시 만든다.</p>
+  <details class="feedback-form-box page-feedback-actions">
+    <summary>익명 의견 남기기</summary>
+    <form action="https://formsubmit.co/kilkon@snu.ac.kr" method="POST">
+      <input type="hidden" name="_subject" value="[대한민국은 정말 사라지는가 의견] 5.5. 인구이동을 설명하는 계량모형은 어떤 것이 있을까">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://kilkon.github.io/fertility/feedback-thanks.html">
+      <input type="text" name="_honey" class="feedback-honey" tabindex="-1" autocomplete="off">
+      <input type="hidden" name="대상" value="5.5. 인구이동을 설명하는 계량모형은 어떤 것이 있을까">
+      <input type="hidden" name="파일" value="section-5-5-migration-econometric-model.html">
+      <label>
+        <span>이름 또는 별명(선택)</span>
+        <input type="text" name="이름" autocomplete="name" placeholder="익명">
+      </label>
+      <label>
+        <span>답장을 받을 이메일(선택)</span>
+        <input type="email" name="email" autocomplete="email" placeholder="남기지 않아도 됩니다">
+      </label>
+      <label class="feedback-message-field">
+        <span>의견</span>
+        <textarea name="의견" rows="5" required placeholder="오탈자, 해석에 대한 의견, 추가 자료 제안, 더 살펴볼 질문을 자유롭게 남겨주세요."></textarea>
+      </label>
+      <button type="submit">메일로 의견 보내기</button>
+      <p>GitHub 로그인 없이 보낼 수 있습니다. 이름과 이메일을 적지 않으면 익명 의견으로 전달됩니다.</p>
+    </form>
+  </details>
+</section>
+<div class="markdown-manuscript">
+<p>인구이동은 단순히 “사람들이 어디로 가는가”의 문제가 아니다. 이동은 한 지역이 제공하는 일자리, 소득, 주거, 교육, 돌봄, 문화, 관계망, 미래 전망을 사람들이 어떻게 평가하는지를 보여주는 집합적 선택의 결과다. 특히 저출산 시대에는 이동의 의미가 더 커진다. 출생아 수가 전국적으로 줄어드는 상황에서 청년층이 어느 지역을 떠나고 어느 지역으로 모이는지는 지역의 혼인 기반, 출산 기반, 노동력, 학교 수요, 돌봄 수요, 지방재정까지 바꾸기 때문이다. 이 절은 인구이동을 설명하는 대표적인 이론 모형을 정리한 뒤, 한국의 시도 자료를 이용해 청년 순이동률을 설명하는 탐색적 계량모형을 구성한다.</p>
+<h2>이동을 설명하는 네 가지 모형</h2>
+<p>가장 오래되고 직관적인 모형은 <strong>중력모형(gravity model)</strong>이다. 물리학의 중력 법칙을 빌려 온 이 모형은 두 지역 사이의 이동량이 출발지와 도착지의 인구 규모가 클수록 커지고, 거리나 이동비용이 클수록 작아진다고 본다. 기본식은 다음과 같이 쓸 수 있다.</p>
+<div class="math-block">\[ \ln M_{ij} = \alpha + \beta_1 \ln P_i + \beta_2 \ln P_j - \beta_3 \ln D_{ij} + \mathbf{X}_{ij}\boldsymbol{\theta} + \varepsilon_{ij} \]</div>
+<p>여기서 \(M_{ij}\)는 지역 \(i\)에서 지역 \(j\)로 이동한 사람 수, \(P_i\)와 \(P_j\)는 출발지와 도착지의 인구 규모, \(D_{ij}\)는 거리 또는 이동비용, \(\mathbf{X}_{ij}\)는 임금 차이, 주택비, 대학·일자리 접근성, 같은 광역권 여부 같은 추가 변수다. 중력모형은 “큰 도시가 사람을 끌어당긴다”는 사실을 정량화하는 데 강하지만, 왜 어떤 사람이 같은 거리를 두고도 이동하고 어떤 사람은 이동하지 않는지를 설명하려면 추가 모형이 필요하다.</p>
+<p>두 번째는 <strong>밀어내기-끌어당기기 모형(push-pull model)</strong>이다. 이 모형은 출발지의 낮은 임금, 일자리 부족, 교육 기회 부족, 높은 고령화, 낮은 서비스 접근성 같은 요인을 밀어내기 요인으로 보고, 도착지의 높은 임금, 좋은 대학, 다양한 일자리, 문화시설, 의료 접근성, 결혼시장 규모를 끌어당기기 요인으로 본다. 한국의 청년 이동을 설명할 때 이 틀은 여전히 유용하다. 다만 “일자리가 있어서 간다”는 단순 설명만으로는 부족하다. 같은 일자리라도 임금, 직무 전망, 주거비, 통근시간, 배우자 선택 가능성, 지역의 사회문화적 분위기가 결합되어야 실제 이동으로 이어진다.</p>
+<p>세 번째는 <strong>무작위 효용모형(random utility model)</strong> 또는 지역 선택모형이다. 개인 \(n\)이 지역 \(r\)을 선택할 때 얻는 효용을 다음처럼 쓴다.</p>
+<div class="math-block">\[ U_{nr} = \mathbf{Z}_{r}\boldsymbol{\beta} - C_{nr} + \varepsilon_{nr} \]</div>
+<p>\(\mathbf{Z}_{r}\)는 지역의 임금, 일자리, 주거비, 교육·보육·의료 서비스, 사회적 네트워크 같은 속성이고, \(C_{nr}\)는 이동비용이다. 개인은 여러 지역 중 효용이 가장 높은 지역을 선택한다. 이 모형은 개인자료가 있을 때 특히 강력하다. 예컨대 대학 진학기 청년, 첫 취업기 청년, 결혼·출산기 부부, 은퇴 이후 고령층은 서로 다른 지역 속성에 반응할 수 있다. 같은 지역도 생애단계에 따라 누군가에게는 기회의 공간이고, 누군가에게는 부담의 공간이 된다.</p>
+<p>네 번째는 <strong>생애과정·공간 불평등 모형</strong>이다. 이 모형은 이동을 한 번의 선택이 아니라 독립, 대학 진학, 첫 일자리, 결혼, 출산, 주택 구입, 자녀 교육, 은퇴가 이어지는 생애시간표 위에서 본다. 청년이 지역을 떠나는 이유는 단지 “현재 일자리” 때문만이 아니라, 그 지역에서 다음 생애단계로 넘어갈 전망이 약하기 때문일 수 있다. 5장의 관점에서 중요한 것은 바로 이 지점이다. 인구이동은 지역의 매력도만이 아니라 지역이 제공하는 생애전망의 차이를 드러낸다.</p>
+<h2>한국 시도 패널에 적용한 탐색적 모형</h2>
+<p>이 절에서는 2020-2024년 17개 광역시도 패널을 이용해 청년 순이동률을 설명하는 간단한 모형을 구성했다. 종속변수는 20-34세 순이동자 수를 19-39세 청년인구 1,000명당 순이동률로 환산한 값이다. 설명변수는 청년고용률, 1인당 GRDP, 인구 1,000명당 사업체 수, 40세 미만 가구주의 주택소유율, 수도권 여부다. 자료는 KOSIS의 시도별 순이동, 청년인구, 청년고용률, 1인당 GRDP, 사업체밀도 자료와 이 책에서 앞서 구축한 주거소유 파생자료를 결합했다.</p>
+<p>기본 추정식은 다음과 같다.</p>
+<div class="math-block">\[ Y_{rt} = \alpha + \beta_1 EmpYoung_{rt} + \beta_2 \ln GRDPpc_{rt} + \beta_3 BizDensity_{rt} + \beta_4 HomeOwn40_{rt} + \beta_5 Capital_r + \gamma_t + \varepsilon_{rt} \]</div>
+<p>여기서 \(Y_{rt}\)는 지역 \(r\), 연도 \(t\)의 청년 순이동률이다. \(EmpYoung_{rt}\)는 15-29세 청년고용률, \(\ln GRDPpc_{rt}\)는 1인당 GRDP의 로그값, \(BizDensity_{rt}\)는 인구 1,000명당 사업체 수, \(HomeOwn40_{rt}\)는 40세 미만 가구주의 주택소유율, \(Capital_r\)은 서울·인천·경기 여부, \(\gamma_t\)는 연도 고정효과다. 비교를 위해 지역 고정효과를 포함한 모형도 함께 추정했다.</p>
+<p>이 모형은 인과효과 추정이 아니다. 지역의 소득, 사업체, 주거, 이동은 서로 동시에 영향을 주며, 누락된 변수도 많다. 예를 들어 대학, 산업구조, 대기업 본사, 광역교통, 지역 문화, 가족 네트워크, 군 복무와 복학, 신규 아파트 공급 같은 요인은 충분히 반영하지 못했다. 따라서 계수는 “이 변수를 바꾸면 청년이 이동한다”가 아니라, 다른 관측변수를 함께 놓았을 때 어떤 지역 특성이 청년 순이동률과 같이 움직이는지를 보여주는 탐색적 결과로 읽어야 한다.</p>
+<section class="panel markdown-chart-panel">
+  <div class="chart-panel-header">
+    <h2>청년 순이동률 설명모형의 표준화 계수</h2>
+    <a class="csv-button" href="../data/derived/migration_model_coefficients.csv" download>CSV 다운로드</a>
+  </div>
+  <div class="chart-box book-chart"><canvas data-book-chart="migration_model_coefficients"></canvas></div>
+  <div class="chart-actions source-actions">
+    <span>출처: KOSIS 시도 순이동·청년인구·청년고용률·1인당 GRDP·사업체밀도, 주거소유통계 파생자료 결합</span>
+  </div>
+  <p class="source-note">종속변수는 20-34세 순이동을 19-39세 청년인구 1,000명당 순이동률로 환산한 값이다. 2020-2024년 17개 시도 패널의 탐색적 회귀이며, 표준화 계수는 인과효과가 아니라 변수 간 조건부 관련성으로 해석해야 한다.</p>
+</section>
+<h2>시군구 간 이동의 중력모형: 거리는 여전히 강한 설명력을 갖는가</h2>
+<p>앞의 시도 패널 모형은 청년 순이동률이 지역 특성과 어떻게 함께 움직이는지를 보여준다. 그러나 실제 인구이동은 광역시도 단위의 평균 속에서 일어나지 않는다. 사람은 서울에서 부산으로만 이동하는 것이 아니라 수원에서 화성으로, 고양에서 파주로, 천안에서 아산으로, 송파에서 강동으로 이동한다. 따라서 지역 인구정책을 더 현실적으로 이해하려면 출발지와 도착지가 결합된 이동쌍, 즉 OD(origin-destination) 자료를 보아야 한다.</p>
+<p>이 절에서는 2024년 KOSIS 전출지/전입지 시군구별 이동자수 자료를 이용해 기초 지자체 간 중력모형을 추정했다. 분석 단위는 전출지 \(i\)와 전입지 \(j\)의 조합이며, 같은 시군구 내부 이동은 제외했다. 종속변수 \(M_{ij}\)는 2024년에 지역 \(i\)에서 지역 \(j\)로 이동한 총 이동자 수다. 설명변수로는 전출지 인구, 전입지 인구, 두 지역 중심점 사이의 거리, 같은 광역시도 여부, 같은 권역 여부, 전입지의 사업체밀도, 전입지가 속한 광역시도의 1인당 GRDP, 전입지가 수도권인지 여부를 사용했다.</p>
+<p>가장 기본적인 로그-선형 중력모형은 다음과 같다.</p>
+<div class="math-block">\[ \ln M_{ij} = \alpha + \beta_1 \ln P_i + \beta_2 \ln P_j + \beta_3 \ln D_{ij} + \beta_4 SameSido_{ij} + \beta_5 SameMacro_{ij} + \beta_6 \ln GRDPpc_j + \beta_7 \ln BizDensity_j + \beta_8 Capital_j + \varepsilon_{ij}. \]</div>
+<p>여기서 \(P_i\)와 \(P_j\)는 각각 전출지와 전입지의 인구, \(D_{ij}\)는 두 지역 중심점 사이의 거리다. \(SameSido_{ij}\)는 두 지역이 같은 광역시도에 속하는지, \(SameMacro_{ij}\)는 수도권·충청권·호남권·영남권·강원·제주처럼 같은 넓은 권역에 속하는지를 나타낸다. \(GRDPpc_j\)는 전입지 광역시도의 1인당 GRDP, \(BizDensity_j\)는 전입지의 인구 대비 사업체 수, \(Capital_j\)는 전입지가 수도권인지 여부다.</p>
+<p>다만 이동자 수는 0을 포함하는 비음수 개수 자료다. 로그 OLS는 해석이 쉽지만 \(M_{ij}=0\)인 이동쌍을 제외해야 하고, 이동량이 큰 쌍과 작은 쌍의 오차 구조가 다를 때 편향될 수 있다. 그래서 국제무역과 지역 간 흐름 분석에서 널리 쓰이는 포아송 유사최대우도(PPML) 모형도 함께 추정했다(Santos Silva &amp; Tenreyro, 2006). PPML의 조건부 평균식은 다음과 같다.</p>
+<div class="math-block">\[ E[M_{ij}\mid X_{ij}] = \exp\left( \alpha + \beta_1 \ln P_i + \beta_2 \ln P_j + \beta_3 \ln D_{ij} + \beta_4 SameSido_{ij} + \beta_5 SameMacro_{ij} + \beta_6 \ln GRDPpc_j + \beta_7 \ln BizDensity_j + \beta_8 Capital_j \right). \]</div>
+<p>마지막으로, 출발지와 도착지의 관측되지 않은 특성을 더 강하게 통제하기 위해 출발지 고정효과와 도착지 고정효과를 포함한 로그 OLS도 추정했다. 이 경우 전출지 인구, 전입지 인구, 전입지 소득처럼 특정 지역에 고정된 변수는 고정효과에 흡수되므로, 거리와 같은 광역·권역 여부만 남는다.</p>
+<div class="math-block">\[ \ln M_{ij} = \alpha_i + \delta_j + \beta_1 \ln D_{ij} + \beta_2 SameSido_{ij} + \beta_3 SameMacro_{ij} + \varepsilon_{ij}. \]</div>
+<p>자료 구축에는 몇 가지 한계가 있다. 첫째, 이 분석은 전체 이동자 수를 사용했으며 청년만의 이동은 아니다. 따라서 5장의 청년 이동 논의와 연결되지만, 청년 이동의 전용 모형은 아니다. 둘째, KOSIS 전출지/전입지 표는 일부 비자치구를 별도 시군구로 제공하지 않고 수원시·성남시·용인시·청주시·천안시·전주시·포항시·창원시처럼 통합된 시 단위로 제공한다. 셋째, 거리는 2018년 행정구역 경계 자료에서 계산한 중심점 간 근사 거리이므로 실제 통근시간이나 철도·도로 접근성을 완전히 반영하지 못한다. 넷째, 전입지 소득은 시군구 소득이 아니라 광역시도 1인당 GRDP를 배정한 값이므로 지역의 실제 임금·일자리 질을 거칠게 대리할 뿐이다. 이 한계 때문에 아래 결과는 인과효과가 아니라, 지역 간 이동량이 어떤 공간 구조와 함께 나타나는지 보여주는 탐색적 증거로 읽어야 한다.</p>
+<section class="panel markdown-chart-panel">
+  <div class="chart-panel-header">
+    <h2>시군구 간 이동 중력모형 계수</h2>
+    <a class="csv-button" href="../data/derived/migration_gravity_coefficients.csv" download>CSV 다운로드</a>
+  </div>
+  <div class="chart-box book-chart"><canvas data-book-chart="migration_gravity_coefficients"></canvas></div>
+  <div class="chart-actions source-actions">
+    <span>출처: KOSIS DT_1B26003_A02 전출지/전입지(시군구)별 이동자수, KOSIS 주민등록연앙인구, 사업체밀도·GRDP 파생자료, 시군구 중심점 거리</span>
+  </div>
+  <p class="source-note">2024년 시군구 간 총 이동 OD쌍을 이용한 탐색적 중력모형이다. PPML은 0 이동쌍을 포함하고, 로그 OLS와 출발·도착지 고정효과 OLS는 양의 이동쌍만 사용한다. 계수는 인과효과가 아니라 이동량과 지역 속성의 조건부 관련성이다.</p>
+</section>
+<p>결과는 매우 선명하다. 로그 OLS에서 거리 탄력성은 -0.65, PPML에서는 -0.81, 출발·도착지 고정효과 모형에서는 -0.79로 나타났다. 이는 다른 조건이 같을 때 두 지역 사이의 거리가 두 배가 되면 이동량이 대략 36-43% 낮아진다는 뜻이다. 다시 말해 디지털 경제와 광역교통이 확대되었어도, 인구이동은 여전히 거리의 마찰을 강하게 받는다. 사람들은 추상적인 “좋은 지역”으로만 이동하지 않는다. 익숙한 생활권, 가족·친구 네트워크, 통근 가능성, 주거 탐색 범위 안에서 움직인다.</p>
+<p>전출지와 전입지의 인구 규모도 강하게 작동한다. PPML 기준 전출지 인구의 계수는 0.80, 전입지 인구의 계수는 0.92다. 인구가 큰 지역은 더 많은 이동자를 내보내고, 더 많은 이동자를 받아들인다. 이것은 큰 도시가 특별히 더 매력적이라는 말만은 아니다. 인구가 큰 지역은 주택 거래, 일자리 전환, 가족 분가, 주변 지역 간 이동 자체가 더 많이 발생하는 두터운 이동시장을 갖는다.</p>
+<p>같은 광역시도와 같은 권역 효과도 뚜렷하다. PPML 기준 같은 광역시도 계수는 0.54, 같은 권역 계수는 0.45다. 지수화하면 같은 광역시도 안의 이동쌍은 그렇지 않은 쌍보다 이동량이 약 71% 높고, 같은 권역 안의 이동쌍도 약 57% 높다. 이는 인구이동이 전국의 모든 지역 사이에서 무차별적으로 일어나는 것이 아니라, 생활권·통근권·가족권·주거권으로 묶인 공간 안에서 집중된다는 사실을 보여준다.</p>
+<p>전입지 사업체밀도는 양의 방향이다. PPML 기준 계수는 0.13으로, 사업체가 촘촘한 지역일수록 이동을 더 많이 받아들이는 경향이 있다. 반면 광역시도 1인당 GRDP와 수도권 더미의 부호는 모형에 따라 조심스럽게 읽어야 한다. 로그 OLS에서 1인당 GRDP는 양의 방향이지만, PPML에서는 음의 방향으로 바뀐다. 이는 광역 단위 GRDP가 시군구의 실제 임금과 일자리 기회를 충분히 포착하지 못하고, 산업도시처럼 소득은 높지만 주거·가족 이동이 제한적인 지역을 함께 담기 때문일 수 있다. 수도권 더미가 조건부로 음의 방향을 보이는 것도 “수도권이 매력이 없다”는 뜻이 아니다. 인구 규모, 거리, 같은 권역, 사업체밀도를 이미 통제하면 수도권의 이동 흡수력 상당 부분이 그 변수들에 의해 설명되고, 남는 수도권 효과에는 높은 주거비와 과밀 비용이 함께 섞일 수 있다는 뜻에 가깝다.</p>
+<section class="panel markdown-chart-panel">
+  <div class="chart-panel-header">
+    <h2>2024년 시군구 간 상위 이동축</h2>
+    <a class="csv-button" href="../data/derived/migration_gravity_top_flows.csv" download>CSV 다운로드</a>
+  </div>
+  <div class="chart-box book-chart"><canvas data-book-chart="migration_gravity_top_flows"></canvas></div>
+  <div class="chart-actions source-actions">
+    <span>출처: KOSIS DT_1B26003_A02 전출지/전입지(시군구)별 이동자수, 시군구 중심점 거리 파생자료</span>
+  </div>
+  <p class="source-note">전출지와 전입지가 다른 시군구 간 이동 중 이동자 수가 큰 순서로 정렬했다. 거리는 행정구역 중심점 사이의 근사 거리이므로 실제 통근·이동시간과 다를 수 있다.</p>
+</section>
+<p>상위 이동축은 이 해석을 더 직관적으로 보여준다. 2024년에 가장 큰 이동축은 수원시에서 화성시, 고양시에서 파주시, 수원시에서 용인시, 천안시에서 아산시, 성남시에서 용인시, 송파구에서 강동구로 이어지는 흐름이다. 이들은 멀리 떨어진 지역 간 이동이라기보다 대도시권 내부 또는 인접 생활권 안의 재배치다. 인구이동은 “지방에서 수도권으로 빨려 들어가는 흐름”만이 아니다. 수도권 내부의 주거 이동, 산업도시와 배후도시의 이동, 충청권의 연담도시 이동, 광역시 내부 구 간 이동이 함께 작동한다.</p>
+<aside class="pause-box">
+  <h2>중력모형이 알려주는 것</h2>
+  <div class="pause-box-body">
+<p>이 분석의 핵심은 인구이동을 지역의 승패표로만 보면 안 된다는 점이다. 이동은 인구 규모가 큰 곳, 가까운 곳, 같은 생활권에 있는 곳 사이에서 훨씬 많이 발생한다. 따라서 시군구 단위 인구정책은 각 지자체가 따로 청년을 “유치”하는 방식만으로는 충분하지 않다. 실제 이동은 생활권 네트워크 안에서 일어나므로, 주거·교통·일자리·보육·의료를 광역 생활권 단위로 설계해야 한다.</p>
+  </div>
+</aside>
+<h2>결과는 무엇을 말하는가</h2>
+<p>첫째, 시도-연도 패널 OLS에서 수도권 더미의 표준화 계수는 0.199로 양의 방향이다. 다른 변수와 연도 효과를 함께 넣어도 수도권 지역은 청년 순유입률이 높은 경향을 보인다. 다만 이 효과가 압도적으로 크지는 않다. 수도권이라는 지위는 중요한 배경이지만, 청년 이동의 전부를 설명하지 않는다.</p>
+<p>둘째, 40세 미만 가구주의 주택소유율은 두 모형 모두에서 음의 방향으로 나타났다. 패널 OLS의 표준화 계수는 -0.474, 지역·연도 고정효과 모형의 표준화 계수는 -1.194다. 이 결과를 “주택소유율이 낮을수록 청년이 온다”고 단순 해석하면 안 된다. 오히려 청년 순유입이 큰 지역일수록 임차 거주와 이동성이 높고, 주거비 부담으로 소유가 어려운 구조가 함께 나타날 수 있다. 즉 청년 유입 지역은 기회가 많지만, 안정적 주거 전환은 더 어렵다는 역설을 보여준다.</p>
+<p>셋째, 사업체밀도는 모형에 따라 부호가 달라진다. 단순 패널 OLS에서는 음의 방향(-0.598)이지만, 지역 고정효과를 넣으면 양의 방향(0.682)으로 바뀐다. 이는 매우 중요한 경고다. 지역 간 비교에서는 사업체가 많은 지역이 반드시 청년 순유입 지역으로 보이지 않을 수 있다. 서울과 부산처럼 사업체가 많지만 청년 주거비와 전출 압력이 큰 지역이 있기 때문이다. 그러나 같은 지역 안에서 시간이 흐르며 사업체밀도가 높아지는 변화는 청년 순이동률 개선과 함께 움직일 수 있다. 지역 간 차이와 지역 내부 변화는 같은 말이 아니다.</p>
+<p>넷째, 청년고용률과 1인당 GRDP의 계수는 기대처럼 안정적으로 크지 않았다. 이는 일자리와 소득이 중요하지 않다는 뜻이 아니다. 시도 단위의 평균 청년고용률과 1인당 GRDP는 청년이 실제로 경험하는 직무의 질, 임금, 계약 안정성, 대기업·공공기관·전문직 일자리의 접근성, 지역 내 산업구조를 충분히 포착하지 못한다. 청년 이동은 “고용률이 높은가”보다 “내가 원하는 경력 경로를 시작할 수 있는가”에 더 민감할 수 있다.</p>
+<aside class="pause-box">
+  <h2>분석 결과를 읽는 법</h2>
+  <div class="pause-box-body">
+<p>이 모형에서 가장 중요한 결과는 특정 계수 하나가 아니라, 청년 이동을 설명할 때 “수도권이 빨아들인다”는 말만으로는 부족하다는 점이다. 수도권 효과는 있지만, 주거 안정성, 사업체 변화, 지역 내부의 시간 변화가 함께 작동한다. 특히 지역 고정효과를 넣었을 때 사업체밀도 부호가 바뀐다는 사실은, 지역 간 평균 비교와 한 지역 내부의 변화가 서로 다른 이야기를 할 수 있음을 보여준다.</p>
+  </div>
+</aside>
+<h2>정책적 함의</h2>
+<p>첫째, 인구이동 정책은 단순 유입 경쟁이 되어서는 안 된다. 어떤 지역이 청년을 많이 끌어들이는지보다, 청년이 그 지역에서 독립, 일, 관계, 주거, 가족형성으로 이어지는 경로를 만들 수 있는지가 더 중요하다. 청년 순유입이 있더라도 그것이 장기 정착으로 이어지지 않으면 지역의 출산 기반과 생활 기반은 안정되지 않는다.</p>
+<p>둘째, 지역 일자리 정책은 고용률 숫자보다 일자리의 질과 경력 전망을 보아야 한다. 시도 평균 고용률은 청년 이동의 세밀한 동기를 충분히 설명하지 못했다. 청년에게 중요한 것은 단순 취업 여부가 아니라 첫 일자리의 임금, 직무, 숙련 축적, 이직 가능성, 지역 내 다음 일자리의 존재다. 따라서 지역 청년정책은 기업 수, 고용률, 창업 건수만이 아니라 경력 형성 경로를 지표로 삼아야 한다.</p>
+<p>셋째, 주거는 청년 이동의 결과이면서 원인이다. 청년이 모이는 지역일수록 임차 수요와 주거비 압력이 커지고, 주거 안정이 늦어지면 결혼과 출산도 늦어진다. 반대로 주거가 상대적으로 안정된 지역이라도 일자리와 관계망이 약하면 청년은 머물지 않는다. 저출산 시대의 지역정책은 일자리와 주거를 따로 설계할 수 없다.</p>
+<p>넷째, 시도 단위 분석은 출발점일 뿐이다. 실제 이동은 시군구, 생활권, 대학권, 통근권에서 일어난다. 같은 광역시도 안에서도 중심도시, 산업도시, 신도시, 농촌, 대학도시는 서로 다른 이동 체계를 갖는다. 앞으로의 분석은 출발지-도착지 행렬 자료, 거리, 통근권, 대학과 산업단지 위치, 주택가격과 임대료, 보육·교육 접근성을 결합한 공간패널 또는 중력모형으로 확장되어야 한다.</p>
+<p>이 절의 결론은 분명하다. 인구이동은 단순한 인구 재배치가 아니라 지역 간 생애전망의 차이가 드러나는 방식이다. 청년은 숫자로만 이동하지 않는다. 더 나은 다음 단계를 상상할 수 있는 곳으로 이동한다. 따라서 저출산 시대의 지역 인구정책은 사람을 붙잡는 정책이 아니라, 그 지역에서 다음 생애단계로 넘어갈 수 있는 조건을 만드는 정책이어야 한다.</p>
+<p class="source-note bibliography-note">참고문헌은 <a href="../sections/appendix-references.html">부록. 참고문헌</a>에 모아 두었다.</p>
+</div>
+      <nav class="page-turn-nav" aria-label="페이지 이동">
+  <a class="page-turn-link prev" href="../sections/section-5-4-foreign-multicultural.html"><span>이전으로 가기</span><strong>5.4. 외국인·다문화·국제결혼</strong></a>
+  <a class="page-turn-home" href="../index.html">처음으로 돌아가기</a>
+  <a class="page-turn-link next" href="../chapters/chapter-6.html"><span>다음 페이지로 가기</span><strong>6. 출산 결정의 생활시간표</strong></a>
+</nav>
+    </main>
+  </div>
+  <script src="../vendor/chart.umd.min.js"></script>
+  <script src="../question_plan.js?v=20260518-fertility-drivers"></script>
+  <script src="../book_chart_data.js?v=20260518-fertility-drivers"></script>
+  <script src="../data/geo/sigungu_topo.js?v=20260518-fertility-drivers"></script>
+  <script src="../toc.js?v=20260518-fertility-drivers"></script>
+  <script src="../book_pages.js?v=20260518-fertility-drivers"></script>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]]
+      },
+      options: { skipHtmlTags: ["script", "noscript", "style", "textarea", "pre", "code"] }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</body>
+</html>

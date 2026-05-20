@@ -1,0 +1,11 @@
+﻿metric,value
+year,2024.0
+od_pairs,51980.0
+positive_od_pairs,47455.0
+origins,229.0
+destinations,228.0
+log_ols_r2,0.799
+ppml_corr_r2,0.616
+fe_log_ols_r2,0.847
+province_proxy_centroids,4456.0
+business_density_imputed_pairs,0.0
